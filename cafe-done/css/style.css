@@ -1,0 +1,474 @@
+/**
+ *
+ * This stylesheet is broken into several chunks.
+ *
+ * - The first is normal. The styles will always apply (unless overridden by a later rule, of course).
+ *
+ * - The remaining chunks are enclosed by media queries. They will not apply to the document unless
+ *   the query evals to TRUE.
+ *
+ * - Since this is an example of "mobile-first" media queries, you'll notice the styles proceed from
+ *   the regular, unconditional styles up to the largest resolution, which is 1290px in this case.
+ *
+ * - We have set the stylesheets up this way to help newcomers comprehend the extra cascading that
+ *   occurs, but there are other methods which can be more efficient for experienced CSS developers.
+ *
+ *   @see http://smacss.com/
+ **/
+
+body {
+  font-family: helvetica, sans-serif;
+  line-height: 1.4em;
+}
+
+#container {
+  width: 100%;
+}
+
+h2, h3, h4 {
+  font-family: "bryant-web";
+}
+
+a,
+a:visited {
+  color: #66B360;
+}
+
+/**
+ * This is initially hidden, but as the design grows in size, we will set all of
+ * the <br>s to display: block; -- preserving the ability to control line breaks.
+ *
+ * @see http://danielmall.com/articles/responsive-line-breaks/
+ **/
+br.rbr {
+  display: none;
+}
+
+header {
+  padding-top: 20%;
+  background-color: #e69a23;
+  background-image: url(../img/webchef-cafe-logo-sm.png);
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+/*
+ * Hi-res logo via media query (pixel density)
+ *
+ * If higher pixel density displays are your only target device, this media query
+ * will allow you to serve high-resolution images. However, it is safer to use
+ * Modernizr and detect SVG support before serving an SVG.
+ */
+/*
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  header {
+    background-image: url(../img/webchef-cafe-logo.svg);
+  }
+}
+ */
+
+/**
+ * Always choose SVG over raster if possible
+ * .svg class will override media queries later in document
+ **/
+.svg header {
+  background-image: url(../img/webchef-cafe-logo.svg);
+}
+
+header h1 {
+  visibility: hidden;
+}
+
+header h1 a,
+header h1 a:visited {
+  color: #555;
+  text-decoration: none;
+}
+
+#tagline {
+  float: right;
+  margin: -90px 20px 0;
+  font-size: 24px;
+  font-family: Georgia;
+  color: #FFF;
+}
+
+nav a {
+  display: block;
+  margin: 6px;
+  padding: 10px 4px;
+  background: #fff;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  font-family: "bryant-web";
+  font-weight: 700;
+  font-size: 1.2em;
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0, 0.4), inset 0 -3px 9px 0 rgba(0,0,0,0.25);
+}
+
+nav a:hover {
+  color: inherit;
+}
+
+#menu h4 {
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f0ec), color-stop(100%, #e5e0dc));
+  background-image: -webkit-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: -moz-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: -o-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: -ms-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: linear-gradient(#f2f0ec, #e5e0dc);
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(255,255,255, 1);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  margin: 0 -8px;
+  padding: .3em .7em;
+}
+
+#specials p {
+  display: none;
+  background-sizing: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+#main {
+  clear: both;
+  padding: 1em;
+  min-height: 300px;
+  border-bottom: 1px #555 dotted;
+  margin-bottom: 5px;
+}
+
+#info {
+  width: 90%;
+  background: #66B360;
+  padding: 0 2%;
+  margin: 1em 3%;
+  color: #FFF;
+}
+
+#info ul {
+  margin: 0;
+  padding: 0;
+}
+
+#info ul li {
+  display: block;
+}
+
+#about {
+  clear: both;
+}
+
+.drinks h3,
+.entrees h3,
+.desserts h3 {
+  font-size: 18px;
+}
+
+footer {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #222;
+  color: #eee;
+  text-shadow: 1px 1px 1px #000;
+  -webkit-border-radius: 0 0 3px 3px;
+     -moz-border-radius-bottomright: 3px;
+     -moz-border-radius-bottomleft: 3px;
+          border-radius: 0 0 3px 3px;
+}
+
+footer p#copyright {
+  padding-left: 1em;
+}
+
+/* Fanciness */
+#menu,
+#info {
+  -webkit-transition: width .2s ease;
+     -moz-transition: width .2s ease;
+      -ms-transition: width .2s ease;
+       -o-transition: width .2s ease;
+          transition: width .2s ease;
+}
+
+
+
+
+/**
+ *
+ * Media Queries are below. These styles will only apply if the media query
+ * enclosing the styles evaluates to TRUE at the present moment.
+ *
+ **/
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 320px wide"
+ */
+@media only screen and (min-width: 320px) {
+
+  header {
+    margin: 0;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  #tagline {
+    display: none;
+  }
+
+  #info {
+    margin: 1em;
+    box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
+    border: 1px solid rgba(108,140,110,0.25);
+    border-radius: 5px;
+  }
+
+  #info h2 {
+    margin: .75em 0 .5em;
+  }
+
+  #info section h3 {
+    margin: 0;
+    padding: 1em 0 .5em;
+  }
+
+  #menu section {
+    margin: 0 .25em 2em;
+  }
+
+  #menu h3 {
+    background-color: #81CEDC;
+    color: #fff;
+    padding: .5em;
+    margin: 0;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+    border-radius: 7px 7px 0 0;
+  }
+
+  #menu .item {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-bottom: 8px;
+  }
+
+  #about h2 {
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+} /* (min-width: 320px) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 640px wide"
+ */
+@media only screen and (min-width: 640px) {
+
+  header {
+    background-image: url(../img/webchef-cafe-logo.png);
+  }
+
+  header h1 {
+    font-size: 4em;
+    text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
+  }
+
+  header h1 a,
+  header h1 a:visited {
+    color: #eee;
+    text-decoration: none;
+  }
+
+  nav a {
+    width: 28%;
+    float: left;
+    margin-bottom: 0;
+    border: none;
+    -webkit-border-radius: 10px 10px 0 0;
+       -moz-border-radius-bottomright: 0;
+       -moz-border-radius-bottomleft: 0;
+            border-radius: 10px 10px 0 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  }
+
+  #info {
+    margin: 0 0 1em 0;
+  }
+
+  #info section {
+    width: 50%;
+    float: left;
+  }
+
+  #menu h2 {
+    display: none;
+  }
+
+  #menu section {
+    float: left;
+    width: 44%;
+    margin: 0 2% 1em 2%;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  #menu section:nth-of-type(2n+1) {
+    clear: left;
+    margin-left: 0;
+  }
+
+} /* (min-width: 640px) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 960px wide"
+ */
+@media only screen and (min-width: 960px) {
+
+  body {
+    font-size: 1.05em;
+  }
+
+  /**
+   * We're ready for line breaks. Nothing is stopping you from making multiple
+   * breakpoint classes for different media queries.. or use Modernizr classes
+   *
+   * Media queries: br.rbr-tablet, br.rbr-desktop, br.rbr-wide
+   * Modernizr:     .touch br.rbr, .no-touch br.rbr
+   **/
+  br.rbr {
+    display: block;
+  }
+
+  header {
+    background-size: 40%;
+    background-position: 8% 18%;
+    padding-top: 1%;
+  }
+
+  #tagline {
+    display: block;
+  }
+
+  header h1 {
+    font-size: 5em;
+    padding: 0.5em 0 0;
+  }
+
+  nav {
+    width: 70%;
+    margin-left: 4%;
+  }
+
+  #main {
+    padding-top: 2em;
+  }
+
+  #info {
+    width: 29%;
+    float: right;
+  }
+
+  #info section {
+    width: 100%;
+    float: none;
+    clear: both;
+    padding-bottom: 1em;
+  }
+
+  #info section h3 {
+    float: left;
+    clear: left;
+    width: 80px;
+    padding: 0;
+  }
+
+  #info section ul,
+  #info section address {
+    margin-left: 80px;
+  }
+
+  #menu {
+    width: 66%;
+  }
+
+  #menu section {
+    width: 48%;
+    margin: 0 2% 0 0;
+  }
+
+  #menu section h3 {
+    margin-top: 0;
+  }
+
+} /* (min-width: 960px) */
+
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 1290px wide"
+ */
+@media only screen and (min-width: 1290px) {
+
+  header {
+    background-size: 30%;
+    background-position: 5% 20%;
+  }
+
+  #info {
+    width: 17%;
+  }
+
+  #menu {
+    width: 82%;
+  }
+
+  #menu section {
+    width: 30%;
+  }
+
+  #menu section:nth-of-type(2n+1) {
+    clear: none;
+  }
+
+  #menu section:nth-of-type(3n+1) {
+    clear: left;
+  }
+
+  #about p {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  #about p:nth-of-type(2n+1) {
+    clear: left;
+  }
+
+} /* (min-width: 1290px) */

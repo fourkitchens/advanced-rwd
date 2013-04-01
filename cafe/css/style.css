@@ -1,0 +1,359 @@
+/**
+ *
+ * This stylesheet is broken into several chunks.
+ *
+ * - The first is normal. The styles will always apply (unless overridden by a later rule, of course).
+ *
+ * - The remaining chunks are enclosed by media queries. They will not apply to the document unless
+ *   the query evals to TRUE.
+ *
+ * - Since this is an example of "mobile-first" media queries, you'll notice the styles proceed from
+ *   the regular, unconditional styles up to the largest resolution, which is 1290px in this case.
+ *
+ * - We have set the stylesheets up this way to help newcomers comprehend the extra cascading that
+ *   occurs, but there are other methods which can be more efficient for experienced CSS developers.
+ *   If you have a method that makes more sense to you, please feel free to use it!
+ *
+ *   @see http://smacss.com/
+ **/
+
+body {
+  font-size: 1.05em;
+  font-family: helvetica, sans-serif;
+  line-height: 1.4em;
+}
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+h2, h3, h4 {
+  font-family: "bryant-web";
+}
+
+a,
+a:visited {
+  color: #66B360;
+}
+
+/**
+ * This is initially hidden, but as the design grows in size, we will set all of
+ * the <br>s to display: block; -- preserving the ability to control line breaks.
+ *
+ * @see http://danielmall.com/articles/responsive-line-breaks/
+ **/
+br.rbr {
+  display: none;
+}
+
+header {
+  padding-top: 1%;
+  margin: 0;
+  background-color: #e69a23;
+  background-repeat: no-repeat;
+  background-image: url(../img/webchef-cafe-logo.png);
+  background-size: 400px;
+  background-position: 20px 0px;
+}
+
+header h1 {
+  visibility: hidden;
+  color: #fff;
+  text-shadow: 3px 3px 1px #19191b, 5px 5px 6px rgba(0,0,0,0.5);
+  font-size: 4em;
+  padding: 0.5em 0 0;
+}
+
+header h1 a,
+header h1 a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+#tagline {
+  float: right;
+  margin: -90px 20px 0;
+  font-size: 24px;
+  font-family: Georgia, serif;
+  color: #FFF;
+}
+
+nav {
+  width: 600px;
+  margin-left: 32px;
+}
+
+nav a {
+  display: block;
+  float: left;
+  width: 28%;
+  margin: 6px 6px 0 6px;
+  padding: 10px 4px;
+  background: #fff;
+
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  font-family: "bryant-web";
+  font-weight: 700;
+  font-size: 1.2em;
+
+  border: none;
+  -webkit-border-radius: 10px 10px 0 0;
+     -moz-border-radius-bottomright: 0;
+     -moz-border-radius-bottomleft:  0;
+          border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+nav a:hover {
+  color: inherit;
+}
+
+
+#main {
+  clear: both;
+  padding: 1em;
+  min-height: 300px;
+  border-bottom: 1px #555 dotted;
+  margin-bottom: 5px;
+  padding-top: 2em;
+}
+
+
+/*
+ * Hours, location, contact
+ */
+
+#info {
+  width: 43%;
+  float: right;
+  margin: 0 0 1em 0;
+  padding: 0 2%;
+  background: #66B360;
+  border: 1px solid rgba(108,140,110,0.25);
+  border-radius: 5px;
+  box-shadow: inset 0 0 9px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+#info h2 {
+  margin: .75em 0 .5em;
+}
+
+#info ul {
+  margin: 0;
+  padding: 0;
+}
+
+#info ul li {
+  display: block;
+}
+
+#info section {
+  width: 100%;
+  float: none;
+  clear: both;
+  padding-bottom: 1em;
+}
+
+#info section h3 {
+  width: 80px;
+  float: left;
+  clear: left;
+  margin: 0;
+  padding: 0;
+}
+
+#info section ul,
+#info section address {
+  margin-left: 80px;
+}
+
+
+/*
+ * Menu
+ */
+
+#menu {
+  width: 82%;
+}
+
+#menu h2 {
+  display: none;
+}
+
+#menu section {
+  float: left;
+  width: 30%;
+  margin: 0 2% 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#menu section.desserts {
+  /* See '#menu section' 30% + 30% + 2% */
+  width: 62%;
+}
+
+#menu section:nth-of-type(2n+1) {
+  clear: left;
+  margin-left: 0;
+}
+
+#menu section h3 {
+  background-color: #81CEDC;
+  color: #fff;
+  padding: .5em;
+  margin: 0;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+  border-radius: 7px 7px 0 0;
+}
+
+#menu h4 {
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f0ec), color-stop(100%, #e5e0dc));
+  background-image: -webkit-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: -moz-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: -o-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: -ms-linear-gradient(#f2f0ec, #e5e0dc);
+  background-image: linear-gradient(#f2f0ec, #e5e0dc);
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(255,255,255, 1);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  margin: 0 -8px;
+  padding: .3em .7em;
+}
+
+#menu .item {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-bottom: 8px;
+}
+
+
+/*
+ * About section
+ */
+
+#about {
+  clear: both;
+}
+
+#about h2 {
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#about p {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+
+#about p:nth-of-type(2n+1) {
+  clear: left;
+}
+
+/*
+ * Footer
+ */
+
+footer {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #222;
+  color: #eee;
+  text-shadow: 1px 1px 1px #000;
+  -webkit-border-radius: 0 0 3px 3px;
+     -moz-border-radius-bottomright: 3px;
+     -moz-border-radius-bottomleft: 3px;
+          border-radius: 0 0 3px 3px;
+}
+
+footer p#copyright {
+  padding-left: 1em;
+}
+
+
+
+
+/**
+ *
+ * Media Queries are below. These styles will only apply if the media query
+ * enclosing the styles evaluates to TRUE at the present moment.
+ *
+ **/
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 320px wide"
+ */
+@media only screen and (min-width: 320px) {
+} /* (min-width: 320px) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 640px wide"
+ */
+@media only screen and (min-width: 640px) {
+} /* (min-width: 640px) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 960px wide"
+ */
+@media only screen and (min-width: 960px) {
+} /* (min-width: 960px) */
+
+
+
+
+/*
+ * This media query means "visual, pixel-based screens which are at least 1290px wide"
+ */
+
+@media only screen and (min-width: 1290px) {
+} /* (min-width: 1290px) */
+
+
+
+
+/*
+ * Fancy effect for when people are testing various browser widths.
+ * This is not necessary on a real site, but you might find a use for it.
+ */
+#menu,
+#info {
+  /* Limit transitions to 'width' instead of 'all' CSS properties */
+  -webkit-transition: width .2s ease;
+     -moz-transition: width .2s ease;
+      -ms-transition: width .2s ease;
+       -o-transition: width .2s ease;
+          transition: width .2s ease;
+}
+
+/**
+ * We're ready for line breaks. Nothing is stopping you from making multiple
+ * breakpoint classes for different media queries.. or use Modernizr classes
+ *
+ * Media queries: br.rbr-tablet, br.rbr-desktop, br.rbr-wide
+ * Modernizr:     .touch br.rbr, .no-touch br.rbr
+ **/
+br.rbr {
+  display: block;
+}
