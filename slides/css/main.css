@@ -75,7 +75,7 @@ body {
  * HEADERS
  *********************************************/
 
-.reveal h1 { font-size: 3.77em; }
+.reveal h1 { font-size: 2.67em; }
 .reveal h2 { font-size: 2.11em;	}
 .reveal h3 { font-size: 1.55em;	}
 .reveal h4 { font-size: 1em;	}
@@ -909,3 +909,12 @@ body {
 	display: none;
 }
 
+
+
+/*********************************************
+ * Advanced-RWD Styles
+ *********************************************/
+
+.reveal .fragment code {
+	color: #666;
+}
