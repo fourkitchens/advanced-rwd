@@ -33,7 +33,7 @@ Some guidelines to speed things along:
     The only JS that should live in the <head> is code that is primarily presentational.
     Modernizr, Respond.js, and Typekit should all live in the <head>, but you should
     ALWAYS put all of them after your CSS.
-    
+
     @see https://developers.google.com/speed/articles/include-scripts-properly
   -->
   <script src="js/libs/modernizr-2.6.1.js"></script>
@@ -168,6 +168,8 @@ Some guidelines to speed things along:
 
     Further reading: http://developer.yahoo.com/performance/rules.html#js_bottom
   -->
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
 </body>
 </html>
