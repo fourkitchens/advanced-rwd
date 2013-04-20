@@ -25,7 +25,6 @@ Some guidelines to speed things along:
 
   <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
 
-  <link rel="stylesheet" href="css/h5bp.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/print.css" media="print">
 
@@ -37,34 +36,48 @@ Some guidelines to speed things along:
     @see https://developers.google.com/speed/articles/include-scripts-properly
   -->
   <script src="js/libs/modernizr-2.6.1.js"></script>
-  <script src="//use.typekit.net/vcy6oeb.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
-  <!--[if lt IE 9]>
-    <script src="js/libs/respond.min.js"></script>
-  <![endif]-->
+
+  <!-- Asynchronous loading of Google Webfonts -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Abel::latin', 'Satisfy::latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 </head>
 
 <body>
 
-  <div id="container">
-    <header>
-
-      <h1><a href="/html/3-cafe">Web Chef Caf&#233;</a></h1>
-      <div id="tagline">Feeding the general population since 2006!</div>
+  <header>
+    <div class="container">
+      <h1>Web Chef Caf&#233;</h1>
+      <!-- <div id="tagline">Feeding the general population since 2006!</div> -->
       <nav class="clearfix">
+        <!-- <div id="nav-toggle" data-toggle="closed">menu</div> -->
         <ul>
           <li><a href="#info">Location</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#about">About</a></li>
         </ul>
       </nav>
+    </div>
+  </header>
 
-    </header>
-    <div id="main" role="main">
 
-      <div id="info" class="vcard clearfix">
+  <main id="main" role="main">
 
-        <h2><span class="fn org">Web Chef Caf&#233;</span><br class="rbr"> Hours &amp; Location</h2>
+    <div id="info" class="vcard clearfix">
+      <div class="container">
+
+        <h2>Hours &amp; Location</h2>
 
         <section class="hours">
           <h3>Hours</h3>
@@ -83,10 +96,12 @@ Some guidelines to speed things along:
             <p class="tel">512-454-6659</p>
           </address>
         </section>
-
       </div><!-- #info -->
+    </div>
 
-      <div id="menu" class="clearfix">
+
+    <div id="menu" class="clearfix">
+      <div class="container">
 
         <h2>Menu</h2>
         <section class="drinks">
@@ -142,22 +157,27 @@ Some guidelines to speed things along:
             A festive pudding made from bread and pumpkins.
           </div>
         </section>
-
       </div><!-- #menu -->
+    </div>
 
-      <div id="about" class="clearfix">
+
+    <div id="about" class="clearfix">
+      <div class="container">
 
         <h2>About Web Chef Caf&#233;</h2>
         <p>Web Chef Caf&#233; first opened its doors in 2006 in Austin, Texas. Keytar PBR bicycle rights food truck, craft beer letterpress sartorial vegan viral mcsweeney's trust fund DIY. Blog next level pitchfork VHS, marfa stumptown keytar brunch iphone leggings yr american apparel biodiesel mustache. Irony +1 next level beard sartorial cosby sweater fixie ethical, trust fund dreamcatcher. High life sartorial food truck american apparel, lo-fi butcher yr locavore.</p>
         <p>Banksy farm-to-table four loko, 8-bit messenger bag jean shorts mcsweeney's gluten-free put a bird on it wolf art party Austin beard. Messenger bag beard shoreditch, skateboard freegan synth before they sold out sustainable mustache etsy iphone lo-fi 8-bit organic. Mixtape bicycle rights leggings, four loko squid keffiyeh butcher 8-bit cliche cosby sweater you probably haven't heard of them craft beer.</p>
         <p><a href="http://fourkitchens.com/sites/default/files/pages/files/The-Web-Chef-Cookbook-vol-2_0.pdf">Download our Web Chef Cookbook (PDF)</a></p>
-
       </div><!-- #about -->
-    </div><!-- #main -->
-    <footer>
+    </div>
+  </main><!-- #main -->
+
+
+  <footer>
+    <div class="container">
       <p id="copyright">&#169; 2012 Web Chef Caf&#233;. No rights reserved.</p>
-    </footer>
-  </div> <!-- #container -->
+    </div>
+  </footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.0.min.js"><\/script>')</script>
