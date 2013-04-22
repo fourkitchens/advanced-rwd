@@ -1,6 +1,6 @@
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* normalize.css v2.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+/* line 20, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 article,
 aside,
 details,
@@ -16,86 +16,86 @@ summary {
   display: block;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+/* line 28, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 audio,
 canvas,
 video {
   display: inline-block;
 }
 
-/* line 39, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+/* line 39, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+/* line 46, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 [hidden] {
   display: none;
 }
 
 /* normalize.css v2.1.0 | Base | MIT License | git.io/normalize */
-/* line 13, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+/* line 13, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-/* line 37, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+/* line 37, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
 body {
   margin: 0;
 }
 
 /* normalize.css v2.1.0 | Links | MIT License | git.io/normalize */
-/* line 9, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
+/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
 a:focus {
   outline: thin dotted;
 }
 
-/* line 16, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
+/* line 16, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
 a:active,
 a:hover {
   outline: 0;
 }
 
 /* normalize.css v2.1.0 | Typography | MIT License | git.io/normalize */
-/* line 13, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 13, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* line 47, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 47, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 54, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 54, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 66, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 66, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 73, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 73, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-/* line 81, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 81, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 100, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 100, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 code,
 kbd,
 pre,
@@ -104,24 +104,24 @@ samp {
   font-size: 1em;
 }
 
-/* line 110, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 110, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* line 118, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 118, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/* line 140, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 140, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 small {
   font-size: 80%;
 }
 
-/* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 147, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -130,48 +130,49 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 154, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 154, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 158, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+/* line 158, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 sub {
   bottom: -0.25em;
 }
 
 /* normalize.css v2.1.0 | Embedded Content | MIT License | git.io/normalize */
-/* line 9, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
+/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
 img {
   border: 0;
 }
 
-/* line 18, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
+/* line 18, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* normalize.css v2.1.0 | Figures | MIT License | git.io/normalize */
-/* line 9, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_figures.scss */
+/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_figures.scss */
 figure {
   margin: 0;
 }
 
 /* normalize.css v2.1.0 | Forms | MIT License | git.io/normalize */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 17, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 30, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 legend {
   border: 0;
   padding: 0;
+  white-space: normal;
 }
 
-/* line 49, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 49, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 input,
 select,
@@ -181,19 +182,19 @@ textarea {
   margin: 0;
 }
 
-/* line 63, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 63, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 input {
   line-height: normal;
 }
 
-/* line 73, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 73, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 90, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 90, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -202,20 +203,20 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 101, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 113, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 113, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 126, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 126, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -223,33 +224,33 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 137, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 137, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 144, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 144, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 152, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+/* line 152, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
 /* normalize.css v2.1.0 | Tables | MIT License | git.io/normalize */
-/* line 9, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_tables.scss */
+/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_tables.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../../../../../Library/Ruby/Gems/1.8/gems/toolkit-0.2.6/stylesheets/toolkit/_border-box.scss */
+/* line 10, ../../../../../../var/lib/gems/1.8/gems/toolkit-0.2.6/stylesheets/toolkit/_border-box.scss */
 *,
 *:after,
 *:before {
@@ -258,521 +259,87 @@ table {
   box-sizing: border-box;
 }
 
-/* line 4, ../../../../../../Library/Ruby/Gems/1.8/gems/toolkit-0.2.6/stylesheets/toolkit/_fluid-media.scss */
+/* line 4, ../../../../../../var/lib/gems/1.8/gems/toolkit-0.2.6/stylesheets/toolkit/_fluid-media.scss */
 img, video {
   max-width: 100%;
   height: auto;
 }
 
-/**
- *
- * This stylesheet is broken into several chunks.
- *
- * - The first is normal. The styles will always apply (unless overridden by a later rule, of course).
- *
- * - The remaining chunks are enclosed by media queries. They will not apply to the document unless
- *   the query evals to TRUE.
- *
- * - Since this is an example of "mobile-first" media queries, you'll notice the styles proceed from
- *   the regular, unconditional styles up to the largest resolution, which is 1290px in this case.
- *
- * - We have set the stylesheets up this way to help newcomers comprehend the extra cascading that
- *   occurs, but there are other methods which can be more efficient for experienced CSS developers.
- *
- *   @see http://smacss.com/
- **/
-/* line 21, ../sass/style.scss */
+@font-face {
+  font-family: 'webchef';
+  src: url('/fonts/webchef/webchef.eot');
+  src: url('/fonts/webchef/webchef.eot?#iefix') format("embedded-opentype"), url('data:application/x-font-woff;base64,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') format('"woff"'), url('/fonts/webchef/webchef.ttf') format("truetype"), url('/fonts/webchef/webchef.svg#webchef') format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 1, ../sass/partials/styleguide/_guide.scss */
 body {
-  font-family: helvetica, sans-serif;
-  line-height: 1.4em;
+  background: #f5fce7;
+  color: #4d4d4d;
+  font-family: 'Abel', sans-serif;
+  font-size: 112.5%;
+  /* Enable Ligatures */
+  -webkit-font-feature-settings: "liga","dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -moz-font-feature-settings: "liga","dlig";
+  -ms-font-feature-settings: "liga","dlig";
+  -o-font-feature-settings: "liga","dlig";
+  font-feature-settings: "liga","dlig";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 26, ../sass/style.scss */
-#container {
-  width: 100%;
-}
-
-/* line 30, ../sass/style.scss */
-h2, h3, h4 {
-  font-family: "bryant-web";
-}
-
-/* line 35, ../sass/style.scss */
-a,
-a:visited {
-  color: #66B360;
-}
-
-/**
- * This is initially hidden, but as the design grows in size, we will set all of
- * the <br>s to display: block; -- preserving the ability to control line breaks.
- *
- * @see http://danielmall.com/articles/responsive-line-breaks/
- **/
-/* line 45, ../sass/style.scss */
-br.rbr {
-  display: none;
-}
-
-/* line 49, ../sass/style.scss */
-header {
-  padding-top: 20%;
-  background-color: #e69a23;
-  background-image: url(../img/webchef-cafe-logo-sm.png);
-  background-position: 50% 10%;
-  background-repeat: no-repeat;
-  background-size: 70%;
-}
-
-/*
- * Hi-res logo via media query (pixel density)
- *
- * If higher pixel density displays are your only target device, this media query
- * will allow you to serve high-resolution images. However, it is safer to use
- * Modernizr and detect SVG support before serving an SVG.
- */
-/*
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  header {
-    background-image: url(../img/webchef-cafe-logo.svg);
-  }
-}
- */
-/**
- * Always choose SVG over raster if possible
- * .svg class will override media queries later in document
- **/
-/* line 77, ../sass/style.scss */
-.svg header {
-  background-image: url(../img/webchef-cafe-logo.svg);
-}
-
-/* line 81, ../sass/style.scss */
-header h1 {
-  visibility: hidden;
-}
-
-/* line 86, ../sass/style.scss */
-header h1 a,
-header h1 a:visited {
-  color: #555;
-  text-decoration: none;
-}
-
-/* line 91, ../sass/style.scss */
-#tagline {
-  float: right;
-  margin: -90px 20px 0;
-  font-size: 24px;
-  font-family: Georgia;
-  color: #FFF;
-}
-
-/* line 99, ../sass/style.scss */
-nav a {
-  display: block;
-  margin: 6px;
-  padding: 10px 4px;
-  background: #fff;
-  text-align: center;
-  color: #333;
-  text-decoration: none;
-  font-family: "bryant-web";
-  font-weight: 700;
-  font-size: 1.2em;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4), inset 0 -3px 9px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4), inset 0 -3px 9px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4), inset 0 -3px 9px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* line 117, ../sass/style.scss */
-nav a:hover {
-  color: inherit;
-}
-
-/* line 121, ../sass/style.scss */
-#menu h4 {
-  background-color: #eee;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f2f0ec), color-stop(100%, #e5e0dc));
-  background-image: -webkit-linear-gradient(#f2f0ec, #e5e0dc);
-  background-image: -moz-linear-gradient(#f2f0ec, #e5e0dc);
-  background-image: -o-linear-gradient(#f2f0ec, #e5e0dc);
-  background-image: -ms-linear-gradient(#f2f0ec, #e5e0dc);
-  background-image: linear-gradient(#f2f0ec, #e5e0dc);
-  color: rgba(0, 0, 0, 0.7);
-  text-transform: uppercase;
-  text-shadow: 1px 1px 0 white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 0 -8px;
-  padding: .3em .7em;
-}
-
-/* line 137, ../sass/style.scss */
-#specials p {
-  display: none;
-  background-sizing: contain;
-  background-repeat: no-repeat;
-  background-position: left top;
-}
-
-/* line 144, ../sass/style.scss */
-#main {
-  clear: both;
-  padding: 1em;
-  min-height: 300px;
-  border-bottom: 1px #555 dotted;
-  margin-bottom: 5px;
-}
-
-/* line 152, ../sass/style.scss */
-#info {
-  width: 90%;
-  background: #66B360;
-  padding: 0 2%;
-  margin: 1em 3%;
-  color: #FFF;
-}
-
-/* line 160, ../sass/style.scss */
-#info ul {
+/* line 16, ../sass/partials/styleguide/_guide.scss */
+nav ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
-
-/* line 165, ../sass/style.scss */
-#info ul li {
-  display: block;
+/* line 22, ../sass/partials/styleguide/_guide.scss */
+nav li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  padding-right: .5em;
 }
 
-/* line 169, ../sass/style.scss */
-#about {
-  clear: both;
+/* line 30, ../sass/partials/styleguide/_guide.scss */
+a {
+  color: #f388c3;
+  text-decoration: none;
+}
+/* line 33, ../sass/partials/styleguide/_guide.scss */
+a:hover {
+  color: #ef61af;
 }
 
-/* line 175, ../sass/style.scss */
-.drinks h3,
-.entrees h3,
-.desserts h3 {
-  font-size: 18px;
+/* line 38, ../sass/partials/styleguide/_guide.scss */
+h1, h2, h3 {
+  font-family: 'Satisfy', cursive;
 }
 
-/* line 179, ../sass/style.scss */
-footer {
+/* line 1, ../sass/partials/layout/_layout.scss */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
   padding: 1em;
-  margin-bottom: 1em;
-  background: #222;
-  color: #eee;
-  text-shadow: 1px 1px 1px #000;
-  -webkit-border-radius: 0 0 3px 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-radius: 0 0 3px 3px;
 }
 
-/* line 191, ../sass/style.scss */
-footer p#copyright {
-  padding-left: 1em;
+/* line 1, ../sass/partials/design/_header.scss */
+header h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+  text-align: center;
+  color: #efae61;
+  margin: 0;
+  padding: 0;
+  margin-bottom: .4em;
 }
 
-/* Fanciness */
-/* line 197, ../sass/style.scss */
-#menu,
-#info {
-  -webkit-transition: width .2s ease;
-  -moz-transition: width .2s ease;
-  -ms-transition: width .2s ease;
-  -o-transition: width .2s ease;
-  transition: width .2s ease;
+/* line 19, ../sass/partials/design/_header.scss */
+nav {
+  text-align: center;
+  margin-top: .4em;
+  font-size: 1.5em;
 }
-
-/**
- *
- * Media Queries are below. These styles will only apply if the media query
- * enclosing the styles evaluates to TRUE at the present moment.
- *
- **/
-/*
- * This media query means "visual, pixel-based screens which are at least 320px wide"
- */
-@media only screen and (min-width: 320px) {
-  /* line 223, ../sass/style.scss */
-  header {
-    margin: 0;
-  }
-
-  /* line 227, ../sass/style.scss */
-  header h1 {
-    font-size: 2em;
-  }
-
-  /* line 231, ../sass/style.scss */
-  #tagline {
-    display: none;
-  }
-
-  /* line 235, ../sass/style.scss */
-  #info {
-    margin: 1em;
-    box-shadow: inset 0 0 9px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(108, 140, 110, 0.25);
-    border-radius: 5px;
-  }
-
-  /* line 242, ../sass/style.scss */
-  #info h2 {
-    margin: .75em 0 .5em;
-  }
-
-  /* line 246, ../sass/style.scss */
-  #info section h3 {
-    margin: 0;
-    padding: 1em 0 .5em;
-  }
-
-  /* line 251, ../sass/style.scss */
-  #menu section {
-    margin: 0 .25em 2em;
-  }
-
-  /* line 255, ../sass/style.scss */
-  #menu h3 {
-    background-color: #81CEDC;
-    color: #fff;
-    padding: .5em;
-    margin: 0;
-    font-size: 1.3em;
-    text-transform: uppercase;
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    border-radius: 7px 7px 0 0;
-  }
-
-  /* line 267, ../sass/style.scss */
-  #menu .item {
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-bottom: 8px;
-  }
-
-  /* line 273, ../sass/style.scss */
-  #about h2 {
-    border-bottom: 1px solid #efefef;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-}
-/* (min-width: 320px) */
-/*
- * This media query means "visual, pixel-based screens which are at least 640px wide"
- */
-@media only screen and (min-width: 640px) {
-  /* line 289, ../sass/style.scss */
-  header {
-    background-image: url(../img/webchef-cafe-logo.png);
-  }
-
-  /* line 293, ../sass/style.scss */
-  header h1 {
-    font-size: 4em;
-    text-shadow: 4px 4px 0px #19191b, 5px 5px 0px #555;
-  }
-
-  /* line 299, ../sass/style.scss */
-  header h1 a,
-  header h1 a:visited {
-    color: #eee;
-    text-decoration: none;
-  }
-
-  /* line 304, ../sass/style.scss */
-  nav a {
-    width: 28%;
-    float: left;
-    margin-bottom: 0;
-    border: none;
-    -webkit-border-radius: 10px 10px 0 0;
-    -moz-border-radius-bottomright: 0;
-    -moz-border-radius-bottomleft: 0;
-    border-radius: 10px 10px 0 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-
-  /* line 318, ../sass/style.scss */
-  #info {
-    margin: 0 0 1em 0;
-  }
-
-  /* line 322, ../sass/style.scss */
-  #info section {
-    width: 50%;
-    float: left;
-  }
-
-  /* line 327, ../sass/style.scss */
-  #menu h2 {
-    display: none;
-  }
-
-  /* line 331, ../sass/style.scss */
-  #menu section {
-    float: left;
-    width: 44%;
-    margin: 0 2% 1em 2%;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  }
-
-  /* line 339, ../sass/style.scss */
-  #menu section:nth-of-type(2n+1) {
-    clear: left;
-    margin-left: 0;
-  }
-}
-/* (min-width: 640px) */
-/*
- * This media query means "visual, pixel-based screens which are at least 960px wide"
- */
-@media only screen and (min-width: 960px) {
-  /* line 354, ../sass/style.scss */
-  body {
-    font-size: 1.05em;
-  }
-
-  /**
-   * We're ready for line breaks. Nothing is stopping you from making multiple
-   * breakpoint classes for different media queries.. or use Modernizr classes
-   *
-   * Media queries: br.rbr-tablet, br.rbr-desktop, br.rbr-wide
-   * Modernizr:     .touch br.rbr, .no-touch br.rbr
-   **/
-  /* line 365, ../sass/style.scss */
-  br.rbr {
-    display: block;
-  }
-
-  /* line 369, ../sass/style.scss */
-  header {
-    background-size: 40%;
-    background-position: 8% 18%;
-    padding-top: 1%;
-  }
-
-  /* line 375, ../sass/style.scss */
-  #tagline {
-    display: block;
-  }
-
-  /* line 379, ../sass/style.scss */
-  header h1 {
-    font-size: 5em;
-    padding: 0.5em 0 0;
-  }
-
-  /* line 384, ../sass/style.scss */
-  nav {
-    width: 70%;
-    margin-left: 4%;
-  }
-
-  /* line 389, ../sass/style.scss */
-  #main {
-    padding-top: 2em;
-  }
-
-  /* line 393, ../sass/style.scss */
-  #info {
-    width: 29%;
-    float: right;
-  }
-
-  /* line 398, ../sass/style.scss */
-  #info section {
-    width: 100%;
-    float: none;
-    clear: both;
-    padding-bottom: 1em;
-  }
-
-  /* line 405, ../sass/style.scss */
-  #info section h3 {
-    float: left;
-    clear: left;
-    width: 80px;
-    padding: 0;
-  }
-
-  /* line 413, ../sass/style.scss */
-  #info section ul,
-  #info section address {
-    margin-left: 80px;
-  }
-
-  /* line 417, ../sass/style.scss */
-  #menu {
-    width: 66%;
-  }
-
-  /* line 421, ../sass/style.scss */
-  #menu section {
-    width: 48%;
-    margin: 0 2% 0 0;
-  }
-
-  /* line 426, ../sass/style.scss */
-  #menu section h3 {
-    margin-top: 0;
-  }
-}
-/* (min-width: 960px) */
-/*
- * This media query means "visual, pixel-based screens which are at least 1290px wide"
- */
-@media only screen and (min-width: 1290px) {
-  /* line 441, ../sass/style.scss */
-  header {
-    background-size: 30%;
-    background-position: 5% 20%;
-  }
-
-  /* line 446, ../sass/style.scss */
-  #info {
-    width: 17%;
-  }
-
-  /* line 450, ../sass/style.scss */
-  #menu {
-    width: 82%;
-  }
-
-  /* line 454, ../sass/style.scss */
-  #menu section {
-    width: 30%;
-  }
-
-  /* line 458, ../sass/style.scss */
-  #menu section:nth-of-type(2n+1) {
-    clear: none;
-  }
-
-  /* line 462, ../sass/style.scss */
-  #menu section:nth-of-type(3n+1) {
-    clear: left;
-  }
-
-  /* line 466, ../sass/style.scss */
-  #about p {
-    float: left;
-    width: 48%;
-    margin-right: 2%;
-  }
-
-  /* line 472, ../sass/style.scss */
-  #about p:nth-of-type(2n+1) {
-    clear: left;
-  }
-}
-/* (min-width: 1290px) */
