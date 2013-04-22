@@ -1,0 +1,243 @@
+<?php
+/**
+ * @file
+ * Exposes a number of core Drupal elements as blocks.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function blockify_help($path, $arg) {
+  if ($path == 'admin/help#blockify') {
+    return '<p>' . t('This module exposes a number of core Drupal elements as blocks.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_menu()
+ */
+function blockify_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/blockify'] = array(
+    'title' => 'Blockify',
+    'description' => 'Settings for the Blockify module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('blockify_admin_settings'),
+    'access arguments' => array('administer blockify'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'blockify.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function blockify_permission() {
+  return array(
+    'administer blockify' => array(
+      'title' => t('Administer Blockify'),
+      'description' => t('Manage settings for Blockify module'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function blockify_block_info() {
+  $block_list = _blockify_get_blocks();
+  foreach ($block_list as $delta => $name) {
+    if (_blockify_is_enabled($delta)) {
+      $blocks[$delta] = array(
+        'info' => $name,
+        'cache' => DRUPAL_CACHE_GLOBAL,
+      );
+    }
+  }
+
+  $cache_per_page_blocks = array(
+    'blockify-page-title',
+    'blockify-breadcrumb',
+    'blockify-feed-icons',
+  );
+  foreach ($cache_per_page_blocks as $delta) {
+    if (!empty($blocks[$delta])) {
+      $blocks[$delta]['cache'] = DRUPAL_CACHE_PER_PAGE;
+    }
+  }
+
+  $no_cache_blocks = array(
+    'blockify-tabs',
+    'blockify-actions',
+    'blockify-messages',
+  );
+  foreach ($no_cache_blocks as $delta) {
+    if (!empty($blocks[$delta])) {
+      $blocks[$delta]['cache'] = DRUPAL_NO_CACHE;
+    }
+  }
+
+  if (empty($blocks)) {
+    $blocks = array();
+  }
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function blockify_block_view($delta = '') {
+  $blocks = _blockify_get_blocks();
+  foreach ($blocks as $block_delta => $block_name) {
+    if ($delta == $block_delta && _blockify_is_enabled($block_delta)) {
+      return array(
+        'subject' => '',
+        'content' => blockify_get_content($delta),
+      );
+    }
+  }
+}
+
+/**
+ * Provides individual block content.
+ */
+function blockify_get_content($delta) {
+  $variables = array();
+
+  switch ($delta) {
+    case 'blockify-logo':
+      $variables['logo_path'] = theme_get_setting('logo');
+      return theme('blockify_logo', $variables);
+
+    case 'blockify-site-name':
+      $variables['site_name'] = filter_xss_admin(variable_get('site_name', 'Drupal'));
+      return theme('blockify_site_name', $variables);
+
+    case 'blockify-site-slogan':
+      $variables['site_slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
+      return theme('blockify_site_slogan', $variables);
+
+    case 'blockify-page-title':
+      $variables['page_title'] = drupal_get_title();
+      return theme('blockify_page_title', $variables);
+
+    case 'blockify-breadcrumb':
+      $variables['breadcrumb'] = drupal_get_breadcrumb();
+      return theme('blockify_breadcrumb', $variables);
+
+    case 'blockify-messages':
+      return theme('status_messages');
+
+    case 'blockify-tabs':
+      $variables['primary'] = menu_primary_local_tasks();
+      $variables['secondary'] = menu_secondary_local_tasks();
+      return theme('blockify_menu_local_tasks', $variables);
+
+    case 'blockify-actions':
+      $variables['menu_local_actions'] = menu_local_actions();
+      return theme('blockify_local_actions', $variables);
+
+    case 'blockify-feed-icons':
+      $variables['feed_icons'] = drupal_get_feeds();
+      return theme('blockify_feed_icons', $variables);
+  }
+}
+
+/**
+ * Returns a list of blockify blocks.
+ */
+function _blockify_get_blocks($enabled_blocks_only = TRUE) {
+  return array(
+    'blockify-logo' => t('Logo'),
+    'blockify-site-name' => t('Site name'),
+    'blockify-site-slogan' => t('Site slogan'),
+    'blockify-page-title' => t('Page title'),
+    'blockify-breadcrumb' => t('Breadcrumb'),
+    'blockify-tabs' => t('Tabs'),
+    'blockify-messages' => t('Messages'),
+    'blockify-actions' => t('Actions'),
+    'blockify-feed-icons' => t('Feed icons'),
+  );
+}
+
+/**
+ * Verify if a given blockify block is enabled in the blockify admin settings.
+ */
+function _blockify_is_enabled($delta) {
+  $blocks = variable_get('blockify_blocks', array());
+  if (!empty($blocks[$delta])) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function blockify_theme() {
+  return array(
+    'blockify_logo' => array(
+      'variables' => array('logo_path' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+    'blockify_site_name' => array(
+      'variables' => array('site_name' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+    'blockify_site_slogan' => array(
+      'variables' => array('site_slogan' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+    'blockify_page_title' => array(
+      'variables' => array('page_title' => NULL),
+      'file' => 'blockify.theme.inc',
+     ),
+    'blockify_breadcrumb' => array(
+      'variables' => array('breadcrumb' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+    'blockify_local_actions' => array(
+      'variables' => array('menu_local_actions' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+    'blockify_feed_icons' => array(
+      'variables' => array('feed_icons' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+    'blockify_menu_local_tasks' => array(
+      'variables' => array('primary' => NULL, 'secondary' => NULL),
+      'file' => 'blockify.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu_contextual_links_alter().
+ */
+function blockify_menu_contextual_links_alter(&$links, $router_item, $root_path) {
+  $block_id = array_pop($router_item['map']);
+
+  $site_information_pages = array(
+    'blockify-site-slogan',
+    'blockify-site-name',
+  );
+
+  if (in_array($block_id, $site_information_pages)) {
+    $links['site-information'] = array(
+      'title' => t('Site information'),
+      'href' => 'admin/config/system/site-information',
+      'localized_options' => array(),
+    );
+  }
+
+  if ($block_id == 'blockify-logo') {
+    $links['logo-settings'] = array(
+      'title' => t('Logo settings'),
+      'href' => 'admin/appearance/settings/' . $GLOBALS['theme'],
+      'localized_options' => array('fragment' => 'edit-logo'),
+    );
+  }
+}

@@ -1,0 +1,14 @@
+<?php
+/**
+  * Ensures that the theme registry gets rebuilt
+  */
+function borealis_ri_update_7100() {
+  drupal_theme_rebuild();
+}
+
+/**
+  * Ensures that Borealis RI is called absolutely last
+  */
+function borealis_ri_update_7101() {
+  db_query("UPDATE {system} SET weight = 99999 WHERE name = 'borealis_ri'");
+}

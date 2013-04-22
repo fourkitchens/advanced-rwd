@@ -1,0 +1,17 @@
+name = Modernizr
+description = Modernizr integration for Drupal. Extends the library by providing two APIs: (1) for test management (2) for exposing Modernizr.load() to Drupal
+core = 7.x
+package = Frontend
+configure = admin/config/development/modernizr
+
+files[] = modernizr.module
+files[] = modernizr.install
+files[] = modernizr.admin.inc
+files[] = modernizr.args.inc
+
+; Information added by drupal.org packaging script on 2013-02-10
+version = "7.x-3.0"
+core = "7.x"
+project = "modernizr"
+datestamp = "1360536218"
+

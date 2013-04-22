@@ -1,0 +1,428 @@
+<?php
+
+/**
+  * Implements hook_permission
+  */
+function borealis_ri_permission() {
+  return array(
+    'administer responsive image styles' => array(
+      'title' => t('Choose Responsive Image Styles'),
+      'description' => t('Choose which image styles to be responsive.'),
+    ),
+    'administer responsive image settings' => array(
+      'title' => t('Administer Responsive Image Settings'),
+      'description' => t('Administer the responsive image settings. Settings apply to all responsive image styles.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ */
+function borealis_ri_form_views_ui_config_item_form_alter(&$form, &$form_state) {
+  if (!empty($form['options']['settings']['image_style'])) {
+    $borealis_children = variable_get('borealis_ri_children', array());
+    $sizes = array('respondsmall', 'respondmedium', 'respondlarge', 'respondxl', 'respondxl2', 'respondxl3', 'respondxl4');
+    foreach ($borealis_children as $style) {
+      foreach ($sizes as $size) {
+        unset($form['options']['settings']['image_style']['#options']['borealis_' . $style . '_' . $size]);
+      }
+    }
+  }
+}
+
+/**
+  * Implements hook_form_FORM_ID_alter()
+  */
+function borealis_ri_form_file_entity_file_display_form_alter(&$form, &$form_state, $form_id) {
+  if(!empty($form['displays']['settings']['file_image']['image_style']['#options'])) {
+    $borealis_children = variable_get('borealis_ri_children', array());
+    $sizes = array('respondsmall', 'respondmedium', 'respondlarge', 'respondxl', 'respondxl2', 'respondxl3', 'respondxl4');
+
+    foreach ($borealis_children as $style) {
+      foreach ($sizes as $size) {
+        unset($form['displays']['settings']['file_image']['image_style']['#options']['borealis_' . $style . '_' . $size]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_formatter_settings_form_alter()
+ */
+function borealis_ri_field_formatter_settings_form_alter(&$settings_form, $context) {
+  if (!empty($settings_form['image_style'])) {
+    $borealis_children = variable_get('borealis_ri_children', array());
+    $sizes = array('respondsmall', 'respondmedium', 'respondlarge', 'respondxl', 'respondxl2', 'respondxl3', 'respondxl4');
+    foreach ($borealis_children as $style) {
+      foreach ($sizes as $size) {
+        unset($settings_form['image_style']['#options']['borealis_' . $style . '_' . $size]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_image_style()
+ */
+function borealis_ri_preprocess_image_style(&$variables) {
+  $borealis_children = variable_get('borealis_ri_children', array());
+
+  if (in_array($variables['style_name'], $borealis_children)) {
+    $variables['responsive'] = true;
+
+    $responsive_builds = variable_get('borealis_responsive_builds', '');
+    $lazylaod = (bool)variable_get('borealis_ri_lazyload', true);
+    $aspect_ratio = preg_split('/\//', variable_get('borealis_ri_aspect_ratio', '3/4'));
+    $aspect_ratio = count($aspect_ratio) == 2 ? floatval($aspect_ratio[0] / $aspect_ratio[1]) : floatval($aspect_ratio[0]);
+
+    if (empty($responsive_builds)) {
+      $responsive_builds = array();
+      $responsive_sizes = array(
+        'respondsmall',
+        'respondmedium',
+        'respondlarge',
+        'respondxl',
+        'respondxl2',
+        'respondxl3',
+        'respondxl4'
+      );
+
+      $respond_length = count($responsive_sizes);
+      $min_size = variable_get('borealis_ri_min_size', 250);
+      $hidpi = floatval(variable_get('borealis_ri_hidpi', '1.75'));
+
+      for ($i = 0; $i < $respond_length; $i++) {
+        if ($i == 0) {
+          $responsive_builds[$responsive_sizes[$i]] = $min_size;
+        }
+        else {
+          $responsive_builds[$responsive_sizes[$i]] = $responsive_builds[$responsive_sizes[$i - 1]] * $hidpi;
+        }
+      }
+    }
+
+    drupal_add_js(array('borealis_ri' => array('sizes' => $responsive_builds, 'lazyload' => $lazylaod, 'aspect_ratio' => $aspect_ratio)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'borealis_ri') . '/js/borealis_ri.js');
+    drupal_add_css(drupal_get_path('module', 'borealis_ri') . '/css/borealis-ri_images.css');
+
+
+    $attributes = array(
+      'class' => array('borealis', 'image-style-' . $variables['style_name']),
+    );
+
+    foreach ($responsive_builds as $size => $value) {
+      $attributes['data-borealis-' . $size] = image_style_url('borealis_' . $variables['style_name'] . '_' . $size, $variables['path']);
+    }
+    $variables['attributes'] = $attributes;
+  }
+}
+
+/**
+  * Implements hook_theme_registry_alter
+  */
+function borealis_ri_theme_registry_alter(&$theme_registry) {
+  // dpm($theme_registry);
+  $path = drupal_get_path('module', 'borealis_ri');
+
+  $theme_registry['image_style']['theme path'] = $path;
+  $theme_registry['image_style']['function'] = 'borealis_ri_responsive_image_styles';
+
+  $theme_registry['image_style_list']['theme_path'] = $path;
+  $theme_registry['image_style_list']['function'] = 'borealis_ri_image_style_list';
+}
+
+/**
+  * Custom Image Style theme
+  */
+function borealis_ri_responsive_image_styles(&$vars) {
+
+  // If it's not a responsive style, kick it to back out!
+  if (empty($vars['responsive']) || $vars['responsive'] == false) {
+    return theme_image_style($vars);
+  }
+
+  // Get Boralis settings
+  $image_wrap = variable_get('borealis_image_wrap', 0);
+  $lazyload = variable_get('borealis_ri_lazyload', true);
+
+
+
+  // Create a clean set of vars to use for NoScript
+  $vars_clean = $vars;
+  foreach ($vars_clean['attributes'] as $key => $value) {
+    if (strpos($key, 'data-borealis') === 0) {
+      unset($vars_clean['attributes'][$key]);
+    }
+  }
+
+  // Add Borealis-JS class
+  $vars['attributes']['class'][] = 'borealis-js';
+
+  // Start Output
+  $output = '';
+
+  // If we're wrapping the image, get the classes and write the wrapper
+  if ($image_wrap) {
+    $classes = '';
+
+    foreach ($vars['attributes']['class'] as $class) {
+      $classes .= $class . ' ';
+    }
+
+    if ($lazyload) {
+      $classes .= 'loading ';
+    }
+
+    $output .= '<div class="' . $classes . 'borealis-wrapper">';
+  }
+
+  // If we're not going to lazyload the images, set the style to Borealis Small
+  if (!$lazyload) {
+    $vars['style_name'] = 'borealis_' . $vars['style_name'] . '_respondsmall';
+  }
+
+  // Add a placeholder class the images
+  if ($lazyload) {
+    $attributes['class'][] = 'placeholder';
+  }
+
+  // Theme the images and pass them through a DOMDocument to remove some of their extremities
+  $themed = '<html><body>' . theme_image_style($vars) . '</body></html>';
+
+  // Setupd DOMDocument to step through rendered images
+  $dom = new DOMDocument();
+  $dom->loadHTML($themed);
+  $xpath = new DOMXpath($dom);
+  $images = $xpath->query('//body/img');
+
+  $dom_images = array();
+
+  // If we're lazyloading, we're going to change SRC as well as remove width and height
+  if ($lazyload) {
+    foreach ($images as $image) {
+      $image->setAttribute('src', '/' . drupal_get_path('module', 'borealis_ri') . '/images/blank.gif');
+      $image->removeAttribute('width');
+      $image->removeAttribute('height');
+      $dom_images[] = $dom->saveXML($image);
+    }
+  }
+  else {
+    foreach ($images as $image) {
+      $image->removeAttribute('width');
+      $image->removeAttribute('height');
+      $dom_images[] = $dom->saveXML($image);
+    }
+  }
+
+  // Place the images into the output
+  foreach ($dom_images as $image) {
+    $output .= $image;
+  }
+
+  // If we're lazyloading, provide a no-js fallback
+  if ($lazyload) {
+    $output .= '<noscript>';
+    $output .= theme_image_style($vars_clean);
+    $output .= '</noscript>';
+  }
+
+  // If we're wrapping the image, close the wrapping
+  if ($image_wrap) {
+    $output .= "</div>";
+  }
+
+  return $output;
+}
+
+/**
+  * Custom Image Style List theme
+  */
+function borealis_ri_image_style_list(&$variables) {
+  $styles = $variables['styles'];
+
+  $header = array(t('Style name'), t('Settings'), array('data' => t('Operations'), 'colspan' => 3));
+  $rows = array();
+  foreach ($styles as $style) {
+    $row = array();
+    $row[] = l($style['name'], 'admin/config/media/image-styles/edit/' . $style['name']);
+    $link_attributes = array(
+      'attributes' => array(
+        'class' => array('image-style-link'),
+      ),
+    );
+    if ($style['storage'] == IMAGE_STORAGE_NORMAL) {
+      $row[] = t('Custom');
+      $row[] = l(t('edit'), 'admin/config/media/image-styles/edit/' . $style['name'], $link_attributes);
+      $row[] = l(t('delete'), 'admin/config/media/image-styles/delete/' . $style['name'], $link_attributes);
+    }
+    elseif ($style['storage'] == IMAGE_STORAGE_OVERRIDE) {
+      $row[] = t('Overridden');
+      $row[] = l(t('edit'), 'admin/config/media/image-styles/edit/' . $style['name'], $link_attributes);
+      $row[] = l(t('revert'), 'admin/config/media/image-styles/revert/' . $style['name'], $link_attributes);
+    }
+    else {
+      $row[] = t('Default');
+      $row[] = l(t('edit'), 'admin/config/media/image-styles/edit/' . $style['name'], $link_attributes);
+      $row[] = '';
+    }
+    $rows[] = $row;
+  }
+
+  if (empty($rows)) {
+    $rows[] = array(array(
+      'colspan' => 4,
+      'data' => t('There are currently no styles. <a href="!url">Add a new one</a>.', array('!url' => url('admin/config/media/image-styles/add'))),
+    ));
+  }
+
+  return theme('table', array('header' => $header, 'rows' => $rows));
+}
+
+/**
+ * Implements hook_menu()
+ */
+function borealis_ri_menu() {
+  $items= array();
+
+  $items['admin/config/media/image-styles/responsive'] = array(
+    'title' => 'Responsive styles',
+    'description' => 'Select which image styles should be responsive',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('borealis_ri_responsive_styles_form'),
+    'access arguments' => array('administer responsive image styles'),
+    'type' => MENU_LOCAL_ACTION,
+    'weight' => 3,
+    'file' => 'admin/borealis_ri.responsive_styles.admin.inc',
+  );
+  $items['admin/config/media/image-styles/responsive/settings'] = array(
+    'title' => 'Settings',
+    'description' => 'Settings for Responsive Image Styles',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('borealis_ri_responsive_styles_settings_form'),
+    'access arguments' => array('administer responsive image settings'),
+    'type' => MENU_LOCAL_ACTION,
+    'weight' => 4,
+    'file' => 'admin/borealis_ri.responsive_styles.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_image_default_styles()
+ */
+function borealis_ri_image_default_styles() {
+  // Set basic array up.
+  $styles = array();
+  // Get responsive styles
+  $responsive_styles = variable_get('borealis_ri_parents', array());
+  // Set responsive settings. This can probably be configurable, but why bother for now?
+  $responsive_builds = array();
+  $responsive_sizes = array(
+    'respondsmall',
+    'respondmedium',
+    'respondlarge',
+    'respondxl',
+    'respondxl2',
+    'respondxl3',
+    'respondxl4'
+  );
+
+  $respond_length = count($responsive_sizes);
+  $min_size = variable_get('borealis_ri_min_size', 250);
+  $hidpi = floatval(variable_get('borealis_ri_hidpi', '1.75'));
+
+  for ($i = 0; $i < $respond_length; $i++) {
+    if ($i == 0) {
+      $responsive_builds[$responsive_sizes[$i]] = (int)$min_size;
+    }
+    else {
+      $responsive_builds[$responsive_sizes[$i]] = $responsive_builds[$responsive_sizes[$i - 1]] * $hidpi;
+    }
+  }
+
+  variable_set('borealis_responsive_builds', $responsive_builds);
+
+  // Array of newly created style names
+  $responsive_children = array();
+
+  // Loop over each responsive style to get the style effects.
+  foreach ($responsive_styles as $rstyle) {
+    $style_effects = array();
+
+    // Get each effect from the image style
+    foreach ($rstyle['effects'] as $effect) {
+      $effect_data = array();
+
+      // Seperate out the data into code-friendly key/value pairs
+      foreach ($effect['data'] as $key => $value) {
+        $effect_data[$key] = $value;
+      }
+      // Create array of options suitable for code-friendly styles
+      $style_effects[] = array(
+        'name' => $effect['name'],
+        'data' => $effect_data,
+        'weight' => 0,
+      );
+    }
+
+    // Loop over each build and make a style for each!
+    foreach ($responsive_builds as $build => $width) {
+      // Loop over styles looking for widths and heights to convert for responsive.
+      // Passing by reference so we can work on it directly.
+      foreach ($style_effects as $key => $values) {
+        $old_width = FALSE;
+        $old_height = FALSE;
+
+        // Check to make sure Data isn't empty, if it is, ignore it!
+        if (!empty($values['data'])) {
+          // Check to see if there's a "width" key, if so, we're gonna change it!
+          if (array_key_exists('width', $values['data'])) {
+            $old_width = $values['data']['width'];
+            $values['data']['width'] = $width;
+          }
+          // Check to see if there's a "height" key, if so, we're gonna change it!
+          // Simple oh/ow*nw=nh formula to calculate new height.
+          if(array_key_exists('height', $values['data'])) {
+            if(!empty($values['data']['height'])) {
+              $old_height = $values['data']['height'];
+              $new_height = $old_height / $old_width * $width;
+              $values['data']['height'] = $new_height;
+            }
+          }
+        }
+        $style_effects[$key] = $values;
+      }
+      // Create style!
+      $styles['borealis_' . $rstyle['name'] . '_' . $build] = array(
+        'effects' => $style_effects
+      );
+
+      // Add new responsive child's name to the array!
+      // array_push($responsive_children, 'borealis_' . $rstyle['name'] . '_' . $build);
+    }
+    array_push($responsive_children, $rstyle['name']);
+  }
+
+  variable_set('borealis_ri_children', $responsive_children);
+  return $styles;
+}
+
+function borealis_ri_build_and_flush() {
+  $responsive_children = variable_get('borealis_ri_children', array());
+  $responsive_builds = variable_get('borealis_responsive_builds', array());
+
+  $builds = array();
+
+  foreach ($responsive_children as $child) {
+    foreach ($responsive_builds as $build => $size) {
+      $builds[] = 'borealis_' . $child . '_' . $build;
+    }
+  }
+
+  foreach ($builds as $style) {
+    $loaded = image_style_load($style);
+    image_style_flush($loaded);
+  }
+}

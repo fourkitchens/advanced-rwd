@@ -1,0 +1,21 @@
+@import "compass/css3/transition";
+
+img.borealis {
+  max-width: 100%;
+
+  .loaded & {
+    width: 100%;
+  }
+}
+
+div.borealis {
+  @include single-transition(opacity, .3s, ease-in);
+
+  &.loading {
+    opacity: 0;
+  }
+
+  &.loaded {
+    opacity: 1;
+  }
+}

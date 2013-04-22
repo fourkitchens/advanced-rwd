@@ -1,0 +1,39 @@
+// $Id: CHANGELOG.txt,v 1.8 2010/10/23 23:28:43 agentken Exp $
+
+CHANGELOG file for Style Guide.
+
+23-OCT-2010
+-- Uses proper theming for page display.
+-- Adds styleguide.theme.inc.
+-- Documents preferred use of theme_html_tag().
+-- Fixes default page callback.
+
+22-OCT-2010
+-- #949758. Use t() normally.
+-- #949764. Suppert attributes for tags.
+
+21-OCT-2010
+-- Patch #948886 by Dave Reid. General code cleaup and renderable arrays.
+
+20-OCT-2010
+-- Adds bottom baseline to element displays.
+-- Adds more hook documentation.
+-- Adds optional element descriptions.
+-- Adds theme descriptions.
+-- Adds hook_styleguide_theme_info_alter().
+-- Adds basic tests for images within paragraphs.
+-- Splits forms into smaller chunks.
+
+19-OCT-2010
+-- README added (inadarei) and proofread (agentrickard).
+-- Adds group options to the API, cleaning the interface.
+-- Updates API documentation.
+-- Adds RTL css support.
+-- Fixes RTL file. Adds more padding on items.
+
+06-OCT-2010
+-- Adds hook_system_theme_page_alter().
+-- Adds new test items.
+
+05-OCT-2010
+-- Initial commit.

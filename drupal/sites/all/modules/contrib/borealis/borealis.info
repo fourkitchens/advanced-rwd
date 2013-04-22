@@ -1,0 +1,11 @@
+name = Borealis
+description = Shared items between the Borealis submodules
+core = 7.x
+
+package = Borealis
+; Information added by drupal.org packaging script on 2013-01-18
+version = "7.x-2.2"
+core = "7.x"
+project = "borealis"
+datestamp = "1358534712"
+

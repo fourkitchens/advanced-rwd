@@ -1,0 +1,15 @@
+name = Borealis Responsive Images
+description = Responsive Image Suite to create responsive image sets for any Image preset
+core = 7.x
+
+package = Borealis
+
+dependencies[] = borealis
+dependencies[] = field_formatter_settings
+dependencies[] = image
+; Information added by drupal.org packaging script on 2013-01-18
+version = "7.x-2.2"
+core = "7.x"
+project = "borealis"
+datestamp = "1358534712"
+
