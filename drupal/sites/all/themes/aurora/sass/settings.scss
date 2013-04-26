@@ -1,0 +1,131 @@
+@import "compass";
+@import 'susy';
+@import 'breakpoint';
+
+//////////////////////////////
+// Clearfix
+//////////////////////////////
+%clearfix-legacy {
+  /* for IE 6/7 */
+  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
+  /* non-JS fallback */
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+//////////////////////////////
+// Variables
+//////////////////////////////
+$drupal-grey: #ccc;
+$drupal-default-border: 1px solid $drupal-grey;
+
+$row-one-to-two: 735px;
+$breakpoint-to-ems: true;
+
+//////////////////////////////
+// Styling
+//////////////////////////////
+.form-item {
+  display: block;
+
+  &.form-disabled {
+    display: none;
+  }
+}
+
+pre {
+  display: inline-block;
+  background-color: lighten($drupal-grey, 10%);
+  padding: {
+    left: .5em !important;
+    right: .5em !important;
+  }
+}
+
+input {
+  max-width: 100%;
+}
+
+#system-theme-settings * {
+//  @include container;
+  @include box-sizing('border-box');
+}
+
+.aurora-row-left {
+  @include breakpoint($row-one-to-two) {
+    @include span-columns(6);
+    border: none;
+
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      margin-top: -100%;
+      margin-left: columns(6, 6);
+      width: .5 * gutter(6);
+      border-right: $drupal-default-border;
+    }
+  }
+}
+
+.aurora-row-right {
+  margin-bottom: 0;
+
+  @include breakpoint($row-one-to-two) {
+    @include reset-columns;
+    @include span-columns(6 omega);
+    border: none;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      margin-top: -100%;
+      margin-left: -.5 * gutter(6);
+      width: .5 * gutter(6);
+      border-left: $drupal-default-border;
+    }
+  }
+}
+
+#edit-theme-settings {
+  clear: both;
+
+  margin-bottom: 0;
+  @include breakpoint($row-one-to-two) {
+    margin-bottom: 1em;
+  }
+}
+
+.aurora-settigns-row {
+  @extend %clearfix-legacy;
+
+  display: block;
+  padding: 0;
+
+  @include breakpoint($row-one-to-two) {
+    border: $drupal-default-border;
+  }
+}
+
+label[for="edit-aurora-typekit-id"] {
+  display: inline;
+}
+
+#edit-aurora-typekit-id {
+  margin-left: .15em;
+}
