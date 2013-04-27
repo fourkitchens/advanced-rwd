@@ -1,0 +1,41 @@
+@include breakpoint('max-width' $measure-break) {
+  #menu {
+    width: 90vw;
+
+    position: absolute;
+    top: .0em;
+    right: -90vw;
+    z-index: 3;
+
+    @include single-transition(all .5s);
+
+    .open & {
+      right: 0;
+
+      @include single-transition(all .5s);
+    }
+
+    padding: 0 1em 1em 1em;
+
+    &:before {
+      @include box-sizing('content-box');
+      height: 1em;
+      width: 1em;
+      padding: {
+        left: .75em;
+        right: .5em;
+        top: .25em;
+        bottom: .25em;
+      }
+      display: inline-block;
+      margin-left: -2.75em;
+    }
+
+    .open & {
+        &:before {
+        padding: .25em;
+        margin-left: -1.5em;
+      }
+    }
+  }
+}
