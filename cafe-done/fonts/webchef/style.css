@@ -35,7 +35,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="your-class-prefix"] {
 */
-.food, .chef, .martini, .steak, .cupcake {
+.food, .chef, .martini, .steak, .cupcake, .uniF478 {
 	font-family: 'webchef';
 		speak: none;
 	/* Enable Ligatures */
@@ -63,4 +63,7 @@ you can use the generic selector below, but it's slower:
 }
 .cupcake:before {
 	content: "\64\65\73\73\65\72\74\73";
+}
+.uniF478:before {
+	content: "\63\6c\6f\73\65";
 }
