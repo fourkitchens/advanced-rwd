@@ -1,4 +1,5 @@
 gem 'singularitygs', '>=1.0.7'
+gem 'singularity-extras', '>=0.0.3'
 gem 'breakpoint', '>=2.0.1'
 gem 'color-schemer', '>=0.2.3'
 gem 'toolkit', '>=1.0.0'
