@@ -48,35 +48,21 @@
     padding-top: .25em;
   }
 
-  @include breakpoint($measure-break) {
-    @include clearfix;
+  @include breakpoint(1024px) {
+    .inner {
+      // font-size: 1.25em;
+    }
+    h3 {
+      font-size: 1.25em;
+      width: 100%;
 
-    section {
-      clear: both;
-    }
-  }
+      @include background(
+        linear-gradient(top left, nth($quadrary, 1), nth($quadrary, 1) 50%, rgba(nth($primary, 1), 0))
+      );
 
-  @include breakpoint($measure-break $menu-break) {
-    .item:nth-of-type(odd) {
-      @include float-span(1);
-    }
-    .item:nth-of-type(even) {
-      @include float-span(1, 'last');
-    }
-    .item:nth-of-type(3) {
-      clear: left;
-    }
-    .item:nth-of-type(4) {
-      clear: right;
-    }
-  }
-
-  @include breakpoint($menu-break) {
-    .item {
-      @include float-span(1);
-    }
-    .item:nth-of-type(4n) {
-      @include float-span(1, 'last');
+      border-radius: 1em;
+      padding-left: .75em;
+      margin-left: -.75em;
     }
   }
 }

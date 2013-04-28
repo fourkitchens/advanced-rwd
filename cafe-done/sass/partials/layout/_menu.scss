@@ -1,5 +1,8 @@
-@include breakpoint('max-width' $measure-break) {
-  #menu {
+//////////////////////////////
+// Flyout Menu
+//////////////////////////////
+#menu {
+  @include breakpoint('max-width' $measure-break) {
     width: 90vw;
 
     position: absolute;
@@ -35,6 +38,61 @@
         &:before {
         padding: .25em;
         margin-left: -1.5em;
+      }
+    }
+  }
+}
+
+//////////////////////////////
+// Inline Menu
+//////////////////////////////
+#menu {
+  @include breakpoint($measure-break) {
+    @include clearfix;
+
+    section {
+      clear: both;
+    }
+  }
+
+  @include breakpoint($measure-break $menu-break) {
+    .item:nth-of-type(odd) {
+      @include float-span(1);
+    }
+    .item:nth-of-type(even) {
+      @include float-span(1, 'last');
+    }
+    .item:nth-of-type(3) {
+      clear: left;
+    }
+    .item:nth-of-type(4) {
+      clear: right;
+    }
+  }
+
+  @include breakpoint($menu-break) {
+    .item {
+      @include float-span(1);
+    }
+    .item:nth-of-type(4n) {
+      @include float-span(1, 'last');
+    }
+  }
+
+  @include breakpoint(1024px) {
+    @include layout(3, .25) {
+
+      @for $i from 1 through 3 {
+        section:nth-of-type(#{$i}) {
+          @include grid-span(1, $i);
+        }
+      }
+
+      .item,
+      .item:nth-of-type(4n) {
+        width: 100%;
+        margin: 0;
+        clear: both;
       }
     }
   }

@@ -14,7 +14,13 @@
     }
   }
 
-  .info {
+  @include breakpoint(658px) {
+    h1 {
+      display: none;
+    }
 
+    .inner {
+      font-size: 1.5em;
+    }
   }
 }
