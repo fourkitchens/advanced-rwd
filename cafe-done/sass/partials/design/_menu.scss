@@ -1,8 +1,12 @@
 #menu {
-  background: nth($quadrary, 1);
+  background: nth($primary, 4);
 
   @include breakpoint($measure-break) {
     background: inherit;
+
+    .item {
+      padding-top: .25em;
+    }
   }
 
   h1 {
@@ -24,7 +28,7 @@
 
       @include border-radius(3em 0 0 3em);
 
-      background: nth($quadrary, 1);
+      background: nth($primary, 4);
     }
 
     .open & {
@@ -44,10 +48,6 @@
     margin-bottom: 0;
   }
 
-  .item {
-    padding-top: .25em;
-  }
-
   @include breakpoint(1024px) {
     .inner {
       // font-size: 1.25em;
@@ -57,7 +57,7 @@
       width: 100%;
 
       @include background(
-        linear-gradient(top left, nth($quadrary, 1), nth($quadrary, 1) 50%, rgba(nth($primary, 1), 0))
+        linear-gradient(top left, nth($primary, 4), nth($primary, 4) 50%, rgba(nth($primary, 4), 0))
       );
 
       border-radius: 1em;
