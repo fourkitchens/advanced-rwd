@@ -1,3 +1,6 @@
+# Pull gems from RubyGems
+source 'https://rubygems.org'
+
 gem 'singularitygs', '>=1.0.7'
 gem 'singularity-extras', '>=0.0.3'
 gem 'breakpoint', '>=2.0.1'
