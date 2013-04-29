@@ -77,9 +77,9 @@
   <?php print render($page['main_prefix']); ?>
 <?php endif; ?>
 
-<?php if ($page['main']): ?>
+<?php if ($page['content']): ?>
   <main id="main" role="main">
-    <?php print render($page['main']); ?>
+    <?php print render($page['content']); ?>
   </main>
 <?php endif; ?>
 

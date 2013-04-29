@@ -1,28 +1,6 @@
 @import "compass";
-@import 'susy';
-@import 'breakpoint';
-
-//////////////////////////////
-// Clearfix
-//////////////////////////////
-%clearfix-legacy {
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
-  *zoom: 1;
-
-  &:before,
-  &:after {
-    content: ".";
-    display: block;
-    height: 0;
-    overflow: hidden;
-  }
-
-  &:after {
-    clear: both;
-  }
-}
+@import 'singularitygs';
+@import "toolkit/clearfix";
 
 //////////////////////////////
 // Variables
@@ -31,7 +9,11 @@ $drupal-grey: #ccc;
 $drupal-default-border: 1px solid $drupal-grey;
 
 $row-one-to-two: 735px;
+$vtab: 'max-width' $row-one-to-two;
 $breakpoint-to-ems: true;
+
+$grids: 2;
+$gutters: .15;
 
 //////////////////////////////
 // Styling
@@ -62,43 +44,39 @@ input {
   @include box-sizing('border-box');
 }
 
+.aurora-settigns-row:first-of-type {
+  @include breakpoint($row-one-to-two) {
+    margin-bottom: 1.25em;
+  }
+}
+
+[class*="aurora-row"] {
+  @include breakpoint($row-one-to-two) {
+    border: none;
+    position: relative;
+  }
+}
+
 .aurora-row-left {
   @include breakpoint($row-one-to-two) {
-    @include span-columns(6);
-    border: none;
-
+    @include grid-span(1, 1);
 
     &:after {
-      content: '';
-      display: block;
       position: absolute;
+      display: inline-block;
+      top: 0;
+      @include push(2, 1);
+      width: 0px;
       height: 100%;
-      margin-top: -100%;
-      margin-left: columns(6, 6);
-      width: .5 * gutter(6);
+      content: '';
       border-right: $drupal-default-border;
     }
   }
 }
 
 .aurora-row-right {
-  margin-bottom: 0;
-
   @include breakpoint($row-one-to-two) {
-    @include reset-columns;
-    @include span-columns(6 omega);
-    border: none;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      height: 100%;
-      margin-top: -100%;
-      margin-left: -.5 * gutter(6);
-      width: .5 * gutter(6);
-      border-left: $drupal-default-border;
-    }
+    @include grid-span(1, 2);
   }
 }
 
@@ -128,4 +106,55 @@ label[for="edit-aurora-typekit-id"] {
 
 #edit-aurora-typekit-id {
   margin-left: .15em;
+}
+
+
+//////////////////////////////
+// Vertical tabs, nasty fuckers
+//////////////////////////////
+div.vertical-tabs {
+  @include breakpoint($vtab) {
+    background: #fff;
+
+    .vertical-tabs-list {
+      width: 100%;
+      background: #f2f2f2;
+
+      a {
+        border: none !important;
+
+        strong {
+          padding: 5px 10px;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          background: inherit !important;
+
+          strong {
+            background: rgba(black, .15);
+          }
+        }
+      }
+
+      .selected a {
+        background: inherit;
+
+        strong {
+          background: #fff;
+        }
+      }
+
+      li {
+        display: inline-block;
+      }
+    }
+
+    .vertical-tabs-panes {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      clear: both;
+    }
+  }
 }

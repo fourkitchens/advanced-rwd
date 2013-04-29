@@ -22,14 +22,22 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
   $recomended_modules = aurora_recomended_modules();
 
   if (!empty($recomended_modules)) {
+    $hide = theme_get_setting('hide_recomended_modules');
+
     $form['recomended_modules'] = array(
       '#type' => 'fieldset',
       '#title' => t('Recommended Modules'),
       '#collapsible' => TRUE,
-      '#collapsed' => FALSE,
-      '#description' => t('Aurora was build in conjunction with several other modules to help streamline development. Some of these modules are not downloaded or enabled on your site. For maximum Aurora awesome-sauce, you should take a look at the following modules.'),
+      '#collapsed' => $hide,
+      '#description' => t('Aurora was build in conjunction with several other modules to help streamline development. Some of these modules are not downloaded or enabled on your site. For maximum Aurora awesomesauce, you should take a look at the following modules. Modules marked as required should be download and enabled in order to get the most out of Aurora.'),
       '#weight' => -1000,
       '#attributes' => array('class' => array('aurora-recommended-modules')),
+    );
+
+    $form['recomended_modules']['hide_recomended_modules'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Hide this warning by default.'),
+      '#default_value' => $hide,
     );
 
     foreach($recomended_modules as $id => $module) {
@@ -39,7 +47,6 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
         '#description' => $module['description'],
         '#required' => $module['required'],
       );
-
     }
   }
 
@@ -226,7 +233,7 @@ function aurora_recomended_modules() {
   if (!module_exists('magic')) {
     $return['magic'] = array(
       'name' => t('Magic Module'),
-      'description' => t('The magic module will add in great JavaScript and CSS preprocessing abilities. Highly recommended for any theme development.'),
+      'description' => t('The Magic module provides advanced CSS and JavaScript handling for themes. It provides additional handling for CSS and JavaScript, as well as allows you to selectively remove files. It also provides development enhancements to make theming easier.'),
       'required' => TRUE,
     );
   }
@@ -234,7 +241,7 @@ function aurora_recomended_modules() {
   if (!module_exists('jquery_update')) {
     $return['jquery_update'] = array(
       'name' => t('jQuery Update'),
-      'description' => t('jQuery update will update the jQuery code base on your site from Drupal\'s base version 1.4. It will also allow jQuery to be loaded from a CDN, for added performance.'),
+      'description' => t('jQuery Update will update the jQuery code base on your site from Drupal\'s base version 1.4. It will also allow jQuery to be loaded from a CDN, for added performance.'),
       'required' => FALSE,
     );
   }
@@ -242,15 +249,23 @@ function aurora_recomended_modules() {
   if (!module_exists('modernizr')) {
     $return['modernizr'] = array(
       'name' => t('Modernizr Module'),
-      'description' => t('The modernizr module will add in the !modernizr library of code to better help theme development.', array('!modernizr' => l('Modernizr', "http://modernizr.com/", array('attributes' => array('target' => '_blank'))))),
+      'description' => t('The Modernizr module will add in the !modernizr library of code to better help theme development and provide hooks for your theme and modules to define their dependencies.', array('!modernizr' => l('Modernizr', "http://modernizr.com/", array('attributes' => array('target' => '_blank'))))),
+      'required' => FALSE,
+    );
+  }
+
+  if (!module_exists('blockify')) {
+    $return['blockify'] = array(
+      'name' => t('Blockify Module'),
+      'description' => t('Blockify allows you to use system information traditionally kept in page.tpl.php, such as Site Name, Tabs, Messages, Logo, etc…, as blocks. Aurora does not include these items in its page.tpl.php, so if you would like to use them, you should use this module.'),
       'required' => FALSE,
     );
   }
 
   if (!module_exists('borealis')) {
     $return['borealis'] = array(
-      'name' => t('Borealis Module'),
-      'description' => t('Borealis was made for Aurora to include responsive images and other '),
+      'name' => t('Borealis Suite'),
+      'description' => t('Borealis provides two modules that make building responsive sites better. Borealis Responsive Images is an innovative, Drupal centric approach to responsive images. Borealis Semantic Blocks allows you to choose the semantics of blocks, making their output CSS much nicer.'),
       'required' => FALSE,
     );
   }

@@ -4,15 +4,18 @@ core = 7.x
 
 regions[header]         = Header
 regions[main_prefix]    = Main Region Prefix
-regions[main]           = Main
+regions[content]        = Main
 regions[main_suffix]    = Main Region Suffix
 regions[footer]         = Footer
 
 plugins[panels][layouts] = layouts
 
-; Information added by drupal.org packaging script on 2013-04-24
-version = "7.x-3.0-beta2+0-dev"
-core = "7.x"
-project = "aurora"
-datestamp = "1366806732"
+; Theme Settings
 
+; Chrome Frame Options
+settings[aurora_enable_chrome_frame] = 1
+settings[aurora_min_ie_support] = 9
+
+; Miscelaneous Options
+settings[aurora_html_tags] = 1
+settings[aurora_typekit_id] =
