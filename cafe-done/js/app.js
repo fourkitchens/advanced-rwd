@@ -1,34 +1,36 @@
-window.onload = function() {
+r(function() {
   var menu = document.getElementById('menu');
-  var info = document.getElementById('info');
-  var about = document.getElementById('about');
+  // var info = document.getElementById('info');
+  // var about = document.getElementById('about');
+  var main = document.getElementById('main')
 
   menu.addEventListener('click', function() {
-    if (hasClass(menu, 'open')) {
-      removeClass(menu, 'open');
+    if (hasClass(main, 'open')) {
+      removeClass(main, 'open');
     }
     else {
-      addClass(menu, 'open');
+      addClass(main, 'open');
     }
   });
+});
 
-  info.addEventListener('click', function() {
-    if (hasClass(info, 'open')) {
-      removeClass(info, 'open');
-    }
-    else {
-      addClass(info, 'open');
-    }
-  });
+  // info.addEventListener('click', function() {
+  //   if (hasClass(info, 'open')) {
+  //     removeClass(info, 'open');
+  //   }
+  //   else {
+  //     addClass(info, 'open');
+  //   }
+  // });
 
-  about.addEventListener('click', function() {
-    if (hasClass(about, 'open')) {
-      removeClass(about, 'open');
-    }
-    else {
-      addClass(about, 'open');
-    }
-  });
+  // about.addEventListener('click', function() {
+  //   if (hasClass(about, 'open')) {
+  //     removeClass(about, 'open');
+  //   }
+  //   else {
+  //     addClass(about, 'open');
+  //   }
+  // });
 
 
   //////////////////////////////
@@ -60,4 +62,3 @@ window.onload = function() {
   function addClass(el, name) {
    if (!hasClass(el, name)) { el.className += (el.className ? ' ' : '') +name; }
   }
-}

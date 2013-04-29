@@ -36,6 +36,11 @@ Some guidelines to speed things along:
     @see https://developers.google.com/speed/articles/include-scripts-properly
   -->
   <script src="js/libs/modernizr-2.6.1.js"></script>
+  <script>
+    // Smallest DOMContentLoaded event ever.
+    // http://dustindiaz.com/smallest-domready-ever
+    function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+  </script>
 
   <!-- Asynchronous loading of Google Webfonts -->
   <script type="text/javascript">
