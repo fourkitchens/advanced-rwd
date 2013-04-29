@@ -602,35 +602,35 @@ nav {
 }
 @media (max-width: 524px) {
   /* line 23, ../sass/partials/design/_menu.scss */
-  #menu:before {
+  .wf-active #menu:before {
     font-family: 'webchef';
     content: 'menu';
     font-size: 1.5em;
     text-align: center;
+    background: #eefbd7;
     -webkit-border-radius: 3em 0 0 3em;
     -moz-border-radius: 3em 0 0 3em;
     -ms-border-radius: 3em 0 0 3em;
     -o-border-radius: 3em 0 0 3em;
     border-radius: 3em 0 0 3em;
-    background: #eefbd7;
   }
-  /* line 35, ../sass/partials/design/_menu.scss */
-  .open #menu:before {
+  /* line 33, ../sass/partials/design/_menu.scss */
+  .open .wf-active #menu:before {
     content: 'close';
   }
 }
-/* line 41, ../sass/partials/design/_menu.scss */
+/* line 40, ../sass/partials/design/_menu.scss */
 #menu h4 {
   margin: 0;
   margin-top: .25em;
   text-decoration: underline;
 }
-/* line 47, ../sass/partials/design/_menu.scss */
+/* line 46, ../sass/partials/design/_menu.scss */
 #menu h3 {
   margin-bottom: 0;
 }
 @media (min-width: 1024px) {
-  /* line 55, ../sass/partials/design/_menu.scss */
+  /* line 54, ../sass/partials/design/_menu.scss */
   #menu h3 {
     font-size: 1.25em;
     width: 100%;
