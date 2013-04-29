@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     blend-mode (0.0.1)
       compass (~> 0.12)
