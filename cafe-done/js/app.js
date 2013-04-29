@@ -1,4 +1,4 @@
-window.onload = function() {
+r(function() {
   var menu = document.getElementById('menu');
   // var info = document.getElementById('info');
   // var about = document.getElementById('about');
@@ -12,6 +12,7 @@ window.onload = function() {
       addClass(main, 'open');
     }
   });
+});
 
   // info.addEventListener('click', function() {
   //   if (hasClass(info, 'open')) {
@@ -61,4 +62,3 @@ window.onload = function() {
   function addClass(el, name) {
    if (!hasClass(el, name)) { el.className += (el.className ? ' ' : '') +name; }
   }
-}
