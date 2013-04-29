@@ -1,2 +1,5 @@
+# ignore sass stuff
 .sass-cache
 
+# ignore all CSS in dev folders
+cafe/css
