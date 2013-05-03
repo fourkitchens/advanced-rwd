@@ -4,7 +4,7 @@
  * reveal.js
  * http://lab.hakim.se/reveal-js
  * MIT licensed
- * 
+ *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 
@@ -22,8 +22,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -34,7 +34,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -44,7 +44,7 @@ footer, header, hgroup, menu, nav, section {
  * GLOBAL STYLES
  *********************************************/
 
-html, 
+html,
 body {
 	padding: 0;
 	margin: 0;
@@ -65,10 +65,10 @@ body {
 	}
 }
 
-::selection { 
-	background:#FF5E99; 
-	color:#fff; 
-	text-shadow: none; 
+::selection {
+	background:#FF5E99;
+	color:#fff;
+	text-shadow: none;
 }
 
 /*********************************************
@@ -112,19 +112,19 @@ body {
 	/* preserve aspect ratio and scale image so it's bound within the section */
 	max-width: 100%;
 	max-height: 100%;
-} 
+}
 
-.reveal strong, 
+.reveal strong,
 .reveal b {
 	font-weight: bold;
 }
 
-.reveal em, 
+.reveal em,
 .reveal i {
 	font-style: italic;
 }
 
-.reveal ol, 
+.reveal ol,
 .reveal ul {
 	display: inline-block;
 
@@ -172,7 +172,7 @@ body {
 	width: 70%;
 	margin: 5px auto;
 	padding: 5px;
-	
+
 	font-style: italic;
 	background: rgba(255, 255, 255, 0.05);
 	box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
@@ -184,7 +184,7 @@ body {
 		content: '”';
 	}
 
-.reveal q {	
+.reveal q {
 	font-style: italic;
 }
 	.reveal q:before {
@@ -215,7 +215,7 @@ body {
 	overflow-x: auto;
 }
 
-.reveal table th, 
+.reveal table th,
 .reveal table td {
 	text-align: left;
 	padding-right: .3em;
@@ -225,10 +225,10 @@ body {
 	text-shadow: rgb(255,255,255) 1px 1px 2px;
 }
 
-.reveal sup { 
+.reveal sup {
 	vertical-align: super;
 }
-.reveal sub { 
+.reveal sub {
 	vertical-align: sub;
 }
 
@@ -258,7 +258,7 @@ body {
 	right: 0;
 	bottom: 0;
 }
-	
+
 	.reveal .controls a {
 		font-family: Arial;
 		font-size: 0.83em;
@@ -303,7 +303,7 @@ body {
 	bottom: 0;
 	left: 0;
 }
-	
+
 	.reveal .progress span {
 		display: block;
 		height: 100%;
@@ -410,7 +410,7 @@ body {
 	margin-top: -320px;
 	padding: 20px 0px;
 	overflow: visible;
-	
+
 	text-align: center;
 
 	-webkit-transition: -webkit-perspective .4s ease;
@@ -418,7 +418,7 @@ body {
 	    -ms-transition: -ms-perspective .4s ease;
 	     -o-transition: -o-perspective .4s ease;
 	        transition: perspective .4s ease;
-	
+
 	-webkit-perspective: 600px;
 	   -moz-perspective: 600px;
 	    -ms-perspective: 600px;
@@ -438,12 +438,12 @@ body {
 	min-height: 600px;
 
 	z-index: 10;
-	
+
 	-webkit-transform-style: preserve-3d;
 	   -moz-transform-style: preserve-3d;
 	    -ms-transform-style: preserve-3d;
 	        transform-style: preserve-3d;
-	
+
 	-webkit-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 	   -moz-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 	    -ms-transition: all 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
@@ -469,7 +469,7 @@ body {
 .reveal .slides>section.past {
 	display: block;
 	opacity: 0;
-	
+
 	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
 	   -moz-transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
 	    -ms-transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
@@ -478,7 +478,7 @@ body {
 .reveal .slides>section.future {
 	display: block;
 	opacity: 0;
-	
+
 	-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
 	   -moz-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
 	    -ms-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
@@ -488,7 +488,7 @@ body {
 .reveal .slides>section>section.past {
 	display: block;
 	opacity: 0;
-	
+
 	-webkit-transform: translate3d(0, -50%, 0) rotateX(70deg) translate3d(0, -50%, 0);
 	   -moz-transform: translate3d(0, -50%, 0) rotateX(70deg) translate3d(0, -50%, 0);
 	    -ms-transform: translate3d(0, -50%, 0) rotateX(70deg) translate3d(0, -50%, 0);
@@ -497,7 +497,7 @@ body {
 .reveal .slides>section>section.future {
 	display: block;
 	opacity: 0;
-	
+
 	-webkit-transform: translate3d(0, 50%, 0) rotateX(-70deg) translate3d(0, 50%, 0);
 	   -moz-transform: translate3d(0, 50%, 0) rotateX(-70deg) translate3d(0, 50%, 0);
 	    -ms-transform: translate3d(0, 50%, 0) rotateX(-70deg) translate3d(0, 50%, 0);
@@ -595,7 +595,7 @@ body {
 	   -moz-backface-visibility: hidden;
 	    -ms-backface-visibility: hidden;
 	        backface-visibility: hidden;
-	
+
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -821,7 +821,7 @@ body {
 .reveal.overview .slides section {
 	padding: 20px 0;
 	max-height: 600px;
-	overflow: hidden;	
+	overflow: hidden;
 	opacity: 1;
 	cursor: pointer;
 	background: rgba(0,0,0,0.1);
@@ -917,4 +917,8 @@ body {
 
 .reveal .fragment code {
 	color: #666;
+}
+
+.reveal ul.naked li {
+	list-style-type: none;
 }
