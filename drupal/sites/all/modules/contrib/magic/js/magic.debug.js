@@ -1,7 +1,4 @@
-(function($, window, undefined) {
-
-  var viewportWidth = $('#magic-viewport-indicator');
-  var modernizrDebug = $('#magic-modernizr-debug');
+(function() {
 
   //////////////////////////////
   // Localstorage Test
@@ -9,7 +6,7 @@
   function supports_html5_storage() {
     // Please see https://github.com/Modernizr/Modernizr/blob/master/feature-detects/storage/localstorage.js
     // for details.
-    var mod = 'modernizr';
+    var mod = 'magic';
     try {
       localStorage.setItem(mod, mod);
       localStorage.removeItem(mod);
@@ -22,107 +19,148 @@
   //////////////////////////////
   // Viewport Width Display
   //////////////////////////////
-  if (viewportWidth.length) {
-    var widthPX = $(window).width();
+
+  function viewport_width() {
+    var viewportWidth = document.getElementById('magic-viewport-indicator');
+    var widthPX = window.innerWidth;
     var widthEM = widthPX / 16;
 
     if (supports_html5_storage()) {
-      var viewportStatus = localStorage.getItem("Magic Viewport Storage");
-    }
+      var viewportStatus = localStorage.getItem("MagicViewportStorage");
 
-    if (viewportStatus !== null) {
       if (viewportStatus == 'px') {
-        viewportWidth.html(widthPX + 'px');
+        viewportWidth.innerHTML = widthPX + 'px';
       }
       else if (viewportStatus == 'em') {
-        viewportWidth.html(widthEM + 'em');
+        viewportWidth.innerHTML = widthEM + 'em';
       }
       else {
-        viewportWidth.html(widthEM + 'em');
-        localStorage.setItem("Magic Viewport Storage", 'em');
+        viewportWidth.html = widthEM + 'em';
+        localStorage.setItem("MagicViewportStorage", 'em');
       }
-    }
-
-
-
-    viewportWidth.click(function() {
-      $(window).resize(function() {
-        widthPX = $(window).width();
-        widthEM = widthPX / 16;
-      });
-
-      var parseHTML = parseFloat($(this).html());
-      if (parseHTML == widthPX) {
-        $(this).html(widthEM + 'em');
-        if (supports_html5_storage()) {
-          localStorage.setItem("Magic Viewport Storage", 'em');
-        }
-      }
-      else if (parseHTML == widthEM) {
-        $(this).html(widthPX + 'px');
-        if (supports_html5_storage()) {
-          localStorage.setItem("Magic Viewport Storage", 'px');
-        }
-      }
-    });
-
-    $(window).resize(function() {
-      widthPX = $(window).width();
-      widthEM = widthPX / 16;
-      if (viewportWidth.html().indexOf('em') > 0) {
-        viewportWidth.html(widthEM + 'em');
-        if (supports_html5_storage()) {
-          localStorage.setItem("Magic Viewport Storage", 'em');
-        }
-      }
-      else {
-        viewportWidth.html(widthPX + 'px');
-        if (supports_html5_storage()) {
-          localStorage.setItem("Magic Viewport Storage", 'px');
-        }
-      }
-    });
-  }
-
-  //////////////////////////////
-  // Modernizr Features Display
-  //////////////////////////////
-  if (modernizrDebug.length) {
-    if (typeof Modernizr === "undefined") {
-      modernizrDebug.html('Modernizr is not loaded!');
-      console.log('Modernizr Not Loaded!');
     }
     else {
-
-      if (supports_html5_storage()) {
-        var modernizrStatus = localStorage.getItem("Magic Modernizr Storage");
-      }
-
-      if (modernizrStatus !== null) {
-        modernizrDebug.removeClass('open closed');
-        modernizrDebug.addClass(modernizrStatus);
-      }
-
-      modernizrDebug.html($('html').attr('class'));
-      modernizrDebug.click(function() {
-        if ($(this).hasClass('open')) {
-          $(this).removeClass('open');
-          $(this).addClass('closed');
-
-
-          if (supports_html5_storage()) {
-            localStorage.setItem("Magic Modernizr Storage", 'closed');
-          }
-        }
-        else if ($(this).hasClass('closed')) {
-          $(this).removeClass('closed');
-          $(this).addClass('open');
-
-          if (supports_html5_storage()) {
-            localStorage.setItem("Magic Modernizr Storage", 'open');
-          }
-        }
-      });
+      viewportWidth.html = widthEM + 'em';
     }
   }
-})(jQuery, window);
+
+  function modernizr_debug() {
+    var modernizrDebug = document.getElementById('magic-modernizr-debug');
+
+    if (supports_html5_storage()) {
+      var modernizrStatus = localStorage.getItem("MagicModernizrStorage");
+
+      if (modernizrStatus == 'open') {
+        removeClass(modernizrDebug, 'closed');
+        addClass(modernizrDebug, 'open');
+      }
+      else if (modernizrStatus == 'closed') {
+        removeClass(modernizrDebug, 'open');
+        addClass(modernizrDebug, 'closed');
+      }
+
+    }
+  }
+
+  window.onload = function() {
+    viewport_width();
+
+    var viewportWidth = document.getElementById('magic-viewport-indicator');
+    var modernizrDebug = document.getElementById('magic-modernizr-debug');
+
+    // Viewport Event Listener
+    viewportWidth.addEventListener('click', function() {
+      if (supports_html5_storage()) {
+        var viewportStatus = localStorage.getItem("MagicViewportStorage");
+
+        if (viewportStatus == 'px') {
+          localStorage.setItem("MagicViewportStorage", 'em');
+        }
+        else if (viewportStatus == 'em') {
+          localStorage.setItem("MagicViewportStorage", 'px');
+        }
+
+        viewport_width();
+      }
+    });
+
+    // Modernizr Event Listener
+    if (modernizrDebug) {
+      modernizrDebug.innerHTML = document.getElementsByTagName('html')[0].classList;
+
+      var modernizrStatus = localStorage.getItem("MagicModernizrStorage");
+
+      if (modernizrStatus == 'closed') {
+        removeClass(modernizrDebug, 'open');
+        addClass(modernizrDebug, 'closed');
+      }
+
+      modernizrDebug.addEventListener('click', function() {
+        var modernizrStatus = localStorage.getItem("MagicModernizrStorage");
+
+        if (modernizrStatus == 'closed') {
+          localStorage.setItem("MagicModernizrStorage", 'open');
+        }
+        else {
+          localStorage.setItem("MagicModernizrStorage", 'closed');
+        }
+
+        modernizr_debug();
+      });
+    }
+  };
+
+  window.onresize = debounce(function() {
+    viewport_width();
+  }, 20);
+
+  //////////////////////////////
+  // Debounce
+  // Returns a function, that, as long as it continues to be invoked, will not be triggered. The function will be called after it stops being called for N milliseconds. If `immediate` is passed, trigger the function on the leading edge, instead of the trailing.
+  //////////////////////////////
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      }
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    }
+  }
+
+  //////////////////////////////
+  // Has Class
+  //
+  // From http://www.avoid.org/?p=78
+  //////////////////////////////
+  function hasClass(el, name) {
+   return new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className);
+  }
+
+  //////////////////////////////
+  // Remove Class
+  //
+  // From http://stackoverflow.com/questions/2155737/remove-css-class-from-element-with-javascript-no-jquery
+  //////////////////////////////
+  function removeClass(ele,cls) {
+    if (hasClass(ele,cls)) {
+      var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+      ele.className=ele.className.replace(reg,' ');
+    }
+  }
+
+  //////////////////////////////
+  // Add Class
+  //
+  // From http://www.avoid.org/?p=78
+  //////////////////////////////
+  function addClass(el, name) {
+   if (!hasClass(el, name)) { el.className += (el.className ? ' ' : '') +name; }
+  }
+
+})();

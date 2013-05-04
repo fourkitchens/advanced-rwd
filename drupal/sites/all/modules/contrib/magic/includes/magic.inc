@@ -102,21 +102,15 @@ function magic_generate_path_regex($paths) {
 
     // Check if the namespace refers to a file residing in the 'misc' folder.
     if ($namespace != '*') {
-      if ($namespace == 'misc') {
-        $prefix = DRUPAL_ROOT . '/misc';
-        $item = substr_replace($item, $prefix, 0, strlen($namespace));
-      }
-      else {
-        // Otherwise, check if it refers to a theme, module, profile or theme
-        // engine.
-        foreach (array('theme', 'module', 'profile', 'theme_engine') as $type) {
-          // We can't use drupal_get_path() directly because that uses dirname()
-          // internally which returns '.' if no filename was found.
-          if ($filename = drupal_get_filename($type, $namespace)) {
-            $prefix = dirname($filename);
-            $item = substr_replace($item, $prefix, 0, strlen($namespace));
-            break;
-          }
+      // Otherwise, check if it refers to a theme, module, profile or theme
+      // engine.
+      foreach (array('theme', 'module', 'profile', 'theme_engine') as $type) {
+        // We can't use drupal_get_path() directly because that uses dirname()
+        // internally which returns '.' if no filename was found.
+        if ($filename = drupal_get_filename($type, $namespace)) {
+          $prefix = dirname($filename);
+          $item = substr_replace($item, $prefix, 0, strlen($namespace));
+          break;
         }
       }
     }
@@ -183,8 +177,15 @@ function magic_exclude_assets(&$elements, $exclude, $include) {
 function magic_generate_asset_mapping($elements) {
   $mapping = array();
   foreach ($elements as $key => $item) {
-    if ($item['type'] == 'inline' || $item['type'] == 'setting') {
+    if ($item['type'] == 'inline') {
       // Naturally, in-line CSS is not supported.
+      continue;
+    }
+
+    // We can also remove the settings array, if we want to. This can only be
+    // removed by specifying "settings" in the exclude file.
+    if ($item['type'] == 'setting') {
+      $mapping[$key] = ':settings';
       continue;
     }
 

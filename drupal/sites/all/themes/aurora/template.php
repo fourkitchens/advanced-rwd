@@ -142,8 +142,16 @@ function aurora_preprocess_html(&$vars) {
   //////////////////////////////
   // LiveReload Integration
   //////////////////////////////
-  if (theme_get_setting('aurora_livereload')) {
-    drupal_add_js("document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')", array('type' => 'inline', 'scope' => 'footer', 'weight' => 9999));
+  $livereload_port = theme_get_setting('aurora_livereload');
+  if ($livereload_port) {
+    if ($livereload_port == 'snugug') {
+      $livereload_port = theme_get_setting('aurora_livereload_port');
+      if (is_null($livereload_port)) {
+        $livereload_port = 35729;
+      }
+    }
+
+    drupal_add_js("document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':$livereload_port/livereload.js?snipver=1\"></' + 'script>')", array('type' => 'inline', 'scope' => 'footer', 'weight' => 9999));
   }
 
 

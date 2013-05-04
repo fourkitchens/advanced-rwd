@@ -784,7 +784,7 @@ function magic_sort_css_js($a, $b) {
   // common files needed throughout the website. Separating this way allows for
   // the aggregate file generated for all of the common files to be reused
   // across a site visit without being cut by a page using a less common file.
-  elseif (!empty($a['every_page']) && !empty($b['every_page'])) {
+  if (!empty($a['every_page']) && !empty($b['every_page'])) {
     if ($a['every_page'] && !$b['every_page']) {
       return -1;
     }
@@ -794,7 +794,7 @@ function magic_sort_css_js($a, $b) {
   }
 
   // Finally, order by weight.
-  elseif (!empty($a['weight']) && !empty($b['weight'])) {
+  if (!empty($a['weight']) && !empty($b['weight'])) {
     if ($a['weight'] < $b['weight']) {
       return -1;
     }

@@ -32,7 +32,7 @@ function corona_modernizr_load_alter(&$load) {
   // We will check for touch events, and if we do load the hammer.js script.
   $load[] = array(
     'test' => 'Modernizr.touch',
-    'yep'  => array('/'. drupal_get_path('theme','corona') . '/javascripts/hammer.js'),
+    'yep'  => array('/'. drupal_get_path('theme','corona') . '/js/hammer.js'),
   );
 
   return $load;

@@ -15,6 +15,8 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
   }
   drupal_add_css(drupal_get_path('theme', 'aurora') . '/css/settings.css');
 
+  $theme = isset($form_state['build_info']['args'][0]) ? $form_state['build_info']['args'][0] : '';
+
   //////////////////////////////
   // Recomended modules
   //////////////////////////////
@@ -32,11 +34,16 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
       '#description' => t('Aurora was build in conjunction with several other modules to help streamline development. Some of these modules are not downloaded or enabled on your site. For maximum Aurora awesomesauce, you should take a look at the following modules. Modules marked as required should be download and enabled in order to get the most out of Aurora.'),
       '#weight' => -1000,
       '#attributes' => array('class' => array('aurora-recommended-modules')),
+      '#prefix' => '<div class="messages warning aurora">',
+      '#suffix' => '</div>'
     );
 
     $form['recomended_modules']['hide_recomended_modules'] = array(
       '#type' => 'checkbox',
       '#title' => t('Hide this warning by default.'),
+      '#ajax' => array(
+        'callback' => 'aurora_ajax_settings_save'
+       ),
       '#default_value' => $hide,
     );
 
@@ -99,7 +106,7 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
 
   $form['misc'] = array(
    '#type' => 'fieldset',
-   '#title' => t('Miscelaneous'),
+   '#title' => t('Miscellaneous'),
    '#description' => t('Various little bits and bobs for your theme.'),
    '#weight' => -99,
    '#attributes' => array('class' => array('aurora-row-right')),
@@ -133,24 +140,17 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
   // Development
   //////////////////////////////
 
-  $form['development'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Development'),
-    '#description' => t('Theme like you\'ve never themed before! <div class="messages warning"><strong>WARNING:</strong> These options incur huge performance penalties and <em>must</em> be turned off on production websites.</div>'),
-    '#weight' => 52
-  );
+  if (!module_exists('magic')) {
+    $form['development'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Development'),
+      '#description' => t('Theme like you\'ve never themed before! <div class="messages warning"><strong>WARNING:</strong> These options incur huge performance penalties and <em>must</em> be turned off on production websites.</div>'),
+      '#weight' => 52
+    );
 
+    $form['development'] = array_merge(_aurora_live_reload_settings(), $form['development']);
 
-  $form['development']['aurora_livereload'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable LiveReload'),
-    '#default_value' => theme_get_setting('aurora_livereload'),
-    '#ajax' => array(
-      'callback' => 'aurora_ajax_settings_save'
-    ),
-    '#description' => t('Enable <a href="!link" target="_blank">LiveReload</a> to refresh your browser without you needing to. Awesome for designing in browser.', array('!link' => 'http://livereload.com/')),
-    '#weight' => 200,
-  );
+  }
 
   //////////////////////////////
   // Remove a bunch of useless theme settings
@@ -238,6 +238,14 @@ function aurora_recomended_modules() {
     );
   }
 
+  if (!module_exists('html5_tools')) {
+    $return['html5_tools'] = array(
+      'name' => t('HTML5 Tools'),
+      'description' => t('HTML5 Tools is a module that allows Drupal sites to be built using HTML5 ... smartly. It includes features for creating cleaner and leaner markup, providing HTML5 elements for use in fields, and streamlining CSS and JavaScript tags, amongst many other improvements.'),
+      'required' => TRUE,
+    );
+  }
+
   if (!module_exists('jquery_update')) {
     $return['jquery_update'] = array(
       'name' => t('jQuery Update'),
@@ -270,5 +278,72 @@ function aurora_recomended_modules() {
     );
   }
 
+  if (!module_exists('fences')) {
+    $return['fences'] = array(
+      'name' => t('Fences Module'),
+      'description' => t("The Fences Module is a an easy-to-use tool to specify an HTML element for each field. This element choice will propagate everywhere the field is used, such as teasers, RSS feeds and Views. You don't have to keep re-configuring the same HTML element over and over again every time you display the field. Best of all, Fences provides leaner markup than Drupal 7 core! And can get rid of the extraneous classes too!"),
+      'required' => FALSE,
+    );
+  }
+
+  if (!module_exists('panels')) {
+    $return['panels'] = array(
+      'name' => t('Panels Module'),
+      'description' => t("The Panels module, especially when coupled with <a href=\"http://drupal.org/project/ctools\">CTool's</a> Page Manager module and Aurora's HTML5 Sections Panels layout, provides an excellent combination of tools for working with source order for the content area of your site."),
+      'required' => FALSE,
+    );
+  }
+
   return $return;
+}
+
+/**
+ * Implements hook_magic_alter.
+ */
+function aurora_magic_alter(&$magic_settings, $theme) {
+  $magic_settings['dev'] = array_merge(_aurora_live_reload_settings($theme), $magic_settings['dev']);
+}
+
+/**
+ * Since we use these settings in two places, we just leave them here.
+ */
+function _aurora_live_reload_settings($theme) {
+  $array = array();
+
+  $array['aurora_livereload'] = array(
+    '#title' => t('Enable Livereload'),
+    '#type' => 'select',
+    '#options' => array(
+      0 => t('Disabled'),
+      35729 => t('Livereload Default Port'),
+      9001 => t('Aurora Default Port'),
+      'snugug' => t('Custom Port'),
+    ),
+    '#weight' => 100,
+    '#default_value' => theme_get_setting('aurora_livereload', $theme),
+    '#ajax' => array(
+      'callback' => 'aurora_ajax_settings_save'
+    ),
+    '#description' => t('Enable <a href="!link" target="_blank">LiveReload</a> to refresh your browser without you needing to. Awesome for designing in browser.', array('!link' => 'http://livereload.com/')),
+  );
+
+  $array['aurora_livereload_port'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Livereload port'),
+    '#description' => t(''),
+    '#size' => 4,
+    '#weight' => 101,
+    '#maxlength' => 5,
+    '#ajax' => array(
+      'callback' => 'aurora_ajax_settings_save'
+    ),
+    '#default_value' => theme_get_setting('aurora_livereload_port', $theme),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="aurora_livereload"]' => array('value' => 'snugug'),
+      ),
+    ),
+  );
+
+  return $array;
 }

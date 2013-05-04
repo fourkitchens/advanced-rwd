@@ -40,7 +40,7 @@
  * @see template_process()
  */
 ?><!DOCTYPE html>
-<!--[if lt IE <?php print $minie; ?> ]>    <html class="lte-ie<?php print $minie; ?> no-js"> <![endif]-->
+<!--[if lt IE <?php print $minie; ?> ]>    <html class="lt-ie<?php print $minie; ?> no-js"> <![endif]-->
 <!--[if gte IE <?php print $minie; ?>]><!--> <html class="no-js" <?php print $html_attributes; ?>> <!--<![endif]-->
   <head>
     <?php print $head; ?>

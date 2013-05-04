@@ -3,10 +3,10 @@ require 'aurora'
 
 # Set this to the root of your project when deployed:
 http_path = "/sites/all/themes/corona"
-css_dir = "stylesheets"
+css_dir = "css"
 sass_dir = "sass"
-images_dir = "images"
-javascripts_dir = "javascripts"
+images_dir = "img"
+javascripts_dir = "js"
 fonts_dir = "fonts"
 
 # To enable relative paths to assets via compass helper functions. Since Drupal
