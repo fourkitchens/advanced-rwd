@@ -2,7 +2,6 @@
 require 'toolkit'
 require 'compass-normalize'
 require 'color-schemer'
-require 'modular-scale'
 require 'sassy-buttons'
 
 # Set this to the root of your project when deployed:
