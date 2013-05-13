@@ -190,10 +190,10 @@
 					<section data-state="bluesy">
 						<br><br>
 						<h1>Media Queries</h1>
-						<code><pre>@media (min-width: 500px) { ... }</pre></code>
-						<code><pre>@media (max-width: 785px) { ... }</pre></code>
-						<code><pre>@media (print) { ... }</pre></code>
-						<code><pre>@media all and (max-width: 699px) and (min-width: 520px) { ... }</pre></code>
+						<pre><code>@media (min-width: 500px) { ... }</pre></code>
+						<pre><code>@media (max-width: 785px) { ... }</pre></code>
+						<pre><code>@media (print) { ... }</pre></code>
+						<pre><code>@media all and (max-width: 699px) and (min-width: 520px) { ... }</pre></code>
 					</section>
 					<section>
   					<h2>Breakpoint Makes It Easier!</h2>
@@ -203,7 +203,7 @@
 					</section>
 					<section>
 					  <h2>How to Use</h2>
-					  <code><pre>
+					  <pre><code>
 $breakpoint-menu: 500px;
 
 @include breakpoint($breakpoint-menu) {
@@ -212,7 +212,7 @@ $breakpoint-menu: 500px;
 					  </pre></code>
 					  <br>
 					  <p>This will output:</p>
-					  <code><pre>@media (min-width: 500px) {
+					  <pre><code>@media (min-width: 500px) {
   margin-right: 0;
 }
             </pre></code>
@@ -229,7 +229,67 @@ $breakpoint-menu: 500px;
 
 				<section>
 					<section data-state="bluesy">
-						<br><br>
+						<h1>Singularity & The&nbsp;Grid</h1>
+						<img src="img/the_grid.jpg" alt="The Grid">
+					</section>
+					<section>
+					 <h2>The 960 Grid System</h2>
+					 <p>Create a layout with 12 columns, be able to divide those columns into halves, thirds, fourths, sixths, etc.</p>
+					 <br>
+					 <p>Easy.</p>
+					 <br>
+					 <p class="fragment">We can create a simple layout like this within Singularity.</p>
+					</section>
+					<section>
+					 <h2>Basic Variables</h2>
+					 <ul>
+					   <li><b>$grids: </b>All of the grid information, we will start with a basic layout (12 columns).</li><br>
+					   <li><b>$gutters: </b>The gutter information for the grids we are using. Expressed as a fraction of a single column.</li><br>
+					   <li><b>$output: </b>How we want to output the grid, 960 relies on 'float'</li><br>
+					 </ul>
+					 <pre><code>$grids: 12;
+$gutters: 1/4;
+$output: 'float';
+					 </pre></code>
+					</section>
+					<section>
+					 <h2>Creating a Layout</h2>
+					 <p>We output a column with: <pre><code>@include grid-span($span, $position); </pre></code></p>
+					 <p>Where <b>$span</b> is the number of columns, and <b>$position</b> is where in the grid to position the object</p>
+					 <pre><code>
+#container {
+  max-width: 60em;
+  clear: both;
+}
+
+#left {
+  @include grid-span(6,1);
+}
+
+#right {
+  @include grid-span(6,7);
+}
+					 </pre></code>
+					</section>
+					<section>
+					 <h2>Challenge:</h2>
+					 <p><b>Bronze: </b> Create a two column layout in the Web Chef Cafe.</p>
+					 <br>
+					 <p><b>Silver: </b> Create a three column layout at a different breakpoint.</p>
+					 <br>
+					 <p><b>Gold: </b> Create an asymmetrical grid. (HINT: <i>$grids: 7 5;</i> )</p>
+					</section>
+					<section data-state="alert">
+					 <h2>960 Grid Systems Are Limiting</h2>
+					 <p>We want to style out sites to content, we are not going to limit ourselves to a 12 column layout. We want to instead design our sites to the content, creating awesome mobile-first layouts.</p>
+					 <br><br>
+					 <p>In short: <b>We deserve better.</b></p>
+					</section>
+				</section>
+
+				<section>
+				  <br><br>
+					<section data-state="bluesy">
 						<h1>Content-first Grid Systems</h1>
 					</section>
 				</section>
