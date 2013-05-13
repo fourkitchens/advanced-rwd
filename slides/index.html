@@ -165,6 +165,7 @@
 					<section data-state="bluesy">
 						<br><br>
 						<h1>Sass + Compass</h1>
+						<img src="img/not-sass.gif" alt="Doesn't Matter, Not Sass">
 					</section>
 					<section>
 						<h2>Sass</h2>
@@ -305,6 +306,41 @@ $output: 'float';
 					<section>
 						<h1>Modernizr module</h1>
 						<a href="http://portland2013.drupal.org/session/meet-modernizr-module">See Chris' session tomorrow at X:YY in ROOM!</a>
+					</section>
+				</section>
+
+				<section>
+				  <section data-state="bluesy">
+						<br><br>
+						<h1>Aurora: Theme and Compass Extension</h1>
+					</section>
+					<section>
+					 <h2>What is Aurora?</h2>
+					 <p>Aurora is two things. It is a base theme in Drupal, written to provide only the HTML5 templates you need, some small tools, and nothing more. It let's you be in control of your theme.</p><br>
+					 <p>It is also a compass extension, designed to allow you to create you own sub-themes without the need to copy a starter-kit.</p>
+					</section>
+					<section>
+					 <h2>The Compass Extension</h2>
+					 <p>The compass extension provides three flavors of an Aurora sub-theme to choose from. They are all very similar, only their Sass partial structure differs:</p>
+					 <ul>
+					   <li>Aurora Proper: The standard Aurora base-theme.</li><br>
+					   <li>Corona: A variation, containing more variables, and structure to start your development off with. </li><br>
+					   <li>Polaris: A SMACCS-based sub-theme</li>
+					 </ul>
+					</section>
+					<section>
+					 <h2>Creating a Sub-Theme</h2>
+					 <p>On the machine you are using, you must have ruby, compass, and compass-aurora all installed. Full directions are on the Aurora documentation.</p><br>
+					 <p>To create a sub-theme, you can use the following command-line code:</p>
+					 <pre><code>compass create {theme_name} -r aurora --using aurora/corona</code></pre>
+					</section>
+					<section>
+					 <h2>Challenge:</h2>
+					 <p><b>Bronze: </b> Create a Corona-based Aurora sub-theme.</p>
+					 <br>
+					 <p><b>Silver: </b> Enable that theme within Drupal settings page.</p>
+					 <br>
+					 <p><b>Gold: </b> Change the output directories within Compass create to use "js" instead of "javascripts".</p>
 					</section>
 				</section>
 
