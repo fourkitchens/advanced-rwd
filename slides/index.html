@@ -12,10 +12,11 @@
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
 		<link rel="stylesheet" href="css/main.css">
+
 		<link rel="stylesheet" href="css/theme/fourkitchens.css">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/github.css">
+		<link rel="stylesheet" href="css/prism.css">
 		<script>
 			// If the query includes 'print-pdf' we'll use the PDF print sheet
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -34,10 +35,10 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				<section data-state="bluesy">
 					<br>
 					<h1>Advanced RWD</h1>
-					<h3>with Sass + Compass</h3>
+					<h2>with Sass + Compass</h2>
 					<br><br>
 					<p><strong>Wifi</strong>: <span contenteditable>TBD</span></p>
 					<p><strong>Pass</strong>: <span contenteditable>TBD</span></p>
@@ -167,23 +168,203 @@
 						<h1>Sass + Compass</h1>
 						<img src="img/not-sass.gif" alt="Doesn't Matter, Not Sass">
 					</section>
-					<section>
-						<h2>Sass</h2>
+					<section data-state="blackout">
+						<h1>Sass</h1>
 						<p class="fragment">Sass is a language construct to create CSS</p>
 						<p class="fragment">It is an easier way to write awesome CSS</p>
-						<br>
-						<h2 class="fragment">Compass</h2>
-						<p class="fragment">Compass is a framework built with Sass</p>
-						<p class="fragment">Community-built extensions help you write CSS</p>
+						<p class="fragment"><a href="http://sass-lang.org">Sass homepage</a></p>
 					</section>
 					<section>
-						<h2>Comparison to Drupal</h2>
+						<h2>Syntax</h2>
+						<br>
+						<p>Sass has TWO syntaxes:</p>
+						<p class="fragment" style="font-size: 2em; "><code>.sass</code> <em style="font-size: .5em; padding-right: .1em; " class="subdued">and</em> <code>.scss</code></p>
+					</section>
+					<section>
+						<h3><code>.sass</code> - whitespace sensitive</h3>
+						<br>
+						<pre class="half"><code class="language-scss">
+	// .sass
+	.my-selector
+		font-size: 2em
+		background: #333
+		font-family: $monospace
+
+</code></pre>
+						<pre class="half"><code class="language-scss">
+	// .scss
+	.my-selector {
+		font-size: 2em;
+		background: #333;
+		font-family: $monospace;
+	}
+
+</code></pre>
+						<br class="clearboth"><br>
+						<h3 class="fragment"><code>.scss</code> - superset of CSS</h3>
+						<br>
+					</section>
+					<section>
+						<h2>Today we're using SCSS</h2>
+						<br>
+						<h3 class="fragment">Code reasons</h3>
+						<ol>
+							<li class="fragment">Easier to understand if you know CSS</li>
+							<li class="fragment">Easier to integrate in the real-world</li>
+						</ol>
+
+						<br><br>
+						<h3 class="fragment">Team reasons</h3>
+						<ul>
+							<li class="fragment">Helps onboard CSS-savvy teammates.</li>
+							<li class="fragment">SCSS allows you to convert a project<br> piece by piece even in-progress</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Variables</h2>
+						<br>
+						<pre><code class="language-scss">
+	$blue: #00ff00;
+	$monospace: "Source Code Pro", "Courier New", monospace;
+	$default-fontsize: 1em;
+	$default-padding: 2 * $default-fontsize;
+						</code></pre>
+						<br>
+						<p class="fragment">Sass lets you use variables to store values.</p>
+					</section>
+					<section>
+						<h2>Functions</h2>
+						<br>
+						<pre><code class="language-scss">
+	@function pixel-to-em($pixel, $font-size: 16px) {
+	  @return $pixel / $font-size * 1em;
+	}
+						</code></pre>
+						<br>
+						<p class="fragment">Functions are just like PHP. They return a single value.</p>
+						<p class="fragment"><em class="subdued">we rarely need functions</em></p>
+					</section>
+					<section>
+						<h2>Mixins</h2>
+						<pre><code class="language-scss">
+	// Define
+	@mixin button-make($color: #66B360) {
+	  background-color: $color;
+	  border: 2px solid lighten($color, 20%);
+	}
+
+	// Call
+	.button-one {
+	  @include button-make;
+	}
+
+	// Call with arguments
+	.button-two {
+	  @include button-make($color-facebook);
+	}
+						</code></pre>
+						<br>
+						<p class="fragment">Mixins are similar, except they return blocks of CSS.</p>
+						<p class="fragment"><em class="subdued">we use these often</em></p>
+					</section>
+					<section>
+						<h2>Extendables</h2>
+						<pre class="half"><code class="language-scss">
+// Sass
+.message {
+	margin: 1em;
+	padding: 1em;
+	font-size: 1.2em;
+}
+.error {
+	@extend .message;
+	color: #060;
+}
+						</code></pre>
+						<pre class="half"><code class="language-css">
+/* CSS */
+.message, .error {
+	margin: 1em;
+	padding: 1em;
+	font-size: 1.2em;
+}
+.error {
+	color: #060;
+}
+
+						</code></pre>
+						<br class="clearboth"><br>
+						<p class="fragment">Extendables allow you to build upon a common style.</p>
+						<p class="fragment"><em class="subdued">we use these most often, as they allow<br> for smaller CSS files than mixins</em></p>
+
+					</section>
+					<section>
+						<h2>Comments</h2>
+						<pre><code class="language-scss">
+	/*
+	 * This is a standard, multi-line comment
+	 * that will appear in your final .css file
+	 *
+	 * Use multi-line comments to mark major headings or partials
+	 */
+
+	// Single-line comments will NOT appear in your final .css file
+	// Use single-line comments for developer notes
+						</code></pre>
+					</section>
+					<section>
+						<h2>Questions about Sass?</h2>
+						<br>
+						<ul class="fragment">
+							<li>Syntax options in Sass</li>
+							<li>Variables</li>
+							<li>Functions</li>
+							<li>Mixins</li>
+							<li>Extendables</li>
+							<li>Comments</li>
+						</ul>
+					</section>
+
+					<section data-state="blackout">
+						<h1>Compass</h1>
+						<p class="fragment">Compass is a framework built upon Sass</p>
+						<p class="fragment">Community-built extensions help you write CSS</p>
+						<p class="fragment"><a href="http://compass-style.org">Compass homepage</a></p>
+					</section>
+					<section>
+						<h2>Compass vs Drupal</h2>
 						<table class="comparison">
-							<tr class="fragment" style="background-color: #eee; "><td>HTML</td><td>CSS</td></tr>
-							<tr class="fragment" style="background-color: #ccc; "><td>PHP</td><td>Sass</td></tr>
-							<tr class="fragment" style="background-color: #aaa; "><td>Drupal</td><td>Compass</td></tr>
-							<tr class="fragment" style="background-color: #888; "><td>Modules</td><td>Extensions</td></tr>
+							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.25); "><td>HTML</td><td>CSS</td></tr>
+							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.50); "><td>PHP</td><td>Sass</td></tr>
+							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.75); "><td>Drupal</td><td>Compass</td></tr>
+							<tr class="fragment" style="background-color: rgba(50, 200, 90, 1); "><td>Modules</td><td>Extensions</td></tr>
 						</table>
+					</section>
+					<section>
+						<h2>Compass provides mixins</h2>
+						<pre class="half"><code class="language-scss">
+.my-selector {
+    @include border-radius(7px);
+}
+
+
+						</code></pre>
+						<pre class="half"><code class="language-css">
+.my-selector {
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Questions about Compass?</h2>
+						<br>
+						<ul>
+							<li>What does it provide?</li>
+							<li>Core @mixins</li>
+							<li>Community-built extensions</li>
+						</ul>
 					</section>
 				</section>
 
@@ -372,6 +553,7 @@ $output: 'float';
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
+		<script src="js/prism.js"></script>
 		<script src="js/reveal.min.js"></script>
 		<script>
 			// Full list of configuration options available here:
