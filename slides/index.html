@@ -190,6 +190,40 @@
 					<section data-state="bluesy">
 						<br><br>
 						<h1>Media Queries</h1>
+						<code><pre>@media (min-width: 500px) { ... }</pre></code>
+						<code><pre>@media (max-width: 785px) { ... }</pre></code>
+						<code><pre>@media (print) { ... }</pre></code>
+						<code><pre>@media all and (max-width: 699px) and (min-width: 520px) { ... }</pre></code>
+					</section>
+					<section>
+  					<h2>Breakpoint Makes It Easier!</h2>
+  					<br>
+  					<p>Breakpoint is a Compass extension to expedite the writing of media queries so that they can be quickly and efficiently be added into the CSS.</p>
+  					<p>It can also output fall-back classes to use with Internet Explorer, because media-queries to not work</p>
+					</section>
+					<section>
+					  <h2>How to Use</h2>
+					  <code><pre>
+$breakpoint-menu: 500px;
+
+@include breakpoint($breakpoint-menu) {
+  margin-right: 0;
+}
+					  </pre></code>
+					  <br>
+					  <p>This will output:</p>
+					  <code><pre>@media (min-width: 500px) {
+  margin-right: 0;
+}
+            </pre></code>
+					</section>
+					<section>
+					 <h2>Challenge:</h2>
+					 <p><b>Bronze: </b> Create a single breakpoint on the page, change the background color.</p>
+					 <br>
+					 <p><b>Silver: </b> Create two breakpoints, using two different min-width values.</p>
+					 <br>
+					 <p><b>Gold: </b> Create a breakpoint between the two you made in silver, with a min-width and max-width.</p>
 					</section>
 				</section>
 
