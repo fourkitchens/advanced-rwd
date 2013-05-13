@@ -71,7 +71,6 @@ body {
 	margin: 0 0 20px 0;
 	font-family: 'Bryant', 'Helvetica Neue', Helvetica, sans-serif;
 	line-height: 0.9em;
-	text-transform: uppercase;
 }
 
 
@@ -173,10 +172,32 @@ body {
 /*********************************************
  * CURRENT SLIDE
  *********************************************/
+
 #current-slide {
- font-size: 40%;
- position: absolute;
- top: 38px;
- left: 28px;
+	font-size: 40%;
+	position: absolute;
+	top: 38px;
+	left: 28px;
 }
 
+
+/*********************************************
+ * TABLES
+ *********************************************/
+
+table.comparison {
+	margin: 1em auto;
+	font-size: 1.6em;
+}
+table.comparison tr td {
+	width: 5em;
+	padding: .4em;
+}
+table.comparison tr td:nth-child(1) {
+	text-align: right;
+	padding-right: 1em;
+}
+table.comparison tr td:nth-child(2) {
+	text-align: left;
+	padding-left: 1em;
+}
