@@ -235,12 +235,26 @@ table.comparison tr td:nth-child(2) {
 }
 .alert .state-background {
 	background-color: rgba(200, 50, 30, 0.8);
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(200, 50, 30, 0.6) 0%, rgba(200, 50, 30, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(200, 50, 30, 0.6)), color-stop(100%,rgba(200, 50, 30, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(200, 50, 30, 0.6) 0%,rgba(200, 50, 30, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(200, 50, 30, 0.6) 0%,rgba(200, 50, 30, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(200, 50, 30, 0.6) 0%,rgba(200, 50, 30, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(200, 50, 30, 0.6) 0%,rgba(200, 50, 30, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .alert .reveal * {
   color: #fff;
 }
 .soothe .state-background {
 	background-color: rgba(50, 200, 90, 0.8);
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(50, 160, 90, .6) 0%, rgba(50, 180, 90, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(50, 160, 90, .6)), color-stop(100%,rgba(50, 180, 90, 1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(50, 160, 90, .6) 0%,rgba(50, 180, 90, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(50, 160, 90, .6) 0%,rgba(50, 180, 90, 1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(50, 160, 90, .6) 0%,rgba(50, 180, 90, 1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(50, 160, 90, .6) 0%,rgba(50, 180, 90, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .soothe .reveal * {
   color: #fff;
