@@ -344,7 +344,7 @@
 						<h2>Compass provides mixins</h2>
 						<pre class="half"><code class="language-scss">
 .my-selector {
-    @include border-radius(7px);
+	@include border-radius(7px);
 }
 
 
@@ -372,32 +372,84 @@
 					<section data-state="bluesy">
 						<br><br>
 						<h1>Media Queries</h1>
-						<pre><code>@media (min-width: 500px) { ... }</pre></code>
-						<pre><code>@media (max-width: 785px) { ... }</pre></code>
-						<pre><code>@media (print) { ... }</pre></code>
-						<pre><code>@media all and (max-width: 699px) and (min-width: 520px) { ... }</pre></code>
 					</section>
 					<section>
-  					<h2>Breakpoint Makes It Easier!</h2>
-  					<br>
-  					<p>Breakpoint is a Compass extension to expedite the writing of media queries so that they can be quickly and efficiently be added into the CSS.</p>
-  					<p>It can also output fall-back classes to use with Internet Explorer, because media-queries to not work</p>
-					</section>
-					<section>
-					  <h2>How to Use</h2>
-					  <pre><code>
-$breakpoint-menu: 500px;
+						<h2>Example media queries</h2>
+						<br>
+						<pre><code class="language-css">
+	// If the window is at least 500px wide...
+	@media (min-width: 500px) { ... }
 
-@include breakpoint($breakpoint-menu) {
-  margin-right: 0;
+	// If the window is less than 785px wide...
+	@media (max-width: 785px) { ... }
+
+	// If the user is printing the page...
+	@media (print) { ... }
+
+	// If the window is in between 520px and 699px...
+	@media all and (min-width: 520px) and (max-width: 699px) { ... }
+
+</pre></code>
+					</section>
+					<section>
+						<h2>Breakpoint</h2>
+						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to write and read.</p>
+						<pre class="half"><code class="language-scss">
+// Define a breakpoint
+$nav-lg: 682px;
+
+.primary-content {
+	width: 100%;
+
+	// Use breakpoint
+	@include breakpoint($nav-lg) {
+		width: 60%;
+		margin-right: 4%;
+	}
+}</code></pre>
+						<pre class="half"><code class="language-scss">
+.primary-content {
+  width: 100%;
 }
-					  </pre></code>
-					  <br>
-					  <p>This will output:</p>
-					  <pre><code>@media (min-width: 500px) {
-  margin-right: 0;
+@media (min-width: 682px) {
+	.primary-content {
+		width: 60%;
+		margin-right: 4%;
+	}
 }
-            </pre></code>
+
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>No-query fallbacks</h2>
+						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallback classes</a> to use with IE since media queries did not work before IE9</p>
+						<pre class="half" style="width: 52%"><code class="language-scss">
+$breakpoint-no-query-fallbacks: true;
+$nav-lg: 500px, 'no-query' '.lte-ie9';
+
+nav {
+	@include breakpoint($nav-lg) {
+		width: 60%;
+		margin-right: 4%;
+	}
+}
+
+						</pre></code>
+						<pre class="half" style="position: absolute; right: -1em; width: 38%; "><code class="language-scss">
+@media (min-width: 500px) {
+	nav {
+		width: 60%;
+		margin-right: 4%;
+	}
+}
+.lte-ie9 nav {
+	width: 60%;
+	margin-right: 4%;
+}
+							</pre></code>
+							<br class="clearboth"><br>
+							<p class="fragment"><em class="subdued">Just add a conditional class to your <code>&lt;html></code> element</em></p>
 					</section>
 					<section>
 					 <h2>Challenge:</h2>
@@ -542,7 +594,7 @@ $output: 'float';
 			<aside class="controls">
 				<a class="left" href="#">&#x25C4;</a>
 				<a class="right" href="#">&#x25BA;</a>
-		        <span id="current-slide"></span>
+				<span id="current-slide"></span>
 				<a class="up" href="#">&#x25B2;</a>
 				<a class="down" href="#">&#x25BC;</a>
 			</aside>
