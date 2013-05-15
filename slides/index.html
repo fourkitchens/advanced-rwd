@@ -86,8 +86,8 @@
 							<li>xx:yy - Mobile-first, em-based media queries
 							<li>xx:yy - Create content-first grid systems
 							<li><em style="display: block; padding: .4em 0; text-align: center; color: #999; ">Lunch for 90 minutes</em>
-							<li>xx:yy - Set up an Aurora subtheme using Compass
 							<li>xx:yy - Combine feature detection and Sass
+							<li>xx:yy - Set up an Aurora subtheme using Compass
 							<li>xx:yy - Using Modernizr module
 							<li>xx:yy - Fluid media in Drupal: Borealis
 							<li>xx:yy - Hands-on learning time
@@ -343,6 +343,7 @@
 					</section>
 					<section>
 						<h2>Compass provides mixins</h2>
+						<br>
 						<pre class="half"><code class="language-scss">
 .my-selector {
 	@include border-radius(7px);
@@ -357,6 +358,34 @@
 	border-radius: 7px;
 }
 						</code></pre>
+						<br class="clearboth"><br>
+						<p class="fragment">In this case, the mixin handles <em>vendor prefixes</em> for you.</p>
+					</section>
+					<section>
+						<h2>Compass features</h2>
+						<br>
+						<ul>
+							<li>Vendor prefixing</li>
+							<li>Sprite generation</li>
+							<li>Inlining of images and fonts</li>
+							<li>Color management</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Compass extensions</h2>
+						<br>
+						<p>These are Ruby gems, just like Sass and Compass.</p>
+						<ul class="fragment">
+							<li><a href="http://rubygems.org/gems/animation">Animation</a></li>
+							<li><a href="https://rubygems.org/gems/sassy-text-shadow">Sassy text-shadow</a></a></li>
+							<li><a href="https://rubygems.org/gems/susy">Susy</a>, Responsive Grids for Compass</li>
+							<li><a href="https://rubygems.org/gems/susy">Zen Grids</a>, More Responsive Grid action</li>
+							<li><a href="https://rubygems.org/gems/breakpoint">Breakpoint</a>, simple MQs with Sass</li>
+							<li><a href="https://rubygems.org/gems/singularitygs">Singularity</a>, Grids without Limits</li>
+							<li><a href="https://rubygems.org/gems/compass-aurora">Aurora</a>, a killer workflow</li>
+						</ul>
+						<br><br>
+						<p class="fragment"><a href="https://rubygems.org/gems/toolkit">Toolkit</a> bundles lots of this stuff together.</p>
 					</section>
 					<section>
 						<h2>Questions about Compass?</h2>
@@ -373,6 +402,16 @@
 					<section data-state="bluesy">
 						<br><br>
 						<h1>Media Queries</h1>
+					</section>
+					<section data-state="soothe">
+						<h2>Switch to SassMeister</h2>
+						<br><br>
+						<p class="fragment">We'll be covering the basics of media queries using <a style="font-size: 1.2em; " href="http://sassmeister.com">SassMeister.com</a></p>
+						<br>
+						<p class="fragment">
+							Make sure to choose Breakpoint<br> from the <em>Extension</em> drop-down:<br>
+							<img src="img/sassmeister-breakpoint.png" alt="it's fourth in the list">
+						</p>
 					</section>
 					<section>
 						<h2>Example media queries</h2>
@@ -423,6 +462,13 @@ $nav-lg: 682px;
 						</code></pre>
 					</section>
 					<section>
+						<h2>Benefits of Breakpoint</h2>
+						<br>
+						<p>You keep all the styles for a component in one place</p>
+						<p class="fragment">No real performance hit from dupe media queries.</p>
+						<p class="fragment">CSS-only fallback system. No need for respond.js</p>
+					</section>
+					<section>
 						<h2>No-query fallbacks</h2>
 						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallback classes</a> to use with IE since media queries did not work before IE9</p>
 						<pre class="half" style="width: 52%"><code class="language-scss">
@@ -448,50 +494,66 @@ nav {
 	width: 60%;
 	margin-right: 4%;
 }
-							</pre></code>
-							<br class="clearboth"><br>
-							<p class="fragment"><em class="subdued">Just add a conditional class to your <code>&lt;html></code> element</em></p>
+						</pre></code>
+						<br class="clearboth"><br>
+						<p class="fragment"><em class="subdued">Just add a conditional class to your <code>&lt;html></code> element</em></p>
 					</section>
 					<section>
-					 <h2>Challenge:</h2>
-					 <p><b>Bronze: </b> Create a single breakpoint on the page, change the background color.</p>
-					 <br>
-					 <p><b>Silver: </b> Create two breakpoints, using two different min-width values.</p>
-					 <br>
-					 <p><b>Gold: </b> Create a breakpoint between the two you made in silver, with a min-width and max-width.</p>
+						<h2>Bronze challenge:</h2>
+						<br>
+						<p>Create a single breakpoint on the page.<br> Change the background color.</p>
+						<br>
+					</section>
+					<section>
+						<h2>Silver challenge:</h2>
+						<br>
+						<p>Create two breakpoints.<br> Use two different <code>min-width</code> queries.</p>
+						<br>
+					</section>
+					<section>
+						<h2>Gold challenge:</h2>
+						<br>
+						<p>Create a breakpoint between the previous two.<br> Use a <code>min-width</code> and <code>max-width</code> query.</p>
 					</section>
 				</section>
 
 				<section>
 					<section data-state="bluesy">
-						<h1>Singularity & The&nbsp;Grid</h1>
+						<h2>Singularity &amp; The&nbsp;Grid</h2>
 						<img src="img/the_grid.jpg" alt="The Grid">
 					</section>
-					<section>
-					 <h2>The 960 Grid System</h2>
-					 <p>Create a layout with 12 columns, be able to divide those columns into halves, thirds, fourths, sixths, etc.</p>
-					 <br>
-					 <p>Easy.</p>
-					 <br>
-					 <p class="fragment">We can create a simple layout like this within Singularity.</p>
+					<section data-state="soothe">
+						<h2>Switch to Training Wheels</h2>
+						<br>
+						<p>We'll complete the next set of exercises<br> in our personal development environments.</p>
 					</section>
 					<section>
-					 <h2>Basic Variables</h2>
-					 <ul>
-					   <li><b>$grids: </b>All of the grid information, we will start with a basic layout (12 columns).</li><br>
-					   <li><b>$gutters: </b>The gutter information for the grids we are using. Expressed as a fraction of a single column.</li><br>
-					   <li><b>$output: </b>How we want to output the grid, 960 relies on 'float'</li><br>
-					 </ul>
-					 <pre><code>$grids: 12;
-$gutters: 1/4;
-$output: 'float';
-					 </pre></code>
+						<h2>The 960 Grid System</h2>
+						<br>
+						<p>Create a layout with 12 columns, be able to divide those columns into halves, thirds, fourths, sixths, etc.</p>
+						<br>
+						<p>Easy.</p>
+						<br>
+						<p class="fragment">It's simple to recreate this within Singularity.</p>
 					</section>
 					<section>
-					 <h2>Creating a Layout</h2>
-					 <p>We output a column with: <pre><code>@include grid-span($span, $position); </pre></code></p>
-					 <p>Where <b>$span</b> is the number of columns, and <b>$position</b> is where in the grid to position the object</p>
-					 <pre><code>
+						<h2>Basic Variables</h2>
+						<ul>
+							<li><b>$grids: </b>Column ratios. We will start with a basic, symmetrical grid made of 12 equal columns.</li><br>
+							<li><b>$gutters: </b>The gutter width for each grid column. Expressed as a fraction of a single column.</li><br>
+							<li><b>$output: </b>Output style. 960 relies on <code>float</code></li><br>
+						</ul>
+						<pre><code class="language-scss">
+		$grids: 12;
+		$gutters: 1/4;
+		$output: 'float';
+						</pre></code>
+					</section>
+					<section style="top: -1em;">
+						<h2>Creating a Layout</h2>
+						<p>Output a column like this: <pre><code class="language-scss">@include grid-span($span, $position); </pre></code></p>
+						<p><code>$span</code> is the number of columns,<br> <code>$position</code> is where it starts the span</p>
+						<pre><code class="language-scss">
 #container {
   max-width: 60em;
   clear: both;
@@ -503,28 +565,40 @@ $output: 'float';
 
 #right {
   @include grid-span(6,7);
-}
-					 </pre></code>
+}</pre></code>
 					</section>
 					<section>
-					 <h2>Challenge:</h2>
-					 <p><b>Bronze: </b> Create a two column layout in the Web Chef Cafe.</p>
-					 <br>
-					 <p><b>Silver: </b> Create a three column layout at a different breakpoint.</p>
-					 <br>
-					 <p><b>Gold: </b> Create an asymmetrical grid. (HINT: <i>$grids: 7 5;</i> )</p>
+						<h2>Bronze:</h2>
+						<br>
+						<p>Create a two column layout in the Web Chef Cafe.</p>
+						<br>
+						<p class="fragment"><em class="subdued">use Singularity</em></p>
+					</section>
+					<section>
+						<h2>Silver:</h2>
+						<br>
+						<p>Create a three column layout at a different breakpoint.</p>
+						<br>
+						<p class="fragment"><em class="subdued">use Singularity and Breakpoint</em></p>
+					</section>
+					<section>
+						<h2>Gold:</h2>
+						<br>
+						<p>Create an asymmetrical grid.</p>
+						<br>
+						<p class="fragment"><em class="subdued">hint — <code>$grids: 7 5;</code></em></p>
 					</section>
 					<section data-state="alert">
-					 <h2>960 Grid Systems Are Limiting</h2>
-					 <p>We want to style out sites to content, we are not going to limit ourselves to a 12 column layout. We want to instead design our sites to the content, creating awesome mobile-first layouts.</p>
-					 <br><br>
-					 <p>In short: <b>We deserve better.</b></p>
+						<h2>Class-based grid systems are limiting</h2>
+						<p>Grids should work with the content itself, not impose a class structure. There's no need to limit ourselves to a 12 column layout.</p>
+						<p>Instead, let's design our sites around the content, creating awesome mobile-first layouts.</p>
+						<br>
+						<p>In short: <b>We deserve better.</b></p>
 					</section>
 				</section>
 
 				<section>
-				  <br><br>
-					<section data-state="soothe">
+					<section data-state="bluesy">
 						<h1>Content-first Grid Systems</h1>
 					</section>
 				</section>
@@ -535,10 +609,10 @@ $output: 'float';
 						<h1>Feature Detection</h1>
 					</section>
 					<section>
-						<h1>Feature detection + Sass</h1>
+						<h2>Feature detection + Sass</h2>
 					</section>
 					<section>
-						<h1>Modernizr module</h1>
+						<h2>Modernizr module</h2>
 						<a href="http://portland2013.drupal.org/session/meet-modernizr-module">See Chris' session tomorrow at X:YY in ROOM!</a>
 					</section>
 				</section>
@@ -570,11 +644,11 @@ $output: 'float';
 					</section>
 					<section>
 					 <h2>Challenge:</h2>
-					 <p><b>Bronze: </b> Create a Corona-based Aurora sub-theme.</p>
+					 <p><b>Bronze: </b> Create a Corona-based Aurora sub-theme and enable it.</p>
 					 <br>
-					 <p><b>Silver: </b> Enable that theme within Drupal settings page.</p>
+					 <p><b>Silver: </b> Change the output directories within Compass create to use "js" instead of "javascripts".</p>
 					 <br>
-					 <p><b>Gold: </b> Change the output directories within Compass create to use "js" instead of "javascripts".</p>
+					 <p><b>Gold: </b> Get Compass running within your theme and make some changes.</p>
 					</section>
 				</section>
 
