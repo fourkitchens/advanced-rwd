@@ -640,38 +640,45 @@ nav {
 							<li>Polaris: a SMACCS-based sub-theme</li>
 						</ul>
 					</section>
-					<section data-state="soothe">
-						<br>
-						<h2>Switch to Training Wheels</h2>
-						<br>
-						<p>The Aurora setup and theming will happen on your personal development environments</p>
-					</section>
-					<section>
-						<h2>Creating a Sub-Theme</h2>
-						<p>On the machine you are using, you must have ruby, compass, and compass-aurora all installed.<br> Full directions are on the <a href="http://snugug.github.io/Aurora/">Aurora documentation</a>.</p><br>
-						<p class="fragment">To create a sub-theme, use the following command:</p>
-						<pre class="fragment" style="width: 95%;"><code class="language-css">      compass create {theme_name} -r aurora --using aurora/corona</code></pre>
-					</section>
 					<section>
 						<h2>What's in Aurora?</h2>
 						<p>Sass tools</p>
 						<p>Workflow goodies</p>
 					</section>
+					<section data-state="soothe">
+						<br>
+						<h2>Switch to Training Wheels</h2>
+						<br>
+						<p>Aurora theming will happen on your<br> personal development environments</p>
+						<br>
+						<p class="fragment">Good news! They already have Sass,<br> Compass, and all the other gems installed.</p>
+					</section>
+					<section data-state="soothe">
+						<h2>Using this Drupal instance</h2>
+						<br>
+						<p>Code is located at:<br> <code style="color: white; ">/twhome/YOU/sassrwd/drupal</code></p>
+						<br>
+						<p class="fragment">Drupal is also installed. Just use<br> the information on your paper slip.</p>
+					</section>
+					<section>
+						<h2>Creating a Sub-Theme</h2>
+						<p>On other computers you'll have to install<br> ruby, compass, and compass-aurora.<br><br> Full directions are on the <a href="http://snugug.github.io/Aurora/">Aurora documentation</a>.</p><br>
+					</section>
 					<section>
 						<h2>Bronze:</h2>
-						<p>Create a Corona-based Aurora sub-theme and then enable it in Drupal.</p>
+						<p>Create a Aurora Corona sub-theme<br> and then enable it in Drupal.</p>
 						<br>
-						<pre><code class="language-css">      compass create {theme_name} -r aurora --using aurora/corona</code></pre>
+						<pre><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
 					</section>
 					<section>
 						<h2>Silver:</h2>
-						<p>Change the output directories within Compass create to use "js" instead of "javascripts".</p>
+						<p>Change the output directories within your new<br> Compass project to use "js" instead of "javascripts"</p>
 						<br>
 						<p class="fragment"><em class="subdued">restart compass once you change the config file</em>
 					</section>
 					<section>
 						<h2>Gold:</h2>
-						<p>Get Compass running within your theme and make a change on the Drupal site.</p>
+						<p>Get Compass running within your theme<br> and make a change on the Drupal site.</p>
 						<br>
 						<p class="fragment"><em class="subdued">
 							<code>compass compile</code> is a one-time command<br>
