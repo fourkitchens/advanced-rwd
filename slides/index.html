@@ -678,8 +678,67 @@ nav {
 					</section>
 					<section>
 						<h2>Modernizr module</h2>
+						<br><br>
+						<p class="fragment">Test API: allows modules/themes to declare tests</p>
+						<p class="fragment">Load API: allows modules/themes to use <code>Modernizr.load()</code></p>
 						<br>
-						<p class="fragment"><a href="http://portland2013.drupal.org/session/meet-modernizr-module">See Chris' session Tomorrow</a><br>3:15pm in OR 202 (Lullabot room)</p>
+					</section>
+					<section>
+						<h2>Test API</h2>
+						<br>
+						<p class="fragment">Modules use a hook:</p>
+						<pre class="fragment"><code class="language-javascript">
+								function MYMODULE_modernizr_info() {
+									$tests[] = 'geolocation';
+									return $tests;
+								}
+						</code></pre>
+						<br>
+						<p class="fragment">Themes use the .info file:</p>
+						<pre class="fragment"><code class="language-javascript">
+									modernizr[tests][] = geolocation
+						</code></pre>
+					</section>
+					<section>
+						<h2>Load API: Modules</h2>
+						<p class="fragment">Use another hook:</p>
+						<pre class="fragment" style="width: 105%;"><code class="language-javascript">function MYMODULE_modernizr_load() {
+	$load[] = array(
+		'test' => 'Modernizr.geolocation',
+		'nope' => array(drupal_get_path('module','geolocation') . '/js/geo.js'),
+		'callback' => 'function(){ geo.init(); }',
+	);
+	return $load;
+}</code></pre>
+						<p class="fragment">Turns into:</p>
+						<pre class="fragment" style="width: 105%;"><code class="language-javascript">
+					Modernizr.load({
+						test: Modernizr.geolocation,
+						nope: '/sites/all/modules/geolocation/js/geo.js',
+						callback: function(){ geo.init(); }
+					});
+						</code></pre>
+					</section>
+					<section>
+						<h2>Load API: Themes</h2>
+						<p class="fragment"><code>mytheme.info</code> file:</p>
+						<pre class="fragment" style="width: 105%;"><code class="language-javascript">
+					modernizr[Modernizr.cssfilters][yep][] = css/super-fancy.css
+						</code></pre>
+						<p class="fragment">Turns into:</p>
+						<pre class="fragment" style="width: 105%;"><code class="language-javascript">
+					Modernizr.load({
+						test: Modernizr.cssfilters,
+						 yep: '/sites/all/themes/mytheme/css/super-fancy.css'
+					});
+						</code></pre>
+						<br>
+						<p class="fragment"><code>mytheme_modernizr_load_alter()</code><br> works the same as module hooks too.</p>
+					</section>
+					<section>
+						<h2>More tomorrow!</h2>
+						<br><br>
+						<p style="font-size: 1.25em; "><a href="http://portland2013.drupal.org/session/meet-modernizr-module">Meet the Modernizr module</a><br>3:15pm in OR 202 (Lullabot room)</p>
 					</section>
 				</section>
 
@@ -734,7 +793,7 @@ nav {
 						<h2>Bronze:</h2>
 						<p>Create a Aurora Corona sub-theme<br> and then enable it in Drupal.</p>
 						<br>
-						<pre><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
+						<pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
 					</section>
 					<section>
 						<h2>Silver:</h2>
