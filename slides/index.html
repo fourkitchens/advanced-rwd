@@ -435,30 +435,26 @@
 						<h2>Breakpoint</h2>
 						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to write and read.</p>
 						<pre class="half"><code class="language-scss">
-// Define a breakpoint
 $nav-lg: 682px;
 
-.primary-content {
+.main-nav {
 	width: 100%;
 
-	// Use breakpoint
 	@include breakpoint($nav-lg) {
 		width: 60%;
-		margin-right: 4%;
+		margin: 0 auto;
 	}
 }</code></pre>
 						<pre class="half"><code class="language-scss">
-.primary-content {
+.main-nav {
   width: 100%;
 }
 @media (min-width: 682px) {
-	.primary-content {
+	.main-nav {
 		width: 60%;
-		margin-right: 4%;
+		margin: 0 auto;
 	}
 }
-
-
 						</code></pre>
 					</section>
 					<section>
@@ -526,28 +522,30 @@ nav {
 						<h2>Switch to Training Wheels</h2>
 						<br>
 						<p>We'll complete the next set of exercises<br> in our personal development environments.</p>
+						<br>
+						<p class="fragment">Use the information on your paper slip<br> to find the URL, username, and password.</p>
 					</section>
 					<section>
 						<h2>The 960 Grid System</h2>
 						<br>
 						<p>Create a layout with 12 columns, be able to divide those columns into halves, thirds, fourths, sixths, etc.</p>
 						<br>
-						<p>Easy.</p>
 						<br>
-						<p class="fragment">It's simple to recreate this within Singularity.</p>
+						<p class="fragment">Easy.</p>
 					</section>
 					<section>
 						<h2>Basic Variables</h2>
-						<ul>
-							<li><b>$grids: </b>Column ratios. We will start with a basic, symmetrical grid made of 12 equal columns.</li><br>
-							<li><b>$gutters: </b>The gutter width for each grid column. Expressed as a fraction of a single column.</li><br>
-							<li><b>$output: </b>Output style. 960 relies on <code>float</code></li><br>
-						</ul>
 						<pre><code class="language-scss">
-		$grids: 12;
-		$gutters: 1/4;
-		$output: 'float';
+														$grids: 12;
+														$gutters: 1/4;
+														$output: 'float';
 						</pre></code>
+						<br>
+						<ul>
+							<li class="fragment"><b>$grids: </b>Column ratios. We will start with a basic, symmetrical grid made of 12 equal columns.</li><br>
+							<li class="fragment"><b>$gutters: </b>The gutter width for each grid column. Expressed as a fraction of a single column.</li><br>
+							<li class="fragment"><b>$output: </b>Output style. 960 relies on <code>float</code></li><br>
+						</ul>
 					</section>
 					<section style="top: -1em;">
 						<h2>Creating a Layout</h2>
@@ -586,7 +584,7 @@ nav {
 						<br>
 						<p>Create an asymmetrical grid.</p>
 						<br>
-						<p class="fragment"><em class="subdued">hint — <code>$grids: 7 5;</code></em></p>
+						<p class="fragment"><em class="subdued"><code>$grids: 2 8 2;</code></em></p>
 					</section>
 					<section data-state="alert">
 						<h2>Class-based grid systems are limiting</h2>
@@ -608,12 +606,80 @@ nav {
 						<br><br>
 						<h1>Feature Detection</h1>
 					</section>
+					<section data-state="fingerprint-pre">
+						<h2>Just remember:</h2>
+						<br><br>
+						<ul>
+							<li class="xs fragment" data-state="alert">Stop relying on nosey servers<br><br></li>
+							<li class="checks fragment" data-state="soothe">Start relying on honest browsers<br><br></li>
+						</ul>
+						<br><br>
+						<p class="fragment">Testing browser capabilities on the fly allows each device to format content in the best manner.</p>
+					</section>
+					<section data-state="fingerprint" style="position: absolute; left: -200px; display: block; ">
+						<h2>Modernizr</h2>
+						<br>
+						<p>Like two people with the same name,<br> user-agent strings tell us very little<br> about two different Chromes, IEs, etc.</p>
+						<br>
+						<p class="fragment">Forget about tracking all the mobile devices!</p>
+						<br>
+						<p class="fragment">Modernizr takes a browser's fingerprint</p>
+					</section>
+					<section>
+						<h2>Nothing is Perfect</h2>
+						<br>
+						<p>Even though feature detection is <em>WAY</em> more reliable than UA-sniffing, it still gets fed bad data occasionally</p>
+						<br>
+						<p class="fragment"><a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/">You can't detect a touch screen.</a></p>
+						<br>
+						<p class="fragment">JavaScript can only see APIs that are exposed to it</p>
+					</section>
 					<section>
 						<h2>Feature detection + Sass</h2>
+						<br>
+						<p>Since many JavaScript tools use classes on <code>&lt;html></code><br> to store their state, we can use the <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#referencing_parent_selectors_">Sass parent selector</a> to easily target them.</p>
+						<br><br>
+						<p class="fragment">It keeps your code more organized.</p>
+					</section>
+					<section>
+						<h1>&amp;</h1>
+						<pre class="fragment"><code class="language-scss">
+			#logo a {
+				background-image: url(../img/logo.png);
+
+				.inlinesvg & {
+					background-image: url('data:image/svg+xml;utf8,...');
+				}
+			}
+						</code></pre>
+						<br>
+						<pre class="fragment"><code class="language-scss">
+			#logo a {
+				background-image: url(../img/logo.png);
+			}
+			.inlinesvg #logo a {
+				background-image: url('data:image/svg+xml;utf8,...');
+			}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Conditional loading</h2>
+						<br>
+						<p>If you need to load a piece of code to make up for missing browser features, Modernizr has you covered.</p>
+						<br>
+						<p class="fragment"><code>Modernizr.load()</code> loads stuff based on test results:</p>
+						<pre class="fragment"><code class="language-javascript">
+					Modernizr.load({
+						test: Modernizr.geolocation,
+						nope: '/sites/all/libraries/geolocation/geo.js',
+						callback: function(){ geo.init(); }
+					});
+						</code></pre>
 					</section>
 					<section>
 						<h2>Modernizr module</h2>
-						<a href="http://portland2013.drupal.org/session/meet-modernizr-module">See Chris' session tomorrow at X:YY in ROOM!</a>
+						<br>
+						<p class="fragment"><a href="http://portland2013.drupal.org/session/meet-modernizr-module">See Chris' session Tomorrow</a><br>3:15pm in OR 202 (Lullabot room)</p>
 					</section>
 				</section>
 

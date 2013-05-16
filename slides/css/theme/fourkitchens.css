@@ -244,7 +244,7 @@ table.comparison tr td:nth-child(2) {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .alert .reveal * {
-  color: #fff;
+	color: #fff;
 }
 .soothe .state-background {
 	background-color: rgba(50, 200, 90, 0.8);
@@ -257,7 +257,7 @@ table.comparison tr td:nth-child(2) {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .soothe .reveal * {
-  color: #fff;
+	color: #fff;
 }
 .blackout .state-background {
 	background-color: rgba(0, 0, 0, 0.8);
@@ -270,7 +270,7 @@ table.comparison tr td:nth-child(2) {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#111111',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .blackout .reveal * {
-  color: #fff;
+	color: #fff;
 }
 .bluesy .state-background {
 	background-color: rgb(6, 9, 75); /* oldIE */
@@ -282,8 +282,16 @@ table.comparison tr td:nth-child(2) {
 	background: radial-gradient(ellipse at center,  rgba(16, 19, 75, .8) 0%,rgba(6, 9, 75, .9) 100%); /* W3C */
 }
 .bluesy .reveal * {
-  color: #fff;
+	color: #fff;
 }
+.fingerprint-pre .state-background {
+	background-position: 1800px -1500px;
+}
+.fingerprint .state-background {
+	background: #fff url('../../img/fingerprint.jpg') no-repeat 800px -600px;
+	opacity: .25;
+}
+
 
 /*
  * Headings for custom states
@@ -305,6 +313,27 @@ table.comparison tr td:nth-child(2) {
  	opacity: .75;
  }
 
+
+/*********************************************
+ * Lists of checks or Xs
+ *********************************************/
+
+.reveal ul.checks,
+.reveal ul.xs,
+.reveal li.checks,
+.reveal li.xs {
+  list-style-type: none;
+}
+.reveal ul.checks li:before,
+.reveal li.checks:before {
+  content: '\2714   ';
+  color: green;
+}
+.reveal ul.xs li:before,
+.reveal li.xs:before {
+  content: '\2718   ';
+  color: red;
+}
 
 /*********************************************
  * CODE BLOCKS
