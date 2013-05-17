@@ -1,3 +1,6 @@
+# ignore sublime stuff
+sftp-config.json
+
 # ignore sass stuff
 .sass-cache
 
