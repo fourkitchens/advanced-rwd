@@ -353,13 +353,13 @@ table.comparison tr td:nth-child(2) {
  * Syntax highlighting: http://prismjs.com/
  *********************************************/
 
-.half {
+.reveal pre.half{
 	float: left;
 	width: 43%;
 	margin-right: 4%;
 }
 
-.half:nth-of-type(even) {
+.reveal pre.half:nth-of-type(even) {
 	margin-right: 0%;
 }
 
