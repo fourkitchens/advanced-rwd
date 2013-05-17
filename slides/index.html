@@ -537,18 +537,6 @@ nav {
 						<h2>Singularity &amp; The&nbsp;Grid</h2>
 						<img src="img/the_grid.jpg" alt="The Grid">
 					</section>
-					<section data-state="soothe">
-						<h2>Switch to Training Wheels</h2>
-						<br>
-						<p>We'll complete the next set of exercises<br> in our personal development environments.</p>
-						<br>
-						<p class="fragment">Use the information on your paper slip<br> to find the URL, username, and password.</p>
-					</section>
-					<section>
-						<h2>The Box Model</h2>
-						<img class="transparent" src="img/boxmodel.png" alt="Box Model">
-						<pre class="fragment"><code class="language-scss">* { @include box-sizing('border-box'); }</code></pre>
-					</section>
 					<section>
 						<h2>The 960 Grid System</h2>
 						<br>
@@ -567,6 +555,12 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 							<li class="fragment"><b>$grids: </b>Grid definition. Can be single number for symmetric grids or multiple numbers in relation for asymmetric grids. For symmetric grids, each column is considered to have a width of 1.</li><br>
 							<li class="fragment"><b>$gutters: </b>Gutter definition. The width of a single gutter in relation to a column of width 1.</li>
 						</ul>
+					</section>
+					<section>
+  					<h2>Types of layouts</h2>
+  					<p>There are two forms of grids Sigularity can output, 'float' and 'isolation'. Float is the most common, and will float each container to the desired position. Isolation allows for more complex re-ordering of content, and we won't be using that today.</p><br>
+  					<p>The output is defaulted to 'float', but can be changed:</p>
+  					<pre><code class="language-scss">$output: 'float';</code></pre>
 					</section>
 					<section style="top: -1em;">
 						<h2>Creating a Layout</h2>
@@ -587,6 +581,46 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 	@include grid-span(6,7);
 }</pre></code>
 					</section>
+					<section data-state="bronze">
+						<h2>Bronze challenge:</h2>
+						<br>
+						<p>Create a two column layout in the Web Chef Caf&eacute;.</p>
+						<br>
+						<p class="fragment"><em class="subdued">use Singularity</em></p>
+					</section>
+					<section data-state="silver">
+						<h2>Silver challenge:</h2>
+						<br>
+						<p>Create a three column layout at a different breakpoint.</p>
+						<br>
+						<p class="fragment"><em class="subdued">use Singularity and Breakpoint</em></p>
+					</section>
+					<section data-state="gold">
+						<h2>Gold challenge:</h2>
+						<br>
+						<p>Create an asymmetrical grid.</p>
+						<br>
+						<p class="fragment"><em class="subdued"><code>$grids: 2 8 2;</code></em></p>
+					</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					<section>
 						<h2>Global Contexts</h2>
 						<p>Settings <b>$grids</b> and <b>$gutters</b> set a global context for them, making them available to use without redeclaring them each time they're needed.</p>
