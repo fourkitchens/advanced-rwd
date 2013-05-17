@@ -171,9 +171,8 @@
 					<section data-state="blackout">
 						<h1>Sass</h1>
 						<p class="fragment">Sass is a language construct to create CSS</p>
-						<p class="fragment">It is an easier way to write awesome CSS</p>
-						<br>
-						<p class="fragment"><a href="http://sass-lang.org">Sass homepage</a></p>
+						<p class="fragment">It makes writing awesome CSS easier</p>
+						<p class="fragment"><a href="http://sass-lang.org">sass-lang.com</a></p>
 					</section>
 					<section>
 						<h2>Syntax</h2>
@@ -203,17 +202,17 @@
 
 </code></pre>
 						<br class="clearboth"><br>
-						<h3 class="fragment"><code>.scss</code> - superset of CSS</h3>
+						<h3><code>.scss</code> - superset of CSS</h3>
 						<br>
 					</section>
 					<section>
 						<h2>Today we're using SCSS</h2>
 						<br>
 						<h3 class="fragment">Tech reasons</h3>
-						<ol>
+						<ul>
 							<li class="fragment">Easier to understand if you know CSS</li>
 							<li class="fragment">Easier to integrate in the real-world</li>
-						</ol>
+						</ul>
 
 						<br><br>
 						<h3 class="fragment">Team reasons</h3>
@@ -243,8 +242,7 @@
 	}
 						</code></pre>
 						<br>
-						<p class="fragment">Functions are just like PHP. They return a single value.</p>
-						<p class="fragment"><em class="subdued">we rarely need functions</em></p>
+						<p class="fragment">Functions return a single value, just like PHP or JS</p>
 					</section>
 					<section>
 						<h2>Mixins</h2>
@@ -266,8 +264,8 @@
 	}
 						</code></pre>
 						<br>
-						<p class="fragment">Mixins are similar, except they return blocks of CSS.</p>
-						<p class="fragment"><em class="subdued">we use these often</em></p>
+						<p class="fragment">Mixins are similar to functions, except they return blocks of CSS.</p>
+<!-- 						<p class="fragment"><em class="subdued">we use these often</em></p> -->
 					</section>
 					<section>
 						<h2>Extendables</h2>
@@ -297,7 +295,7 @@
 						</code></pre>
 						<br class="clearboth"><br>
 						<p class="fragment">Extendables allow you to build upon a common style.</p>
-						<p class="fragment"><em class="subdued">we use these most often, as they allow<br> for smaller CSS files than mixins</em></p>
+						<!-- <p class="fragment"><em class="subdued">we use these most often, as they allow<br> for smaller CSS files than mixins</em></p> -->
 
 					</section>
 					<section>
@@ -329,14 +327,14 @@
 
 					<section data-state="blackout">
 						<h1>Compass</h1>
-						<p class="fragment">Compass is a framework built upon Sass</p>
-						<p class="fragment">Community-built extensions help you write CSS</p>
-						<br>
-						<p class="fragment"><a href="http://compass-style.org">Compass homepage</a></p>
+						<p class="fragment">Compass is a meta-framework for Sass</p>
+						<p class="fragment">Provides useful mixins and functions</p>
+						<p class="fragment">Includes plugin framework to allow for community written extensions</p>
+						<p class="fragment"><a href="http://compass-style.org">compass-style.org</a></p>
 					</section>
 					<section>
-						<h2>Compass vs Drupal</h2>
 						<table class="comparison">
+							<tr><td>Drupal</td><td>Compass</td></tr>
 							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.25); "><td>HTML</td><td>CSS</td></tr>
 							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.50); "><td>PHP</td><td>Sass</td></tr>
 							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.75); "><td>Drupal</td><td>Compass</td></tr>
@@ -344,24 +342,27 @@
 						</table>
 					</section>
 					<section>
-						<h2>Compass provides mixins</h2>
+						<h2>Compass provides mixins and functions</h2>
 						<br>
 						<pre class="half"><code class="language-scss">
-.my-selector {
-	@include border-radius(7px);
+.my-icon {
+  @include replace-text('druplicon.png');
 }
 
 
 						</code></pre>
 						<pre class="half"><code class="language-css">
-.my-selector {
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	border-radius: 7px;
+.my-icon {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url('../images/druplicon.png?1358263178');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 						</code></pre>
 						<br class="clearboth"><br>
-						<p class="fragment">In this case, the mixin handles <em>vendor prefixes</em> for you.</p>
+						<p class="fragment">In this case, the mixin handles image replacement of text for you.</p>
 					</section>
 					<section>
 						<h2>Compass features</h2>
@@ -369,8 +370,9 @@
 						<ul>
 							<li>Vendor prefixing</li>
 							<li>Sprite generation</li>
+							<li>Common typography and styling patterns</li>
 							<li>Inlining of images and fonts</li>
-							<li>Color management</li>
+							<li><a href="http://compass-style.org/reference/compass/">And more…</a></li>
 						</ul>
 					</section>
 					<section>
@@ -380,8 +382,7 @@
 						<ul class="fragment">
 							<li><a href="http://rubygems.org/gems/animation">Animation</a></li>
 							<li><a href="https://rubygems.org/gems/sassy-text-shadow">Sassy text-shadow</a></a></li>
-							<li><a href="https://rubygems.org/gems/susy">Susy</a>, Responsive Grids for Compass</li>
-							<li><a href="https://rubygems.org/gems/susy">Zen Grids</a>, More Responsive Grid action</li>
+							<li><a href="http://rubygems.org/gems/sassy-buttons">Sassy Buttons</a>, Sassy CSS3 buttons</li>
 							<li><a href="https://rubygems.org/gems/breakpoint">Breakpoint</a>, simple MQs with Sass</li>
 							<li><a href="https://rubygems.org/gems/singularitygs">Singularity</a>, Grids without Limits</li>
 							<li><a href="https://rubygems.org/gems/compass-aurora">Aurora</a>, a killer workflow</li>
@@ -435,7 +436,7 @@
 					</section>
 					<section>
 						<h2>Breakpoint</h2>
-						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to write and read.</p>
+						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to read.</p>
 						<pre class="half"><code class="language-scss">
 $nav-lg: 682px;
 
@@ -527,36 +528,39 @@ nav {
 						<br>
 						<p class="fragment">Use the information on your paper slip<br> to find the URL, username, and password.</p>
 					</section>
+					<section data-state="alert">
+						<h2>The Box Model</h2>
+						<img class="transparent" src="img/boxmodel.png" alt="Box Model">
+						<pre class="fragment"><code class="language-scss">* { @include box-sizing('border-box'); }</code></pre>
+					</section>
 					<section>
 						<h2>The 960 Grid System</h2>
 						<br>
-						<p>Create a layout with 12 columns, be able to divide those columns into halves, thirds, fourths, sixths, etc.</p>
-						<br>
-						<br>
-						<p class="fragment">Easy.</p>
+						<p class="fragment">12 column grid</p>
+						<p class="fragment">Each column is 60px wide</p>
+						<p class="fragment">Each gutter is 20px wide</p>
+						<p class="fragment">10px side gutter</p>
+						<p class="fragment">960px Centered Container</p>
 					</section>
 					<section>
-						<h2>Basic Variables</h2>
-						<pre><code class="language-scss">
-														$grids: 12;
-														$gutters: 1/4;
-														$output: 'float';
-						</pre></code>
+						<h2>Setting Up The Grid</h2>
+						<pre><code class="language-scss">$grids: 12; // Number of Columns
+$gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<br>
 						<ul>
-							<li class="fragment"><b>$grids: </b>Column ratios. We will start with a basic, symmetrical grid made of 12 equal columns.</li><br>
-							<li class="fragment"><b>$gutters: </b>The gutter width for each grid column. Expressed as a fraction of a single column.</li><br>
-							<li class="fragment"><b>$output: </b>Output style. 960 relies on <code>float</code></li><br>
+							<li class="fragment"><b>$grids: </b>Grid definition. Can be single number for symmetric grids or multiple numbers in relation for asymmetric grids.</li><br>
+							<li class="fragment"><b>$gutters: </b>The width of a single gutter.</li>
 						</ul>
 					</section>
 					<section style="top: -1em;">
 						<h2>Creating a Layout</h2>
-						<p>Output a column like this: <pre><code class="language-scss">@include grid-span($span, $position); </pre></code></p>
-						<p><code>$span</code> is the number of columns,<br> <code>$position</code> is where it starts the span</p>
-						<pre><code class="language-scss">
-#container {
-  max-width: 60em;
-  clear: both;
+						<p>Align to columns using Grid Span: <pre><code class="language-scss">@include grid-span($span, $position); </pre></code></p>
+						<p><code>$span</code> is the number of columns to span<br> <code>$position</code> is what column to start from</p>
+						<pre><code class="language-scss">#container {
+  max-width: 960px;  			// Outer Container
+  padding: 0 10px;   			// Side Gutter
+  margin: 0 auto;    			// Center Container
+  @include clearfix; 			// Have container clear floats properly
 }
 
 #left {
