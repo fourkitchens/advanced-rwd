@@ -19,6 +19,7 @@ $legacy-support-for-mozilla: false;
 ////////////////////////
 // Compass Extensions
 ////////////////////////
+@import "compass";
 @import "toolkit";
 @import "breakpoint";
 @import "singularitygs";

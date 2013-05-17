@@ -363,20 +363,21 @@
 						<h2>Compass provides mixins and functions</h2>
 						<br>
 						<pre class="half"><code class="language-scss">
-.my-icon {
-	@include replace-text('druplicon.png');
+ul {
+	@include pretty-bullets('bullet.png');
 }
 
 
 						</code></pre>
 						<pre class="half"><code class="language-css">
-.my-icon {
-	text-indent: -119988px;
-	overflow: hidden;
-	text-align: left;
-	background-image: url('../images/druplicon.png?1358263178');
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+ul {
+  margin-left: 0;
+}
+
+ul li {
+  padding-left: 14px;
+  background: url('../img/bullet.png') no-repeat -12px -12px;
+  list-style-type: none;
 }
 						</code></pre>
 						<br class="clearboth"><br>

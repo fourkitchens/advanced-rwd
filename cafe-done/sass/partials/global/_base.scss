@@ -12,13 +12,13 @@ $legacy-support-for-mozilla: false;
 ////////////////////////
 // CSS Reset
 ////////////////////////
-// @import "compass/reset";
 @import "normalize";
 
 
 ////////////////////////
 // Compass Extensions
 ////////////////////////
+@import "compass";
 @import "toolkit";
 @import "breakpoint";
 @import "singularitygs";
