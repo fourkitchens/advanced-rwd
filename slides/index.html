@@ -309,6 +309,12 @@
 						<p class="fragment">Extendables allow you to build upon a common style.</p>
 					</section>
 					<section>
+					 <h2>Partials</h2>
+					 <p>Compass will automatically convert any .scss file into a css file when you run 'compass compile', EXCEPT for files that begin with an underscore. Each of these smaller files are called a "partial".</p><br>
+					 <p>We use partials to better our organization of code, reduce git conflicts, and enhance our reusability of certain sections (e.g. variables). To use a partial within your main .scss file, we will have to import it like so:</p>
+					 <pre><code class="language-scss">@import 'variables';</code></pre>
+					</section>
+					<section>
 						<h2>Comments</h2>
 						<pre><code class="language-scss">
 	/*
@@ -321,6 +327,7 @@
 	// Single-line comments will NOT appear in your final .css file
 	// Use single-line comments for developer notes
 						</code></pre>
+						<p>Generally, we leave a standard, multi-line comment on the top of each partial. This will help with debugging because we will always know what partial we are looking at.</p>
 					</section>
 					<section>
 						<h2>Questions about Sass?</h2>
@@ -331,6 +338,7 @@
 							<li>Functions</li>
 							<li>Mixins</li>
 							<li>Extendables</li>
+							<li>Partials</li>
 							<li>Comments</li>
 						</ul>
 					</section>
