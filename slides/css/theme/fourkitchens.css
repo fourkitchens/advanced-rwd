@@ -126,14 +126,14 @@ body {
 	        transition: all .2s linear;
 }
 
-	.reveal a:hover img {
-		background: rgba(255,255,255,0.2);
-		border-color: #66B360;
+.reveal a:hover img {
+	background: rgba(255,255,255,0.2);
+	border-color: #66B360;
 
-		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
-		   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
-		        box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
-	}
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+	   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+	        box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
 
 .reveal blockquote {
 	background: rgba(255, 255, 255, 0.4);
@@ -143,6 +143,10 @@ body {
 	margin-bottom: 20px;
 }
 
+.reveal img.bare {
+  box-shadow: none;
+  border: none;
+}
 
 /*********************************************
  * NAVIGATION CONTROLS
