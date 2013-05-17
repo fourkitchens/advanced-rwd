@@ -483,7 +483,7 @@ $nav-lg: 682px;
 						<p class="fragment">No real performance hit from dupe media queries.</p>
 						<p class="fragment">CSS-only fallback system. No need for respond.js</p>
 					</section>
-					<section>
+					<section data-state="medal-pre">
 						<h2>No-query fallbacks</h2>
 						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallback classes</a> to use with IE since media queries did not work before IE9</p>
 						<pre class="half" style="width: 52%"><code class="language-scss">
@@ -513,19 +513,19 @@ nav {
 						<br class="clearboth"><br>
 						<p class="fragment"><em class="subdued">Just add a conditional class to your <code>&lt;html></code> element</em></p>
 					</section>
-					<section>
+					<section data-state="bronze">
 						<h2>Bronze challenge:</h2>
 						<br>
 						<p>Create a single breakpoint on the page.<br> Change the background color.</p>
 						<br>
 					</section>
-					<section>
+					<section data-state="silver">
 						<h2>Silver challenge:</h2>
 						<br>
 						<p>Create two breakpoints.<br> Use two different <code>min-width</code> queries.</p>
 						<br>
 					</section>
-					<section>
+					<section data-state="gold">
 						<h2>Gold challenge:</h2>
 						<br>
 						<p>Create a breakpoint between the previous two.<br> Use a <code>min-width</code> and <code>max-width</code> query.</p>
@@ -614,7 +614,7 @@ $gutters: 1/6;
 }</code></pre>
 
 					</section>
-					<section>
+					<section data-state="medal-pre">
 						<h2>Overriding Global Contexts</h2>
 						<p class="small">If you need to override the global contexts, for instance if you need to nest a grid and therefore change the grid you're using, use the <b>layout</b> mixin</p>
 						<pre><code class="language-scss">$grids: 12;
@@ -633,22 +633,21 @@ $gutters: 1/3;
 	}
 }</code></pre>
 					</section>
-
-					<section>
+					<section data-state="bronze">
 						<h2>Bronze:</h2>
 						<br>
 						<p>Create a two column layout in the Web Chef Caf&eacute;.</p>
 						<br>
 						<p class="fragment"><em class="subdued">use Singularity</em></p>
 					</section>
-					<section>
+					<section data-state="silver">
 						<h2>Silver:</h2>
 						<br>
 						<p>Create a three column layout at a different breakpoint.</p>
 						<br>
 						<p class="fragment"><em class="subdued">use Singularity and Breakpoint</em></p>
 					</section>
-					<section>
+					<section data-state="gold">
 						<h2>Gold:</h2>
 						<br>
 						<p>Nest one grid inside another</p>
@@ -672,17 +671,17 @@ $gutters: 1/3;
 					</section>
 					<section>
   				  <h2>What is content first?</h2>
-  				  <p>We are going to build our grid and styling based upon the content.</p>
-
+  				  <p>We are going to build and style<br> our grid based upon the content.</p>
+  				  <br>
   				  <center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
   				  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  				  <p class="fragment">This is the opposite of using a framework like Twitter Bootstrap, where the grid is pre-defined.</p>
+						<br>
+  				  <p class="fragment">This is the opposite of using a framework like<br> Twitter Bootstrap, where the grid is pre-defined.</p>
 					</section>
 					<section>
 						<h2>The Ideal Grid</h2>
-						<br><p>Grids provide order to your design and structure to your information.</p><br>
-						<p class="fragment">The ideal grid is specific to your content and your design, as it is an extension of both.</p>
+						<br><p>Grids provide order to your design<br> and structure to your information.</p><br>
+						<p class="fragment">The ideal grid is specific to your content and<br> your design, since it is an extension of both.</p>
 					</section>
 					<section>
   				  <h2>Singularity is built for this.</h2>
@@ -690,10 +689,9 @@ $gutters: 1/3;
   				  <p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
   				  <img src="img/grid-examples.png" alt="Examples of grids">
 					</section>
-
 					<section>
 					 <h2>Global grid changes</h2>
-					 <p>We can change the grid system at each breakpoint for global changes:</p>
+					 <p>We can change the grid system at<br> each breakpoint for global changes:</p>
 					 <pre><code class="language-scss">$menu-break: 700px;
 
 $grids: 2;
@@ -706,7 +704,6 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
   					<h2>Global grid changes</h2>
   					<p>To use this global grid change:</p>
   					<pre><code class="language-scss">
-
 @include breakpoint($menu-break) {
     .item {
       @include float-span(1);
@@ -716,9 +713,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
     }
   }
            </code></pre>
-
 					</section>
-
 				</section>
 
 				<section>
@@ -765,23 +760,23 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 						<br>
 						<p class="fragment">Drupal is also installed. Just use<br> the information on your paper slip.</p>
 					</section>
-					<section>
+					<section data-state="medal-pre">
 						<h2>Creating a Sub-Theme</h2>
 						<p>On other computers you'll have to install<br> ruby, compass, and compass-aurora.<br><br> Full directions are on the <a href="http://snugug.github.io/Aurora/">Aurora documentation</a>.</p><br>
 					</section>
-					<section>
+					<section data-state="bronze">
 						<h2>Bronze:</h2>
 						<p>Create a Aurora Corona sub-theme<br> and then enable it in Drupal.</p>
 						<br>
 						<pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
 					</section>
-					<section>
+					<section data-state="silver">
 						<h2>Silver:</h2>
 						<p>Change the output directories within your new<br> Compass project to use "js" instead of "javascripts"</p>
 						<br>
 						<p class="fragment"><em class="subdued">restart compass once you change the config file</em>
 					</section>
-					<section>
+					<section data-state="gold">
 						<h2>Gold:</h2>
 						<p>Get Compass running within your theme<br> and make a change on the Drupal site.</p>
 						<br>
@@ -860,7 +855,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 			}
 						</code></pre>
 					</section>
-					<section data-state="soothe">
+					<section data-state="soothe medal-pre">
 						<br>
 						<h2>Switch to Training Wheels</h2>
 						<br>
@@ -868,7 +863,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 						<br>
 						<p class="fragment">They already have the Modernizr module downloaded,<br> but it is not yet installed and running properly.</p>
 					</section>
-					<section>
+					<section data-state="bronze">
 						<h2>Bronze</h2>
 						<br>
 						<p>Enable Modernizr module and verify that it is working</p>
@@ -912,7 +907,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 						<p class="fragment">Load API: allows modules/themes to use <code>Modernizr.load()</code></p>
 						<br>
 					</section>
-					<section>
+					<section data-state="medal-pre">
 						<h2>Test API</h2>
 						<br>
 						<p class="fragment">Modules use a hook:</p>
@@ -928,7 +923,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 									modernizr[tests][] = geolocation
 						</code></pre>
 					</section>
-					<section>
+					<section data-state="silver">
 						<h2>Silver</h2>
 						<br>
 						<p>Get a new feature test to appear in the<br> Modernizr module's configuration page.</p>
@@ -973,7 +968,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 						<br>
 						<p class="fragment"><code>mytheme_modernizr_load_alter()</code><br> works the same as module hooks too.</p>
 					</section>
-					<section>
+					<section data-state="medal-pre">
 						<h2>drupal.org docs</h2>
 						<br>
 						<ul>
@@ -984,7 +979,7 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 							<li><a href="http://drupal.org/node/1913830">Modernizr.load() basics</a></li>
 						</ul>
 					</section>
-					<section>
+					<section data-state="gold">
 						<h2>Gold</h2>
 						<br>
 						<p>Create a conditional load using the Load API.</p>
