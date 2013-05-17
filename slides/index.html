@@ -603,23 +603,41 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<p class="fragment"><em class="subdued"><code>$grids: 2 8 2;</code></em></p>
 					</section>
 
+					<section data-state="alert">
+						<h2>Class-based grid systems</h2>
+						<br>
+						<p>Grids should work with the content itself, not impose a class structure. We <em>should not</em> limit ourselves to a 12 column layout with four breakpoints.</p>
+						<br>
+						<p class="fragment">Instead, let's design our sites around the content, creating awesome mobile-first layouts.</p>
+						<br>
+						<p class="fragment">In short: <b>We deserve better.</b></p>
+					</section>
+				</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				<section>
+					<section data-state="bluesy">
+						<h1>Content-first Grid Systems</h1>
+					</section>
+					<section>
+  				  <h2>What is content first?</h2>
+  				  <p>We are going to build and style<br> our grid based upon the content.</p>
+  				  <br>
+  				  <center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
+  				  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<br>
+  				  <p class="fragment">This is the opposite of using a framework like<br> Twitter Bootstrap, where the grid is pre-defined.</p>
+					</section>
+					<section>
+						<h2>The Ideal Grid</h2>
+						<br><p>Grids provide order to your design<br> and structure to your information.</p><br>
+						<p class="fragment">The ideal grid is specific to your content and<br> your design, since it is an extension of both.</p>
+					</section>
+					<section>
+  				  <h2>Singularity is built for this.</h2>
+  				  <p>Within singularity you can create completely different grids for different breakpoints.</p><br>
+  				  <p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
+  				  <img src="img/grid-examples.png" alt="Examples of grids">
+					</section>
 
 					<section>
 						<h2>Global Contexts</h2>
@@ -668,85 +686,22 @@ $gutters: 1/3;
 }</code></pre>
 					</section>
 					<section data-state="bronze">
-						<h2>Bronze:</h2>
+						<h2>Bronze challenge:</h2>
 						<br>
-						<p>Create a two column layout in the Web Chef Caf&eacute;.</p>
+						<p>Create a 4 column layout a new breakpoint in Web Chef Caf&eacute;.</p>
 						<br>
-						<p class="fragment"><em class="subdued">use Singularity</em></p>
 					</section>
 					<section data-state="silver">
-						<h2>Silver:</h2>
+						<h2>Silver challenge:</h2>
 						<br>
-						<p>Create a three column layout at a different breakpoint.</p>
+						<p>Override the layout for the hours and contact to be 2 columns.</p>
 						<br>
-						<p class="fragment"><em class="subdued">use Singularity and Breakpoint</em></p>
 					</section>
 					<section data-state="gold">
-						<h2>Gold:</h2>
+						<h2>Gold challenge:</h2>
 						<br>
-						<p>Nest one grid inside another</p>
+						<p>Separate the menu to be 3 columns for the largest breakpoint.</p>
 						<br>
-						<p class="fragment"><em class="subdued"><code>use the Layout mixin</code></em></p>
-					</section>
-					<section data-state="alert">
-						<h2>Class-based grid systems</h2>
-						<br>
-						<p>Grids should work with the content itself, not impose a class structure. We <em>should not</em> limit ourselves to a 12 column layout with four breakpoints.</p>
-						<br>
-						<p class="fragment">Instead, let's design our sites around the content, creating awesome mobile-first layouts.</p>
-						<br>
-						<p class="fragment">In short: <b>We deserve better.</b></p>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<h1>Content-first Grid Systems</h1>
-					</section>
-					<section>
-  				  <h2>What is content first?</h2>
-  				  <p>We are going to build and style<br> our grid based upon the content.</p>
-  				  <br>
-  				  <center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
-  				  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-						<br>
-  				  <p class="fragment">This is the opposite of using a framework like<br> Twitter Bootstrap, where the grid is pre-defined.</p>
-					</section>
-					<section>
-						<h2>The Ideal Grid</h2>
-						<br><p>Grids provide order to your design<br> and structure to your information.</p><br>
-						<p class="fragment">The ideal grid is specific to your content and<br> your design, since it is an extension of both.</p>
-					</section>
-					<section>
-  				  <h2>Singularity is built for this.</h2>
-  				  <p>Within singularity you can create completely different grids for different breakpoints.</p><br>
-  				  <p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
-  				  <img src="img/grid-examples.png" alt="Examples of grids">
-					</section>
-					<section>
-					 <h2>Global grid changes</h2>
-					 <p>We can change the grid system at<br> each breakpoint for global changes:</p>
-					 <pre><code class="language-scss">$menu-break: 700px;
-
-$grids: 2;
-$grids: add-grid(4 at $menu-break);
-
-$gutters: .15;
-$gutters: add-gutter(.3 at $menu-break);</code></pre>
-					</section>
-					<section>
-  					<h2>Global grid changes</h2>
-  					<p>To use this global grid change:</p>
-  					<pre><code class="language-scss">
-@include breakpoint($menu-break) {
-    .item {
-      @include float-span(1);
-    }
-    .item:nth-of-type(4n) {
-      @include float-span(1, 'last');
-    }
-  }
-           </code></pre>
 					</section>
 				</section>
 
@@ -790,9 +745,10 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 					<section data-state="soothe">
 						<h2>Using this Drupal instance</h2>
 						<br>
-						<p>Code is located at:<br> <code style="color: white; ">/twhome/SPICE/rwd/drupal</code></p>
+						<p>Code is located at:<br> <code style="color: white; ">~/rwd/drupal</code></p>
 						<br>
-						<p class="fragment">Drupal is also installed. Just use<br> the information on your paper slip.</p>
+						<p class="fragment">Drupal is also installed. You can reach it at http://{spice}.rwd.4kclass.com/dupal.</p>
+						<p class="fragment">The username is "<b>admin</b>", the password is "<b>password</b>".</p>
 					</section>
 					<section data-state="medal-pre">
 						<h2>Creating a Sub-Theme</h2>
