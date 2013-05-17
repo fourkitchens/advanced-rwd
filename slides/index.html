@@ -690,14 +690,17 @@ $gutters: add-gutter(.3 at $menu-break);</code></pre>
 					<section>
   					<h2>Global grid changes</h2>
   					<p>To use this global grid change:</p>
-  					<pre><code class="language-scss">@include breakpoint($menu-break) {
+  					<pre><code class="language-scss">
+
+@include breakpoint($menu-break) {
     .item {
       @include float-span(1);
     }
     .item:nth-of-type(4n) {
       @include float-span(1, 'last');
     }
-  }</code></pre>
+  }
+           </code></pre>
 
 					</section>
 
