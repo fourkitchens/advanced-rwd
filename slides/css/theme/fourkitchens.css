@@ -368,3 +368,7 @@ table.comparison tr td:nth-child(2) {
 	border: none;
 	box-shadow: none;
 }
+
+.small {
+	font-size: .9em;
+}
