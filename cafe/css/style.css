@@ -1,6 +1,5 @@
 /* normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* normalize.css v2.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-/* line 20, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 article,
 aside,
 details,
@@ -16,86 +15,72 @@ summary {
   display: block;
 }
 
-/* line 28, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 audio,
 canvas,
 video {
   display: inline-block;
 }
 
-/* line 39, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 46, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
 [hidden] {
   display: none;
 }
 
 /* normalize.css v2.1.0 | Base | MIT License | git.io/normalize */
-/* line 13, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-/* line 37, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
 body {
   margin: 0;
 }
 
 /* normalize.css v2.1.0 | Links | MIT License | git.io/normalize */
-/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
 a:focus {
   outline: thin dotted;
 }
 
-/* line 16, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
 a:active,
 a:hover {
   outline: 0;
 }
 
 /* normalize.css v2.1.0 | Typography | MIT License | git.io/normalize */
-/* line 13, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* line 47, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 54, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 66, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 73, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-/* line 81, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 100, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 code,
 kbd,
 pre,
@@ -104,24 +89,20 @@ samp {
   font-size: 1em;
 }
 
-/* line 110, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* line 118, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/* line 140, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 small {
   font-size: 80%;
 }
 
-/* line 147, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -130,49 +111,40 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 154, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 158, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
 sub {
   bottom: -0.25em;
 }
 
 /* normalize.css v2.1.0 | Embedded Content | MIT License | git.io/normalize */
-/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
 img {
   border: 0;
 }
 
-/* line 18, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* normalize.css v2.1.0 | Figures | MIT License | git.io/normalize */
-/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_figures.scss */
 figure {
   margin: 0;
 }
 
 /* normalize.css v2.1.0 | Forms | MIT License | git.io/normalize */
-/* line 17, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 30, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 legend {
   border: 0;
   padding: 0;
-  white-space: normal;
 }
 
-/* line 49, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 input,
 select,
@@ -182,19 +154,16 @@ textarea {
   margin: 0;
 }
 
-/* line 63, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 input {
   line-height: normal;
 }
 
-/* line 73, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 90, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -203,20 +172,17 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 101, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/* line 113, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 126, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -224,40 +190,34 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 137, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 144, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 152, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
 /* normalize.css v2.1.0 | Tables | MIT License | git.io/normalize */
-/* line 9, ../../../../../../var/lib/gems/1.8/gems/compass-normalize-1.4.3/stylesheets/normalize/_tables.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 6, ../../../../../../var/lib/gems/1.8/gems/toolkit-1.0.0/stylesheets/toolkit/_border-box.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 4, ../../../../../../var/lib/gems/1.8/gems/toolkit-1.0.0/stylesheets/toolkit/_fluid-media.scss */
 img, video {
   max-width: 100%;
   height: auto;
@@ -271,7 +231,6 @@ img, video {
   font-style: normal;
 }
 
-/* line 1, ../sass/partials/styleguide/_guide.scss */
 body {
   background: white;
   color: #4d4d4d;
@@ -287,13 +246,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* line 20, ../sass/partials/styleguide/_guide.scss */
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 26, ../sass/partials/styleguide/_guide.scss */
 nav li {
   margin: 0;
   padding: 0;
@@ -301,21 +258,19 @@ nav li {
   padding-right: .5em;
 }
 
-/* line 34, ../sass/partials/styleguide/_guide.scss */
 a {
   color: #f388c3;
   text-decoration: none;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
   -o-transition: color 0.3s;
-  transition: color 0.3s;
+  transition: color 0.3s false;
 }
-/* line 38, ../sass/partials/styleguide/_guide.scss */
 a:hover {
   color: #ef61af;
 }
 
-/* line 43, ../sass/partials/styleguide/_guide.scss */
 h1, h2, h3 {
   font-family: 'Satisfy', cursive;
 }
