@@ -655,9 +655,14 @@ $gutters: 1/3;
 					<section data-state="bluesy">
 						<h1>Content-first Grid Systems</h1>
 					</section>
-					<section data-state="blackout">
-						<h2>City Grids</h2>
-						<img src="img/street_grids.png" alt="Street Grids of NYC, Philly, DC, and Toronto" data-source="http://tedpak.com/2013/03/31/what-new-york-does-right" data-cite="Ted Pak">
+					<section>
+  				  <h2>What is content first?</h2>
+  				  <p>We are going to build our grid and styling based upon the content.</p>
+
+  				  <center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
+  				  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  				  <p class="fragment">This is the opposite of using a framework like Twitter Bootstrap, where the grid is pre-defined.</p>
 					</section>
 					<section>
 						<h2>The Ideal Grid</h2>
@@ -665,49 +670,37 @@ $gutters: 1/3;
 						<p class="fragment">The ideal grid is specific to your content and your design, as it is an extension of both.</p>
 					</section>
 					<section>
-						<h2>Asymmetric Grids</h2>
-						<p>Grids where the columns are not the same size</p>
-						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
-						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
+  				  <h2>Singularity is built for this.</h2>
+  				  <p>Within singularity you can create completely different grids for different breakpoints.</p><br>
+  				  <p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
+  				  <img src="img/grid-examples.png" alt="Examples of grids">
+					</section>
+
+					<section>
+					 <h2>Global grid changes</h2>
+					 <p>We can change the grid system at each breakpoint for global changes:</p>
+					 <pre><code class="language-scss">$menu-break: 700px;
+
+$grids: 2;
+$grids: add-grid(4 at $menu-break);
+
+$gutters: .15;
+$gutters: add-gutter(.3 at $menu-break);</code></pre>
 					</section>
 					<section>
-						<h2>Types of Asymmetric Grids</h2>
-						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
-						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
-						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
-						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
-						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
+  					<h2>Global grid changes</h2>
+  					<p>To use this global grid change:</p>
+  					<pre><code class="language-scss">@include breakpoint($menu-break) {
+    .item {
+      @include float-span(1);
+    }
+    .item:nth-of-type(4n) {
+      @include float-span(1, 'last');
+    }
+  }</code></pre>
+
 					</section>
-					<section>
-						<h2>Custom Grid</h2>
-						<pre><code class="language-scss">// List of column width in relation to each other
-$grids: 5 2 3 3 7 9;</code></pre>
-						<img src="img/custom.png">
-					</section>
-					<section>
-						<h2>Compound Grid</h2>
-						<pre><code class="language-scss">// List of symmetric grids to compound together
-$grids: compound(3, 4);</code></pre>
-						<img src="img/compound.png">
-					</section>
-					<section>
-						<h2>Ratio Grid</h2>
-						<pre><code class="language-scss">// Ratio and number of columns
-$grids: ratio(golden(), 4);</code></pre>
-						<img src="img/ratio.png">
-					</section>
-					<section>
-						<h2>Ratio Spiral Grid</h2>
-						<pre><code class="language-scss">// Number of columns and ratio
-$grids: ratio-spiral(5, golden());</code></pre>
-						<img src="img/spiral.png">
-					</section>
-					<section>
-						<h2>Snap Grid</h2>
-						<pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
-$grids: snap(2 4 4 2, 1/3);</code></pre>
-						<img src="img/snap.png">
-					</section>
+
 				</section>
 
 				<section>
@@ -1003,6 +996,53 @@ $grids: snap(2 4 4 2, 1/3);</code></pre>
 					<section data-state="bluesy">
 						<br><br>
 						<h1>Magic</h1>
+					</section>
+				</section>
+
+				<section>
+				  <section>
+						<h2>Asymmetric Grids</h2>
+						<p>Grids where the columns are not the same size</p>
+						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
+						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
+					</section>
+					<section>
+						<h2>Types of Asymmetric Grids</h2>
+						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
+						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
+						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
+						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
+						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
+					</section>
+					<section>
+						<h2>Custom Grid</h2>
+						<pre><code class="language-scss">// List of column width in relation to each other
+$grids: 5 2 3 3 7 9;</code></pre>
+						<img src="img/custom.png">
+					</section>
+					<section>
+						<h2>Compound Grid</h2>
+						<pre><code class="language-scss">// List of symmetric grids to compound together
+$grids: compound(3, 4);</code></pre>
+						<img src="img/compound.png">
+					</section>
+					<section>
+						<h2>Ratio Grid</h2>
+						<pre><code class="language-scss">// Ratio and number of columns
+$grids: ratio(golden(), 4);</code></pre>
+						<img src="img/ratio.png">
+					</section>
+					<section>
+						<h2>Ratio Spiral Grid</h2>
+						<pre><code class="language-scss">// Number of columns and ratio
+$grids: ratio-spiral(5, golden());</code></pre>
+						<img src="img/spiral.png">
+					</section>
+					<section>
+						<h2>Snap Grid</h2>
+						<pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
+$grids: snap(2 4 4 2, 1/3);</code></pre>
+						<img src="img/snap.png">
 					</section>
 				</section>
 
