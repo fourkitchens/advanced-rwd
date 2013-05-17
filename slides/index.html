@@ -181,6 +181,7 @@
 						<p class="fragment" style="font-size: 2em; "><code>.sass</code> <em style="font-size: .5em; padding-right: .1em; " class="subdued">and</em> <code>.scss</code></p>
 					</section>
 					<section>
+						<br>
 						<h3><code>.sass</code> - whitespace sensitive</h3>
 						<br>
 						<pre class="half"><code class="language-scss">
@@ -238,7 +239,7 @@
 						<br>
 						<pre><code class="language-scss">
 	@function pixel-to-em($pixel, $font-size: 16px) {
-	  @return $pixel / $font-size * 1em;
+		@return $pixel / $font-size * 1em;
 	}
 						</code></pre>
 						<br>
@@ -249,18 +250,18 @@
 						<pre><code class="language-scss">
 	// Define
 	@mixin button-make($color: #66B360) {
-	  background-color: $color;
-	  border: 2px solid lighten($color, 20%);
+		background-color: $color;
+		border: 2px solid lighten($color, 20%);
 	}
 
 	// Call
 	.button-one {
-	  @include button-make;
+		@include button-make;
 	}
 
 	// Call with arguments
 	.button-two {
-	  @include button-make($color-facebook);
+		@include button-make($color-facebook);
 	}
 						</code></pre>
 						<br>
@@ -333,8 +334,8 @@
 						<p class="fragment"><a href="http://compass-style.org">compass-style.org</a></p>
 					</section>
 					<section>
+						<h2>Drupal vs Compass</h2>
 						<table class="comparison">
-							<tr><td>Drupal</td><td>Compass</td></tr>
 							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.25); "><td>HTML</td><td>CSS</td></tr>
 							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.50); "><td>PHP</td><td>Sass</td></tr>
 							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.75); "><td>Drupal</td><td>Compass</td></tr>
@@ -346,19 +347,19 @@
 						<br>
 						<pre class="half"><code class="language-scss">
 .my-icon {
-  @include replace-text('druplicon.png');
+	@include replace-text('druplicon.png');
 }
 
 
 						</code></pre>
 						<pre class="half"><code class="language-css">
 .my-icon {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-  background-image: url('../images/druplicon.png?1358263178');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+	text-indent: -119988px;
+	overflow: hidden;
+	text-align: left;
+	background-image: url('../images/druplicon.png?1358263178');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 						</code></pre>
 						<br class="clearboth"><br>
@@ -370,7 +371,7 @@
 						<ul>
 							<li>Vendor prefixing</li>
 							<li>Sprite generation</li>
-							<li>Common typography and styling patterns</li>
+							<li>Typography and styling patterns</li>
 							<li>Inlining of images and fonts</li>
 							<li><a href="http://compass-style.org/reference/compass/">And more…</a></li>
 						</ul>
@@ -450,7 +451,7 @@ $nav-lg: 682px;
 }</code></pre>
 						<pre class="half"><code class="language-scss">
 .main-nav {
-  width: 100%;
+	width: 100%;
 }
 @media (min-width: 682px) {
 	.main-nav {
@@ -557,18 +558,18 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<p>Align to columns using Grid Span: <pre><code class="language-scss">@include grid-span($span, $position); </pre></code></p>
 						<p><code>$span</code> is the number of columns to span<br> <code>$position</code> is what column to start from</p>
 						<pre><code class="language-scss">#container {
-  max-width: 960px;  			// Outer Container
-  padding: 0 10px;   			// Side Gutter
-  margin: 0 auto;    			// Center Container
-  @include clearfix; 			// Have container clear floats properly
+	max-width: 960px;  			// Outer Container
+	padding: 0 10px;   			// Side Gutter
+	margin: 0 auto;    			// Center Container
+	@include clearfix; 			// Have container clear floats properly
 }
 
 .left {
-  @include grid-span(6,1);
+	@include grid-span(6,1);
 }
 
 .right {
-  @include grid-span(6,7);
+	@include grid-span(6,7);
 }</pre></code>
 					</section>
 					<section>
@@ -594,7 +595,7 @@ $gutters: 1/6;
 
 	@include breakpoint(500px) {
 		@include grid-span(3, 2);
-  }
+	}
 }</code></pre>
 
 					</section>
@@ -654,7 +655,7 @@ $gutters: 1/3;
 					<section data-state="bluesy">
 						<h1>Content-first Grid Systems</h1>
 					</section>
-					<section data-state="soothe">
+					<section data-state="blackout">
 						<h2>City Grids</h2>
 						<img src="img/street_grids.png" alt="Street Grids of NYC, Philly, DC, and Toronto" data-source="http://tedpak.com/2013/03/31/what-new-york-does-right" data-cite="Ted Pak">
 					</section>
@@ -665,7 +666,7 @@ $gutters: 1/3;
 					</section>
 					<section>
 						<h2>Asymmetric Grids</h2>
-						<p>Grids where the columns are not the same size are asymmetric grids</p>
+						<p>Grids where the columns are not the same size</p>
 						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
 						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
 					</section>
@@ -802,7 +803,7 @@ $grids: snap(2 4 4 2, 1/3);</code></pre>
 						<br><br>
 						<p class="fragment">Testing browser capabilities on the fly allows each device to format content in the best manner.</p>
 					</section>
-					<section data-state="fingerprint" style="position: absolute; left: -200px; display: block; ">
+					<section data-state="fingerprint" style="position: absolute; left: -140px; display: block; ">
 						<h2>Modernizr</h2>
 						<br>
 						<p>Like two people with the same name,<br> user-agent strings tell us very little<br> about two different Chromes, IEs, etc.</p>
