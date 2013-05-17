@@ -548,8 +548,8 @@ nav {
 $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<br>
 						<ul>
-							<li class="fragment"><b>$grids: </b>Grid definition. Can be single number for symmetric grids or multiple numbers in relation for asymmetric grids.</li><br>
-							<li class="fragment"><b>$gutters: </b>The width of a single gutter.</li>
+							<li class="fragment"><b>$grids: </b>Grid definition. Can be single number for symmetric grids or multiple numbers in relation for asymmetric grids. For symmetric grids, each column is considered to have a width of 1.</li><br>
+							<li class="fragment"><b>$gutters: </b>Gutter definition. The width of a single gutter in relation to a column of width 1.</li>
 						</ul>
 					</section>
 					<section style="top: -1em;">
@@ -563,14 +563,61 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
   @include clearfix; 			// Have container clear floats properly
 }
 
-#left {
+.left {
   @include grid-span(6,1);
 }
 
-#right {
+.right {
   @include grid-span(6,7);
 }</pre></code>
 					</section>
+					<section>
+						<h2>Global Contexts</h2>
+						<p>Settings <b>$grids</b> and <b>$gutters</b> set a global context for them, making them available to use without redeclaring them each time they're needed.</p>
+						<p class="fragment">You can set different global contexts to use at different <b>min-width</b> or <b>max-width</b> breakpoints</p>
+						<pre class="fragment"><code class="language-scss">$grids: 12;
+$grids: add-grid(2 8 2 at 500px);
+
+$gutters: 1/3;
+$gutters: add-gutter(1/4 at 532px);</code></pre>
+					</section>
+					<section>
+						<h2>Global Contexts</h2>
+						<p>When using the <b>breakpoint</b> mixin, Singularity is able to determine which global context you'd like and subsequently use the correct one when you use the <b>grid-span</b> mixin</p>
+						<pre><code class="language-scss">$grids: 2;
+$grids: add-grid(4 at 475px);
+
+$gutters: 1/6;
+
+#nav {
+	width: 100%;
+
+	@include breakpoint(500px) {
+		@include grid-span(3, 2);
+  }
+}</code></pre>
+
+					</section>
+					<section>
+						<h2>Overriding Global Contexts</h2>
+						<p class="small">If you need to override the global contexts, for instance if you need to nest a grid and therefore change the grid you're using, use the <b>layout</b> mixin</p>
+						<pre><code class="language-scss">$grids: 12;
+$gutters: 1/3;
+
+#main {
+	@include grid-span(8, 1);
+
+	@include layout(8) {
+		.left {
+			@include grid-span(4, 1);
+		}
+		.right {
+			@include grid-span(4, 5);
+		}
+	}
+}</code></pre>
+					</section>
+
 					<section>
 						<h2>Bronze:</h2>
 						<br>
@@ -588,14 +635,14 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 					<section>
 						<h2>Gold:</h2>
 						<br>
-						<p>Create an asymmetrical grid.</p>
+						<p>Nest one grid inside another</p>
 						<br>
-						<p class="fragment"><em class="subdued"><code>$grids: 2 8 2;</code></em></p>
+						<p class="fragment"><em class="subdued"><code>use the Layout mixin</code></em></p>
 					</section>
 					<section data-state="alert">
 						<h2>Class-based grid systems</h2>
 						<br>
-						<p>Grids should work with the content itself, not impose a class structure. There's no need to limit ourselves to a 12 column layout with four breakpoints.</p>
+						<p>Grids should work with the content itself, not impose a class structure. We <em>should not</em> limit ourselves to a 12 column layout with four breakpoints.</p>
 						<br>
 						<p class="fragment">Instead, let's design our sites around the content, creating awesome mobile-first layouts.</p>
 						<br>
@@ -606,6 +653,58 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 				<section>
 					<section data-state="bluesy">
 						<h1>Content-first Grid Systems</h1>
+					</section>
+					<section data-state="soothe">
+						<h2>City Grids</h2>
+						<img src="img/street_grids.png" alt="Street Grids of NYC, Philly, DC, and Toronto" data-source="http://tedpak.com/2013/03/31/what-new-york-does-right" data-cite="Ted Pak">
+					</section>
+					<section>
+						<h2>The Ideal Grid</h2>
+						<br><p>Grids provide order to your design and structure to your information.</p><br>
+						<p class="fragment">The ideal grid is specific to your content and your design, as it is an extension of both.</p>
+					</section>
+					<section>
+						<h2>Asymmetric Grids</h2>
+						<p>Grids where the columns are not the same size are asymmetric grids</p>
+						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
+						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
+					</section>
+					<section>
+						<h2>Types of Asymmetric Grids</h2>
+						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
+						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
+						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
+						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an imaginary spiral</p>
+						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
+					</section>
+					<section>
+						<h2>Custom Grid</h2>
+						<pre><code class="language-scss">// List of column width in relation to each other
+$grids: 5 2 3 3 7 9;</code></pre>
+						<img src="img/custom.png">
+					</section>
+					<section>
+						<h2>Compound Grid</h2>
+						<pre><code class="language-scss">// List of symmetric grids to compound together
+$grids: compound(3, 4);</code></pre>
+						<img src="img/compound.png">
+					</section>
+					<section>
+						<h2>Ratio Grid</h2>
+						<pre><code class="language-scss">// Ratio and number of columns
+$grids: ratio(golden(), 4);</code></pre>
+						<img src="img/ratio.png">
+					</section>
+					<section>
+						<h2>Ratio Spiral Grid</h2>
+						<pre><code class="language-scss">$grids: compound(3, 4);</code></pre>
+						<img src="img/ratio.png">
+					</section>
+					<section>
+						<h2>Snap Grid</h2>
+						<pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
+$grids: snap(2 4 4 2, 1/3);</code></pre>
+						<img src="img/snap.png">
 					</section>
 				</section>
 
