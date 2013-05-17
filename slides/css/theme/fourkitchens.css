@@ -247,9 +247,18 @@ table.comparison tr td:nth-child(2) {
 	background: radial-gradient(ellipse at center,  rgba(200, 50, 30, 0.6) 0%,rgba(200, 50, 30, 1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-.alert .reveal * {
+.alert .reveal p,
+.alert .reveal h1,
+.alert .reveal h2,
+.alert .reveal h3,
+.alert .reveal h4,
+.alert .reveal h5,
+.alert .reveal h6 {
 	color: #fff;
 }
+
+
+
 .soothe .state-background {
 	background-color: rgba(50, 200, 90, 0.8);
 	background: -moz-radial-gradient(center, ellipse cover,  rgba(50, 160, 90, .6) 0%, rgba(50, 180, 90, 1) 100%); /* FF3.6+ */
@@ -344,12 +353,18 @@ table.comparison tr td:nth-child(2) {
  * Syntax highlighting: http://prismjs.com/
  *********************************************/
 
-pre[class*="language-"].half {
+.half {
 	float: left;
-	width: 43%;
-	margin-right: 4%;
+	width: 43% !important;
+	margin-right: 4% !important;
 }
 
-pre[class*="language-"].half:nth-of-type(even) {
-	margin-right: 0%;
+.half:nth-of-type(even) {
+	margin-right: 0% !important;
+}
+
+.reveal img.transparent {
+	background: none;
+	border: none;
+	box-shadow: none;
 }
