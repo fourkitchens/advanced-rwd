@@ -65,6 +65,13 @@
          @-o-keyframes pulse {50% {opacity: .2; }}
             @keyframes pulse {50% {opacity: .2; }}
 
+    @-webkit-keyframes throb {50% {border-radius: 5em 12em; }}
+       @-moz-keyframes throb {50% {border-radius: 5em 12em; }}
+        @-ms-keyframes throb {50% {border-radius: 5em 12em; }}
+         @-o-keyframes throb {50% {border-radius: 5em 12em; }}
+            @keyframes throb {50% {border-radius: 5em 12em; }}
+
+
     /* -- le queries de media -- */
     @media (min-width: 26em) {
       body {
@@ -86,6 +93,13 @@
         margin-top: 3.5em;
         padding: 2em 3em 2em 13em;
         border-radius: 2em 17em;
+
+      -webkit-animation: throb 5.5s ease-in-out 5;
+         -moz-animation: throb 5.5s ease-in-out 5;
+          -ms-animation: throb 5.5s ease-in-out 5;
+           -o-animation: throb 5.5s ease-in-out 5;
+              animation: throb 5.5s ease-in-out 5;
+
       }
     }
   </style>
