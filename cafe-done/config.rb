@@ -2,9 +2,7 @@
 require 'toolkit'
 require 'compass-normalize'
 require 'color-schemer'
-require 'modular-scale'
 require 'sassy-buttons'
-require 'singularity-extras'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
