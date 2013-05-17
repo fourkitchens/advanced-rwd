@@ -674,7 +674,7 @@ $gutters: 1/3;
 						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
 						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
 						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
-						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an imaginary spiral</p>
+						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
 						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
 					</section>
 					<section>
@@ -697,8 +697,9 @@ $grids: ratio(golden(), 4);</code></pre>
 					</section>
 					<section>
 						<h2>Ratio Spiral Grid</h2>
-						<pre><code class="language-scss">$grids: compound(3, 4);</code></pre>
-						<img src="img/ratio.png">
+						<pre><code class="language-scss">// Number of columns and ratio
+$grids: ratio-spiral(5, golden());</code></pre>
+						<img src="img/spiral.png">
 					</section>
 					<section>
 						<h2>Snap Grid</h2>
