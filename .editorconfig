@@ -2,3 +2,8 @@
 [*]
 indent_style = space
 indent_size = 2
+
+; slides are the exception cuz reveal.js upstream uses tabs
+[slides/index.html]
+indent_style = tab
+indent_size = 2
