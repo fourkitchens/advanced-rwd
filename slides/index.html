@@ -754,6 +754,13 @@ $gutters: 1/3;
 						<h2>Creating a Sub-Theme</h2>
 						<p>On other computers you'll have to install<br> ruby, compass, and compass-aurora.<br><br> Full directions are on the <a href="http://snugug.github.io/Aurora/">Aurora documentation</a>.</p><br>
 					</section>
+					<section>
+  				  <h2>Creating a Sub-Theme</h2>
+  				  <p>The Compass extension allows us to quickly create a "starter kit" sub-theme, removing the need for copying/pasting theme files and replacing "STARTERKIT" with your theme name.</p>
+  				  <pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
+  				  <p class="fragment">And to stop the little kittens from crying, you can add these optional flags:</p>
+  				  <pre class="fragment"><code class="language-css">    --css-dir="css" --javascripts-dir="js"</code></pre>
+					</section>
 					<section data-state="bronze">
 						<h2>Bronze:</h2>
 						<p>Create a Aurora Corona sub-theme<br> and then enable it in Drupal.</p>
@@ -762,7 +769,7 @@ $gutters: 1/3;
 					</section>
 					<section data-state="silver">
 						<h2>Silver:</h2>
-						<p>Change the output directories within your new<br> Compass project to use "js" instead of "javascripts"</p>
+						<p>Change the output directories within your new<br> Compass project to use "img" instead of "images"</p>
 						<br>
 						<p class="fragment"><em class="subdued">restart compass once you change the config file</em>
 					</section>
@@ -774,6 +781,38 @@ $gutters: 1/3;
 							<code>compass compile</code> is a one-time command<br>
 							<code>compass watch</code> will keep compiling
 						</em></p>
+					</section>
+					<section>
+  				  <h2>Bundler: Unifying Gem Versions</h2>
+  				  <p>When you are working on different computers, or have multiple developers--- or even just are constantly updating your ruby gems--- there will always be an issue with ruby gems changing their own mixins or functions as they update.</p>
+  				  <p>These changes can be good or bad, but we want to make sure that we know the versions of each gem we are using, to prevent compiling differences and errors. Thus, Aurora comes bundler integration. Use the following command to create a .lock file within your theme to lock each gem version.</p>
+  				  <pre><code>bundle install</code></pre>
+
+					</section>
+					<section>
+					  <h2>Bundler: Unifying Gem Versions</h2>
+					  <p>From now on, instead of running "compass watch" or "compass compile", you can use:</p>
+					  <pre><code>bundle exec compass watch</code></pre>
+					  <p>And bundler will only use the gem versions selected within the .lock file</p>
+					  <p class="fragment">But wait... THERE'S MORE!</p>
+					</section>
+					<section>
+  				  <h2>Aurora: Now with Grunt!</h2>
+  				  <p>The "compass watch" command will use heavy resources on your system, and we have more we want to watch for then just sass file changes. Thus, we also are including (optionally) grunt.js integration for your theme.</p>
+  				  <p>We can install the grunt.js integration with:</p>
+  				  <pre><code>compass install aurora/grunt</code></pre>
+					</section>
+					<section>
+  				  <h2>Aurora: Now with Grunt!</h2>
+  				  <p>What does it all include?</p>
+  				  <ul>
+  				    <li>Automatic Sass file compilation</li>
+  				    <li>JavaScript linting</li>
+  				    <li>Image minification</li>
+  				    <li>Uglify.js your JavaScript</li>
+  				  </ul>
+  				  <p>Once enabled, just run:</p>
+  				  <pre><code>grunt watch</code></pre>
 					</section>
 				</section>
 
