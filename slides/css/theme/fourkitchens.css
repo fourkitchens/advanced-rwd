@@ -355,12 +355,12 @@ table.comparison tr td:nth-child(2) {
 
 .half {
 	float: left;
-	width: 43% !important;
-	margin-right: 4% !important;
+	width: 43%;
+	margin-right: 4%;
 }
 
 .half:nth-of-type(even) {
-	margin-right: 0% !important;
+	margin-right: 0%;
 }
 
 .reveal img.transparent {
