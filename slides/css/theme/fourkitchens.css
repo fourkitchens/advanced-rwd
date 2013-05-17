@@ -264,6 +264,9 @@ table.comparison tr td:nth-child(2) {
 .soothe .reveal * {
 	color: #fff;
 }
+.soothe .reveal code {
+  color: #fff;
+}
 
 .blackout .state-background {
 	background-color: rgba(0, 0, 0, 0.8);
@@ -317,6 +320,7 @@ table.comparison tr td:nth-child(2) {
 /*
  * Move slides over a little bit when image is present
  */
+
 .bronze section.present,
 .silver section.present,
 .gold section.present {
