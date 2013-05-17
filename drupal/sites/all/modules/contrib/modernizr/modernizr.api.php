@@ -29,34 +29,19 @@
  *   An array of options that specify Modernizr custom build requirements.
  */
 function hook_modernizr_info() {
-  $items = array();
+  $tests = array();
 
-  // General note:
-  // The array index of each entry MUST be the exact string needed in whatever
-  // version of modernizr.js you're using. These strings are not arbitrary. This
-  // Drupal module will always support the latest stable version of Modernizr
-  // and nothing else.
+  //
+  // The index of each entry MUST be the exact string needed in whatever
+  // version of modernizr.js you're using. These strings are not arbitrary.
+  // This Drupal module will always support the latest stable version of
+  // Modernizr and nothing else.
+  //
 
-  // Specify feature tests
-  $items['borderradius'] = array(
-    // test means regular feature test. Most common option.
-    'type'   => 'test',
-    // Say who requested this test. Displays within admin UI only.
-    'module' => 'Modernizr',
-    // Short description of test. Displays within admin UI only.
-    'desc'   => 'Tests browser support for <code>border-radius</code>',
-  );
+  // Specify feature tests.
+  $tests[] = 'borderradius';
 
-  // Specify some Extras
-  $items['cssclasses'] = array(
-    // Extras are functional components of Modernizr; they are not feature tests
-    'type'   => 'extras',
-    // module and desc work exactly the same in all situations
-    'module' => 'Modernizr',
-    'desc'   => 'Allows Modernizr to inject CSS classes into &lt;html&gt;',
-  );
-
-  return $items;
+  return $tests;
 }
 
 /**
@@ -75,6 +60,8 @@ function hook_modernizr_info() {
 function hook_modernizr_load() {
   $load = array();
 
+  // Unlike hook_modernizr_info(), no array index is needed.
+  // You can add as many Modernizr.load() commands as you want
   $load[] = array(
     // The 'test' property determines which resources get downloaded.
     // Your test can be *any* truthy JavaScript expression; you are NOT
