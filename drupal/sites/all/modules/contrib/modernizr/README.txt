@@ -28,16 +28,21 @@ tests you're interested in:
       nope : ['polyfill.js', 'wrapper.js']
     });
 
-The 3.x branch of the Drupal module aims to integrate Modernizr.load()
-so it is available to themes/modules that support HTML5/CSS3 features.
+The 3.x branch of the Drupal module integrates Modernizr.load()
+so it can be used by themes/modules that support HTML5/CSS3.
 
-For more information, visit: http://www.modernizr.com/docs/
+Documentation
+=============
 
-Usage
-=====
+Read about Modernizr: http://www.modernizr.com/docs/
+Module documentation: http://drupal.org/node/1913744
 
-Find admin settings at /admin/config/development/modernizr
+Installation & Usage
+====================
 
+1. Install module
+2. Build Modernizr at /admin/config/development/modernizr
+3. Place your custom build inside sites/all/libraries/modernizr
 
 Credits
 =======

@@ -27,17 +27,17 @@ define('MODERNIZR_DOWNLOAD_DEV', 'http://www.modernizr.com/downloads/modernizr-2
 function modernizr_drush_command() {
   $items = array();
 
-  $items['modernizr-download-dev'] = array(
-    'callback' => '_modernizr_drush_download_dev',
-    'description' => dt('(mdl) Downloads the dev version of Modernizr from @dev', array('@dev' => MODERNIZR_DOWNLOAD_DEV)),
-    'aliases' => array('mdl'),
-    'arguments' => array(
+  $items['modernizr-dev'] = array(
+    'callback'    => '_modernizr_drush_download_dev',
+    'description' => dt('Downloads the dev version of Modernizr from @dev', array('@dev' => MODERNIZR_DOWNLOAD_DEV)),
+    'aliases'     => array('mdl'),
+    'arguments'   => array(
       'path' => dt('Optional. A destination for the Modernizr library. If omitted Drush will use one of the default locations.'),
     ),
   );
-  $items['modernizr-custom-build'] = array(
+  $items['modernizr-build'] = array(
     'callback'    => '_modernizr_drush_custom_build',
-    'description' => dt('(mcb) Requests a custom build of Modernizr based on your Drupal module settings. Depends on node.js/npm.'),
+    'description' => dt('Requests a custom build of Modernizr based on your Drupal module settings. Depends on node.js/npm.'),
     'aliases'     => array('mcb'),
     'arguments'   => array(),
   );
@@ -59,10 +59,10 @@ function modernizr_drush_command() {
  */
 function modernizr_drush_help($section) {
   switch ($section) {
-    case 'drush:modernizr-download-dev':
+    case 'drush:modernizr-dev':
       return dt("Downloads the dev version of Modernizr from @dev. Accepts an optional destination argument.", array('@dev' => MODERNIZR_DOWNLOAD_DEV));
-    case 'drush:modernizr-custom-build':
-      return dt('Queries Drupal modules for any Modernizr tests they require, and creates a request to a node.js-powered CLI builder. You must install node.js, npm, and the CLI builder beforehand.');
+    case 'drush:modernizr-build':
+      return dt('Queries Drupal modules for any Modernizr tests they require, and creates a request for a node.js-powered CLI builder. You must install node.js, npm, and the CLI builder beforehand.');
   }
 }
 
@@ -82,15 +82,16 @@ function _modernizr_drush_download_dev() {
   // Depends on whether Libraries API is enabled or not.
   else {
     $drush_context = drush_get_context('DRUSH_DRUPAL_ROOT');
-    if (module_exists('libraries')) {
+
+    // Can we use Libraries API?
+    if (module_exists('libraries') && function_exists('libraries_get_path')) {
       $libraries_dir = libraries_get_path('modernizr');
-      $dir = $libraries_dir
-           ? $drush_context . '/' . $libraries_dir
-           : $drush_context . '/sites/all/libraries/modernizr';
     }
-    else {
-      $dir = $drush_context . '/' . drupal_get_path('module', 'modernizr') . '/js';
-    }
+
+    // Load the path
+    $dir = $libraries_dir
+         ? $drush_context . '/' . $libraries_dir
+         : $drush_context . '/sites/all/libraries/modernizr';
   }
 
   // Build full path including filename
@@ -135,24 +136,25 @@ function drush_modernizr_post_pm_enable() {
  * from other modules and sends them to the node.js CLI builder.
  */
 function _modernizr_drush_custom_build() {
-  $args = array();
-  $tests = modernizr_api_list();
+  $output_args = array();
+  $args = modernizr_api_list();
   $output = '';
 
+  // Get the map of Modernizr args.
+  include_once(drupal_get_path('module', 'modernizr') . '/modernizr.args.inc');
+
   // Fetch all the tests, and record which modules supplied them.
-  foreach ($tests as $test => $info) {
-    $args[$info['type']][] = $test;
-    $modules[] = $info['module'];
+  foreach ($args as $key => $test) {
+    $meta = _modernizr_args_return($key);
+    $type = $meta['type'];
+    $output_args[$type][] = $key;
   }
 
-  // Remove duplicate module names.
-  $modules = array_unique($modules);
-
   // Collapse tests into the format accepted by the node builder.
-  $tests  = (isset($args['tests']))  ? ' -t ' . implode(' ', $args['tests'])  : '';
-  $extras = (isset($args['extras'])) ? ' -e ' . implode(' ', $args['extras']) : '';
-  $groups = (isset($args['groups'])) ? ' -g ' . implode(' ', $args['groups']) : '';
-  $not    = (isset($args['not']))    ? ' -n ' . implode(' ', $args['not'])    : '';
+  $tests  = (isset($output_args['tests']))  ? ' -t ' . implode(' ', $output_args['tests'])  : '';
+  $extras = (isset($output_args['extras'])) ? ' -e ' . implode(' ', $output_args['extras']) : '';
+  $groups = (isset($output_args['groups'])) ? ' -g ' . implode(' ', $output_args['groups']) : '';
+  $not    = (isset($output_args['not']))    ? ' -n ' . implode(' ', $output_args['not'])    : '';
 
   $output = $tests . $extras . $groups . $not;
 
