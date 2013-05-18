@@ -247,7 +247,20 @@ table.comparison tr td:nth-child(2) {
 	background: radial-gradient(ellipse at center,  rgba(200, 50, 30, 0.6) 0%,rgba(200, 50, 30, 1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-.alert .reveal * {
+.alert .reveal h1,
+.alert .reveal h2,
+.alert .reveal h3,
+.alert .reveal h4,
+.alert .reveal h5,
+.alert .reveal h6,
+.alert .reveal p,
+.soothe .reveal h1,
+.soothe .reveal h2,
+.soothe .reveal h3,
+.soothe .reveal h4,
+.soothe .reveal h5,
+.soothe .reveal h6,
+.soothe .reveal p {
   color: #fff;
 }
 
@@ -260,12 +273,6 @@ table.comparison tr td:nth-child(2) {
 	background: -ms-radial-gradient(center, ellipse cover,  rgba(50, 160, 90, .6) 0%,rgba(50, 180, 90, 1) 100%); /* IE10+ */
 	background: radial-gradient(ellipse at center,  rgba(50, 160, 90, .6) 0%,rgba(50, 180, 90, 1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-.soothe .reveal * {
-	color: #fff;
-}
-.soothe .reveal code {
-  color: #fff;
 }
 
 .blackout .state-background {
