@@ -540,6 +540,11 @@ nav {
 						<h2>Singularity &amp; The&nbsp;Grid</h2>
 						<img src="img/the_grid.jpg" alt="The Grid">
 					</section>
+					<section data-state="alert">
+						<h2>The Box Model</h2>
+						<img class="transparent" src="img/boxmodel.png" alt="Box Model">
+						<pre class="fragment"><code class="language-scss">*, *:before, *:after { @include box-sizing('border-box'); }</code></pre>
+					</section>
 					<section>
 						<h2>The 960 Grid System</h2>
 						<br>
@@ -560,9 +565,9 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						</ul>
 					</section>
 					<section>
-  					<h2>Types of layouts</h2>
-  					<p>There are two forms of grids Sigularity can output, 'float' and 'isolation'. Float is the most common, and will float each container to the desired position. Isolation allows for more complex re-ordering of content, and we won't be using that today.</p><br>
-  					<p>The output is defaulted to 'float', but can be changed:</p>
+  					<h2>Grid Output Styles</h2>
+  					<p>Out of the box, Singularity offers two output styles, <b>float</b> and <b>isolation</b>. The default output style is <b>isolation</b>, but we're going to change it <b>float</b>.
+  					</p><br>
   					<pre><code class="language-scss">$output: 'float';</code></pre>
 					</section>
 					<section style="top: -1em;">
@@ -1052,7 +1057,29 @@ $gutters: 1/3;
 						<h1>Fluid Media</h1>
 					</section>
 					<section>
-						Borealis
+						<h2>Intrinsic Ratios</h2>
+						<p><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a> are a CSS technique to allow you to constrain child elements to a ratio and percentage of its parent</p>
+						<pre class="fragment"><code class="language-scss">// Intrinsic Ratio mixin comes from [Toolkit](https://github.com/team-sass/toolkit)
+.ratio-16-9 {
+	@include intrinsic-ratio;
+}
+
+.ratio-4-3 {
+	@include intrinsic-ratio(4/3);
+}</code></pre>
+					</section>
+					<section>
+						<h2>Borealis</h2>
+						<p>Borealis Suite comes with a submodule <em>Borealis Responsive Images</em></p>
+						<p class="fragment">Create an image style, then go to Responsive styles in <pre class="fragment">admin/config/media/image-styles/responsive</pre></p>
+						<p class="fragment">Choose the image styles you'd like to be responsive!</p>
+						<p class="fragment">Use the image style you created as normal!</p>
+					</section>
+					<section>
+						<h2>Borealis Settings</h2>
+						<p>Element query based through Javascript, so no choosing breakpoints</p>
+						<p class="fragment">Instead, choose minimum image size, High DPI quality, and swap technique</p>
+						<p class="fragment">Image swapping is controlled by the viewport, so Image Placeholders option is instant image Lazy Loading!</p>
 					</section>
 				</section>
 
