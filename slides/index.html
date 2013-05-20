@@ -934,7 +934,7 @@ $gutters: 1/3;
 						<br>
 						<p>Enable Modernizr module and verify that it is working</p>
 						<br>
-						<p class="fragment"><em class="subdued">drush mdl</em></p>
+						<p class="fragment"><em class="subdued">drush en modernizr<br><br> -or-<br><br> drush mdl</em></p>
 						<br>
 
 					</section>
@@ -1001,10 +1001,10 @@ $gutters: 1/3;
 					<section>
 						<h2>Load API: Modules</h2>
 						<p class="fragment">Use another hook:</p>
-						<pre class="fragment" style="width: 105%;"><code class="language-javascript">function MYMODULE_modernizr_load() {
+						<pre class="fragment" style="width: 110%;"><code class="language-javascript">function MYMODULE_modernizr_load() {
 	$load[] = array(
 		'test' => 'Modernizr.geolocation',
-		'nope' => array(drupal_get_path('module','geolocation') . '/js/geo.js'),
+		'nope' => array('/' . drupal_get_path('module','geolocation') . '/js/geo.js'),
 		'callback' => 'function(){ geo.init(); }',
 	);
 	return $load;
