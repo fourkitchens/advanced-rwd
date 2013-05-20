@@ -210,6 +210,8 @@
  *   );
  * @endcode
  */
+
+/*
 $databases = array(
   'default' => array(
     'default' => array(
@@ -222,6 +224,7 @@ $databases = array(
     ),
   ),
 );
+*/
 
 /**
  * Access control for update.php script.
@@ -562,3 +565,10 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+
+/**
+ * Import student settings
+ */
+if (is_file('student.settings.php')) {
+  include_once('student.settings.php');
+}
