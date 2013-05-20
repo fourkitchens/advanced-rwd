@@ -254,13 +254,19 @@ table.comparison tr td:nth-child(2) {
 .alert .reveal h5,
 .alert .reveal h6,
 .alert .reveal p,
+.alert .reveal li,
+.alert .reveal a,
+.alert .reveal code,
 .soothe .reveal h1,
 .soothe .reveal h2,
 .soothe .reveal h3,
 .soothe .reveal h4,
 .soothe .reveal h5,
 .soothe .reveal h6,
-.soothe .reveal p {
+.soothe .reveal p,
+.soothe .reveal li,
+.soothe .reveal a,
+.soothe .reveal code {
   color: #fff;
 }
 
