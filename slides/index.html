@@ -374,13 +374,13 @@ ul {
 						</code></pre>
 						<pre class="half"><code class="language-css">
 ul {
-  margin-left: 0;
+	margin-left: 0;
 }
 
 ul li {
-  padding-left: 14px;
-  background: url('../img/bullet.png') no-repeat -12px -12px;
-  list-style-type: none;
+	padding-left: 14px;
+	background: url('../img/bullet.png') no-repeat -12px -12px;
+	list-style-type: none;
 }
 						</code></pre>
 						<br class="clearboth"><br>
@@ -567,10 +567,10 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						</ul>
 					</section>
 					<section>
-  					<h2>Grid Output Styles</h2>
-  					<p>Out of the box, Singularity offers two output styles, <b>float</b> and <b>isolation</b>. The default output style is <b>isolation</b>, but we're going to change it <b>float</b>.
-  					</p><br>
-  					<pre><code class="language-scss">$output: 'float';</code></pre>
+						<h2>Grid Output Styles</h2>
+						<p>Out of the box, Singularity offers two output styles, <b>float</b> and <b>isolation</b>. The default output style is <b>isolation</b>, but we're going to change it <b>float</b>.
+						</p><br>
+						<pre><code class="language-scss">$output: 'float';</code></pre>
 					</section>
 					<section style="top: -1em;" data-state="medal-pre">
 						<h2>Creating a Layout</h2>
@@ -629,13 +629,13 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<h1>Content-first Grid Systems</h1>
 					</section>
 					<section>
-  				  <h2>What is content first?</h2>
-  				  <p>We are going to build and style<br> our grid based upon the content.</p>
-  				  <br>
-  				  <center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
-  				  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<h2>What is content first?</h2>
+						<p>We are going to build and style<br> our grid based upon the content.</p>
 						<br>
-  				  <p class="fragment">This is the opposite of using a framework like<br> Twitter Bootstrap, where the grid is pre-defined.</p>
+						<center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
+						<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<br>
+						<p class="fragment">This is the opposite of using a framework like<br> Twitter Bootstrap, where the grid is pre-defined.</p>
 					</section>
 					<section>
 						<h2>The Ideal Grid</h2>
@@ -643,10 +643,10 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<p class="fragment">The ideal grid is specific to your content and<br> your design, since it is an extension of both.</p>
 					</section>
 					<section>
-  				  <h2>Singularity is built for this.</h2>
-  				  <p>Within singularity you can create completely different grids for different breakpoints.</p><br>
-  				  <p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
-  				  <img src="img/grid-examples.png" alt="Examples of grids">
+						<h2>Singularity is built for this.</h2>
+						<p>Within singularity you can create completely different grids for different breakpoints.</p><br>
+						<p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
+						<img src="img/grid-examples.png" alt="Examples of grids">
 					</section>
 
 					<section>
@@ -766,13 +766,13 @@ $gutters: 1/3;
 						<p>On other computers you'll have to install<br> ruby, compass, and compass-aurora.<br><br> Full directions are on the <a href="http://snugug.github.io/Aurora/">Aurora documentation</a>.</p><br>
 					</section>
 					<section data-state="medal-pre">
-  				  <h2>Creating a Sub-Theme</h2>
-  				  <p>The Compass extension allows us to quickly create a "starter kit" sub-theme, removing the need for copying/pasting theme files and replacing "STARTERKIT" with your theme name.</p>
-  				  <pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
-  				  <br>
-  				  <br>
-  				  <p class="fragment">And to stop the little kittens from crying, you can add these optional flags:</p>
-  				  <pre class="fragment"><code class="language-css">    --css-dir="css" --javascripts-dir="js"</code></pre>
+						<h2>Creating a Sub-Theme</h2>
+						<p>The Compass extension allows us to quickly create a "starter kit" sub-theme, removing the need for copying/pasting theme files and replacing "STARTERKIT" with your theme name.</p>
+						<pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
+						<br>
+						<br>
+						<p class="fragment">And to stop the little kittens from crying, you can add these optional flags:</p>
+						<pre class="fragment"><code class="language-css">    --css-dir="css" --javascripts-dir="js"</code></pre>
 					</section>
 					<section data-state="bronze">
 						<h2>Bronze:</h2>
@@ -796,20 +796,20 @@ $gutters: 1/3;
 						</em></p>
 					</section>
 					<section>
-  				  <h2>Bundler: Unifying Gem Versions</h2>
-  				  <p>When working on different computers, developers, or even projects, there will always be an issue with ruby gems changing between different versions.</p>
-  				  <p>We want to make sure that we know which versions of each gem we are using to prevent compiling differences and errors. Thus, Aurora comes bundler integration. Use the following command to create a <code>.lock</code> file within your theme to lock each gem version.</p>
-  				  <pre><code class="language-javascript">bundle install</code></pre>
+						<h2>Bundler: Unifying Gem Versions</h2>
+						<p>When working on different computers, developers, or even projects, there will always be an issue with ruby gems changing between different versions.</p>
+						<p>We want to make sure that we know which versions of each gem we are using to prevent compiling differences and errors. Thus, Aurora comes bundler integration. Use the following command to create a <code>.lock</code> file within your theme to lock each gem version.</p>
+						<pre><code class="language-javascript">bundle install</code></pre>
 
 					</section>
 					<section>
-					  <h2>Bundler: Unifying Gem Versions</h2>
-					  <p>From now on, instead of running "compass watch" or "compass compile", you can use:</p>
-					  <pre><code class="language-javascript">bundle exec compass watch</code></pre>
-					  <br>
-					  <p>And bundler will only use the gem versions selected within the .lock file</p>
-					  <br>
-					  <p class="fragment">But wait... THERE'S MORE!</p>
+						<h2>Bundler: Unifying Gem Versions</h2>
+						<p>From now on, instead of running "compass watch" or "compass compile", you can use:</p>
+						<pre><code class="language-javascript">bundle exec compass watch</code></pre>
+						<br>
+						<p>And bundler will only use the gem versions selected within the .lock file</p>
+						<br>
+						<p class="fragment">But wait... THERE'S MORE!</p>
 					</section>
 					<section>
   				  <h2>Aurora: Now with Grunt!</h2>
@@ -819,18 +819,18 @@ $gutters: 1/3;
   				  <pre><code class="language-javascript">npm install</code></pre>
 					</section>
 					<section data-state="medal-pre">
-  				  <h2>Aurora: Now with Grunt!</h2>
-  				  <p>What does it all include?</p>
-  				  <ul>
-  				    <li>Automatic Sass file compilation</li>
-  				    <li>JavaScript linting</li>
-  				    <li>Image minification</li>
-  				    <li>Uglify.js your JavaScript</li>
-  				    <li>Deployment of Sass files in minified form</li>
-  				    <li>Automatic live reload integration</li>
-  				  </ul>
-  				  <p>Once enabled, just run:</p>
-  				  <pre><code class="language-javascript">grunt watch</code></pre>
+						<h2>Aurora: Now with Grunt!</h2>
+						<p>What does it all include?</p>
+						<ul>
+							<li>Automatic Sass file compilation</li>
+							<li>JavaScript linting</li>
+							<li>Image minification</li>
+							<li>Uglify.js your JavaScript</li>
+							<li>Deployment of Sass files in minified form</li>
+							<li>Automatic live reload integration</li>
+						</ul>
+						<p>Once enabled, just run:</p>
+						<pre><code class="language-javascript">grunt watch</code></pre>
 					</section>
 					<section data-state="bronze">
 						<h2>Bronze:</h2>
@@ -847,9 +847,9 @@ $gutters: 1/3;
 						<p>Run the grunt deployment with <code>grunt watch</code><br> (take a look at the css output).</p>
 					</section>
 					<section>
-  					<h2>Aurora Base Theme</h2>
-  					<p>The base theme is primarily HTML5 template files, nothing more.</p><br>
-  					<p>There is also a setting on the setting page to turn on live reload, which will allow you to use live reload when running "grunt watch"</p>
+						<h2>Aurora Base Theme</h2>
+						<p>The base theme is primarily HTML5 template files, nothing more.</p><br>
+						<p>There is also a setting on the setting page to turn on live reload, which will allow you to use live reload when running "grunt watch"</p>
 					</section>
 				</section>
 
@@ -1068,57 +1068,64 @@ $gutters: 1/3;
 					</section>
 					<section>
 						<h2>Intrinsic Ratios</h2>
-						<p><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a> are a CSS technique to allow you to constrain child elements to a ratio and percentage of its parent</p>
-						<pre class="fragment"><code class="language-scss">// Intrinsic Ratio mixin comes from [Toolkit](https://github.com/team-sass/toolkit)
-.ratio-16-9 {
-	@include intrinsic-ratio;
-}
+						<p><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a> are a CSS technique<br> that allow you to constrain child elements to<br> a ratio and percentage of its parent</p>
+						<br>
+						<pre class="fragment"><code class="language-scss">
+			// Intrinsic Ratio mixin comes from [Toolkit](https://github.com/team-sass/toolkit)
+			.ratio-16-9 {
+				@include intrinsic-ratio;
+			}
 
-.ratio-4-3 {
-	@include intrinsic-ratio(4/3);
-}</code></pre>
+			.ratio-4-3 {
+				@include intrinsic-ratio(4/3);
+			}
+
+</code></pre>
 					</section>
 					<section>
 						<h2>Borealis</h2>
-						<p>Borealis Suite comes with a submodule <em>Borealis Responsive Images</em></p>
-						<p class="fragment">Create an image style, then go to Responsive styles in <pre class="fragment">admin/config/media/image-styles/responsive</pre></p>
+						<p>Borealis Suite comes with a submodule called<br> <em>Borealis Responsive Images</em></p>
+						<p class="fragment">Create an image style, then go to Responsive styles in <pre class="fragment"><code class="language-scss">admin/config/media/image-styles/responsive</code></pre></p>
 						<p class="fragment">Choose the image styles you'd like to be responsive!</p>
 						<p class="fragment">Use the image style you created as normal!</p>
 					</section>
 					<section>
 						<h2>Borealis Settings</h2>
-						<p>Element query based through Javascript, so no choosing breakpoints</p>
-						<p class="fragment">Instead, choose minimum image size, High DPI quality, and swap technique</p>
+						<p>Element query based through Javascript,<br> so <em>no choosing breakpoints</em></p>
+						<p class="fragment">Instead, choose minimum image size,<br> High DPI quality, and swap technique</p>
 						<p class="fragment">Image swapping is controlled by the viewport, so Image Placeholders option is instant image Lazy Loading!</p>
 					</section>
 				</section>
 
 				<section>
 					<section data-state="bluesy">
-						<br><br>
+						<br>
 						<h1>Magic</h1>
-						<br><br>
+						<br>
 						<img src="img/magic.jpg" alt="We demand to be taken seriously">
 					</section>
 					<section>
-  					<h2>What is this module?</h2>
-  					<p>Magic is a project started by the developers of the Aurora and Omega base themes. It contains several front-end tools to help your front end development and performance. It has been used to standardize tools between themes, and so any theme can use the same performance-enhancing scripts.</p><br>
-  					<p class="fragment">So what? You can move your JavaScript to the footer, selectively remove core / contributed CSS and JavaScript, have a width-indicator, etc.</p>
+						<h2>What is this module?</h2>
+						<p>Collaboration between Aurora and Omega.</p>
+						<br>
+						<p class="fragment">It contains several tools that can increase frontend performance and improve your workflow. Any theme can share these settings.</p><br>
+						<p class="fragment">You can move your JavaScript to the footer, selectively remove core / contributed CSS and JavaScript, have a width-indicator, etc.</p>
 					</section>
 					<section>
-  					<h2>How can I use it?</h2>
-  					<p>On your Drupal installation, enable the Magic Module. Once enabled, all the settings are on your theme page.</p>
-  					<p class="fragment">Magic is somewhat unique, as it integrates on a per-theme basis. Meaning, you can remove core CSS for your default theme, but leave it in for the administration theme.</p>
-  					<p class="fragment">Go to your theme settings, and lets examine the settings available.</p>
+						<h2>How can I use it?</h2>
+						<p>On your Drupal installation, enable the Magic module. Once enabled, all the settings are on your theme page.</p>
+						<p class="fragment">Magic stores configuration on a per-theme basis.<br> For example, you can remove core CSS for your default theme, but leave it in for the administration theme.</p>
+						<br>
+						<p class="fragment">Go to your theme settings, and lets examine the settings available.</p>
 					</section>
 				</section>
 
 				<section>
-				  <section data-state="bluesy">
-				    <h1>Singularity: The Crazy Parts</h1>
-				    <p>If we have time, we have slides on the more crazy pieces of its functionality for advanced usage.</p>
-				  </section>
-				  <section>
+					<section data-state="bluesy">
+						<h1>Singularity: The Crazy Parts</h1>
+						<p>If we have time, we have slides on the more crazy pieces of its functionality for advanced usage.</p>
+					</section>
+					<section>
 						<h2>Asymmetric Grids</h2>
 						<p>Grids where the columns are not the same size</p>
 						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
