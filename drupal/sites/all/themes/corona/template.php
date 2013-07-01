@@ -27,15 +27,9 @@ function corona_preprocess_maintenance_page(&$vars, $hook) {
  * @return
  *   An array to be output as yepnope testObjects.
  */
+/* -- Delete this line if you want to use this function
 function corona_modernizr_load_alter(&$load) {
 
-  // We will check for touch events, and if we do load the hammer.js script.
-  $load[] = array(
-    'test' => 'Modernizr.touch',
-    'yep'  => array('/'. drupal_get_path('theme','corona') . '/js/hammer.js'),
-  );
-
-  return $load;
 }
 
 /**
