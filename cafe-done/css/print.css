@@ -1,5 +1,5 @@
 /* ==|== print styles ======================================================= */
-/* line 3, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000033}}
 * {
   background: transparent !important;
   color: black !important;
@@ -8,43 +8,43 @@
   -ms-filter: none !important;
 }
 
-/* line 4, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000034}}
 a, a:visited {
   text-decoration: underline;
 }
 
-/* line 5, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000035}}
 a[href]:after {
   content: " (" attr(href) ")";
 }
 
-/* line 6, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000036}}
 abbr[title]:after {
   content: " (" attr(title) ")";
 }
 
-/* line 7, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000037}}
 .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
   content: "";
 }
 
-/* line 8, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000038}}
 pre, blockquote {
   border: 1px solid #999;
   page-break-inside: avoid;
 }
 
-/* line 9, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\000039}}
 thead {
   display: table-header-group;
 }
 
-/* line 10, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\0000310}}
 tr, img {
   page-break-inside: avoid;
 }
 
-/* line 11, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\0000311}}
 img {
   max-width: 100% !important;
 }
@@ -53,13 +53,13 @@ img {
   margin: 0.5cm;
 }
 
-/* line 13, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\0000313}}
 p, h2, h3 {
   orphans: 3;
   widows: 3;
 }
 
-/* line 14, ../sass/print.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/print\.scss}line{font-family:\0000314}}
 h2, h3 {
   page-break-after: avoid;
 }

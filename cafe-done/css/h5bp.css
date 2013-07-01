@@ -1,29 +1,29 @@
 /* HTML5 ✰ Boilerplate
  * ==|== normalize ==========================================================
  */
-/* line 5, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\000035}}
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
 
-/* line 6, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\000036}}
 audio, canvas, video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
 
-/* line 7, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\000037}}
 audio:not([controls]) {
   display: none;
 }
 
-/* line 8, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\000038}}
 [hidden] {
   display: none;
 }
 
-/* line 10, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000310}}
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -31,79 +31,79 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-/* line 11, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000311}}
 body {
   margin: 0;
   font-size: 13px;
   line-height: 1.231;
 }
 
-/* line 12, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000312}}
 body, button, input, select, textarea {
   font-family: sans-serif;
   color: #222;
 }
 
-/* line 14, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000314}}
 ::-moz-selection {
   background: #fe57a1;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 15, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000315}}
 ::selection {
   background: #fe57a1;
   color: #fff;
   text-shadow: none;
 }
 
-/* line 17, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000317}}
 a {
   color: #00e;
 }
 
-/* line 18, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000318}}
 a:visited {
   color: #551a8b;
 }
 
-/* line 19, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000319}}
 a:hover {
   color: #06e;
 }
 
-/* line 20, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000320}}
 a:focus {
   outline: thin dotted;
 }
 
-/* line 21, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000321}}
 a:hover, a:active {
   outline: 0;
 }
 
-/* line 23, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000323}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 24, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000324}}
 b, strong {
   font-weight: bold;
 }
 
-/* line 25, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000325}}
 blockquote {
   margin: 1em 40px;
 }
 
-/* line 26, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000326}}
 dfn {
   font-style: italic;
 }
 
-/* line 27, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000327}}
 hr {
   display: block;
   height: 1px;
@@ -113,14 +113,14 @@ hr {
   padding: 0;
 }
 
-/* line 28, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000328}}
 ins {
   background: #ff9;
   color: #000;
   text-decoration: none;
 }
 
-/* line 29, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000329}}
 mark {
   background: #ff0;
   color: #000;
@@ -128,37 +128,37 @@ mark {
   font-weight: bold;
 }
 
-/* line 30, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000330}}
 pre, code, kbd, samp {
   font-family: monospace, monospace;
   _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
-/* line 31, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000331}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* line 32, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000332}}
 q {
   quotes: none;
 }
 
-/* line 33, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000333}}
 q:before, q:after {
   content: "";
   content: none;
 }
 
-/* line 34, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000334}}
 small {
   font-size: 85%;
 }
 
-/* line 35, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000335}}
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -166,28 +166,28 @@ sub, sup {
   vertical-align: baseline;
 }
 
-/* line 36, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000336}}
 sup {
   top: -0.5em;
 }
 
-/* line 37, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000337}}
 sub {
   bottom: -0.25em;
 }
 
-/* line 38, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000338}}
 ul, ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
 }
 
-/* line 39, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000339}}
 dd {
   margin: 0 0 0 40px;
 }
 
-/* line 40, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000340}}
 nav ul, nav ol {
   list-style: none;
   list-style-image: none;
@@ -195,48 +195,48 @@ nav ul, nav ol {
   padding: 0;
 }
 
-/* line 41, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000341}}
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: middle;
 }
 
-/* line 42, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000342}}
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 43, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000343}}
 figure {
   margin: 0;
 }
 
-/* line 45, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000345}}
 form {
   margin: 0;
 }
 
-/* line 46, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000346}}
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 47, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000347}}
 label {
   cursor: pointer;
 }
 
-/* line 48, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000348}}
 legend {
   border: 0;
   *margin-left: -7px;
   padding: 0;
 }
 
-/* line 49, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000349}}
 button, input, select, textarea {
   font-size: 100%;
   margin: 0;
@@ -244,29 +244,29 @@ button, input, select, textarea {
   *vertical-align: middle;
 }
 
-/* line 50, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000350}}
 button, input {
   line-height: normal;
   *overflow: visible;
 }
 
-/* line 51, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000351}}
 table button, table input {
   *overflow: auto;
 }
 
-/* line 52, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000352}}
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
 }
 
-/* line 53, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000353}}
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
 }
 
-/* line 54, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000354}}
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -274,42 +274,42 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 55, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000355}}
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 56, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000356}}
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 57, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000357}}
 textarea {
   overflow: auto;
   vertical-align: top;
   resize: vertical;
 }
 
-/* line 59, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000359}}
 input:invalid, textarea:invalid {
   background-color: #f0dddd;
 }
 
-/* line 61, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000361}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 62, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000362}}
 td {
   vertical-align: top;
 }
 
 /* ==|== non-semantic helper classes ======================================== */
-/* line 65, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000365}}
 .ir {
   display: block;
   border: 0;
@@ -321,18 +321,18 @@ td {
   direction: ltr;
 }
 
-/* line 66, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000366}}
 .ir br {
   display: none;
 }
 
-/* line 67, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000367}}
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* line 68, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000368}}
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -344,7 +344,7 @@ td {
   width: 1px;
 }
 
-/* line 69, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000369}}
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
@@ -354,23 +354,23 @@ td {
   width: auto;
 }
 
-/* line 70, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000370}}
 .invisible {
   visibility: hidden;
 }
 
-/* line 71, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000371}}
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
 
-/* line 72, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000372}}
 .clearfix:after {
   clear: both;
 }
 
-/* line 73, ../sass/h5bp.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/twhome\/instructor\/rwd\/cafe\/sass\/h5bp\.scss}line{font-family:\0000373}}
 .clearfix {
   zoom: 1;
 }
