@@ -417,7 +417,7 @@ function aurora_preprocess_block(&$vars) {
     $vars['theme_hook_suggestions'][] = 'block__tabs';
 
     $primary = menu_primary_local_tasks();
-    $seconday = menu_secondary_local_tasks();
+    $secondary = menu_secondary_local_tasks();
 
     $tabs = array(
       'primary' => $primary,
