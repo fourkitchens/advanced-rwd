@@ -6,7 +6,13 @@
 
 $measure-break: 524px;
 $menu-break: 700px;
+$bkpt-gold: 504px 907px;
 
-$grids: 2;
-$grids: add-grid(4 at $menu-break);
-$gutters: .15;
+$grids: 12;
+$grids: add-grid(3 6 3 at $measure-break);
+$gutters: 1/3;
+$output: 'float';
+
+// $grids: 2;
+// $grids: add-grid(4 at $menu-break);
+// $gutters: .15;
