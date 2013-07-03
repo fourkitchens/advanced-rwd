@@ -493,7 +493,7 @@ $nav-lg: 682px;
 						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallback classes</a> to use with IE since media queries did not work before IE9</p>
 						<pre class="half" style="width: 52%"><code class="language-scss">
 $breakpoint-no-query-fallbacks: true;
-$nav-lg: 500px, 'no-query' '.lte-ie9';
+$nav-lg: 500px, 'no-query' '.lte-ie8';
 
 nav {
 	@include breakpoint($nav-lg) {
@@ -510,7 +510,7 @@ nav {
 		margin-right: 4%;
 	}
 }
-.lte-ie9 nav {
+.lte-ie8 nav {
 	width: 60%;
 	margin-right: 4%;
 }
