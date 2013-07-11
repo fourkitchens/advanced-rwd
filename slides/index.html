@@ -311,10 +311,18 @@
 						<p class="fragment">Extendables allow you to build upon a common style.</p>
 					</section>
 					<section>
-					 <h2>Partials</h2>
-					 <p>Compass will automatically convert any .scss file into a css file when you run 'compass compile', EXCEPT for files that begin with an underscore. Each of these smaller files are called a "partial".</p><br>
-					 <p>We use partials to better our organization of code, reduce git conflicts, and enhance our reusability of certain sections (e.g. variables). To use a partial within your main .scss file, we will have to import it like so:</p>
-					 <pre><code class="language-scss">@import 'variables';</code></pre>
+						<h2>Partials</h2>
+						<details open>
+							<summary>sass</summary>
+							<pre><code>style.css</code></pre>
+								<details>
+									<summary>partials</summary>
+									<pre><code>_variables.scss</code></pre>
+								</details>
+						</details>
+						<br>
+						<pre><code class="language-scss">// style.css
+@import 'partials/variables';</code></pre>
 					</section>
 					<section>
 						<h2>Comments</h2>
@@ -407,7 +415,7 @@ ul li {
 							<li><a href="http://rubygems.org/gems/sassy-buttons">Sassy Buttons</a>, Sassy CSS3 buttons</li>
 							<li><a href="https://rubygems.org/gems/breakpoint">Breakpoint</a>, simple MQs with Sass</li>
 							<li><a href="https://rubygems.org/gems/singularitygs">Singularity</a>, Grids without Limits</li>
-							<li><a href="https://rubygems.org/gems/compass-aurora">Aurora</a>, a killer workflow</li>
+							<li><a href="https://rubygems.org/gems/compass-aurora">Aurora</a>, Partial structure and Drupal sub theme</li>
 						</ul>
 						<br><br>
 						<p class="fragment"><a href="https://rubygems.org/gems/toolkit">Toolkit</a> bundles lots of this stuff together.</p>
@@ -428,15 +436,6 @@ ul li {
 						<br><br>
 						<h1>Media Queries</h1>
 					</section>
-					<section data-state="soothe">
-						<h2>Switch to Training Wheels</h2>
-						<br>
-						<p>We'll complete the next set of exercises<br> in our personal development environments.</p>
-						<br>
-						<p class="fragment">Use the information on your paper slip<br> to find the URL, username, and password.</p>
-						<br>
-						<p class="fragment">Work inside this directory:<br><code>/twhome/SPICE/rwd/cafe/sass/partials/layout</code></p>
-					</section>
 					<section>
 						<h2>Example media queries</h2>
 						<br>
@@ -448,7 +447,7 @@ ul li {
 	@media (max-width: 785px) { ... }
 
 	// If the user is printing the page...
-	@media (print) { ... }
+	@media print { ... }
 
 	// If the window is in between 520px and 699px...
 	@media all and (min-width: 520px) and (max-width: 699px) { ... }
@@ -457,9 +456,9 @@ ul li {
 					</section>
 					<section>
 						<h2>Breakpoint</h2>
-						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to read.</p>
+						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to maintain.</p>
 						<pre class="half"><code class="language-scss">
-$nav-lg: 682px;
+$nav-lg: 680px;
 
 .main-nav {
 	width: 100%;
@@ -473,7 +472,7 @@ $nav-lg: 682px;
 .main-nav {
 	width: 100%;
 }
-@media (min-width: 682px) {
+@media (min-width: 680px) {
 	.main-nav {
 		width: 60%;
 		margin: 0 auto;
@@ -490,7 +489,7 @@ $nav-lg: 682px;
 					</section>
 					<section data-state="medal-pre">
 						<h2>No-query fallbacks</h2>
-						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallback classes</a> to use with IE since media queries did not work before IE9</p>
+						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallbacks</a> for when no media queries are present, such as in IE<9</p>
 						<pre class="half" style="width: 52%"><code class="language-scss">
 $breakpoint-no-query-fallbacks: true;
 $nav-lg: 500px, 'no-query' '.lte-ie9';
@@ -521,19 +520,31 @@ nav {
 					<section data-state="bronze">
 						<h2>Bronze challenge:</h2>
 						<br>
-						<p>Create a single breakpoint on the page.<br> Change the background color.</p>
+						<p>Create a media query that will increase the body's font size when:</p>
+						<ul>
+							<li>A chosen <code>min-width</code></li>
+						</ul>
 						<br>
 					</section>
 					<section data-state="silver">
 						<h2>Silver challenge:</h2>
 						<br>
-						<p>Create two breakpoints.<br> Use two different <code>min-width</code> queries.</p>
+						<p>Create a media query that will change the color scheme when:</p>
+						<ul>
+							<li>The website is in portrait</li>
+						</ul>
 						<br>
 					</section>
 					<section data-state="gold">
 						<h2>Gold challenge:</h2>
 						<br>
-						<p>Create a breakpoint between the previous two.<br> Use a <code>min-width</code> and <code>max-width</code> query.</p>
+						<p>Output media queries in <code>em</code> units.</p>
+						<p>Create a media query that will change to a third color scheme when:</p>
+						<ul>
+							<li>The body's font size changes in landscape<br><i>- or -</i></li>
+							<li>A chosen <code>max-height</code> in portrait<br><i> - or -</i></li>
+							<li>The browser is IE8 or below</li>
+						</ul>
 					</section>
 				</section>
 
@@ -568,7 +579,7 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 					</section>
 					<section>
 						<h2>Grid Output Styles</h2>
-						<p>Out of the box, Singularity offers two output styles, <b>float</b> and <b>isolation</b>. The default output style is <b>isolation</b>, but we're going to change it <b>float</b>.
+						<p>Out of the box, Singularity offers two output styles, <b>float</b> and <b>isolation</b>. The default output style is <b>isolation</b>, but we're going to change it <b>float</b> for now as it will be more familiar to begin with.
 						</p><br>
 						<pre><code class="language-scss">$output: 'float';</code></pre>
 					</section>
@@ -594,23 +605,33 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 					<section data-state="bronze">
 						<h2>Bronze challenge:</h2>
 						<br>
-						<p>Create a two column layout in the Web Chef Caf&eacute;.</p>
-						<br>
-						<p class="fragment"><em class="subdued">use Singularity</em></p>
+						<p>Create a Basic Symmetric Grid</p>
+						<ul>
+							<li>10 Columns</li>
+							<li>Float Output Style</li>
+							<li>Column to Gutter ratio of 1:3</li>
+							<li>Display the debugging grid in the <code>&lt;article&gt;</code></li>
+						</ul>
 					</section>
 					<section data-state="silver">
 						<h2>Silver challenge:</h2>
 						<br>
-						<p>Create a three column layout at a different breakpoint.</p>
-						<br>
-						<p class="fragment"><em class="subdued">use Singularity and Breakpoint</em></p>
+						<p>Attach Items to the Grid</p>
+						<ul>
+							<li>Make Ingredients span the first two columns</li>
+							<li>Make Directions span the next three columns</li>
+							<li>Make Media span the last five columns</li>
+						</ul>
 					</section>
 					<section data-state="gold">
 						<h2>Gold challenge:</h2>
 						<br>
-						<p>Create an asymmetrical grid.</p>
-						<br>
-						<p class="fragment"><em class="subdued"><code>$grids: 3 6 3;</code></em></p>
+						<p>Change Visual Order Without Changing Source Order</p>
+						<ul>
+							<li>Make Media span the first two columns</li>
+							<li>Make Ingredients span the next three columns</li>
+							<li>Make Directions span the last five columns</li>
+						</ul>
 					</section>
 
 					<section data-state="alert">
@@ -652,7 +673,7 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 					<section>
 						<h2>Global Contexts</h2>
 						<p>Settings <b>$grids</b> and <b>$gutters</b> set a global context for them, making them available to use without redeclaring them each time they're needed.</p>
-						<p class="fragment">You can set different global contexts to use at different <b>min-width</b> or <b>max-width</b> breakpoints</p>
+						<p class="fragment">You can set different global contexts to use at different <b>min-width</b> breakpoints</p>
 						<pre class="fragment"><code class="language-scss">$grids: 12;
 $grids: add-grid(2 8 2 at 500px);
 
