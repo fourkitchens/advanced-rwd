@@ -428,6 +428,32 @@ ul li {
 				<section>
 					<section data-state="bluesy">
 						<br><br>
+						<h1>Bundler</h1>
+					</section>
+					<section>
+						<h2>Bundler: Unifying Gem Versions</h2>
+						<p>When working on different computers, developers, or even projects, there will always be an issue with ruby gems changing between different versions.</p>
+						<p>We want to make sure that we know which versions of each gem we are using to prevent compiling differences and errors. Bundler allows us to do just that. But first, we need to make sure we have Bundler installed:</p>
+						<pre><code class="language-javascript">gem install bundler</code></pre>
+					</section>
+					<section>
+						<h2>Bundler: Unifying Gem Versions</h2>
+						<p>The <code>Gemfile</code> that comes with the project will tell Bundler exactly what versions of what gems to use. Use the following command to create a <code>Gemfile.lock</code> file within your theme to install gem dependencies you may not already have and to lock each gem version.</p>
+						<pre><code class="language-javascript">bundle install</code></pre>
+					</section>
+					<section>
+						<h2>Bundler: Unifying Gem Versions</h2>
+						<p>From now on, instead of running "compass watch" or "compass compile", you can use:</p>
+						<pre><code class="language-javascript">bundle exec compass watch</code></pre>
+						<br>
+						<p>And bundler will only use the gem versions selected within the .lock file</p>
+					</section>
+					</section>
+				</section>
+
+				<section>
+					<section data-state="bluesy">
+						<br><br>
 						<h1>Media Queries</h1>
 					</section>
 					<section>
@@ -753,7 +779,50 @@ $gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
 						<p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
 						<img src="img/grid-examples.png" alt="Examples of grids">
 					</section>
-
+					<section>
+						<h2>Asymmetric Grids</h2>
+						<p>Grids where the columns are not the same size</p>
+						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
+						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
+					</section>
+					<section>
+						<h2>Types of Asymmetric Grids</h2>
+						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
+						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
+						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
+						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
+						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
+					</section>
+					<section>
+						<h2>Custom Grid</h2>
+						<pre><code class="language-scss">// List of column width in relation to each other
+$grids: 5 2 3 3 7 9;</code></pre>
+						<img src="img/custom.png">
+					</section>
+					<section>
+						<h2>Compound Grid</h2>
+						<pre><code class="language-scss">// List of symmetric grids to compound together
+$grids: compound(3, 4);</code></pre>
+						<img src="img/compound.png">
+					</section>
+					<section>
+						<h2>Ratio Grid</h2>
+						<pre><code class="language-scss">// Ratio and number of columns
+$grids: ratio(golden(), 4);</code></pre>
+						<img src="img/ratio.png">
+					</section>
+					<section>
+						<h2>Ratio Spiral Grid</h2>
+						<pre><code class="language-scss">// Number of columns and ratio
+$grids: ratio-spiral(5, golden());</code></pre>
+						<img src="img/spiral.png">
+					</section>
+					<section>
+						<h2>Snap Grid</h2>
+						<pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
+$grids: snap(2 4 4 2, 1/3);</code></pre>
+						<img src="img/snap.png">
+					</section>
 					<section>
 						<h2>Global Contexts</h2>
 						<p>Settings <b>$grids</b> and <b>$gutters</b> set a global context for them, making them available to use without redeclaring them each time they're needed.</p>
@@ -803,161 +872,108 @@ $gutters: 1/3;
 					<section data-state="bronze">
 						<h2>Bronze challenge:</h2>
 						<br>
-						<p>Create a 4 column layout a new breakpoint in Web Chef Caf&eacute;.</p>
-						<br>
+						<p>Create a Ratio Based Grid</p>
+						<ul>
+							<li>Add <code>singularity-extras</code> to your Gemfile and install through Bundler. The version should be <code>&lt;1.0.0</code>.</li>
+							<li>Require <code>singularity-extras</code> in your <code>config.rb</code> file and import <code>singularity-extras</code> generators into your stylesheets</li>
+							<li>Change your grid definition to a 2 column golden ratio based isolation grid</li>
+							<li>Remove your <code>grid-span</code> calls, they're going to break while we drastically change our grids</li>
+						</ul>
 					</section>
 					<section data-state="silver">
 						<h2>Silver challenge:</h2>
 						<br>
-						<p>Override the layout for the hours and contact to be 2 columns.</p>
-						<br>
+						<p>Create a Medium Layout</p>
+						<ul>
+							<li>Based on your content, choose a <code>min-width</code> to switch from one column to multiple columns</li>
+							<li>Make Ingredients span the first column</li>
+							<li>Make Directions span the second column</li>
+							<li>Make Media span the first column underneath ingredients</li>
+						</ul>
 					</section>
 					<section data-state="gold">
 						<h2>Gold challenge:</h2>
 						<br>
-						<p>Separate the menu to be 3 columns for the largest breakpoint.</p>
-						<br>
+						<p>Create a Large Layout</p>
+						<ul>
+							<li>Based on your content, choose a <code>min-width</code> to switch from two columns to three columns</li>
+							<li>Add a 3 column golden ratio based grid at that point</li>
+							<li>Adjust the gutter</li>
+							<li>Make Media span the first column</li>
+							<li>Make Ingredients span the second column</li>
+							<li>Make Directions span the third column</li>
+						</ul>
 					</section>
 				</section>
 
 				<section>
 					<section data-state="bluesy">
 						<br><br>
-						<h1>Aurora: Theme and Compass Extension</h1>
+						<h1>Toolkit</h1>
 					</section>
 					<section>
-						<h2>What is Aurora?</h2>
-						<br>
-						<h3 class="fragment">It is a <b>base theme for Drupal</b>.</h3>
-						<p class="fragment">It provides HTML5 templates and some optional tools. You're in control of your theme.</p>
-						<br>
-						<h3 class="fragment">It is also a <b>compass extension</b></h3>
-						<p class="fragment">It's designed to allow you to create you own sub-themes without the need to copy/find/replace a starter-kit.</p>
+						<h2>What Is Toolkit?</h2>
+						<p><a href="https://github.com/team-sass/toolkit">Toolkit</a> has been providing for us our box model fix and our fluid images, but it can do so much more</p>
+						<p>Designed not as a CSS Framework, but rather a set of tools to build your own, Toolkit makes doing things the right way the easy way</p>
 					</section>
 					<section>
-						<h2>The Compass Extension</h2>
-						<p>The compass extension provides three flavors of an Aurora sub-theme to choose from. They are all very similar. Only their Sass partial structures differ:</p>
+					<h2>Basic Fluid Media</h2>
+					<p>Provided by Toolkit by default, the basic way to get images to squish and maintain their dimensions is fairly easy CSS</p>
+					<pre><code class="language-scss">img, video {
+	max-width: 100%;
+	height: auto;
+}</code></pre>
+				<p class="fragment"><em>But Embedded Content Isn't So Easy</em></p>
+				</section>
+				<section>
+						<h2>Intrinsic Ratios</h2>
+						<p><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a> are a CSS technique that allow you to constrain child elements to a ratio and percentage of its parent</p>
 						<br>
-						<ul>
-							<li><b>Aurora Proper:</b> the standard Aurora base-theme.</li><br>
-							<li><b>Corona:</b> a variation, containing more variables and structure to start your development off with. </li><br>
-							<li><b>Polaris:</b> a SMACSS-based sub-theme</li>
-						</ul>
-					</section>
-					<section>
-						<h2>What's in Aurora?</h2>
-						<p>Sass tools</p>
-						<p>Workflow goodies</p>
-					</section>
-					<section data-state="soothe">
-						<br>
-						<h2>Switch to Training Wheels</h2>
-						<br>
-						<p>Aurora theming will happen on your<br> personal development environments</p>
-						<br>
-						<p class="fragment">Good news! They already have Sass,<br> Compass, and all the other gems installed.</p>
-					</section>
-					<section data-state="soothe">
-						<h2>Using this Drupal instance</h2>
-						<br>
-						<p>Code is located at:<br> <code>/twhome/SPICE/rwd/drupal</code></p>
-						<br>
-						<p class="fragment">Drupal is also installed. You can reach it at http://SPICE.rwd.4kclass.com/drupal.</p>
-						<br>
-						<p class="fragment">The username is <i>admin</i>, the password is <i>password</i></p>
-					</section>
-					<section>
-						<h2>Creating a Sub-Theme</h2>
-						<p>On other computers you'll have to install<br> ruby, compass, and compass-aurora.<br><br> Full directions are on the <a href="http://snugug.github.io/Aurora/">Aurora documentation</a>.</p><br>
-					</section>
-					<section data-state="medal-pre">
-						<h2>Creating a Sub-Theme</h2>
-						<p>The Compass extension allows us to quickly create a "starter kit" sub-theme, removing the need for copying/pasting theme files and replacing "STARTERKIT" with your theme name.</p>
-						<pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
-						<br>
-						<br>
-						<p class="fragment">And to stop the little kittens from crying, you can add these optional flags:</p>
-						<pre class="fragment"><code class="language-css">    --css-dir="css" --javascripts-dir="js"</code></pre>
-					</section>
-					<section data-state="bronze">
-						<h2>Bronze:</h2>
-						<p>Create a Aurora Corona sub-theme<br> and then enable it in Drupal.</p>
-						<br>
-						<pre class="fragment"><code class="language-css">    compass create {theme_name} -r aurora --using aurora/corona</code></pre>
-					</section>
-					<section data-state="silver">
-						<h2>Silver:</h2>
-						<p>Change the output directories within your new<br> Compass project to use "img" instead of "images"</p>
-						<br>
-						<p class="fragment"><em class="subdued">restart compass once you change the config file</em>
-					</section>
-					<section data-state="gold">
-						<h2>Gold:</h2>
-						<p>Get Compass running within your theme<br> and make a change on the Drupal site.</p>
-						<br>
-						<p class="fragment"><em class="subdued">
-							<code>compass compile</code> is a one-time command<br>
-							<code>compass watch</code> will keep compiling
-						</em></p>
-					</section>
-					<section>
-						<h2>Bundler: Unifying Gem Versions</h2>
-						<p>When working on different computers, developers, or even projects, there will always be an issue with ruby gems changing between different versions.</p>
-						<p>We want to make sure that we know which versions of each gem we are using to prevent compiling differences and errors. Thus, Aurora comes bundler integration. Use the following command to create a <code>.lock</code> file within your theme to lock each gem version.</p>
-						<pre><code class="language-javascript">bundle install</code></pre>
+						<pre class="fragment"><code class="language-scss">
+			// Intrinsic Ratio mixin comes from [Toolkit](https://github.com/team-sass/toolkit)
+			.ratio-16-9 {
+				@include intrinsic-ratio;
+			}
 
-					</section>
-					<section>
-						<h2>Bundler: Unifying Gem Versions</h2>
-						<p>From now on, instead of running "compass watch" or "compass compile", you can use:</p>
-						<pre><code class="language-javascript">bundle exec compass watch</code></pre>
-						<br>
-						<p>And bundler will only use the gem versions selected within the .lock file</p>
-						<br>
-						<p class="fragment">But wait... THERE'S MORE!</p>
-					</section>
-					<section>
-  				  <h2>Aurora: Now with Grunt!</h2>
-  				  <p>The "compass watch" command will use heavy resources on your system, and we have more we want to watch for then just sass file changes. Thus, we also are including (optionally) grunt.js integration for your theme.</p>
-  				  <p>We can install the grunt.js integration with:</p>
-  				  <pre><code class="language-javascript">compass install aurora/grunt</code></pre>
-  				  <pre><code class="language-javascript">npm install</code></pre>
-					</section>
-					<section data-state="medal-pre">
-						<h2>Aurora: Now with Grunt!</h2>
-						<p>What does it all include?</p>
-						<ul>
-							<li>Automatic Sass file compilation</li>
-							<li>JavaScript linting</li>
-							<li>Image minification</li>
-							<li>Uglify.js your JavaScript</li>
-							<li>Deployment of Sass files in minified form</li>
-							<li>Automatic live reload integration</li>
-						</ul>
-						<p>Once enabled, just run:</p>
-						<pre><code class="language-javascript">grunt watch</code></pre>
+			.ratio-4-3 {
+				@include intrinsic-ratio(4/3);
+			}
+
+</code></pre>
 					</section>
 					<section data-state="bronze">
-						<h2>Bronze:</h2>
-						<p>Create your own bundler.lock file within the sub-theme.</p>
-						<p class="fragment"><em class="subdued">bundle install</em></p>
+						<h2>Bronze challenge:</h2>
+						<br>
+						<p>Create an Intrinsic Ratio for the Video</p>
+						<ul>
+							<li>Remove the video's <code>display: none</code>.</li>
+							<li>Apply a 16:9 intrinsic ratio to the video</li>
+						</ul>
 					</section>
 					<section data-state="silver">
-						<h2>Silver:</h2>
-						<p>Install grunt.js integration, and run grunt watch</p>
-						<p class="fragment"><em class="subdued">npm install<br>grunt watch</em></p>
+						<h2>Silver challenge:</h2>
+						<br>
+						<p>Create a CSS Carousel</p>
+						<ul>
+							<li>Turn the list of images into a CSS Carousel 5 items large</li>
+							<li>Create a carousel animation for 5 items, utilizing the <code>start</code> animation</li>
+						</ul>
 					</section>
 					<section data-state="gold">
-						<h2>Gold:</h2>
-						<p>Run the grunt deployment with <code>grunt watch</code><br> (take a look at the css output).</p>
-					</section>
-					<section>
-						<h2>Aurora Base Theme</h2>
-						<p>The base theme is primarily HTML5 template files, nothing more.</p><br>
-						<p>There is also a setting on the setting page to turn on live reload, which will allow you to use live reload when running "grunt watch"</p>
+						<h2>Gold challenge:</h2>
+						<br>
+						<p>Inline Media</p>
+						<ul>
+							<li>Based on your content for the <code>min-width</code> and the point you go from one column to two columns, create a fenced query for inline media</li>
+							<li>At your inline media query, position the video and the carousel next to each other using a two column grid</li>
+							<li>The carousel should span the first column</li>
+							<li>The video should span the last column</li>
+							<li>The video should be the same ratio as the carousel</li>
+						</ul>
 					</section>
 				</section>
 
+				<!--
 				<section>
 					<section data-state="bluesy">
 						<br><br>
@@ -1224,58 +1240,7 @@ $gutters: 1/3;
 						<p class="fragment">Go to your theme settings, and lets examine the settings available.</p>
 					</section>
 				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<h1>Singularity: The Crazy Parts</h1>
-						<p>If we have time, we have slides on the more crazy pieces of its functionality for advanced usage.</p>
-					</section>
-					<section>
-						<h2>Asymmetric Grids</h2>
-						<p>Grids where the columns are not the same size</p>
-						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
-						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
-					</section>
-					<section>
-						<h2>Types of Asymmetric Grids</h2>
-						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
-						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
-						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
-						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
-						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
-					</section>
-					<section>
-						<h2>Custom Grid</h2>
-						<pre><code class="language-scss">// List of column width in relation to each other
-$grids: 5 2 3 3 7 9;</code></pre>
-						<img src="img/custom.png">
-					</section>
-					<section>
-						<h2>Compound Grid</h2>
-						<pre><code class="language-scss">// List of symmetric grids to compound together
-$grids: compound(3, 4);</code></pre>
-						<img src="img/compound.png">
-					</section>
-					<section>
-						<h2>Ratio Grid</h2>
-						<pre><code class="language-scss">// Ratio and number of columns
-$grids: ratio(golden(), 4);</code></pre>
-						<img src="img/ratio.png">
-					</section>
-					<section>
-						<h2>Ratio Spiral Grid</h2>
-						<pre><code class="language-scss">// Number of columns and ratio
-$grids: ratio-spiral(5, golden());</code></pre>
-						<img src="img/spiral.png">
-					</section>
-					<section>
-						<h2>Snap Grid</h2>
-						<pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
-$grids: snap(2 4 4 2, 1/3);</code></pre>
-						<img src="img/snap.png">
-					</section>
-				</section>
-
+ -->
 				<section>
 					<section data-state="blackout">
 						<br><br>
@@ -1286,12 +1251,12 @@ $grids: snap(2 4 4 2, 1/3);</code></pre>
 						<br>
 						<p>We'd really appreciate your thoughts about today<br> so we can continue improving this course.</p>
 						<br>
-						<p class="fragment">Surveys are being handed out so you can provide<br> us with feedback in an anonymous fashion.<br><br> We appreciate your honest opinion.</p>
+						<!-- <p class="fragment">Surveys are being handed out so you can provide<br> us with feedback in an anonymous fashion.<br><br> We appreciate your honest opinion.</p> -->
 					</section>
-					<section>
+<!-- 					<section>
 						<h1 style="letter-spacing: -2px; ">FOUR KITCHENS</h1>
 						<img src="img/4k-logo-square-500px.png" alt="" class="bare">
-					</section>
+					</section> -->
 				</section>
 			</div>
 
