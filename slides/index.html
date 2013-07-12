@@ -480,12 +480,102 @@ $nav-lg: 680px;
 }
 						</code></pre>
 					</section>
-					<section>
-						<h2>Benefits of Breakpoint</h2>
+					<section id="breakpoint-value-proposition">
+            <h2>Breakpoint Breakdown</h2>
 						<br>
-						<p>You keep all the styles for a component in one place</p>
+            <p>Boil down most media queries to one simple value.</p>
+            <p class="fragment">Assign that value a meaningful name.</p>
+						<p class="fragment">You keep all the styles for a component in one place</p>
+            <p class="fragment">Manage media queries by purpose and context.</p>
+<!--             <p class="fragment">Simplify creating all media queries, even the crazy complex ones.</p>
 						<p class="fragment">No real performance hit from dupe media queries.</p>
 						<p class="fragment">CSS-only fallback system. No need for respond.js</p>
+ -->
+          </section>
+          <section id="breakpoint-basic-single">
+						<h2>Single value = min-width</h2>
+						<p>Pass Breakpoint just a number and you get a min-width query.</p>
+						<pre class="half"><code class="language-scss">// THIS IS OUR FIRST BREAKPOINT VARIABLE
+$basic: 500px; // <-- YUP, THIS ONE
+
+#main-nav {
+  width: 100%
+  @include breakpoint($basic) {
+    width: 75%;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#main-nav {
+  width: 100%
+}
+@media (min-width: 500px) {
+  #main-nav {
+    width: 75%;
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-basic-fenced">
+						<h2>Fenced Values</h2>
+						<p>Two values creates a min-width / max-width query.</p>
+						<pre class="half"><code class="language-scss">$big-header: 330px 750px;
+
+#header {
+  font-size: 2em;
+  @include breakpoint($big-header) {
+    font-size: 2.5em;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#header {
+  font-size: 2em;
+}
+@media (min-width: 330px) and (max-width: 750px) {
+  #header {
+    font-size: 2.5em;
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-basic-explicit">
+						<h2>Explicit Test / Value</h2>
+						<p>If one value is a string, assume a feature/value pair</p>
+						<pre class="half"><code class="language-scss">$too-damn-wide: max-width 1000px;
+
+#hero-image {
+  max-width: 100%;
+  margin: 2em 0;
+  @include breakpoint($too-damn-wide) {
+	  margin: 0.5em 0;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#hero-image {
+  max-width: 100%;
+  margin: 2em 0;
+}
+@media (max-width: 1000px) {
+  #fifty-seven-chevy {
+    margin: 0.5em 0;
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-basic-combine">
+						<h2>Combine Tests</h2>
+						<p>String them together to create more complex queries</p>
+						<pre class="half"><code class="language-scss">$tighten-text: (max-width 1000px) (orientation portrait);
+
+#main-article {
+  font-size: 1em;
+  line-height: 1.375;
+  @include breakpoint($tighten-text) {
+    line-height: 1.25;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#main-article {
+  font-size: 1em;
+  line-height: 1.375;
+}
+@media (max-width: 1000px) and (orientation: portrait) {
+  #pappas {
+    line-height: 1.25;
+  }
+}</code></pre>
 					</section>
 					<section data-state="medal-pre">
 						<h2>No-query fallbacks</h2>
