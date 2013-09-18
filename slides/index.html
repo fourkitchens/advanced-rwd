@@ -84,17 +84,17 @@
 						<ul class="naked">
 							<li>9:00 - Personal intros and agenda</li>
 							<li>9:20 - Intro to Sass+Compass</li>
-							<li>10:00 - Break</li>
-							<li>10:10 - Media-queries: Breakpoint</li>
+							<li>10:15 - Coffee Break</li>
+							<li>10:30 - Media-queries: Breakpoint</li>
 							<li>10:45 - Singularity and The Grid</li>
-							<li><em style="display: block; padding: .4em 0; text-align: center; color: #999; ">Lunch for 90 minutes</em>
-							<li>13:30 - Content-first Grid Systems</li>
+							<li><em style="display: block; padding: .4em 0; text-align: center; color: #999; ">11:45 - Lunch for 90 minutes</em>
+							<li>13:15 - Content-first Grid Systems</li>
 							<li>14:30 - Aurora: Theme and Compass Extension</li>
-							<li>15:15 - Break</li>
-							<li>15:30 - Modernizr Module</li>
-							<li>16:00 - Magic: The Gathering</li>
-							<li>16:30 - Fluid media in Drupal: Borealis</li>
-							<li>17:00 - Wrap up</li>
+							<li>15:15 - Coffee Break</li>
+							<li>15:30 - Magic: The Gathering</li>
+							<li>16:00 - Fluid media in Drupal: Borealis</li>
+							<li>16:25 - Advanced Singularity Grids</li>
+							<li>16:45 - Wrap Up / Course Evaluations</li>
 						</ul>
 					</section>
 					<section>
@@ -853,213 +853,6 @@ $gutters: 1/3;
 					</section>
 				</section>
 
-				<section>
-					<section data-state="bluesy">
-						<br><br>
-						<h1>Feature Detection</h1>
-					</section>
-					<section>
-						<h2>Why feature detection?</h2>
-						<br>
-						<p>It arose as a response to the <em>staggering</em> number of devices accessing the web.</p>
-						<br>
-						<p class="fragment">The web was designed to embrace this diversity, so we should too.</p>
-					</section>
-					<section data-state="fingerprint-pre">
-						<h2>Just remember:</h2>
-						<br><br>
-						<ul>
-							<li class="xs fragment" data-state="alert">Stop relying on nosey servers<br><br></li>
-							<li class="checks fragment" data-state="soothe">Start relying on honest browsers<br><br></li>
-						</ul>
-						<br><br>
-						<p class="fragment">Testing browser capabilities on the fly allows each device to format content in the best manner.</p>
-					</section>
-					<section data-state="fingerprint" style="position: absolute; left: -140px; display: block; ">
-						<h2>Modernizr</h2>
-						<br>
-						<p>Like two people with the same name,<br> user-agent strings tell us very little<br> about two different Chromes, IEs, etc.</p>
-						<br>
-						<p class="fragment">Forget about tracking all the mobile devices!</p>
-						<br>
-						<p class="fragment">Modernizr takes a browser's fingerprint</p>
-					</section>
-					<section>
-						<h2>Nothing is Perfect</h2>
-						<br>
-						<p>Even though feature detection is <em>WAY</em> more reliable than UA-sniffing, it still gets fed bad data occasionally</p>
-						<br>
-						<p class="fragment"><a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/">You can't detect a touch screen.</a></p>
-						<br>
-						<p class="fragment">JavaScript can only see APIs that are exposed to it</p>
-					</section>
-					<section>
-						<h2>Feature detection + Sass</h2>
-						<br>
-						<p>Since many JavaScript tools use classes on <code>&lt;html></code><br> to store their state, we can use the <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#referencing_parent_selectors_">Sass parent selector</a> to easily target them.</p>
-						<br><br>
-						<p class="fragment">It keeps your code more organized.</p>
-					</section>
-					<section>
-						<h1>&amp;</h1>
-						<pre class="fragment"><code class="language-scss">
-			#logo a {
-				background-image: url(../img/logo.png);
-
-				.inlinesvg & {
-					background-image: url('data:image/svg+xml;utf8,...');
-				}
-			}
-						</code></pre>
-						<br>
-						<pre class="fragment"><code class="language-scss">
-			#logo a {
-				background-image: url(../img/logo.png);
-			}
-			.inlinesvg #logo a {
-				background-image: url('data:image/svg+xml;utf8,...');
-			}
-						</code></pre>
-					</section>
-					<section data-state="soothe medal-pre">
-						<br>
-						<h2>Switch to Training Wheels</h2>
-						<br>
-						<p>Working with Modernizr will happen on your<br> personal development environments</p>
-						<br>
-						<p class="fragment">They already have the Modernizr module downloaded,<br> but it is not yet installed and running properly.</p>
-					</section>
-					<section data-state="bronze">
-						<h2>Bronze</h2>
-						<br>
-						<p>Enable Modernizr module and verify that it is working</p>
-						<br>
-						<p class="fragment"><em class="subdued">drush en modernizr<br><br> -or-<br><br> drush mdl</em></p>
-						<br>
-
-					</section>
-					<section>
-						<h2>Conditional loading</h2>
-						<br>
-						<p>If you need to load a piece of code to make up for missing browser features, Modernizr has you covered.</p>
-						<br>
-						<p class="fragment"><code>Modernizr.load()</code> loads stuff based on test results:</p>
-						<pre class="fragment"><code class="language-javascript">
-					Modernizr.load({
-						test: Modernizr.geolocation,
-						nope: '/sites/all/libraries/geolocation/geo.js',
-						callback: function(){ geo.init(); }
-					});
-						</code></pre>
-					</section>
-					<section>
-						<h2>Progressive loading</h2>
-						<br>
-						<p class="fragment">Modernizr can be used the other way around too.<br> Use it to load stuff <em>only when needed</em>.</p>
-						<br>
-						<pre class="fragment"><code class="language-javascript">
-					Modernizr.load({
-						test: Modernizr.mq('(min-width: 42em)'),
-						 yep: '/sites/all/themes/example/xl.css'
-					});
-						</code></pre>
-						<br>
-						<p class="fragment"><a href="http://fourkitchens.com/blog/2013/04/24/one-less-jpg">One Less JPG</a></p>
-					</section>
-					<section>
-						<h2>Modernizr module</h2>
-						<br><br>
-						<p class="fragment">Test API: allows modules/themes to declare tests</p>
-						<p class="fragment">Load API: allows modules/themes to use <code>Modernizr.load()</code></p>
-						<br>
-					</section>
-					<section data-state="medal-pre">
-						<h2>Test API</h2>
-						<br>
-						<p class="fragment">Modules use a hook:</p>
-						<pre class="fragment"><code class="language-javascript">
-								function MYMODULE_modernizr_info() {
-									$tests[] = 'geolocation';
-									return $tests;
-								}
-						</code></pre>
-						<br>
-						<p class="fragment">Themes use the .info file:</p>
-						<pre class="fragment"><code class="language-javascript">
-									modernizr[tests][] = geolocation
-						</code></pre>
-					</section>
-					<section data-state="silver">
-						<h2>Silver</h2>
-						<br>
-						<p>Get a new feature test to appear in the<br> Modernizr module's configuration page.</p>
-						<br>
-						<p class="fragment"><em class="subdued">add a test in your Aurora sub-theme .info file</em></p>
-						<br>
-						<p class="fragment"><em class="subdued"><b>bonus:</b> if you can write module hooks,<br> make a hook in the <code>cafe</code> module</em></p>
-					</section>
-					<section>
-						<h2>Load API: Modules</h2>
-						<p class="fragment">Use another hook:</p>
-						<pre class="fragment" style="width: 110%;"><code class="language-javascript">function MYMODULE_modernizr_load() {
-	$load[] = array(
-		'test' => 'Modernizr.geolocation',
-		'nope' => array('/' . drupal_get_path('module','geolocation') . '/js/geo.js'),
-		'callback' => 'function(){ geo.init(); }',
-	);
-	return $load;
-}</code></pre>
-						<p class="fragment">Turns into:</p>
-						<pre class="fragment" style="width: 105%;"><code class="language-javascript">
-					Modernizr.load({
-						test: Modernizr.geolocation,
-						nope: '/sites/all/modules/geolocation/js/geo.js',
-						callback: function(){ geo.init(); }
-					});
-						</code></pre>
-					</section>
-					<section>
-						<h2>Load API: Themes</h2>
-						<p class="fragment"><code>mytheme.info</code> file:</p>
-						<pre class="fragment" style="width: 105%;"><code class="language-javascript">
-					modernizr[Modernizr.cssfilters][yep][] = css/super-fancy.css
-						</code></pre>
-						<p class="fragment">Turns into:</p>
-						<pre class="fragment" style="width: 105%;"><code class="language-javascript">
-					Modernizr.load({
-						test: Modernizr.cssfilters,
-						 yep: '/sites/all/themes/mytheme/css/super-fancy.css'
-					});
-						</code></pre>
-						<br>
-						<p class="fragment"><code>mytheme_modernizr_load_alter()</code><br> works the same as module hooks too.</p>
-					</section>
-					<section data-state="medal-pre">
-						<h2>drupal.org docs</h2>
-						<br>
-						<ul>
-							<li><a href="http://drupal.org/project/modernizr">Modernizr module homepage</a></li>
-							<li><a href="http://drupal.org/node/1913726">Feature detection</a></li>
-							<li><a href="http://drupal.org/node/1913744">Installing Modernizr module</a></li>
-							<li><a href="http://drupal.org/node/1913748">Create custom builds using Test API</a></li>
-							<li><a href="http://drupal.org/node/1913830">Modernizr.load() basics</a></li>
-						</ul>
-					</section>
-					<section data-state="gold">
-						<h2>Gold</h2>
-						<br>
-						<p>Create a conditional load using the Load API.</p>
-						<br>
-						<p class="fragment"><em class="subdued">add the code to your Aurora sub-theme .info file</em></p>
-						<br>
-						<p class="fragment"><em class="subdued">bonus: those who are module-fearless<br> can write another hook in <code>cafe</code> module.<br> Check out <code>modernizr.api.php</code></em></p>
-					</section>
-					<section>
-						<h2>More tomorrow!</h2>
-						<br><br>
-						<p style="font-size: 1.25em; "><a href="http://portland2013.drupal.org/session/meet-modernizr-module">Meet the Modernizr module</a><br>3:15pm in OR 202 (Lullabot room)</p>
-					</section>
-				</section>
 
 				<section>
 					<section data-state="bluesy">
