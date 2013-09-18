@@ -5,7 +5,7 @@
  */
 function field_formatter_settings_hook_info() {
   $hooks = array(
-    'field_formatter_settings_form',
+    'field_formatter_settings_form_alter',
     'field_formatter_settings_summary_alter',
   );
 

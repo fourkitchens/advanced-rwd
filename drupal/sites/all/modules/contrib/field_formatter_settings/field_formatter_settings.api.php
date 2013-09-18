@@ -17,7 +17,14 @@
  *   The settings form array from the field module's implementation of
  *   hook_field_formatter_settings().
  * @param $context
- *   An array of additional context for the settings form.
+ *   An array of additional context for the settings form, containing:
+ *   - module: The module providing the formatter being configured.
+ *   - formatter: The definition array of the formatter being configured. Note
+ *     that this does not contain the machine name of the formatter. This can
+ *     be found in:
+ *     @code
+ *     $context['instance']['display'][$context['view_mode']]['type']
+ *     @endcode
  *   - field: The field structure being configured.
  *   - instance: The instance structure being configured.
  *   - view_mode: The view mode being configured.

@@ -293,8 +293,6 @@ function aurora_pager_last($variables) {
  * @ingroup themeable
  */
 function aurora_pager_link($variables) {
-  dpm($variables);
-
   $text = $variables['text'];
   $page_new = $variables['page_new'];
   $element = $variables['element'];

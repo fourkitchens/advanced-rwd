@@ -1,5 +1,24 @@
 <?php
-// $Id: styleguide.module,v 1.12 2010/10/23 23:28:43 agentken Exp $
+
+/**
+ * Implements hook_help().
+ */
+function styleguide_help($path, $arg) {
+  $output = '';
+  switch ($path) {
+    // Main module help for the Style guide module.
+    case 'admin/help#styleguide':
+      $output .= '<p>' . t('Provides a visual testing page for Drupal themes. Quickly compare the display of common elements across your themes, and verify that your new theme addresses all common style elements.') . '</p>';
+
+      $output .= '<p>' . t('The Style Guide module creates a preview page for displaying common theme elements in all active themes for your Drupal site. The module comes with previews for common HTML elements, such as tables, forms, links and lists.') . '</p>';
+
+      $output .= '<p>' . t('You can preview the styleguide at !url', array('!url' => l(t('admin/appearance/styleguide'), "admin/appearance/styleguide"))) . '</p>';
+
+      break;
+  }
+
+  return $output;
+}
 
 /**
  * Implements hook_menu().
@@ -29,6 +48,18 @@ function styleguide_menu() {
     );
   }
   return $items;
+}
+
+/**
+ * Implements hook_admin_paths().
+ */
+function styleguide_admin_paths() {
+  $paths = array(
+    'admin/appearance/styleguide' => FALSE,
+    'admin/appearance/styleguide/*' => FALSE,
+  );
+
+  return $paths;
 }
 
 /**
@@ -91,7 +122,8 @@ function styleguide_access_check($theme) {
  * The styleguide page.
  */
 function styleguide_page($theme = NULL) {
-  drupal_add_css(drupal_get_path('module', 'styleguide') . '/styleguide.css');
+  // Get the path to the module for loading includes.
+  $path = drupal_get_path('module', 'styleguide');
 
   // TODO: notice about the Overlay module?
 
@@ -103,6 +135,14 @@ function styleguide_page($theme = NULL) {
   // Get theme data.
   $themes = list_themes();
   $active = $themes[$theme];
+
+  // Include modules for which we implement styleguides.
+  $modules = module_list();
+  foreach ($modules as $module) {
+    if (file_exists($path . '/modules/' . $module . '.inc')) {
+      include_once $path . '/modules/' . $module . '.inc';
+    }
+  }
 
   // Get visual testing elements.
   $items = module_invoke_all('styleguide');
@@ -133,6 +173,7 @@ function styleguide_page($theme = NULL) {
     foreach ($elements as $key => $item) {
       $display = '';
       // Output a standard theme item.
+
       if (isset($item['theme'])) {
         $display = theme($item['theme'], $item['variables']);
       }
@@ -162,11 +203,13 @@ function styleguide_page($theme = NULL) {
     }
     $head .= theme('item_list', array('items' => $header[$group], 'title' => $group));
   }
-  $output = theme('styleguide_header', array('theme_info' => $theme_info));
-  $output .= theme('styleguide_links', array('items' => $head));
-  $output .= theme('styleguide_content', array('content' => $content));
   // Return the page.
-  return $output;
+  $build = array();
+  $build['header']['#markup'] = theme('styleguide_header', array('theme_info' => $theme_info));
+  $build['navigation']['#markup']= theme('styleguide_links', array('items' => $head));
+  $build['content']['#markup'] = theme('styleguide_content', array('content' => $content));
+  $build['content']['#attached']['css'][] = $path . '/styleguide.css';
+  return $build;
 }
 
 /**
@@ -187,19 +230,31 @@ function styleguide_hook_info() {
  * @return
  *   An array of words.
  */
-function styleguide_list($size = 5) {
+function styleguide_list($size = 5, $words = 3) {
   $items = array();
   for ($i = 0; $i < $size; $i++) {
-    $items[] = styleguide_word();
+    $items[] = styleguide_word($words, 'ucfirst');
   }
   return $items;
 }
 
 /**
- * Return a random word.
+ * Return a random word or words.
+ *
+ * @param $size
+ *   The number of words to return.
+ * @param $case
+ *   A string indicating the case to return. This is the name of a PHP function.
+ *   options are 'ucfirst', 'ucwords', 'strtoupper', and 'strtolower'.
+ *   Defaults to return strtolower().
  */
-function styleguide_word($size = 1) {
-  return styleguide_lorem(1, $size, 'lower', FALSE, FALSE);
+function styleguide_word($size = 1, $case = 'strtolower') {
+  $words = styleguide_lorem(1, $size, 'lower', FALSE, FALSE);
+  $functions = array('ucfirst', 'ucwords', 'strtoupper', 'strtolower');
+  if (!is_null($case) && function_exists($case) && in_array($case, $functions)) {
+    $words = $case($words);
+  }
+  return $words;
 }
 
 /**
@@ -368,6 +423,18 @@ function styleguide_sentence() {
 }
 
 /**
+ * Provide results for the machine_name field's duplication check.
+ *
+ * @param $value
+ *   The submitted value.
+ * @return
+ *   The check isn't necessary here, so always return FALSE.
+ */
+function styleguide_machine_name_exists($value) {
+  return FALSE;
+}
+
+/**
  * Sample form, showing all elements.
  */
 function styleguide_form($form, &$form_state, $form_keys = array()) {
@@ -405,7 +472,7 @@ function styleguide_form($form, &$form_state, $form_keys = array()) {
   $form['textfield'] = array(
     '#type' => 'textfield',
     '#title' => t('Textfield'),
-    '#default_value' => styleguide_word(),
+    '#default_value' => styleguide_word(3, 'ucfirst'),
     '#description' => styleguide_sentence(),
   );
   $form['autocomplete'] = array(
@@ -418,13 +485,14 @@ function styleguide_form($form, &$form_state, $form_keys = array()) {
   $form['textfield-machine'] = array(
     '#type' => 'textfield',
     '#title' => t('Textfield, with machine name'),
-    '#default_value' => styleguide_word() . ' ' . styleguide_word() . ' ' . styleguide_word(),
+    '#default_value' => styleguide_word(3, 'ucfirst'),
     '#description' => styleguide_sentence(),
   );
   $form['machine_name'] = array(
     '#type' => 'machine_name',
     '#title' => t('Machine name'),
     '#machine_name' => array(
+      'exists' => 'styleguide_machine_name_exists',
       'source' => array('textfield-machine'),
     ),
     '#description' => styleguide_sentence(),
@@ -535,3 +603,81 @@ function styleguide_form($form, &$form_state, $form_keys = array()) {
   }
   return $form;
 }
+
+/**
+ * Simulate Drupal pagination,
+ *
+ * @param $size
+ *   The number of page numbers to display.
+ * @param $total
+ *   The total number of pages to simulate.
+ * @return
+ *   A Drupal pager HTML element.
+ */
+function styleguide_pager($size = 8, $total = 20) {
+  global $pager_page_array, $pager_total;
+  $pager_page_array[1] = $size;
+  $pager_total[1] = $total;
+  // For some reason, the pager breaks the page title.
+  drupal_set_title('Style guide');
+  return theme('pager', array('element' => 1));
+}
+
+/**
+ * Generate a array of random links
+ *
+ * @param $url
+ *   The internal path or external URL being linked to.
+ * @param $size
+ *   The total number of links to generate .
+ * @return
+ *   A array of random links
+ */
+function styleguide_links($url, $size = 4) {
+  $links = array();
+  for ($i = 0; $i < 5; $i++) {
+    $links[] = array(
+      'title' => styleguide_word(3),
+      'href' => $url,
+    );
+  }
+  return $links;
+}
+
+/**
+ * Generate a random menu item
+ *
+ * @param $url
+ *   The internal path or external URL being linked to.
+ * @return
+ *   A random menu item, see menu_tree_page_data for a description of the data structure.
+ */
+function styleguide_menu_item($url) {
+  $menu_item = array(
+    '#title' => styleguide_sentence(),
+    '#href' => $url, 
+    '#localized_options' => array(),
+    '#attributes' => array(),
+    '#below' => FALSE,
+  );
+  return $menu_item;
+}
+
+/**
+ * Generate a links array for theme_links.
+ */
+function styleguide_ul_links() {
+  $links = array();
+
+  for ($i = 0; $i <= 10; $i++) {
+    $word = styleguide_word();
+    $links[$word] = array(
+      'title' => $word,
+      'href' => current_path(),
+      'fragment' => 'ul_links',
+    );
+  }
+
+  return $links;
+}
+

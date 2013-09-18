@@ -135,12 +135,20 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
     '#description' => t('If you are using <a href="!link" target="_blank">Typekit</a> to serve webfonts, put your Typekit Kit ID here', array('!link' => 'https://typekit.com/')),
   );
 
+  if (module_exists('blockify') && user_access('administer blockify')) {
+
+    $form['misc']['blockify'] = array(
+      '#markup' => l('+ Configure Blockify', 'admin/config/user-interface/blockify', array('query' => array(drupal_get_destination()))),
+    );
+  }
+
+
 
   //////////////////////////////
   // Development
   //////////////////////////////
 
-  if (!module_exists('magic')) {
+  if (!module_exists('magic_dev')) {
     $form['development'] = array(
       '#type' => 'fieldset',
       '#title' => t('Development'),
@@ -148,7 +156,7 @@ function aurora_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
       '#weight' => 52
     );
 
-    $form['development'] = array_merge(_aurora_live_reload_settings(), $form['development']);
+    $form['development'] = array_merge(_aurora_live_reload_settings($theme), $form['development']);
 
   }
 

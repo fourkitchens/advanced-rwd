@@ -1,5 +1,4 @@
 <?php
-// $Id: styleguide.api.php,v 1.6 2010/10/23 20:58:17 agentken Exp $
 
 /**
  * Register a style guide element for display.
@@ -40,7 +39,7 @@ function hook_styleguide() {
     'variables' => array('items' => styleguide_list(), 'type' => 'ul'),
     'group' => t('Common'),
   );
-  $items['text'] => array(
+  $items['text'] = array(
     'title' => t('Text block'),
     'content' => styleguide_paragraph(3),
     'group' => t('Text'),
