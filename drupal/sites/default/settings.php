@@ -211,12 +211,12 @@
  * @endcode
  */
 
-/*
+
 $databases = array(
   'default' => array(
     'default' => array(
       'driver' => 'mysql',
-      'database' => 'databasename',
+      'database' => 'database',
       'username' => 'username',
       'password' => 'password',
       'host' => 'localhost',
@@ -224,7 +224,7 @@ $databases = array(
     ),
   ),
 );
-*/
+
 
 /**
  * Access control for update.php script.
@@ -256,7 +256,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';
+$drupal_hash_salt = 'b2b729c44e3c25a1cc129f9698d491cd0de50bbfb336d638caffa7310ccf52a2';
 
 /**
  * Base URL (optional).
@@ -565,10 +565,3 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
-
-/**
- * Import student settings
- */
-if (is_file('student.settings.php')) {
-  include_once('student.settings.php');
-}
