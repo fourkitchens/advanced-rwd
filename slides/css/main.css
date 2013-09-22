@@ -896,3 +896,13 @@ body {
 .reveal ul.naked li {
 	list-style-type: none;
 }
+
+
+details {
+	text-align: left;
+}
+
+details details {
+	width: 90%;
+	margin-left: 10%;
+}
