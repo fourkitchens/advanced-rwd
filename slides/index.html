@@ -409,8 +409,17 @@ ul li {
 					</section>
 					<section>
 						<h2>Bundler: Unifying Gem Versions</h2>
+						<p>One time bundler setup:</p>
+						<pre><code class="language-javascript">mkdir ~/.bundle
+echo 'BUNDLE_PATH: vendor/bundle' >> ~/.bundle/config
+						</code></pre>
+						<p>This will install all gems into your working directory, allowing you to have different gem versions.</p>
+					</section>
+					<section>
+						<h2>Bundler: Unifying Gem Versions</h2>
 						<p>The <code>Gemfile</code> that comes with the project will tell Bundler exactly what versions of what gems to use. Use the following command to create a <code>Gemfile.lock</code> file within your theme to install gem dependencies you may not already have and to lock each gem version.</p>
 						<pre><code class="language-javascript">bundle install</code></pre>
+						<p>You should <b>NEVER</b> run "sudo bundle install"</p>
 					</section>
 					<section>
 						<h2>Bundler: Unifying Gem Versions</h2>
