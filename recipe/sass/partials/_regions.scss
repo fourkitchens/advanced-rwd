@@ -1,0 +1,21 @@
+main {
+  display: block;
+  max-width: 1283px;
+  margin: 0 auto;
+}
+
+section {
+  @extend %region-padding;
+}
+
+.media {
+  @extend %region-padding;
+}
+
+.recipe > h1 {
+  @extend %region-padding;
+}
+
+footer {
+  @extend %region-padding;
+}

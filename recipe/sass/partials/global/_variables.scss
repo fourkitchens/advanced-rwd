@@ -1,0 +1,32 @@
+////////////////////////
+// Variables Partials
+//
+// All of your variables should go in this file.
+////////////////////////
+
+//////////////////////////////
+// Colors
+//////////////////////////////
+$primary:     #adc3d0;
+$secondary:   #cfadd0;
+$tertiary:    #bfd2af;
+$quaternary:  #d7cbb3;
+
+//////////////////////////////
+// Fonts
+//////////////////////////////
+$webfont-serif: "ff-tisa-web-pro";
+$websafe-serif: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+
+$webfont-dec: "hwt-american-solid";
+$websafe-dec: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+
+$font-serif: append($webfont-serif, $websafe-serif, comma);
+$font-dec: append($webfont-dec, $websafe-dec, comma);
+
+$line-height: 1.681em;
+
+//////////////////////////////
+// Media Border Options
+//////////////////////////////
+$border-width: .35em;

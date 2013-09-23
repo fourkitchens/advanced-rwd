@@ -1,0 +1,21 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+@mixin header-emboss($color) {
+  color: lighten(invert($color), 35%);
+  text-shadow: emboss($color);
+}
+
+@mixin body-coloring($color) {
+  background: light($color);
+  color: dark($color);
+}
+
+@mixin media-border($color, $width: $border-width) {
+  border-width: $width 0 $width 0;
+  border-color: $color;
+  border-radius: $width;
+}

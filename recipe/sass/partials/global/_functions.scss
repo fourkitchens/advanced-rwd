@@ -1,0 +1,18 @@
+////////////////////////
+// Functions Partials
+//
+// All of your functions should go in this file.
+////////////////////////
+
+@function light($color) {
+  @return tint($color, 85%);
+}
+
+@function dark($color) {
+  @return shade($color, 85%);
+}
+
+@function emboss($color) {
+  $shade: dark($color);
+  @return -1px 0 $shade, 0 1px $shade, 1px 0 $shade, 0 -1px $shade, 3px 2px 0px $shade;
+}

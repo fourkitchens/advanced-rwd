@@ -1,0 +1,22 @@
+////////////////////////
+// Extendables Partials
+//
+// All of your extendable classes, ids, and placeholder extendables
+//   should go in this file.
+////////////////////////
+
+//////////////////////////////
+// Media Border
+//////////////////////////////
+%media-shared {
+  border-style: outset;
+  margin: .25em 0;
+}
+
+
+//////////////////////////////
+// Region Padding
+//////////////////////////////
+%region-padding {
+  padding: .25rem .5rem;
+}

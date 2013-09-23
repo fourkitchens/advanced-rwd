@@ -1,0 +1,6 @@
+body {
+  font-family: $font-serif;
+  line-height: $line-height;
+
+  @include body-coloring($primary);
+}

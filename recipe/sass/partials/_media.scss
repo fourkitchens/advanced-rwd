@@ -1,0 +1,13 @@
+.fluid-video {
+  display: none;
+  @extend %media-shared;
+
+  @include media-border($primary);
+}
+
+.carousel {
+  @extend %media-shared;
+  margin-bottom: .5em;
+
+  @include media-border($primary);
+}
