@@ -575,6 +575,36 @@
   ],
   [
     {
+      "filename": "yeoman/yeoman.md",
+      "attr": {
+        "data-state": "yeoman",
+        "id": "yeoman"
+      }
+    },
+    {
+      "filename": "yeoman/install.md",
+      "attr": {
+        "data-state": "yeoman",
+        "id": "yeoman-install"
+      }
+    },
+    {
+      "filename": "yeoman/sub-theme.md",
+      "attr": {
+        "data-state": "yeoman",
+        "id": "sub-theme-generation"
+      }
+    },
+    {
+      "filename": "yeoman/boom.md",
+      "attr": {
+        "data-state": "yeoman",
+        "id": "boom"
+      }
+    }
+  ],
+  [
+    {
       "filename": "wrap-up/wrap-up.md",
       "attr": {
         "data-state": "wrap-up",
