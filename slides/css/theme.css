@@ -76,7 +76,7 @@ img, video {
 }
 
 body {
-  background-color: #97e52d;
+  background-color: #a5e849;
   font-family: 'pt';
   font-size: 2em;
 }
@@ -209,10 +209,10 @@ body {
   background: #c8321e;
 }
 .singularity .state-background {
-  background: #fe4432;
+  background: #fe5848;
 }
 .toolkit .state-background {
-  background-color: #8227A9;
+  background-color: #bb6edd;
 }
 .yeoman .state-background {
   background-color: #5aadbb;
