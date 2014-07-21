@@ -1,0 +1,6 @@
+.sass-cache
+node_modules/
+vendor/
+
+# Remove for publication
+bower_components

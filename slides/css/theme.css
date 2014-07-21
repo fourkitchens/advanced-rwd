@@ -1,0 +1,307 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@import url(http://snugug.github.io/fonts/homestead-subset.css);
+@import url(http://snugug.github.io/fonts/north.css);
+@import url(http://snugug.github.io/fonts/ostrich.css);
+@import url(http://snugug.github.io/fonts/scp.css);
+@import url(http://snugug.github.io/fonts/pt.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: #97e52d;
+  font-family: 'pt';
+  font-size: 2em;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+}
+
+.reveal blockquote {
+  border: none;
+  box-shadow: none;
+  text-align: right;
+  background: none;
+  border-right: .2em solid;
+  padding: 0 1em 0 0;
+}
+.reveal blockquote cite {
+  font-size: .75em;
+  font-weight: bold;
+}
+.reveal ul {
+  margin-bottom: 1em;
+}
+.reveal a {
+  color: inherit;
+  text-decoration: none;
+}
+.cs .reveal a {
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZWRlMzIiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iIzNjM2MzYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-linear-gradient(bottom, #fede32 75%, #3c3c3c 75%);
+  background-image: linear-gradient(to top, #fede32 75%, #3c3c3c 75%);
+  background-size: 0.125em 0.1875em;
+  background-position: 0 1.125em;
+  text-shadow: 0.0625em 0.0625em 0 #fede32, -0.0625em 0 0 #fede32;
+}
+.reveal h1:not(.north), .reveal h2:not(.north), .reveal h3:not(.north), .reveal h4:not(.north), .reveal h5:not(.north) {
+  font-family: 'ostrich';
+  letter-spacing: .1em;
+}
+.reveal h1 a, .reveal h2 a, .reveal h3 a, .reveal h4 a, .reveal h5 a {
+  background-position: 0 0.825em !important;
+}
+.reveal pre {
+  font-size: 1em;
+}
+.reveal pre.codemark {
+  box-shadow: none;
+  font-size: .55em;
+}
+
+.intro .reveal .controls div.navigate-left {
+  border-right-color: white;
+}
+.north .reveal .controls div.navigate-left {
+  border-right-color: #061b25;
+}
+.cs .reveal .controls div.navigate-left {
+  border-right-color: #3c3c3c;
+}
+.intro .reveal .controls div.navigate-right {
+  border-left-color: white;
+}
+.north .reveal .controls div.navigate-right {
+  border-left-color: #061b25;
+}
+.cs .reveal .controls div.navigate-right {
+  border-left-color: #3c3c3c;
+}
+.intro .reveal .controls div.navigate-up {
+  border-bottom-color: white;
+}
+.north .reveal .controls div.navigate-up {
+  border-bottom-color: #061b25;
+}
+.cs .reveal .controls div.navigate-up {
+  border-bottom-color: #3c3c3c;
+}
+.intro .reveal .controls div.navigate-down {
+  border-top-color: white;
+}
+.north .reveal .controls div.navigate-down {
+  border-top-color: #061b25;
+}
+.cs .reveal .controls div.navigate-down {
+  border-top-color: #3c3c3c;
+}
+
+.intro .state-background {
+  background: black;
+}
+.north .state-background {
+  background: #f7fafc;
+}
+.cs .state-background {
+  background: #fede32;
+}
+.design .state-background {
+  background: #fe4432;
+}
+.wrap-up .state-background {
+  background: white;
+}
+
+.intro {
+  color: white;
+}
+
+.wrap-up {
+  color: #666666;
+}
+
+.cs,
+.tools,
+.wrap-up {
+  color: #3c3c3c;
+}
+
+.reveal .north--logo, .reveal .north--wordmark {
+  -webkit-font-feature-settings: "liga","dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -moz-font-feature-settings: "liga","dlig";
+  -ms-font-feature-settings: "liga","dlig";
+  -o-font-feature-settings: "liga","dlig";
+  font-feature-settings: "liga","dlig";
+  color: #11517d;
+  font-family: 'north';
+  text-transform: lowercase;
+  display: inline-block;
+  border: none;
+}
+.north {
+  color: #061b25;
+}
+.reveal .north--title {
+  font-size: 7em;
+}
+.reveal .north--logo {
+  padding-right: .16em;
+  -ms-transform: translateY(0.1194em);
+  -webkit-transform: translateY(0.1194em);
+  transform: translateY(0.1194em);
+}
+.reveal .north--wordmark {
+  font-size: .75em;
+  color: #5ea9d0;
+  text-transform: uppercase;
+  position: relative;
+  text-align: left;
+  display: inline-block;
+  font-family: 'homestead-one', 'homestead-regular';
+}
+.reveal .north--wordmark:before {
+  content: 'north';
+  text-transform: uppercase;
+  font-family: 'homestead-two', 'homestead-regular';
+  color: #559abe;
+  position: absolute;
+  left: 0;
+  top: -0.065em;
+}
+.reveal .north--wordmark:after {
+  content: 'north';
+  text-transform: uppercase;
+  font-family: 'homestead-three', 'homestead-regular';
+  color: #6db1d4;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+h1 a.wordmark {
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-family: 'ostrich-wordmark';
+  background: none !important;
+  text-shadow: none !important;
+}
+h1 a.wordmark .wordmark--4 {
+  margin-left: -.10em;
+}
+
+.fk-logo {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * Custom background images
+ */
+.fingerprint-pre .state-background, .medal-pre .state-background {
+  background-position: 1800px -1500px;
+}
+.fingerprint .state-background {
+  background: white url("../../img/fingerprint.jpg") no-repeat 28em -16em;
+  opacity: .25;
+}
+.bronze .state-background {
+  background: white url("../../img/medal-bronze.png") no-repeat 26em -1em;
+}
+.silver .state-background {
+  background: white url("../../img/medal-silver.png") no-repeat 26em -1em;
+}
+.gold .state-background {
+  background: white url("../../img/medal-gold.png") no-repeat 26em -1em;
+}
+
+/*********************************************
+ * Advanced-RWD Styles
+ *********************************************/
+.reveal .fragment code {
+  color: #666;
+}
+
+.reveal ul.naked li {
+  list-style-type: none;
+}
+
+details {
+  text-align: left;
+}
+
+details details {
+  width: 90%;
+  margin-left: 10%;
+}

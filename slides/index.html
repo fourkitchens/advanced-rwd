@@ -1,1021 +1,554 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>Advanced RWD Training</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Sam Richard, Chris Ruppel, Ian Carrico">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
-		<link rel="stylesheet" href="css/main.css">
-
-		<link rel="stylesheet" href="css/theme/fourkitchens.css">
-
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="css/prism.css">
-		<script>
-			// If the query includes 'print-pdf' we'll use the PDF print sheet
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Used to fade in a background when a specific slide state is reached -->
-			<div class="state-background"></div>
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section data-state="bluesy">
-					<br>
-					<h1>Advanced RWD</h1>
-					<h2>with Sass + Compass</h2>
-					<br><br>
-					<p><strong>Wifi</strong>: <span contenteditable>TBD</span></p>
-					<p><strong>Pass</strong>: <span contenteditable>TBD</span></p>
-				</section>
-
-				<section>
-					<h3>Meet the Trainers</h3>
-					<br><br>
-					<!-- do not remove this blank slide -->
-					<section></section>
-
-					<section>
-						<h2>Sam Richard</h2>
-						<ul class="networks">
-							<li class="work">Senior Front End Developer, NBCUniversal</li>
-							<li class="drupal"><a href="http://drupal.org/user/820332">drupal.org/user/820332 (snugug)</a></li>
-							<li class="twitter"><a href="https://twitter.com/Snugug">twitter.com/Snugug</a></li>
-							<li class="github"><a href="https://github.com/Snugug">github.com/Snugug</a></li>
-						</ul>
-					</section>
-
-					<section>
-						<h2>Ian Carrico</h2>
-						<ul class="networks">
-							<li class="work">Backend of Frontend Developer, Four Kitchens</li>
-							<li class="drupal"><a href="https://drupal.org/user/1300542">drupal.org/user/1300542 (ChinggizKhan)</a></li>
-							<li class="twitter"><a href="https://twitter.com/iamcarrico">twitter.com/iamcarrico</a></li>
-							<li class="github"><a href="https://github.com/ChinggizKhan">github.com/ChinggizKhan</a></li>
-						</ul>
-					</section>
-
-					<section>
-						<h2>Chris Ruppel</h2>
-						<ul class="networks">
-							<li class="work">Frontend Developer, Four Kitchens</li>
-							<li class="drupal"><a href="https://drupal.org/user/411999">drupal.org/user/411999 (rupl)</a></li>
-							<li class="twitter"><a href="https://twitter.com/rupl">twitter.com/rupl</a></li>
-							<li class="github"><a href="https://github.com/rupl">github.com/rupl</a></li>
-						</ul>
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h3>Agenda</h3>
-						<ul class="naked">
-							<li>9:00 - Personal intros and agenda</li>
-							<li>9:10 - Intro to Sass+Compass</li>
-							<li>9:50 - Gem and dependency management</li>
-							<li>10:15 - Coffee Break</li>
-							<li>10:30 - Media-queries: Breakpoint</li>
-							<li><em style="display: block; padding: .4em 0; text-align: center; color: #999; ">11:45 - Lunch for 75 minutes</em>
-							<li>13:00 - Singularity and The Grid</li>
-							<li>14:30 - Advanced Singularity Grids</li>
-							<li>15:15 - Coffee Break</li>
-							<li>15:30 - Intro to Toolkit</li>
-							<li>16:45 - Wrap Up / Course Evaluations</li>
-						</ul>
-					</section>
-					<section>
-						<h3>Requirements</h3>
-						<br>
-						<ul>
-							<li>FTP and/or SSH to edit remote files
-							<li>Write HTML and CSS <em>by hand</em>
-							<li>Install and use ruby gems
-							<li>Use git for version control
-						</ul>
-					</section>
-					<section data-state="soothe">
-						<h3>Training Wheels instances</h3>
-						<br>
-						<p>You should have a paper handout. It contains:</p>
-						<ul>
-							<li>Unique sandbox URL
-							<li>user / pass
-						</ul>
-						<br><br>
-						<p>These training instances will be up for<br> 30 days so you can keep experimenting!</p>
-						<p>
-							The repo is open source and available on GitHub:<br>
-							<a href="https://github.com/fourkitchens/advanced-rwd">https://github.com/fourkitchens/advanced-rwd</a>
-						</p>
-					</section>
-					<section>
-						<h3>How embarrassing!</h3>
-						<p>We've got a typo. Could you fix it for us?</p>
-						<br>
-						<p class="fragment">Open this file:<br> <code>/index.html</code></p>
-						<br>
-						<p class="fragment">Fix this typo:<br> <code>&lt;h2>Welcome to the &lt;em>worst&lt;/em> training ever!&lt;/h2></code></p>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<br><br>
-						<h1>Sass + Compass</h1>
-						<img src="img/not-sass.gif" alt="Doesn't Matter, Not Sass">
-					</section>
-					<section data-state="blackout">
-						<h1>Sass</h1>
-						<p class="fragment">Sass is a language construct to create CSS</p>
-						<p class="fragment">It makes writing awesome CSS easier</p>
-						<br>
-						<p class="fragment"><a href="http://sass-lang.org">sass-lang.com</a></p>
-					</section>
-					<section>
-						<h2>Syntax</h2>
-						<br>
-						<p>Sass has TWO syntaxes:</p>
-						<p class="fragment" style="font-size: 2em; "><code>.sass</code> <em style="font-size: .5em; padding-right: .1em; " class="subdued">and</em> <code>.scss</code></p>
-					</section>
-					<section>
-						<br>
-						<h3><code>.sass</code> - whitespace sensitive</h3>
-						<br>
-						<pre class="half"><code class="language-scss">
-	// .sass
-	.my-selector
-		font-size: 2em
-		background: #333
-		font-family: $monospace
-
-
-</code></pre>
-						<pre class="half fragment"><code class="language-scss">
-	// .scss
-	.my-selector {
-		font-size: 2em;
-		background: #333;
-		font-family: $monospace;
-	}
-
-</code></pre>
-						<br class="clearboth"><br>
-						<h3><code>.scss</code> - superset of CSS</h3>
-						<br>
-					</section>
-					<section>
-						<h2>Today we're using SCSS</h2>
-						<br>
-						<h3 class="fragment">Tech reasons</h3>
-						<ul>
-							<li class="fragment">Easier to understand if you know CSS</li>
-							<li class="fragment">Easier to integrate in the real-world</li>
-						</ul>
-
-						<br><br>
-						<h3 class="fragment">Team reasons</h3>
-						<ul>
-							<li class="fragment">Helps onboard CSS-savvy teammates.</li>
-							<li class="fragment">SCSS allows you to convert a project<br> piece by piece even in-progress</li>
-						</ul>
-					</section>
-					<section data-state="soothe">
-						<h2>Switch to SassMeister</h2>
-						<br><br>
-						<p class="fragment">We'll be covering Sass basics using <a style="font-size: 1.2em; " href="http://sassmeister.com">SassMeister.com</a></p>
-						<br>
-					</section>
-					<section>
-						<h2>Variables</h2>
-						<br>
-						<pre><code class="language-scss">
-	$blue: #00ff00;
-	$monospace: "Source Code Pro", "Courier New", monospace;
-	$default-fontsize: 1em;
-	$default-padding: 2 * $default-fontsize;
-						</code></pre>
-						<br>
-						<p class="fragment">Sass lets you use variables to store values.</p>
-					</section>
-					<section>
-						<h2>Functions</h2>
-						<br>
-						<pre><code class="language-scss">
-	@function pixel-to-em($pixel, $font-size: 16px) {
-		@return $pixel / $font-size * 1em;
-	}
-						</code></pre>
-						<br>
-						<p class="fragment">Functions return a single value, just like PHP or JS</p>
-					</section>
-					<section>
-						<h2>Mixins</h2>
-						<pre><code class="language-scss">
-	// Define
-	@mixin button-make($color: #66B360) {
-		background-color: $color;
-		border: 2px solid lighten($color, 20%);
-	}
-
-	// Call
-	.button-one {
-		@include button-make;
-	}
-
-	// Call with arguments
-	.button-two {
-		@include button-make($color-facebook);
-	}
-						</code></pre>
-						<br>
-						<p class="fragment">Mixins are similar to functions, except they return blocks of CSS.</p>
-					</section>
-					<section>
-						<h2>Extendables</h2>
-						<pre class="half"><code class="language-scss">
-// Sass
-.message {
-	margin: 1em;
-	padding: 1em;
-	font-size: 1.2em;
-}
-.error {
-	@extend .message;
-	color: #060;
-}
-						</code></pre>
-						<pre class="half"><code class="language-css">
-/* CSS */
-.message, .error {
-	margin: 1em;
-	padding: 1em;
-	font-size: 1.2em;
-}
-.error {
-	color: #060;
-}
-
-						</code></pre>
-						<br class="clearboth"><br>
-						<p class="fragment">Extendables allow you to build upon a common style.</p>
-					</section>
-					<section>
-						<h2>Partials</h2>
-						<details open>
-							<summary>sass</summary>
-							<pre><code>style.scss</code></pre>
-								<details>
-									<summary>partials</summary>
-									<pre><code>_variables.scss</code></pre>
-								</details>
-						</details>
-						<br>
-						<pre><code class="language-scss">// style.css
-@import 'partials/variables';</code></pre>
-					</section>
-					<section>
-						<h2>Comments</h2>
-						<pre><code class="language-scss">
-	/*
-	 * This is a standard, multi-line comment
-	 * that will appear in your final .css file
-	 *
-	 * Use multi-line comments to mark major headings or partials
-	 */
-
-	// Single-line comments will NOT appear in your final .css file
-	// Use single-line comments for developer notes
-						</code></pre>
-						<p>Generally, we leave a standard, multi-line comment on the top of each partial. This will help with debugging because we will always know what partial we are looking at.</p>
-					</section>
-					<section>
-						<h2>Questions about Sass?</h2>
-						<br>
-						<ul class="fragment">
-							<li>Syntax options in Sass</li>
-							<li>Variables</li>
-							<li>Functions</li>
-							<li>Mixins</li>
-							<li>Extendables</li>
-							<li>Partials</li>
-							<li>Comments</li>
-						</ul>
-					</section>
-
-					<section data-state="blackout">
-						<h1>Compass</h1>
-						<p class="fragment">Compass is a meta-framework for Sass</p>
-						<p class="fragment">Provides useful mixins and functions</p>
-						<p class="fragment">Includes plugin framework to allow<br> for community written extensions</p>
-						<br>
-						<p class="fragment"><a href="http://compass-style.org">compass-style.org</a></p>
-					</section>
-					<section>
-						<h2>Drupal vs Compass</h2>
-						<table class="comparison">
-							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.25); "><td>HTML</td><td>CSS</td></tr>
-							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.50); "><td>PHP</td><td>Sass</td></tr>
-							<tr class="fragment" style="background-color: rgba(50, 200, 90, 0.75); "><td>Drupal</td><td>Compass</td></tr>
-							<tr class="fragment" style="background-color: rgba(50, 200, 90, 1); "><td>Modules</td><td>Extensions</td></tr>
-						</table>
-					</section>
-					<section>
-						<h2>Compass provides mixins and functions</h2>
-						<br>
-						<pre class="half"><code class="language-scss">
-ul {
-	@include pretty-bullets('bullet.png');
-}
-
-
-						</code></pre>
-						<pre class="half"><code class="language-css">
-ul {
-	margin-left: 0;
-}
-
-ul li {
-	padding-left: 14px;
-	background: url('../img/bullet.png') no-repeat -12px -12px;
-	list-style-type: none;
-}
-						</code></pre>
-						<br class="clearboth"><br>
-						<p class="fragment">In this case, the mixin allows the use of a "pretty" image for your bullets.</p>
-					</section>
-					<section>
-						<h2>Compass features</h2>
-						<br>
-						<ul>
-							<li>Vendor prefixing</li>
-							<li>Sprite generation</li>
-							<li>Typography and styling patterns</li>
-							<li>Inlining of images and fonts</li>
-							<li><a href="http://compass-style.org/reference/compass/">And more…</a></li>
-						</ul>
-					</section>
-					<section>
-						<h2>Compass extensions</h2>
-						<br>
-						<p>These are Ruby gems, just like Sass and Compass.</p>
-						<ul class="fragment">
-							<li><a href="http://rubygems.org/gems/animation">Animation</a></li>
-							<li><a href="https://rubygems.org/gems/sassy-text-shadow">Sassy text-shadow</a></a></li>
-							<li><a href="http://rubygems.org/gems/sassy-buttons">Sassy Buttons</a>, Sassy CSS3 buttons</li>
-							<li><a href="https://rubygems.org/gems/breakpoint">Breakpoint</a>, simple MQs with Sass</li>
-							<li><a href="https://rubygems.org/gems/singularitygs">Singularity</a>, Grids without Limits</li>
-							<li><a href="https://rubygems.org/gems/compass-aurora">Aurora</a>, Partial structure and Drupal sub theme</li>
-						</ul>
-						<br><br>
-						<p class="fragment"><a href="https://rubygems.org/gems/toolkit">Toolkit</a> bundles lots of this stuff together.</p>
-					</section>
-					<section>
-						<h2>Questions about Compass?</h2>
-						<br>
-						<ul>
-							<li>What does it provide?</li>
-							<li>Core @mixins</li>
-							<li>Community-built extensions</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<br><br>
-						<h1>Bundler</h1>
-					</section>
-					<section>
-						<h2>Bundler: Unifying Gem Versions</h2>
-						<p>When working on different computers, developers, or even projects, there will always be an issue with ruby gems changing between different versions.</p>
-						<p>We want to make sure that we know which versions of each gem we are using to prevent compiling differences and errors. Bundler allows us to do just that. But first, we need to make sure we have Bundler installed:</p>
-						<pre><code class="language-javascript">gem install bundler</code></pre>
-					</section>
-					<section>
-						<h2>Bundler: Unifying Gem Versions</h2>
-						<p>One time bundler setup:</p>
-						<pre><code class="language-javascript">mkdir ~/.bundle
-echo 'BUNDLE_PATH: vendor/bundle' >> ~/.bundle/config
-						</code></pre>
-						<p>This will install all gems into your working directory, allowing you to have different gem versions.</p>
-					</section>
-					<section>
-						<h2>Bundler: Unifying Gem Versions</h2>
-						<p>The <code>Gemfile</code> that comes with the project will tell Bundler exactly what versions of what gems to use. Use the following command to create a <code>Gemfile.lock</code> file within your theme to install gem dependencies you may not already have and to lock each gem version.</p>
-						<pre><code class="language-javascript">bundle install</code></pre>
-						<p>You should <b>NEVER</b> run "sudo bundle install"</p>
-					</section>
-					<section>
-						<h2>Bundler: Unifying Gem Versions</h2>
-						<p>From now on, instead of running "compass watch" or "compass compile", you can use:</p>
-						<pre><code class="language-javascript">bundle exec compass watch</code></pre>
-						<br>
-						<p>And bundler will only use the gem versions selected within the .lock file</p>
-					</section>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<br><br>
-						<h1>Media Queries</h1>
-					</section>
-					<section>
-						<h2>Example media queries</h2>
-						<br>
-						<pre><code class="language-css">
-	// If the window is at least 500px wide...
-	@media (min-width: 500px) { ... }
-
-	// If the window is less than 785px wide...
-	@media (max-width: 785px) { ... }
-
-	// If the user is printing the page...
-	@media print { ... }
-
-	// If the window is in between 520px and 699px...
-	@media all and (min-width: 520px) and (max-width: 699px) { ... }
-
-</pre></code>
-					</section>
-					<section>
-						<h2>Breakpoint</h2>
-						<p><a href="https://github.com/Team-Sass/breakpoint">Breakpoint</a> is a Compass extension. It makes<br> media queries much easier to maintain.</p>
-						<pre class="half"><code class="language-scss">
-$nav-lg: 680px;
-
-.main-nav {
-	width: 100%;
-
-	@include breakpoint($nav-lg) {
-		width: 60%;
-		margin: 0 auto;
-	}
-}</code></pre>
-						<pre class="half"><code class="language-scss">
-.main-nav {
-	width: 100%;
-}
-@media (min-width: 680px) {
-	.main-nav {
-		width: 60%;
-		margin: 0 auto;
-	}
-}
-						</code></pre>
-					</section>
-					<section id="breakpoint-value-proposition">
-            <h2>Breakpoint Breakdown</h2>
-						<br>
-            <p>Boil down most media queries to one simple value.</p>
-            <p class="fragment">Assign that value a meaningful name.</p>
-						<p class="fragment">You keep all the styles for a component in one place</p>
-            <p class="fragment">Manage media queries by purpose and context.</p>
-						<p class="fragment">CSS-only fallback system. No need for respond.js</p>
-          </section>
-          <section id="breakpoint-basic-single">
-						<h2>Single value = min-width</h2>
-						<p>Pass Breakpoint just a number and you get a min-width query.</p>
-						<pre class="half"><code class="language-scss">// THIS IS OUR FIRST BREAKPOINT VARIABLE
-$basic: 500px; // <-- YUP, THIS ONE
-
-#main-nav {
-  width: 100%
-  @include breakpoint($basic) {
-    width: 75%;
-  }
-}</code></pre>
-            <pre class="half"><code class="language-scss">#main-nav {
-  width: 100%
-}
-@media (min-width: 500px) {
-  #main-nav {
-    width: 75%;
-  }
-}</code></pre>
-					</section>
-					<section id="breakpoint-basic-fenced">
-						<h2>Fenced Values</h2>
-						<p>Two values creates a min-width / max-width query.</p>
-						<pre class="half"><code class="language-scss">$big-header: 330px 750px;
-
-#header {
-  font-size: 2em;
-  @include breakpoint($big-header) {
-    font-size: 2.5em;
-  }
-}</code></pre>
-            <pre class="half"><code class="language-scss">#header {
-  font-size: 2em;
-}
-@media (min-width: 330px) and (max-width: 750px) {
-  #header {
-    font-size: 2.5em;
-  }
-}</code></pre>
-					</section>
-					<section id="breakpoint-basic-explicit">
-						<h2>Explicit Test / Value</h2>
-						<p>If one value is a string, assume a feature/value pair</p>
-						<pre class="half"><code class="language-scss">$too-damn-wide: max-width 1000px;
-
-#hero-image {
-  max-width: 100%;
-  margin: 2em 0;
-  @include breakpoint($too-damn-wide) {
-	  margin: 0.5em 0;
-  }
-}</code></pre>
-            <pre class="half"><code class="language-scss">#hero-image {
-  max-width: 100%;
-  margin: 2em 0;
-}
-@media (max-width: 1000px) {
-  #fifty-seven-chevy {
-    margin: 0.5em 0;
-  }
-}</code></pre>
-					</section>
-					<section id="breakpoint-basic-combine">
-						<h2>Combine Tests</h2>
-						<p>String them together to create more complex queries</p>
-						<pre class="half"><code class="language-scss">$tighten-text: (max-width 1000px) (orientation portrait);
-
-#main-article {
-  font-size: 1em;
-  line-height: 1.375;
-  @include breakpoint($tighten-text) {
-    line-height: 1.25;
-  }
-}</code></pre>
-            <pre class="half"><code class="language-scss">#main-article {
-  font-size: 1em;
-  line-height: 1.375;
-}
-@media (max-width: 1000px) and (orientation: portrait) {
-  #pappas {
-    line-height: 1.25;
-  }
-}</code></pre>
-					</section>
-					<section data-state="medal-pre">
-						<h2>No-query fallbacks</h2>
-						<p>Breakpoint can also output <a href="https://github.com/Team-Sass/breakpoint/wiki/No-Query-Fallbacks">fallbacks</a> for when no media queries are present, such as in IE<9</p>
-						<pre class="half" style="width: 52%"><code class="language-scss">
-$breakpoint-no-query-fallbacks: true;
-$nav-lg: 500px, 'no-query' '.lte-ie8';
-
-nav {
-	@include breakpoint($nav-lg) {
-		width: 60%;
-		margin-right: 4%;
-	}
-}
-
-						</pre></code>
-						<pre class="half" style="position: absolute; right: -1em; width: 38%; "><code class="language-scss">
-@media (min-width: 500px) {
-	nav {
-		width: 60%;
-		margin-right: 4%;
-	}
-}
-.lte-ie8 nav {
-	width: 60%;
-	margin-right: 4%;
-}
-						</pre></code>
-						<br class="clearboth"><br>
-						<p class="fragment"><em class="subdued">Just add a conditional class to your <code>&lt;html></code> element</em></p>
-					</section>
-					<section data-state="bronze">
-						<h2>Bronze challenge:</h2>
-						<br>
-						<p>Create a media query that will increase the body's font size when:</p>
-						<ul>
-							<li>A chosen <code>min-width</code></li>
-						</ul>
-						<br>
-					</section>
-					<section data-state="silver">
-						<h2>Silver challenge:</h2>
-						<br>
-						<p>Create a media query that will change the color scheme when:</p>
-						<ul>
-							<li>The website is in portrait</li>
-						</ul>
-						<br>
-					</section>
-					<section data-state="gold">
-						<h2>Gold challenge:</h2>
-						<br>
-						<p>Output media queries in <code>em</code> units.</p>
-						<p>Create a media query that will change to a third color scheme when:</p>
-						<ul>
-							<li>The body's font size changes in landscape<br><i>- or -</i></li>
-							<li>A chosen <code>max-height</code> in portrait<br><i> - or -</i></li>
-							<li>The browser is IE8 or below</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<h2>Singularity &amp; The&nbsp;Grid</h2>
-						<img src="img/the_grid.jpg" alt="The Grid">
-					</section>
-					<section>
-						<h2>The Box Model</h2>
-						<img class="transparent" src="img/boxmodel.png" alt="Box Model">
-						<pre class="fragment"><code class="language-scss">*, *:before, *:after { @include box-sizing('border-box'); }</code></pre>
-					</section>
-					<section>
-						<h2>The 960 Grid System</h2>
-						<br>
-						<p class="fragment">12 column grid</p>
-						<p class="fragment">Each column is 60px wide</p>
-						<p class="fragment">Each gutter is 20px wide</p>
-						<p class="fragment">10px side gutter</p>
-						<p class="fragment">960px Centered Container</p>
-					</section>
-					<section>
-						<h2>Setting Up The Grid</h2>
-						<pre><code class="language-scss">$grids: 12; // Number of Columns
-$gutters: 1/3; // Gutter to Column ratio, 20px/60px = 1/3</pre></code>
-						<br>
-						<ul>
-							<li class="fragment"><b>$grids: </b>Grid definition. Can be single number for symmetric grids or multiple numbers in relation for asymmetric grids. For symmetric grids, each column is considered to have a width of 1.</li><br>
-							<li class="fragment"><b>$gutters: </b>Gutter definition. The width of a single gutter in relation to a column of width 1.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Grid Output Styles</h2>
-						<p>Out of the box, Singularity offers two output styles, <b>float</b> and <b>isolation</b>. The default output style is <b>isolation</b>, but we're going to change it <b>float</b> for now as it will be more familiar to begin with.
-						</p><br>
-						<pre><code class="language-scss">$output: 'float';</code></pre>
-					</section>
-					<section style="top: -1em;" data-state="medal-pre">
-						<h2>Creating a Layout</h2>
-						<p>Align to columns using Grid Span: <pre><code class="language-scss">@include grid-span($span, $position); </pre></code></p>
-						<p><code>$span</code> is the number of columns to span<br> <code>$position</code> is what column to start from</p>
-						<pre><code class="language-scss">#container {
-	max-width: 960px;  			// Outer Container
-	padding: 0 10px;   			// Side Gutter
-	margin: 0 auto;    			// Center Container
-	@include clearfix; 			// Have container clear floats properly
-}
-
-.left {
-	@include grid-span(6,1);
-}
-
-.right {
-	@include grid-span(6,7);
-}</pre></code>
-					</section>
-					<section data-state="bronze">
-						<h2>Bronze challenge:</h2>
-						<br>
-						<p>Create a Basic Symmetric Grid</p>
-						<ul>
-							<li>10 Columns</li>
-							<li>Float Output Style</li>
-							<li>Column to Gutter ratio of 1:3</li>
-							<li>Display the debugging grid in the <code>&lt;article&gt;</code></li>
-						</ul>
-					</section>
-					<section data-state="silver">
-						<h2>Silver challenge:</h2>
-						<br>
-						<p>Attach Items to the Grid</p>
-						<ul>
-							<li>Make Ingredients span the first two columns</li>
-							<li>Make Directions span the next three columns</li>
-							<li>Make Media span the last five columns</li>
-						</ul>
-					</section>
-					<section data-state="gold">
-						<h2>Gold challenge:</h2>
-						<br>
-						<p>Change Visual Order Without Changing Source Order</p>
-						<ul>
-							<li>Make Media span the first two columns</li>
-							<li>Make Ingredients span the next three columns</li>
-							<li>Make Directions span the last five columns</li>
-						</ul>
-					</section>
-
-					<section data-state="alert">
-						<h2>Class-based grid systems</h2>
-						<br>
-						<p>Grids should work with the content itself, not impose a class structure. We <em>should not</em> limit ourselves to a 12 column layout with four breakpoints.</p>
-						<br>
-						<p class="fragment">Instead, let's design our sites around the content, creating awesome mobile-first layouts.</p>
-						<br>
-						<p class="fragment">In short: <b>We deserve better.</b></p>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<h1>Content-first Grid Systems</h1>
-					</section>
-					<section>
-						<h2>What is content first?</h2>
-						<p>We are going to build and style<br> our grid based upon the content.</p>
-						<br>
-						<center><blockquote class="twitter-tweet"><p>start with the small screen first, then expand until it looks like shit. TIME FOR A BREAKPOINT! @<a href="https://twitter.com/stephenhay">stephenhay</a> <a href="https://twitter.com/search/%23bdconf">#bdconf</a></p>&mdash; Brad Frost (@brad_frost) <a href="https://twitter.com/brad_frost/status/191977076000161793">April 16, 2012</a></blockquote></center>
-						<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-						<br>
-						<p class="fragment">This is the opposite of using a framework like<br> Twitter Bootstrap, where the grid is pre-defined.</p>
-					</section>
-					<section>
-						<h2>The Ideal Grid</h2>
-						<br><p>Grids provide order to your design<br> and structure to your information.</p><br>
-						<p class="fragment">The ideal grid is specific to your content and<br> your design, since it is an extension of both.</p>
-					</section>
-					<section>
-						<h2>Singularity is built for this.</h2>
-						<p>Within singularity you can create completely different grids for different breakpoints.</p><br>
-						<p>You can also customize each section of the site completely, creating sub-structure within a block of content.</p>
-						<img src="img/grid-examples.png" alt="Examples of grids">
-					</section>
-					<section>
-						<h2>Asymmetric Grids</h2>
-						<p>Grids where the columns are not the same size</p>
-						<p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
-						<p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
-					</section>
-					<section>
-						<h2>Types of Asymmetric Grids</h2>
-						<p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
-						<p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
-						<p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
-						<p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
-						<p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
-					</section>
-					<section>
-						<h2>Custom Grid</h2>
-						<pre><code class="language-scss">// List of column width in relation to each other
-$grids: 5 2 3 3 7 9;</code></pre>
-						<img src="img/custom.png">
-					</section>
-					<section>
-						<h2>Compound Grid</h2>
-						<pre><code class="language-scss">// List of symmetric grids to compound together
-$grids: compound(3, 4);</code></pre>
-						<img src="img/compound.png">
-					</section>
-					<section>
-						<h2>Ratio Grid</h2>
-						<pre><code class="language-scss">// Ratio and number of columns
-$grids: ratio(golden(), 4);</code></pre>
-						<img src="img/ratio.png">
-					</section>
-					<section>
-						<h2>Ratio Spiral Grid</h2>
-						<pre><code class="language-scss">// Number of columns and ratio
-$grids: ratio-spiral(5, golden());</code></pre>
-						<img src="img/spiral.png">
-					</section>
-					<section>
-						<h2>Snap Grid</h2>
-						<pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
-$grids: snap(2 4 4 2, 1/3);</code></pre>
-						<img src="img/snap.png">
-					</section>
-					<section>
-						<h2>Global Contexts</h2>
-						<p>Settings <b>$grids</b> and <b>$gutters</b> set a global context for them, making them available to use without redeclaring them each time they're needed.</p>
-						<p class="fragment">You can set different global contexts to use at different <b>min-width</b> breakpoints</p>
-						<pre class="fragment"><code class="language-scss">$grids: 12;
-$grids: add-grid(2 8 2 at 500px);
-
-$gutters: 1/3;
-$gutters: add-gutter(1/4 at 532px);</code></pre>
-					</section>
-					<section>
-						<h2>Global Contexts</h2>
-						<p>When using the <b>breakpoint</b> mixin, Singularity is able to determine which global context you'd like and subsequently use the correct one when you use the <b>grid-span</b> mixin</p>
-						<pre><code class="language-scss">$grids: 2;
-$grids: add-grid(4 at 475px);
-
-$gutters: 1/6;
-
-#nav {
-	width: 100%;
-
-	@include breakpoint(500px) {
-		@include grid-span(3, 2);
-	}
-}</code></pre>
-
-					</section>
-					<section data-state="medal-pre">
-						<h2>Overriding Global Contexts</h2>
-						<p class="small">If you need to override the global contexts, for instance if you need to nest a grid and therefore change the grid you're using, use the <b>layout</b> mixin</p>
-						<pre><code class="language-scss">$grids: 12;
-$gutters: 1/3;
-
-#main {
-	@include grid-span(8, 1);
-
-	@include layout(8) {
-		.left {
-			@include grid-span(4, 1);
-		}
-		.right {
-			@include grid-span(4, 5);
-		}
-	}
-}</code></pre>
-					</section>
-					<section data-state="bronze">
-						<h2>Bronze challenge:</h2>
-						<br>
-						<p>Create a Ratio Based Grid</p>
-						<ul>
-							<li>Add <code>singularity-extras</code> to your Gemfile and install through Bundler. The version should be <code>&lt;1.0.0</code>.</li>
-							<li>Require <code>singularity-extras</code> in your <code>config.rb</code> file and import <code>singularity-extras</code> generators into your stylesheets</li>
-							<li>Change your grid definition to a 2 column golden ratio based isolation grid</li>
-							<li>Remove your <code>grid-span</code> calls, they're going to break while we drastically change our grids</li>
-						</ul>
-					</section>
-					<section data-state="silver">
-						<h2>Silver challenge:</h2>
-						<br>
-						<p>Create a Medium Layout</p>
-						<ul>
-							<li>Based on your content, choose a <code>min-width</code> to switch from one column to multiple columns</li>
-							<li>Make Ingredients span the first column</li>
-							<li>Make Directions span the second column</li>
-							<li>Make Media span the first column underneath ingredients</li>
-						</ul>
-					</section>
-					<section data-state="gold">
-						<h2>Gold challenge:</h2>
-						<br>
-						<p>Create a Large Layout</p>
-						<ul>
-							<li>Based on your content, choose a <code>min-width</code> to switch from two columns to three columns</li>
-							<li>Add a 3 column golden ratio based grid at that point</li>
-							<li>Adjust the gutter</li>
-							<li>Make Media span the first column</li>
-							<li>Make Ingredients span the second column</li>
-							<li>Make Directions span the third column</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="bluesy">
-						<br><br>
-						<h1>Toolkit</h1>
-					</section>
-					<section>
-						<h2>What Is Toolkit?</h2>
-						<p><a href="https://github.com/team-sass/toolkit">Toolkit</a> has been providing for us our box model fix and our fluid images, but it can do so much more</p>
-						<p>Designed not as a CSS Framework, but rather a set of tools to build your own, Toolkit makes doing things the right way the easy way</p>
-					</section>
-					<section>
-					<h2>Basic Fluid Media</h2>
-					<p>Provided by Toolkit by default, the basic way to get images to squish and maintain their dimensions is fairly easy CSS</p>
-					<pre><code class="language-scss">img, video {
-	max-width: 100%;
-	height: auto;
-}</code></pre>
-				<p class="fragment"><em>But Embedded Content Isn't So Easy</em></p>
-				</section>
-				<section>
-						<h2>Intrinsic Ratios</h2>
-						<p><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">Intrinsic Ratios</a> are a CSS technique that allow you to constrain child elements to a ratio and percentage of its parent</p>
-						<br>
-						<pre class="fragment"><code class="language-scss">
-			// Intrinsic Ratio mixin comes from [Toolkit](https://github.com/team-sass/toolkit)
-			.ratio-16-9 {
-				@include intrinsic-ratio;
-			}
-
-			.ratio-4-3 {
-				@include intrinsic-ratio(4/3);
-			}
-
-</code></pre>
-					</section>
-					<section data-state="bronze">
-						<h2>Bronze challenge:</h2>
-						<br>
-						<p>Create an Intrinsic Ratio for the Video</p>
-						<ul>
-							<li>Remove the video's <code>display: none</code>.</li>
-							<li>Apply a 16:9 intrinsic ratio to the video</li>
-						</ul>
-					</section>
-					<section data-state="silver">
-						<h2>Silver challenge:</h2>
-						<br>
-						<p>Create a CSS Carousel</p>
-						<ul>
-							<li>Turn the list of images into a CSS Carousel 5 items large</li>
-							<li>Create a carousel animation for 5 items, utilizing the <code>start</code> animation</li>
-						</ul>
-					</section>
-					<section data-state="gold">
-						<h2>Gold challenge:</h2>
-						<br>
-						<p>Inline Media</p>
-						<ul>
-							<li>Based on your content for the <code>min-width</code> and the point you go from one column to two columns, create a fenced query for inline media</li>
-							<li>At your inline media query, position the video and the carousel next to each other using a two column grid</li>
-							<li>The carousel should span the first column</li>
-							<li>The video should span the last column</li>
-							<li>The video should be the same ratio as the carousel</li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section data-state="blackout">
-						<br><br>
-						<h1>Wrapping up</h1>
-					</section>
-					<section>
-						<h2>Thanks for coming!</h2>
-						<br>
-						<p>We'd really appreciate your thoughts about today<br> so we can continue improving this course.</p>
-						<br>
-						<p class="fragment">Surveys are being handed out so you can provide<br> us with feedback in an anonymous fashion.
-							<br><br>
-							We appreciate your honest opinion.<br> It helps us improve the material.
-						</p>
-					</section>
-					<section>
-						<h1 style="letter-spacing: -2px; ">FOUR KITCHENS</h1>
-						<img src="img/4k-logo-square-500px.png" alt="" class="bare">
-					</section>
-				</section>
-			</div>
-
-			<!-- The navigational controls UI. bleep bloop. -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<span id="current-slide"></span>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
-
-			<!-- Presentation progress bar -->
-			<div class="progress"><span></span></div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/prism.js"></script>
-		<script src="js/reveal.min.js"></script>
-		<script>
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-
-				theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-				]
-			});
-
-			var currentSlide = document.getElementById('current-slide');
-				Reveal.addEventListener('slidechanged', function(data) {
-				currentSlide.innerHTML = data.indexh + '/' + data.indexv;
-			});
-		</script>
-
-	</body>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Advanced Responsive Web Design</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+
+        <link rel="stylesheet" href="css/theme.css" id="theme">
+
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css" id="highlight-theme">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                
+                    
+                        
+    <section data-state="intro" data-markdown="slides/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="intro" id="who" data-markdown="slides/intro/who.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="ian" data-markdown="slides/intro/ian.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="joe" data-markdown="slides/intro/joe.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="also" data-markdown="slides/intro/also.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="intro" id="is" data-markdown="slides/intro/is.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="isnt" data-markdown="slides/intro/isnt.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="agenda" data-markdown="slides/intro/agenda.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="sass" id="sass-index" data-markdown="slides/sass/index.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="sass" data-markdown="slides/sass/sass.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="syntax" data-markdown="slides/sass/syntax.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="syntax-2" data-markdown="slides/sass/syntax-2.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="scss" data-markdown="slides/sass/scss.md"></section>
+
+
+                            
+                                
+    <section data-state="soothe" id="sassmeister" data-markdown="slides/sass/sassmeister.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="variables" data-markdown="slides/sass/variables.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="functions" data-markdown="slides/sass/functions.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="mixins" data-markdown="slides/sass/mixins.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="extendables" data-markdown="slides/sass/extendables.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="partials" data-markdown="slides/sass/partials.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="comments" data-markdown="slides/sass/comments.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="sass-questions" data-markdown="slides/sass/questions.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass" data-markdown="slides/compass/index.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="drupal" data-markdown="slides/compass/drupal.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-mixins" data-markdown="slides/compass/mixins.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-features" data-markdown="slides/compass/features.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-extensions" data-markdown="slides/compass/extensions.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-questions" data-markdown="slides/compass/questions.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="bundler" id="bundler" data-markdown="slides/bundler/bundler.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-install" data-markdown="slides/bundler/install.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-one-time" data-markdown="slides/bundler/one-time.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-bundle-install" data-markdown="slides/bundler/bundle-install.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-exec" data-markdown="slides/bundler/exec.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="mq" id="media-queries" data-markdown="slides/mq/mq.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-examples" data-markdown="slides/mq/examples.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="breakpoint" data-markdown="slides/mq/breakpoint.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="breakdown" data-markdown="slides/mq/breakdown.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-single" data-markdown="slides/mq/single.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-fenced" data-markdown="slides/mq/fenced.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-explicit" data-markdown="slides/mq/explicit.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-combine" data-markdown="slides/mq/combine.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="noquery" data-markdown="slides/mq/noquery.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="mq-bronze" data-markdown="slides/mq/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="mq-silver" data-markdown="slides/mq/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="mq-gold" data-markdown="slides/mq/gold.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="singularity" id="singularity" data-markdown="slides/singularity/singularity.md"></section>
+
+
+                            
+                                
+    <section data-state="alert" id="special-note" data-markdown="slides/singularity/note.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="box-model" data-markdown="slides/singularity/box-model.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="s960" data-markdown="slides/singularity/960.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="setting-up" data-markdown="slides/singularity/setting-up.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="output" data-markdown="slides/singularity/output.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="grid-span" data-markdown="slides/singularity/grid-span.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="singularity-bronze" data-markdown="slides/singularity/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="singularity-silver" data-markdown="slides/singularity/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="singularity-gold" data-markdown="slides/singularity/gold.md"></section>
+
+
+                            
+                                
+    <section data-state="alert" id="class-based-grid-systems-suck" data-markdown="slides/singularity/class-based.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="content" id="content-first" data-markdown="slides/content/first.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="what-is-content-first" data-html="slides/content/what.html"></section>
+
+
+                            
+                                
+    <section data-state="content" id="ideal-grid" data-markdown="slides/content/ideal.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="singularity-is-built-for-this" data-markdown="slides/content/built.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="asymmetric" data-markdown="slides/content/asymmetric.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="asymmetric-types" data-markdown="slides/content/asymmetric-types.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="custom-grids" data-markdown="slides/content/custom.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="compound-grids" data-markdown="slides/content/compound.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="ratio-grids" data-markdown="slides/content/ratio.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="spiral-grids" data-markdown="slides/content/spiral.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="snap-grids" data-markdown="slides/content/snap.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="global-contexts" data-markdown="slides/content/global-contexts.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="global-contexts-2" data-markdown="slides/content/global-contexts-2.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="override-global-contexts" data-markdown="slides/content/override.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="content-bronze" data-markdown="slides/content/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="content-silver" data-markdown="slides/content/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="content-gold" data-markdown="slides/content/gold.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="toolkit" id="toolkit" data-markdown="slides/toolkit/toolkit.md"></section>
+
+
+                            
+                                
+    <section data-state="toolkit" id="what-is-toolkit" data-markdown="slides/toolkit/what.md"></section>
+
+
+                            
+                                
+    <section data-state="toolkit" id="basic-fluid-media" data-markdown="slides/toolkit/fluid.md"></section>
+
+
+                            
+                                
+    <section data-state="toolkit" id="intrinsic-ratios" data-markdown="slides/toolkit/ir.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="toolkit-bronze" data-markdown="slides/toolkit/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="toolkit-silver" data-markdown="slides/toolkit/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="toolkit-gold" data-markdown="slides/toolkit/gold.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="wrap-up" id="wrap-up" data-markdown="slides/wrap-up/wrap-up.md"></section>
+
+
+                            
+                                
+    <section data-state="wrap-up" id="thank-you" data-markdown="slides/wrap-up/thanks.md"></section>
+
+
+                            
+                                
+    <section data-state="wrap-up" id="four-kitchens" data-markdown="slides/wrap-up/4k.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+            </div>
+
+        </div>
+
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script>
+            // Configure Reveal
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+                ]
+            });
+        </script>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </body>
+
 </html>

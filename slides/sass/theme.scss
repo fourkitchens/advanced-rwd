@@ -1,0 +1,321 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+// This file has been copied over from
+// ../../bower_components/reveal.js/css/theme/source/default.scss
+
+////////////////////////////
+// Cross Browser Support
+$graceful-usage-threshold: 100;
+$critical-usage-threshold: 100;
+
+$browser-minimum-versions: (
+  "ie": "9",
+  "android": "4",
+  "chrome": "31",
+  "safari": "5",
+  "firefox": "25",
+  "ios-safari": "6.0-6.1",
+  "android-chrome": "0"
+);
+////////////////////////////
+
+////////////////////////
+// Compass Imports
+@import "compass";
+@import "compass/reset";
+////////////////////////
+
+////////////////////////
+// Compass Extensions
+@import "toolkit";
+@import "toolkit/kickstart";
+@import "breakpoint";
+////////////////////////
+
+
+// Default mixins and settings -----------------
+@import "../bower_components/reveal.js/css/theme/template/mixins";
+@import "../bower_components/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+@import url(http://snugug.github.io/fonts/homestead-subset.css);
+@import url(http://snugug.github.io/fonts/north.css);
+@import url(http://snugug.github.io/fonts/ostrich.css);
+
+// Include theme-specific fonts ----------------
+// @font-face {
+//         font-family: 'League Gothic';
+//         src: url('../../lib/font/league_gothic-webfont.eot');
+//         src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+//                  url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+//                  url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+//                  url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+
+//         font-weight: normal;
+//         font-style: normal;
+// }
+
+// @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+// ---------------------------------------------
+
+// Override theme settings ---------------------
+// $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+// Other options include e.g.
+// $mainFont: 'Open Sans', sans-serif;
+// $linkColor: #ed1dff;
+// $linkColorHover: $linkColor;
+// $headingFont: 'Montserrat', Impact, sans-serif;
+// $headingTextShadow: none;
+// $headingLetterSpacing: -0.03em;
+// $headingTextTransform: none;
+// $selectionBackgroundColor: #e0ad52;
+// $mainFontSize: 30px;
+// See ../../bower_components/reveal.js/css/theme/template/settings.scss for the full list.
+// ---------------------------------------------
+
+// Background generator ------------------------
+// @mixin bodyBackground() {
+//   background-color: #2a9ed5;
+// }
+// ---------------------------------------------
+
+// Theme template ------------------------------
+// @import "../bower_components/reveal.js/css/theme/template/theme";
+
+// ---------------------------------------------
+
+// See ../../bower_components/reveal.js/css/theme/README.md
+// for further explanations on how reveal.js themes work.
+
+
+body {
+  background-color: #97e52d;
+  font-family: 'pt';
+  font-size: 2em;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+}
+
+.reveal {
+  blockquote {
+    border: none;
+    box-shadow: none;
+    text-align: right;
+    background: none;
+    border-right: .2em solid;
+    padding: 0 1em 0 0;
+
+    cite {
+      font-size: .75em;
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    // width: 100%;
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    .cs & {
+      @include underline(#fede32, #3c3c3c);
+    }
+
+    // .tools & {
+    //   @include underline(#97e52d, #3c3c3c);
+    // }
+  }
+
+
+  h1, h2, h3, h4, h5  {
+    &:not(.north) {
+      font-family: 'ostrich';
+      letter-spacing: .1em;
+    }
+
+    a {
+      background-position: 0 0.825em !important;
+    }
+  }
+
+  pre {
+    font-size: 1em;
+    &.codemark {
+      box-shadow: none;
+      font-size: .55em;
+    }
+  }
+}
+
+.reveal .controls div.navigate {
+  $states: (
+    "intro": white,
+    "north": #061b25,
+    "cs": #3c3c3c
+  );
+
+  $dirs: (
+    left: right,
+    right: left,
+    up: bottom,
+    down: top
+  );
+
+  @each $dir, $border in $dirs {
+    &-#{$dir} {
+      @each $state, $color in $states {
+        .#{$state} & {
+          border-#{$border}-color: $color;
+        }
+      }
+    }
+  }
+}
+
+.state-background {
+  .intro & {
+    background: black;
+  }
+  .north & {
+    background: #f7fafc;
+  }
+  .cs & {
+    background: #fede32;
+  }
+  .design & {
+    background: #fe4432;
+  }
+
+  .wrap-up & {
+    background: white;
+  }
+}
+
+.intro {
+  color: white;
+}
+
+.wrap-up {
+  color: #666666;
+}
+
+.cs,
+.tools,
+.wrap-up {
+  color: #3c3c3c;
+}
+
+.reveal .north {
+  @function white($color) {
+    @return adjust-color($color, $hue: 5.18797, $saturation: -8.82867, $lightness: 38.62745);
+  }
+
+  @function black($color) {
+    @return adjust-color($color, $hue: -0.76401, $saturation: 17.28533, $lightness: -50.78431);
+  }
+
+  @function secondary($color) {
+    @return adjust-color($color, $hue: 3.91813, $saturation: 21.24865, $lightness: -31.37255);
+  }
+
+  $primary: #5ea9d0;
+  $black: black($primary);
+  $white: white($primary);
+  $secondary: secondary($primary);
+
+  $background: $white;
+  $foreground: $black;
+  $thin: mix($white, $black, 80%);
+
+  @at-root {
+    %icon {
+      @include enable-ligatures;
+      color: $secondary;
+      font-family: 'north';
+      text-transform: lowercase;
+      display: inline-block;
+      border: none;
+    }
+  }
+
+  @at-root {
+    .north {
+      color: $black;
+    }
+  }
+
+  &--title {
+    font-size: 7em;
+  }
+
+  &--logo {
+    @extend %icon;
+    padding-right: .16em;
+    @include translateY(.119402985em);
+  }
+
+  &--wordmark {
+    @extend %icon;
+    font-size: .75em;
+
+    color: $primary;
+    text-transform: uppercase;
+    position: relative;
+
+    text-align: left;
+    display: inline-block;
+
+    font-family: 'homestead-one', 'homestead-regular';
+
+    &:before {
+      content: 'north';
+      text-transform: uppercase;
+      font-family: 'homestead-two', 'homestead-regular';
+      color: mix($black, $primary, 10%);
+      position: absolute;
+      left: 0;
+      top: -0.065em;
+    }
+    &:after {
+      content: 'north';
+      text-transform: uppercase;
+      font-family: 'homestead-three', 'homestead-regular';
+      color: mix($white, $primary, 10%);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+h1 a.wordmark {
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-family: 'ostrich-wordmark';
+  background: none !important;
+  text-shadow: none !important;
+
+  .wordmark--4 {
+    margin-left: -.10em;
+  }
+}
+
+.fk-logo {
+  width: 100%;
+  height: 100%;
+}
+
+@import "partials/medals";
+@import 'partials/old';
+
+@import url(http://snugug.github.io/fonts/scp.css);
+@import url(http://snugug.github.io/fonts/pt.css);
