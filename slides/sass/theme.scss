@@ -287,8 +287,51 @@ h1 a.wordmark {
   height: 100%;
 }
 
-@import 'partials/comparison';
-@import 'partials/old';
+/*********************************************
+ * TABLES
+ *********************************************/
+
+table.comparison {
+  margin: 1em auto;
+  font-size: 1.6em;
+}
+table.comparison tr td {
+  width: 5em;
+  padding: .4em;
+}
+table.comparison tr td:nth-child(1) {
+  text-align: right;
+  padding-right: 1em;
+}
+table.comparison tr td:nth-child(2) {
+  text-align: left;
+  padding-left: 1em;
+}
+
+
+/*********************************************
+ * Advanced-RWD Styles
+ *********************************************/
+
+.reveal .fragment code {
+  color: #666;
+}
+
+.reveal ul.naked li {
+  list-style-type: none;
+}
+
+
+details {
+  text-align: left;
+}
+
+details details {
+  width: 90%;
+  margin-left: 10%;
+}
+
+
 
 @import url(http://snugug.github.io/fonts/scp.css);
 @import url(http://snugug.github.io/fonts/pt.css);
