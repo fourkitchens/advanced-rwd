@@ -109,6 +109,13 @@
       }
     },
     {
+      "filename": "sass/maps.md",
+      "attr": {
+        "data-state": "sass",
+        "id": "sassy-maps"
+      }
+    },
+    {
       "filename": "sass/functions.md",
       "attr": {
         "data-state": "sass",
