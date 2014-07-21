@@ -136,7 +136,7 @@ body {
 .north .reveal .controls div.navigate-left {
   border-right-color: #061b25;
 }
-.cs .reveal .controls div.navigate-left {
+.mq .reveal .controls div.navigate-left {
   border-right-color: #3c3c3c;
 }
 .intro .reveal .controls div.navigate-right {
@@ -145,7 +145,7 @@ body {
 .north .reveal .controls div.navigate-right {
   border-left-color: #061b25;
 }
-.cs .reveal .controls div.navigate-right {
+.mq .reveal .controls div.navigate-right {
   border-left-color: #3c3c3c;
 }
 .intro .reveal .controls div.navigate-up {
@@ -154,7 +154,7 @@ body {
 .north .reveal .controls div.navigate-up {
   border-bottom-color: #061b25;
 }
-.cs .reveal .controls div.navigate-up {
+.mq .reveal .controls div.navigate-up {
   border-bottom-color: #3c3c3c;
 }
 .intro .reveal .controls div.navigate-down {
@@ -163,27 +163,12 @@ body {
 .north .reveal .controls div.navigate-down {
   border-top-color: #061b25;
 }
-.cs .reveal .controls div.navigate-down {
+.mq .reveal .controls div.navigate-down {
   border-top-color: #3c3c3c;
 }
 
-.intro .state-background {
-  background: black;
-}
-.north .state-background {
-  background: #f7fafc;
-}
-.cs .state-background {
-  background: #fede32;
-}
-.design .state-background {
-  background: #fe4432;
-}
-.wrap-up .state-background {
-  background: white;
-}
-
-.intro {
+.intro,
+.compass {
   color: white;
 }
 
@@ -191,63 +176,65 @@ body {
   color: #666666;
 }
 
-.cs,
+.mq,
 .tools,
 .wrap-up {
   color: #3c3c3c;
 }
 
-.reveal .north--logo, .reveal .north--wordmark {
-  -webkit-font-feature-settings: "liga","dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -moz-font-feature-settings: "liga","dlig";
-  -ms-font-feature-settings: "liga","dlig";
-  -o-font-feature-settings: "liga","dlig";
-  font-feature-settings: "liga","dlig";
-  color: #11517d;
-  font-family: 'north';
-  text-transform: lowercase;
-  display: inline-block;
-  border: none;
+/**
+ * State backgrounds.
+ */
+.state-background {
+  /*
+   * Custom background images
+   */
 }
-.north {
-  color: #061b25;
+.intro .state-background {
+  background: black;
 }
-.reveal .north--title {
-  font-size: 7em;
+.sass .state-background {
+  background: #c69;
 }
-.reveal .north--logo {
-  padding-right: .16em;
-  -ms-transform: translateY(0.1194em);
-  -webkit-transform: translateY(0.1194em);
-  transform: translateY(0.1194em);
+.compass .state-background {
+  background: #2f2f2f;
 }
-.reveal .north--wordmark {
-  font-size: .75em;
-  color: #5ea9d0;
-  text-transform: uppercase;
-  position: relative;
-  text-align: left;
-  display: inline-block;
-  font-family: 'homestead-one', 'homestead-regular';
+.bundler .state-background {
+  background: #c6e7ec;
 }
-.reveal .north--wordmark:before {
-  content: 'north';
-  text-transform: uppercase;
-  font-family: 'homestead-two', 'homestead-regular';
-  color: #559abe;
-  position: absolute;
-  left: 0;
-  top: -0.065em;
+.mq .state-background {
+  background: #fede32;
 }
-.reveal .north--wordmark:after {
-  content: 'north';
-  text-transform: uppercase;
-  font-family: 'homestead-three', 'homestead-regular';
-  color: #6db1d4;
-  position: absolute;
-  left: 0;
-  top: 0;
+.alert .reveal .state-background {
+  background: #c8321e;
+}
+.singularity .state-background {
+  background: #fe4432;
+}
+.toolkit .state-background {
+  background-color: #8227A9;
+}
+.yeoman .state-background {
+  background-color: #5aadbb;
+}
+.wrap-up .state-background {
+  background: white;
+}
+.fingerprint-pre .state-background, .medal-pre .state-background {
+  background-position: 1800px -1500px;
+}
+.fingerprint .state-background {
+  background: white url("../../img/fingerprint.jpg") no-repeat 28em -16em;
+  opacity: .25;
+}
+.bronze .state-background {
+  background: white url("../../img/medal-bronze.png") no-repeat 26em -1em;
+}
+.silver .state-background {
+  background: white url("../../img/medal-silver.png") no-repeat 26em -1em;
+}
+.gold .state-background {
+  background: white url("../../img/medal-gold.png") no-repeat 26em -1em;
 }
 
 h1 a.wordmark {
@@ -266,24 +253,27 @@ h1 a.wordmark .wordmark--4 {
   height: 100%;
 }
 
-/*
- * Custom background images
- */
-.fingerprint-pre .state-background, .medal-pre .state-background {
-  background-position: 1800px -1500px;
+/*********************************************
+ * TABLES
+ *********************************************/
+table.comparison {
+  margin: 1em auto;
+  font-size: 1.6em;
 }
-.fingerprint .state-background {
-  background: white url("../../img/fingerprint.jpg") no-repeat 28em -16em;
-  opacity: .25;
+
+table.comparison tr td {
+  width: 5em;
+  padding: .4em;
 }
-.bronze .state-background {
-  background: white url("../../img/medal-bronze.png") no-repeat 26em -1em;
+
+table.comparison tr td:nth-child(1) {
+  text-align: right;
+  padding-right: 1em;
 }
-.silver .state-background {
-  background: white url("../../img/medal-silver.png") no-repeat 26em -1em;
-}
-.gold .state-background {
-  background: white url("../../img/medal-gold.png") no-repeat 26em -1em;
+
+table.comparison tr td:nth-child(2) {
+  text-align: left;
+  padding-left: 1em;
 }
 
 /*********************************************

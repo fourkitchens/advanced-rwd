@@ -160,7 +160,7 @@ body {
   $states: (
     "intro": white,
     "north": #061b25,
-    "cs": #3c3c3c
+    "mq": #3c3c3c
   );
 
   $dirs: (
@@ -181,26 +181,8 @@ body {
   }
 }
 
-.state-background {
-  .intro & {
-    background: black;
-  }
-  .north & {
-    background: #f7fafc;
-  }
-  .cs & {
-    background: #fede32;
-  }
-  .design & {
-    background: #fe4432;
-  }
-
-  .wrap-up & {
-    background: white;
-  }
-}
-
-.intro {
+.intro,
+.compass {
   color: white;
 }
 
@@ -208,92 +190,83 @@ body {
   color: #666666;
 }
 
-.cs,
+.mq,
 .tools,
 .wrap-up {
   color: #3c3c3c;
 }
 
-.reveal .north {
-  @function white($color) {
-    @return adjust-color($color, $hue: 5.18797, $saturation: -8.82867, $lightness: 38.62745);
+
+/**
+ * State backgrounds.
+ */
+
+
+.state-background {
+  .intro & {
+    background: black;
   }
 
-  @function black($color) {
-    @return adjust-color($color, $hue: -0.76401, $saturation: 17.28533, $lightness: -50.78431);
+  .sass & {
+    background: #c69;
   }
 
-  @function secondary($color) {
-    @return adjust-color($color, $hue: 3.91813, $saturation: 21.24865, $lightness: -31.37255);
+  .compass & {
+    background: #2f2f2f;
   }
 
-  $primary: #5ea9d0;
-  $black: black($primary);
-  $white: white($primary);
-  $secondary: secondary($primary);
-
-  $background: $white;
-  $foreground: $black;
-  $thin: mix($white, $black, 80%);
-
-  @at-root {
-    %icon {
-      @include enable-ligatures;
-      color: $secondary;
-      font-family: 'north';
-      text-transform: lowercase;
-      display: inline-block;
-      border: none;
-    }
+  .bundler & {
+    background: #c6e7ec;
   }
 
-  @at-root {
-    .north {
-      color: $black;
-    }
+  .mq & {
+    background: #fede32;
   }
 
-  &--title {
-    font-size: 7em;
+  .alert .reveal & { // Extra class to override reveal.
+    background: rgba(200, 50, 30, 1);
   }
 
-  &--logo {
-    @extend %icon;
-    padding-right: .16em;
-    @include translateY(.119402985em);
+  .singularity & {
+    background: #fe4432;
   }
 
-  &--wordmark {
-    @extend %icon;
-    font-size: .75em;
+  .toolkit & {
+    background-color: #8227A9;
+  }
 
-    color: $primary;
-    text-transform: uppercase;
-    position: relative;
+  .yeoman & {
+    background-color: #5aadbb;
+  }
 
-    text-align: left;
-    display: inline-block;
+  .wrap-up & {
+    background: white;
+  }
 
-    font-family: 'homestead-one', 'homestead-regular';
+  /*
+   * Custom background images
+   */
 
-    &:before {
-      content: 'north';
-      text-transform: uppercase;
-      font-family: 'homestead-two', 'homestead-regular';
-      color: mix($black, $primary, 10%);
-      position: absolute;
-      left: 0;
-      top: -0.065em;
-    }
-    &:after {
-      content: 'north';
-      text-transform: uppercase;
-      font-family: 'homestead-three', 'homestead-regular';
-      color: mix($white, $primary, 10%);
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+  .fingerprint-pre &,
+  .medal-pre & {
+    background-position: 1800px -1500px;
+  }
+
+  .fingerprint & {
+    background: #fff url('../../img/fingerprint.jpg') no-repeat 28em -16em;
+    opacity: .25;
+  }
+
+  .bronze & {
+    background: #fff url('../../img/medal-bronze.png') no-repeat 26em -1em;
+  }
+
+  .silver &  {
+    background: #fff url('../../img/medal-silver.png') no-repeat 26em -1em;
+  }
+
+  .gold & {
+    background: #fff url('../../img/medal-gold.png') no-repeat 26em -1em;
   }
 }
 
@@ -314,7 +287,7 @@ h1 a.wordmark {
   height: 100%;
 }
 
-@import "partials/medals";
+@import 'partials/comparison';
 @import 'partials/old';
 
 @import url(http://snugug.github.io/fonts/scp.css);
