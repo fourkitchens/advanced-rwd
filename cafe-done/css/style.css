@@ -1,294 +1,236 @@
-/* normalize.css v2.1.0 | MIT License | git.io/normalize */
-/* normalize.css v2.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_html5\.scss}line{font-family:\0000320}}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+body {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_html5\.scss}line{font-family:\0000328}}
-audio,
-canvas,
-video {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+audio, canvas, progress, video {
   display: inline-block;
+  vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_html5\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_html5\.scss}line{font-family:\0000346}}
-[hidden] {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+[hidden], template {
   display: none;
 }
 
-/* normalize.css v2.1.0 | Base | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_base\.scss}line{font-family:\0000313}}
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+a {
+  background: 0 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_base\.scss}line{font-family:\0000337}}
-body {
-  margin: 0;
-}
-
-/* normalize.css v2.1.0 | Links | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_links\.scss}line{font-family:\000039}}
-a:focus {
-  outline: thin dotted;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_links\.scss}line{font-family:\0000316}}
-a:active,
-a:hover {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+a:active, a:hover {
   outline: 0;
 }
 
-/* normalize.css v2.1.0 | Typography | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\0000313}}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\0000354}}
-b,
-strong {
-  font-weight: bold;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+b, strong {
+  font-weight: 700;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 dfn {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\0000373}}
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 mark {
   background: #ff0;
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003100}}
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003110}}
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003118}}
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 small {
   font-size: 80%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003147}}
-sub,
-sup {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_typography\.scss}line{font-family:\00003158}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
-/* normalize.css v2.1.0 | Embedded Content | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_embeds\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 img {
   border: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_embeds\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* normalize.css v2.1.0 | Figures | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_figures\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 figure {
+  margin: 1em 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+pre {
+  overflow: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+code, kbd, pre, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
   margin: 0;
 }
 
-/* normalize.css v2.1.0 | Forms | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\0000317}}
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+button {
+  overflow: visible;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\0000330}}
-legend {
-  border: 0;
-  padding: 0;
-  white-space: normal;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\0000349}}
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  margin: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\0000363}}
-button,
-input {
-  line-height: normal;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\0000373}}
-button,
-select {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+button, select {
   text-transform: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\0000390}}
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+button, html input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\00003101}}
-button[disabled],
-html input[disabled] {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+button[disabled], html input[disabled] {
   cursor: default;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\00003113}}
-input[type="checkbox"],
-input[type="radio"] {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+input {
+  line-height: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\00003126}}
-input[type="search"] {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+input[type=search] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\00003137}}
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\00003144}}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+legend {
   border: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_forms\.scss}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 textarea {
   overflow: auto;
-  vertical-align: top;
 }
 
-/* normalize.css v2.1.0 | Tables | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/compass-normalize-1\.4\.3\/stylesheets\/normalize\/_tables\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+optgroup {
+  font-weight: 700;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/toolkit-1\.0\.0\/stylesheets\/toolkit\/_border-box\.scss}line{font-family:\000036}}
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/toolkit-1\.0\.0\/stylesheets\/toolkit\/_fluid-media\.scss}line{font-family:\000034}}
-img, video {
-  max-width: 100%;
-  height: auto;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/toolkit-1\.0\.0\/stylesheets\/toolkit\/_intrinsic-ratio\.scss}line{font-family:\0000346}}
-.ratio-16-9 {
-  position: relative;
-  height: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/toolkit-1\.0\.0\/stylesheets\/toolkit\/_intrinsic-ratio\.scss}line{font-family:\0000350}}
-.ratio-16-9 > * {
-  display: block;
-  position: absolute;
-  width: 100% !important;
-  height: 100% !important;
-  top: 0;
-  margin: 0;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
+td, th {
   padding: 0;
 }
 
 @font-face {
   font-family: 'webchef';
   src: url('../fonts/webchef/webchef.eot');
-  src: url('../fonts/webchef/webchef.eot?#iefix') format("embedded-opentype"), url('data:application/x-font-woff;base64,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') format('"woff"'), url('../fonts/webchef/webchef.ttf') format("truetype"), url('../fonts/webchef/webchef.svg#webchef') format("svg");
+  src: url('../fonts/webchef/webchef.eot?#iefix') format("embedded-opentype"), url('data:application/font-woff;base64,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') format('woff'), url('../fonts/webchef/webchef.ttf') format("truetype"), url('../fonts/webchef/webchef.svg#webchef') format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\000031}}
 body {
   background: white;
   color: #4d4d4d;
@@ -304,13 +246,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000320}}
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000326}}
 nav li {
   margin: 0;
   padding: 0;
@@ -318,80 +260,78 @@ nav li {
   padding-right: .5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000334}}
 a {
   color: #f388c3;
   text-decoration: none;
   -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -o-transition: color 0.3s;
   transition: color 0.3s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000338}}
 a:hover {
   color: #ef61af;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000343}}
 h1, h2, h3 {
   font-family: 'Satisfy', cursive;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\000032}}
 .container, main {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.8\/gems\/singularitygs-1\.0\.7\/stylesheets\/singularitygs\/helpers\/_clearfix\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/\.rbenv\/versions\/2\.0\.0-p451\/lib\/ruby\/gems\/2\.0\.0\/gems\/toolkit-2\.5\.0\/stylesheets\/toolkit\/_clearfix\.scss}line{font-family:\0000313}}
 .container:after, main:after {
   content: "";
   display: table;
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\000039}}
 .hours {
   width: 48.93617%;
   clear: right;
   float: left;
-  margin-left: 0%;
+  margin-left: 0;
   margin-right: 2.12766%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000312}}
 .contact {
   width: 48.93617%;
   clear: right;
   float: right;
-  margin-right: 0%;
+  margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000316}}
 main {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000322}}
 #info {
   width: 31.91489%;
   clear: right;
   float: left;
-  margin-left: 0%;
+  margin-left: 0;
   margin-right: 2.12766%;
 }
 @media (min-width: 624px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000322}}
   #info {
     width: 23.68421%;
     clear: right;
     float: left;
-    margin-left: 0%;
+    margin-left: 0;
     margin-right: 2.63158%;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000331}}
 #menu {
   width: 31.91489%;
   clear: right;
@@ -399,7 +339,7 @@ main {
   margin-right: 2.12766%;
 }
 @media (min-width: 624px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000331}}
   #menu {
     width: 47.36842%;
     clear: right;
@@ -407,41 +347,53 @@ main {
     margin-right: 2.63158%;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000340}}
 #menu section {
   width: 27.27273%;
   clear: right;
   float: left;
-  margin-left: 0%;
+  margin-left: 0;
   margin-right: 9.09091%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000343}}
 #menu section:nth-of-type(3n) {
   width: 27.27273%;
   clear: right;
   float: right;
-  margin-right: 0%;
+  margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000349}}
 #about {
   width: 31.91489%;
   clear: right;
   float: right;
-  margin-right: 0%;
+  margin-right: 0;
 }
 @media (min-width: 624px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000349}}
   #about {
-    width: 23.68421%;
+    width: 47.36842%;
     clear: right;
     float: right;
-    margin-right: 0%;
+    margin-right: 0;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/ian\/www\/rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000359}}
 .ratio-16-9 {
+  position: relative;
+  height: 0;
   padding-top: 56.25%;
   width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/\.rbenv\/versions\/2\.0\.0-p451\/lib\/ruby\/gems\/2\.0\.0\/gems\/toolkit-2\.5\.0\/stylesheets\/toolkit\/_intrinsic-ratio\.scss}line{font-family:\0000358}}
+.ratio-16-9 > * {
+  display: block;
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  margin: 0;
+  padding: 0;
 }

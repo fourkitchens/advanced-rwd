@@ -27,6 +27,7 @@ main {
     @include grid-span(1,1);
   }
 }
+
 #menu {
   //background-color: rgba(#0ff, .5);
   @include grid-span(4,5);
@@ -44,6 +45,7 @@ main {
     }
   }
 }
+
 #about {
   //background-color: rgba(#f0f, .5);
   @include grid-span(4,9);
@@ -57,8 +59,3 @@ main {
 .ratio-16-9 {
   @include intrinsic-ratio;
 }
-
-
-
-
-

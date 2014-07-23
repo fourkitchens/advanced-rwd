@@ -1,6 +1,7 @@
 # Require any additional compass plugins here.
 require 'toolkit'
-require 'compass-normalize'
+require 'breakpoint'
+require 'singularitygs'
 require 'color-schemer'
 require 'sassy-buttons'
 
