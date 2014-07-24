@@ -377,10 +377,11 @@ main {
     clear: right;
     float: right;
     margin-right: 0;
+    width: column-span 1, 3;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000362}}
 .ratio-16-9 {
   position: relative;
   height: 0;

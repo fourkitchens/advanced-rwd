@@ -52,6 +52,9 @@ main {
 
   @include breakpoint($measure-break + 100px) {
     @include grid-span(1,3);
+
+    // Fix until Singularity 1.2.2 is released.
+    width: column-span (1,3);
   }
 }
 
