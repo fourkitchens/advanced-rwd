@@ -5,14 +5,28 @@
 //  CSS files. Generally included here are only Compass Extension
 //  imports and imports for variables, functions, mixins, and extendables.
 ////////////////////////
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-mozilla: false;
+
+////////////////////////////
+// Cross Browser Support
+$graceful-usage-threshold: 100;
+$critical-usage-threshold: 100;
+
+$browser-minimum-versions: (
+  "ie": "9",
+  "android": "4",
+  "chrome": "31",
+  "safari": "5",
+  "firefox": "25",
+  "ios-safari": "6.0-6.1",
+  "android-chrome": "0"
+);
+////////////////////////////
+
+
 
 ////////////////////////
 // CSS Reset
 ////////////////////////
-// @import "compass/reset";
 @import "normalize";
 
 
