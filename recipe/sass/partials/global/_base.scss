@@ -6,25 +6,34 @@
 // Toolkit imports all of Compass, so there is no need to import it separately.
 ////////////////////////
 
-//////////////////////////////
-// Setup Variables
-//////////////////////////////
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
-$legacy-support-for-ie8: false;
-$legacy-support-for-mozilla: false;
+////////////////////////////
+// Cross Browser Support
+$graceful-usage-threshold: 100;
+$critical-usage-threshold: 100;
 
-//////////////////////////////
-// Import Normalize
-//////////////////////////////
-@import 'normalize';
+$browser-minimum-versions: (
+  "ie": "9",
+  "android": "4",
+  "chrome": "31",
+  "safari": "5",
+  "firefox": "25",
+  "ios-safari": "6.0-6.1",
+  "android-chrome": "0"
+);
+////////////////////////////
 
 ////////////////////////
 // Compass Extensions
 ////////////////////////
+@import 'compass';
 @import 'singularitygs';
 @import 'toolkit';
-@import 'toolkit/carousel';
+
+//////////////////////////////
+// Import Compass reset
+//////////////////////////////
+@import 'compass/reset';
+@import 'toolkit/kickstart';
 
 ////////////////////////
 // Private Imports
