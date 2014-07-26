@@ -1,0 +1,5 @@
+#!/bin/bash
+export RUBY_FREE_MIN={{ ruby_free_min }}
+export RUBY_GC_MALLOC_LIMIT={{ ruby_gc_malloc_limit }}
+export RUBY_HEAP_MIN_SLOTS={{ ruby_heap_min_slots }}
+exec "{{ ruby_location }}/bin/ruby" "$@"

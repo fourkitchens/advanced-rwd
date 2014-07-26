@@ -1,0 +1,18 @@
+---
+##
+# Message of the day configuration.
+#
+- name: General | Message of the day explaining server is under Ansible control.
+  action: copy src=etc/update-motd.d/95-ansible dest=/etc/update-motd.d/95-ansible mode=755
+
+- name: General | Message of the day logo script.
+  action: copy src=etc/update-motd.d/05-splash dest=/etc/update-motd.d/05-splash mode=755
+
+- name: General | Disable default motd scripts.
+  action: file path=/etc/update-motd.d/00-header mode=444
+
+- name: General | Disable default motd scripts.
+  action: file path=/etc/update-motd.d/10-help-text mode=444
+
+- name: General | Disable default motd scripts.
+  action: file path=/etc/update-motd.d/50-landscape-sysinfo state=absent

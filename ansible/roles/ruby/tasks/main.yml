@@ -1,0 +1,69 @@
+---
+- name: Update APT cache
+  apt: update_cache=yes
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Retrieve the number of cores that are available for compilation
+  command: nproc
+  register: cores
+
+- name: Install APT prerequisite packages that are necessary to compile applications and gems with native extensions
+  apt: pkg={{ item }}
+  with_items:
+    - autoconf
+    - build-essential
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Install yum prerequisite packages that are necessary to compile applications and gems with native extensions
+  yum: name="{{ item }}"
+  with_items:
+    - autoconf
+    - "@Developer tools"
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Amazon'
+
+- name: Install APT Ruby dependencies
+  apt: pkg={{ item }}
+       state=present
+  with_items: ruby_apt_dependencies
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Install yum Ruby dependencies
+  yum: name={{ item }}
+  with_items: ruby_yum_dependencies
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Amazon'
+
+- name: Download the Ruby source code
+  get_url: url={{ ruby_download_location }}
+           dest=/usr/local/src/
+           sha256sum={{ ruby_checksum }}
+
+- name: Generate the Ruby installation script
+  template: src=install-ruby.j2
+            dest=/usr/local/src/install-ruby.sh
+            owner=root
+            group=root
+            mode=700
+
+- name: Run the Ruby installation script
+  command: /usr/local/src/install-ruby.sh
+           creates={{ ruby_location }}/bin/ruby
+
+- name: Generate the script that allows you to easily run Rake tasks with the correct RAILS_ENV environment variable, and the wrapper script that contains GC settings
+  template: src={{ item }}.j2
+            dest=/usr/local/bin/{{ item }}
+            owner=root
+            group=root
+            mode=755
+  with_items:
+    - rake-env
+    - ruby-gc-wrapper
+
+- name: Install Bundler
+  command: "{{ ruby_location }}/bin/gem install bundler {{ ruby_bundler_flags }}
+            creates={{ ruby_location }}/bin/bundle"
+
+- name: Make Ruby symlinks
+  file: path=/usr/local/bin/{{ item }}
+        src={{ ruby_location }}/bin/{{ item }}
+        state=link
+  with_items: ruby_symlinks

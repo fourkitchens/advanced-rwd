@@ -1,0 +1,3 @@
+#!/bin/bash
+export RAILS_ENV={{ rails_env }}
+exec "{{ ruby_location }}/bin/bundle" "exec" "rake" "$@"

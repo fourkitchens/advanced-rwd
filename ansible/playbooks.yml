@@ -1,0 +1,9 @@
+---
+# The main playbook to deploy the site
+
+- hosts: all
+  roles:
+   - common
+   - db
+   - web
+   - ruby

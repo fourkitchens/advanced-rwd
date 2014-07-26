@@ -1,0 +1,22 @@
+# Variables for all instances.
+
+---
+
+# MySQL
+mysql_root_password: 'password'
+
+# Apache
+apache_server_admin: 'you@fourkittens.com'
+apache_server_alias: '*.local.dev'
+apache_server_directory: '/home/vagrant/public_html/'
+apache_server_name: 'local'
+apache_server_home_alias: 'local.dev'
+
+# Local overrides
+local_key: 1
+
+# ssh
+ssh_password_auth: 'no'
+server_hostname: 'local.dev'
+github_playbooks: 0
+skip_server_auth: true

@@ -1,0 +1,29 @@
+---
+##
+# node.js installation (latest stable instead of Ubuntu's out-of-date one)
+#
+- name: Node.js | Package prerequisites for node.js
+  action: apt pkg=python-software-properties state=installed
+  
+- name: Node.js | Add the node.js PPA
+  action: apt_repository repo=ppa:chris-lea/node.js
+
+- name: Node.js | Update the apt cache for the new repository
+  action: apt update-cache=yes
+
+- name: Node.js | Install nodejs and npm
+  action: apt pkg=nodejs state=installed
+
+- name: Node.js | Install required npm packages
+  action: npm name={{ item }} global=yes
+  with_items:
+    - bower
+    - coffee-script
+    - forever
+    - grunt-cli
+    - jshint
+    - node-inspector
+    - roole
+    - yo
+    - drush-reloadp
+    - gulp

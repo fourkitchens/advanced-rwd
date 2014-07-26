@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo " +----------------------------------------------------------------------------+"
+echo " | Four Kitchens Development Server.                                          |"
+echo " |                                                                            |"
+echo " | Please don't install packages or change configuration manually, as your    |"
+echo " | changes will be lost. To correctly modify configuration, edit the files in |"
+echo " | /root/dev2-playbooks, and re-run the Ansible playbook.                     |"
+echo " |                                                                            |"
+echo " | There are Jenkins jobs that perform everyday tasks such as adding          |"
+echo " | Apache vhosts, adding/removing Linux users and moving data around.         |"
+echo " |                                                                            |"
+echo " | Jenkins is at:                                                             |"
+echo " | https://jenkins.fourkitchens.com                                           |"
+echo " |                                                                            |"
+echo " | For more help, please see:                                                 |"
+echo " | https://fourkitchens.atlassian.net/wiki/display/FK/Dev2+on+Rackspace+Cloud |"
+echo " +----------------------------------------------------------------------------+"
+echo

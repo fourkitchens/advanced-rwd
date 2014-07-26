@@ -1,0 +1,6 @@
+---
+##
+# Subversion version control.
+#
+- name: Subversion | Install svn
+  action: apt pkg=subversion state=installed

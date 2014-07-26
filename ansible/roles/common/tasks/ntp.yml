@@ -1,0 +1,6 @@
+---
+##
+# Install ntp for time syncronization
+#
+- name: NTP | Install NTP
+  action: apt pkg=ntp state=installed
