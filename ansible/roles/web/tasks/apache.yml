@@ -28,7 +28,7 @@
 - name: Apache | Enable Apache vhost_alias module
   action: command a2enmod vhost_alias creates=/etc/apache2/mods-enabled/vhost_alias.load
   notify:
-    - restart apache]
+    - restart apache
 
 - name: Apache | Main configuration file
   action: template src=etc/apache2/apache2.conf.j2 dest=/etc/apache2/apache2.conf

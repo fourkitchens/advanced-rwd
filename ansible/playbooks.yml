@@ -2,8 +2,12 @@
 # The main playbook to deploy the site
 
 - hosts: all
+  sudo: yes
   roles:
    - common
-   - db
    - web
    - ruby
+
+- hosts: all
+  roles:
+   - training

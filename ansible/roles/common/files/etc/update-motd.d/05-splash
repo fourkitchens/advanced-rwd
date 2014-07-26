@@ -1,7 +1,0 @@
-#!/bin/bash
-#
-# This file provided by Ansible. It should only be modified within a checkout
-# of the dev2 Ansible playbooks.
-#
-
-cat /etc/update-motd.d/dev2-terminal-logo

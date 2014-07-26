@@ -1,4 +1,0 @@
----
-# The playbook for tasks related to database servers.
-
-- include: mysql.yml tags=mysql
