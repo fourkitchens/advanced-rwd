@@ -1,81 +1,66 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 body {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 audio, canvas, progress, video {
   display: inline-block;
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 [hidden], template {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 a {
   background: 0 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 a:active, a:hover {
   outline: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 b, strong {
   font-weight: 700;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 dfn {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 h1 {
   font-size: 2em;
   margin: .67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 mark {
   background: #ff0;
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 small {
   font-size: 80%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -83,100 +68,82 @@ sub, sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 sup {
   top: -.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 sub {
   bottom: -.25em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 img {
   border: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 svg:not(:root) {
   overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 figure {
   margin: 1em 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 pre {
   overflow: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 code, kbd, pre, samp {
   font-family: monospace,monospace;
   font-size: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 button, input, optgroup, select, textarea {
   color: inherit;
   font: inherit;
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 button {
   overflow: visible;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 button, select {
   text-transform: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 button, html input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 button[disabled], html input[disabled] {
   cursor: default;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 input {
   line-height: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 input[type=search] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -184,41 +151,34 @@ input[type=search] {
   box-sizing: content-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
   padding: .35em .625em .75em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 legend {
   border: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 textarea {
   overflow: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 optgroup {
   font-weight: 700;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/global\/_normalize\.scss}line{font-family:\000031}}
 td, th {
   padding: 0;
 }
@@ -230,7 +190,6 @@ td, th {
   font-weight: normal;
   font-style: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\000031}}
 body {
   background: white;
   color: #4d4d4d;
@@ -246,13 +205,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000320}}
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000326}}
 nav li {
   margin: 0;
   padding: 0;
@@ -260,37 +217,31 @@ nav li {
   padding-right: .5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000334}}
 a {
   color: #f388c3;
   text-decoration: none;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000338}}
 a:hover {
   color: #ef61af;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/styleguide\/_guide\.scss}line{font-family:\0000343}}
 h1, h2, h3 {
   font-family: 'Satisfy', cursive;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\000032}}
 .container, main {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/\.rbenv\/versions\/2\.0\.0-p451\/lib\/ruby\/gems\/2\.0\.0\/gems\/toolkit-2\.5\.0\/stylesheets\/toolkit\/_clearfix\.scss}line{font-family:\0000313}}
 .container:after, main:after {
   content: "";
   display: table;
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\000039}}
 .hours {
   width: 48.93617%;
   clear: right;
@@ -299,7 +250,6 @@ h1, h2, h3 {
   margin-right: 2.12766%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000312}}
 .contact {
   width: 48.93617%;
   clear: right;
@@ -307,12 +257,10 @@ h1, h2, h3 {
   margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000316}}
 main {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000322}}
 #info {
   width: 31.91489%;
   clear: right;
@@ -321,7 +269,6 @@ main {
   margin-right: 2.12766%;
 }
 @media (min-width: 624px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000322}}
   #info {
     width: 23.68421%;
     clear: right;
@@ -331,7 +278,6 @@ main {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000331}}
 #menu {
   width: 31.91489%;
   clear: right;
@@ -339,7 +285,6 @@ main {
   margin-right: 2.12766%;
 }
 @media (min-width: 624px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000331}}
   #menu {
     width: 47.36842%;
     clear: right;
@@ -347,7 +292,6 @@ main {
     margin-right: 2.63158%;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000340}}
 #menu section {
   width: 27.27273%;
   clear: right;
@@ -355,7 +299,6 @@ main {
   margin-left: 0;
   margin-right: 9.09091%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000343}}
 #menu section:nth-of-type(3n) {
   width: 27.27273%;
   clear: right;
@@ -363,7 +306,6 @@ main {
   margin-right: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000349}}
 #about {
   width: 31.91489%;
   clear: right;
@@ -371,7 +313,6 @@ main {
   margin-right: 0;
 }
 @media (min-width: 624px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000349}}
   #about {
     width: 47.36842%;
     clear: right;
@@ -381,14 +322,12 @@ main {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/GitHubs\/advanced-rwd\/cafe-done\/sass\/partials\/layout\/_layout\.scss}line{font-family:\0000362}}
 .ratio-16-9 {
   position: relative;
   height: 0;
   padding-top: 56.25%;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ian\/\.rbenv\/versions\/2\.0\.0-p451\/lib\/ruby\/gems\/2\.0\.0\/gems\/toolkit-2\.5\.0\/stylesheets\/toolkit\/_intrinsic-ratio\.scss}line{font-family:\0000358}}
 .ratio-16-9 > * {
   display: block;
   position: absolute;

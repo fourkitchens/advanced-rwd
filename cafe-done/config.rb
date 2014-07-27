@@ -38,8 +38,7 @@ environment = :development
 #environment = :production
 
 # In development, we can turn on the debug_info to use with FireSass or Chrome Web Inspector.
-#debug = false
-debug = true
+debug = false
 
 ##
 ## You probably don't need to edit anything below this.
