@@ -1,13 +1,17 @@
 ---
 # The main playbook to deploy the site
 
-- hosts: all
+- name: "Server setup tasks"
+  hosts: 127.0.0.1
+  connection: local
   sudo: yes
   roles:
    - common
    - web
    - ruby
 
-- hosts: all
+- name: "Training specific tasks"
+  hosts: 127.0.0.1
+  connection: local
   roles:
    - training

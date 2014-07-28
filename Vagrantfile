@@ -17,7 +17,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vm.customize ["modifyvm", :id, "--cpus", "2"]
   end
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "ansible/playbooks.yml"
-  end
+  config.vm.provision :shell, :path => "ansible/provision/ansible-setup.sh"
+  config.vm.provision :shell, :path => "ansible/provision/local-dev-setup.sh"
 end
