@@ -1,0 +1,33 @@
+---
+ruby_library_version:   "2.0.0"
+ruby_version:           "ruby-2.0.0-p481"
+ruby_checksum:          "00dd3d72435eb77f2bd94537c1738e5219ca42b6d68df3d4f20c183f4bd12d0f"
+ruby_download_location: "http://cache.ruby-lang.org/pub/ruby/2.0/{{ ruby_version }}.tar.gz"
+ruby_bundler_flags: "--no-document"
+
+ruby_apt_dependencies:
+  - libreadline-dev
+  - libssl-dev
+  - libyaml-dev
+  - zlib1g-dev
+
+ruby_yum_dependencies:
+  - readline-devel
+  - openssl-devel
+  - libyaml-devel
+  - zlib-devel
+
+ruby_symlinks:
+  - bundle
+  - erb
+  - gem
+  - irb
+  - rake
+  - rdoc
+  - ri
+  - ruby
+  - testrb
+
+ruby_location: "/opt/{{ ruby_version }}"
+
+ruby_executable: "{{ ruby_location }}/bin/ruby"

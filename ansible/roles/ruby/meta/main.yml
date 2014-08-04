@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: "Joshua Lund"
+  description: "Ansible role that compiles and installs Ruby (https://www.ruby-lang.org) and Bundler (http://bundler.io)."
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - name: Amazon
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+  categories:
+    - development
+dependencies: []

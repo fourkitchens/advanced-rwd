@@ -1,0 +1,12 @@
+---
+##
+# SSH config
+#
+- name: SSH | Install ssh server
+  action: apt pkg=openssh-server state=installed
+
+- name: SSH | Server config
+  action: template src=etc/ssh/sshd_config.j2 dest=/etc/ssh/sshd_config
+  notify:
+    - restart ssh
+

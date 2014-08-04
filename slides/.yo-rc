@@ -1,0 +1,7 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Advanced Responsive Web Design",
+    "packageVersion": "0.1.0",
+    "useSass": true
+  }
+}

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /usr/local/src/
+tar xvfz {{ ruby_version }}.tar.gz
+cd {{ ruby_version }}
+./configure --prefix={{ ruby_location }} --disable-install-doc
+make --jobs {{ cores.stdout }}
+make install

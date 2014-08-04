@@ -1,0 +1,50 @@
+# Default Vars for php.
+
+---
+# PHP
+phpfpm_user: 'phpfpm'
+phpfpm_group: 'phpfpm'
+phpfpm_pm_start_servers: '2'
+phpfpm_listen: '/var/run/php5-fpm.sock'
+phpfpm_listen_owner: 'nginx'
+phpfpm_listen_group: 'nginx'
+phpfpm_listen_mode: '0600'
+php_max_execution_time: '90'
+php_display_errors: 'On'
+php_display_startup_errors: 'On'
+php_html_errors: 'On'
+php_post_max_size: '32M'
+php_upload_max_filesize: '32M'
+php_date_timezone: 'US/Central'
+php_memory_limit: '192M'
+php_cgi_fix_pathinfo: '0'
+php_short_open_tag: 'Off'
+php_xdebug_remote_enable: 0
+
+# OPCache
+opcache_memory_consumption: '128'
+opcache_interned_strings_buffer: '8'
+opcache_max_accelerated_files: '4000'
+opcache_revalidate_freq: '60'
+opcache_fast_shutdown: '1'
+opcache_enable_cli: '1'
+
+# Apache
+apache_port: 8080
+apache_server_home_docroot: '/var/www/home'
+
+# nginx
+nginx_user: 'nginx'
+nginx_port: 8081
+nginx_dev_robots: true
+nginx_worker_processes: '1'
+nginx_webroot: '/var/www'
+nginx_fpm_listen: 'unix:/var/run/php5-fpm.sock'
+
+# Varnish
+varnish_port: 80
+varnish_size: '1G'
+varnish_auth: 'Basic Zms6ZmtidWlsZA=='
+varnish_backend_get_key: 'varnish_backend'
+varnish_backend_header_key: 'X-varnish-backend'
+varnish_default_backend: 'apache'

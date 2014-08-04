@@ -1,0 +1,14 @@
+---
+# The playbook for common tasks
+
+- apt: update_cache=yes
+
+- include: curl.yml tags=curl
+- include: git.yml tags=git
+- include: editors.yml tags=editors
+- include: htop.yml tags=htop
+- include: motd.yml tags=motd
+- include: ntp.yml tags=ntp
+- include: sendmail.yml tags=sendmail
+- include: ssh.yml tags=ssh
+- include: svn.yml tags=svn

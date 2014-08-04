@@ -1,5 +1,0 @@
-# Ignore paths that contain user-generated content.
-sites/*/private
-
-# Ignore Training Wheels student settings
-sites/default/student.settings.php

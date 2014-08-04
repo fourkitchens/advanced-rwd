@@ -1,0 +1,18 @@
+---
+# The playbook for training-specific tasks
+
+
+- name: Copy dot files
+  copy: copy src=home/vagrant/{{ item }} dest=/home/vagrant/{{ item }}
+  with_items:
+    - .bashrc
+    - .gitconfig
+    - .gitignore
+    - .vimrc
+
+- name: Install all gems
+  command: bash -lc "cd {{ item }} && bundle install --path=.vendor"
+  with_items:
+    - /home/vagrant/public_html/cafe
+    - /home/vagrant/public_html/cafe-done
+    - /home/vagrant/public_html/recipe

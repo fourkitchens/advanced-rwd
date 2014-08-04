@@ -1,6 +1,7 @@
 # Require any additional compass plugins here.
 require 'toolkit'
-require 'compass-normalize'
+require 'breakpoint'
+require 'singularitygs'
 
 # Set this to the root of your project when deployed:
 http_path = "/"

@@ -1,0 +1,66 @@
+---
+##
+# Apache2 setup.
+#
+
+- name: Apache | Install required prereqs
+  action: apt pkg={{ item }} state=installed
+  with_items:
+    - software-properties-common
+    - python-software-properties
+
+- name: Apache | Add Apache 2.4 PPA
+  action: apt_repository repo=ppa:ondrej/apache2
+
+- name: Apache | Update apt cache
+  action: apt update-cache=yes
+
+- name: Apache | Install required packages
+  action: apt pkg={{ item }} state=installed
+  with_items:
+    - apache2
+
+- name: Apache | Enable Apache rewrite module
+  action: command a2enmod rewrite creates=/etc/apache2/mods-enabled/rewrite.load
+  notify:
+    - restart apache
+
+- name: Apache | Enable Apache vhost_alias module
+  action: command a2enmod vhost_alias creates=/etc/apache2/mods-enabled/vhost_alias.load
+  notify:
+    - restart apache
+
+- name: Apache | Main configuration file
+  action: template src=etc/apache2/apache2.conf.j2 dest=/etc/apache2/apache2.conf
+  notify:
+    - restart apache
+
+- name: Apache | Main configuration file for ports
+  action: template src=etc/apache2/ports.conf.j2 dest=/etc/apache2/ports.conf
+  notify:
+    - restart apache
+
+- name: Apache | Configuration file for our devserver site
+  action: template src=etc/apache2/sites-available/devserver.conf.j2 dest=/etc/apache2/sites-available/devserver.conf
+  notify:
+    - restart apache
+
+- name: Apache | Disable the default site
+  action: command a2dissite 000-default removes=/etc/apache2/sites-enabled/000-default
+  notify:
+    - restart apache
+
+- name: Apache | Enable our new devserver site
+  action: command a2ensite devserver creates=/etc/apache2/sites-enabled/devserver
+  notify:
+    - restart apache
+
+- name: Apache | Robots.txt file that prevents search engines from spidering dev site.
+  action: copy src=var/www/robots.txt dest=/var/www/robots.txt
+  notify:
+    - restart apache
+
+- name: Apache | Directory for virtual hosts.
+  action: file path=/var/www/vhosts state=directory mode=755 owner=www-data group=www-data
+  notify:
+    - restart apache

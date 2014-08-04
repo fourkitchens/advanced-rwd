@@ -1,0 +1,8 @@
+---
+# The playbook for tasks related to webservers.
+
+# Webservers
+- include: apache.yml tags=apache
+
+# Languages/ frameworks
+- include: node.yml tags=node

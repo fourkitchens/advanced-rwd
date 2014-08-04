@@ -1,0 +1,17 @@
+---
+##
+# Install preferred editors
+#
+- name: Editors | Install Vim
+  action: apt pkg={{ item }} state=installed
+  with_items:
+    - vim-nox
+    - vim-scripts
+    - vim-common
+
+- name: Editors | Install Emacs
+  action: apt pkg={{ item }} state=installed
+  with_items:
+    - emacs23-nox
+    - emacs23-common
+    - emacs23-bin-common

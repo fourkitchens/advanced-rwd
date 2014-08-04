@@ -7,6 +7,8 @@
 $measure-break: 524px;
 $menu-break: 700px;
 
-$grids: 2;
-$grids: add-grid(4 at $menu-break);
-$gutters: .15;
+
+
+@include add-grid(2);
+@include add-grid(4 at $menu-break);
+@include add-gutter(.15);
