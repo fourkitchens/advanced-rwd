@@ -4,6 +4,15 @@ All of the code here can be run on any environment that has Ruby and Bundler ins
 
 You will need to be connected to the internet to setup your environment, and depending on your connection speed it could take some time.
 
+## Using Mac OS X locally
+
+If you have already used Sass / Compass, and want to continue to do so, you may use you local Mac. This is how we generally develop our code, but ocassionaly minor differences between environments can cause errors. If you use your local machine, please ensure you have the followin installed:
+
+* Ruby (Version 2.0.0-p451 or higher)
+* [Node.js](http://nodejs.org/download/) (Most recent)
+* [Bundler](http://bundler.io/) (Installed via command line) 
+* [Yeoman](http://yeoman.io/) (npm install -g yo)
+
 ## Windows
 
 These directions are meant for OS X and Linux hosts. Although the Vagrant machine should work on Windows, we have not tested it thoroughly. We HIGHLY recomend you use a OS X machine, as we cannot provide support in the training for Windows machines.
