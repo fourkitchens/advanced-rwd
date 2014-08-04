@@ -4,6 +4,10 @@ All of the code here can be run on any environment that has Ruby and Bundler ins
 
 You will need to be connected to the internet to setup your environment, and depending on your connection speed it could take some time.
 
+## Windows
+
+These directions are meant for OS X and Linux hosts. Although the Vagrant machine should work on Windows, we have not tested it thoroughly. We HIGHLY recomend you use a OS X machine, as we cannot provide support in the training for Windows machines.
+
 ## Prerequisites
 
 This VM is built using [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/). You will need to download them both to proceed.
@@ -24,9 +28,8 @@ All of the source code for this training lives on GitHub. You can look at it all
 $ git clone git@github.com:fourkitchens/advanced-rwd.git
 ```
 
-If you are not confortable with the command line, download the zip file from GitHub. (https://github.com/fourkitchens/advanced-rwd/archive/master.zip) Unzip and put the file into a directory of choice.
+If you are not confortable with the command line, please install [GitHub for Windows](https://windows.github.com/) or [GitHub for Mac](https://windows.github.com/). Both of these programs will give you a GUI to clone repositories with. 
 
-We **highly** recommend using the Git clone method, so that we can more easily help you during development.
 
 ## Start up the development environment
 
