@@ -2,6 +2,7 @@
 require 'toolkit'
 require 'breakpoint'
 require 'singularitygs'
+require 'singularity-extras'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
