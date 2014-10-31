@@ -1,6 +1,6 @@
 ## Silver challenge:
 
-Create a CSS Carousel
+CSS Triangles
 
-* Turn the list of images into a CSS Carousel 5 items large
-* Create a carousel animation for 5 items, utilizing the ```start``` animation
+* Add a triangle with only CSS to the div with class "green-arrow"
+* Play with having it point in different directions.
