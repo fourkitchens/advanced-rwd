@@ -21,10 +21,24 @@
       }
     },
     {
-      "filename": "intro/joe.md",
+      "filename": "intro/sam.md",
       "attr": {
         "data-state": "intro",
-        "id": "joe"
+        "id": "sam"
+      }
+    },
+    {
+      "filename": "intro/taylor.md",
+      "attr": {
+        "data-state": "intro",
+        "id": "taylor"
+      }
+    },
+    {
+      "filename": "intro/patrick.md",
+      "attr": {
+        "data-state": "intro",
+        "id": "patrick"
       }
     },
     {

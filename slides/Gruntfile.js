@@ -97,5 +97,5 @@ module.exports = function(grunt) {
   grunt.registerTask('test', '*Lint* javascript and coffee files.', ['coffeelint', 'jshint']);
   grunt.registerTask('server', 'Run presentation locally and start watch process (living document).', ['buildIndex', 'connect:livereload', 'watch']);
   grunt.registerTask('dist', 'Save presentation files to *dist* directory.', ['test', 'compass', 'buildIndex', 'copy']);
-  return grunt.registerTask('default', ['test', 'server']);
+  return grunt.registerTask('default', ['server']);
 };
