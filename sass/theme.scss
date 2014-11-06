@@ -1,0 +1,337 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+// This file has been copied over from
+// ../../bower_components/reveal.js/css/theme/source/default.scss
+
+////////////////////////////
+// Cross Browser Support
+$graceful-usage-threshold: 100;
+$critical-usage-threshold: 100;
+
+$browser-minimum-versions: (
+  "ie": "9",
+  "android": "4",
+  "chrome": "31",
+  "safari": "5",
+  "firefox": "25",
+  "ios-safari": "6.0-6.1",
+  "android-chrome": "0"
+);
+////////////////////////////
+
+////////////////////////
+// Compass Imports
+@import "compass";
+@import "compass/reset";
+////////////////////////
+
+////////////////////////
+// Compass Extensions
+@import "toolkit";
+@import "toolkit/kickstart";
+@import "breakpoint";
+////////////////////////
+
+
+// Default mixins and settings -----------------
+@import "../bower_components/reveal.js/css/theme/template/mixins";
+@import "../bower_components/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+@import url(http://snugug.github.io/fonts/homestead-subset.css);
+@import url(http://snugug.github.io/fonts/north.css);
+@import url(http://snugug.github.io/fonts/ostrich.css);
+
+// Include theme-specific fonts ----------------
+// @font-face {
+//         font-family: 'League Gothic';
+//         src: url('../../lib/font/league_gothic-webfont.eot');
+//         src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+//                  url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+//                  url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+//                  url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+
+//         font-weight: normal;
+//         font-style: normal;
+// }
+
+// @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+// ---------------------------------------------
+
+// Override theme settings ---------------------
+// $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+// Other options include e.g.
+// $mainFont: 'Open Sans', sans-serif;
+// $linkColor: #ed1dff;
+// $linkColorHover: $linkColor;
+// $headingFont: 'Montserrat', Impact, sans-serif;
+// $headingTextShadow: none;
+// $headingLetterSpacing: -0.03em;
+// $headingTextTransform: none;
+// $selectionBackgroundColor: #e0ad52;
+// $mainFontSize: 30px;
+// See ../../bower_components/reveal.js/css/theme/template/settings.scss for the full list.
+// ---------------------------------------------
+
+// Background generator ------------------------
+// @mixin bodyBackground() {
+//   background-color: #2a9ed5;
+// }
+// ---------------------------------------------
+
+// Theme template ------------------------------
+// @import "../bower_components/reveal.js/css/theme/template/theme";
+
+// ---------------------------------------------
+
+// See ../../bower_components/reveal.js/css/theme/README.md
+// for further explanations on how reveal.js themes work.
+
+
+body {
+  background-color: #a9e952;
+  font-family: 'pt';
+  font-size: 2em;
+}
+
+* {
+  text-rendering: optimizeLegibility;
+}
+
+.reveal {
+  blockquote {
+    border: none;
+    box-shadow: none;
+    text-align: right;
+    background: none;
+    border-right: .2em solid;
+    padding: 0 1em 0 0;
+
+    cite {
+      font-size: .75em;
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    // width: 100%;
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    .cs & {
+      @include underline(#fede32, #3c3c3c);
+    }
+
+    // .tools & {
+    //   @include underline(#97e52d, #3c3c3c);
+    // }
+  }
+
+
+  h1, h2, h3, h4, h5  {
+    &:not(.north) {
+      font-family: 'ostrich';
+      letter-spacing: .1em;
+    }
+
+    a {
+      background-position: 0 0.825em !important;
+    }
+  }
+
+  pre {
+    font-size: 1em;
+    &.codemark {
+      box-shadow: none;
+      font-size: .55em;
+    }
+  }
+}
+
+.reveal .controls div.navigate {
+  $states: (
+    "intro": white,
+    "north": #061b25,
+    "mq": #3c3c3c
+  );
+
+  $dirs: (
+    left: right,
+    right: left,
+    up: bottom,
+    down: top
+  );
+
+  @each $dir, $border in $dirs {
+    &-#{$dir} {
+      @each $state, $color in $states {
+        .#{$state} & {
+          border-#{$border}-color: $color;
+        }
+      }
+    }
+  }
+}
+
+.intro,
+.compass {
+  color: white;
+}
+
+.wrap-up {
+  color: #666666;
+}
+
+.mq,
+.tools,
+.wrap-up {
+  color: #3c3c3c;
+}
+
+
+/**
+ * State backgrounds.
+ */
+
+
+.state-background {
+  .intro & {
+    background: black;
+  }
+
+  .sass & {
+    background: #c69;
+  }
+
+  .compass & {
+    background: #2f2f2f;
+  }
+
+  .bundler & {
+    background: #c6e7ec;
+  }
+
+  .mq & {
+    background: #fede32;
+  }
+
+  .alert .reveal & { // Extra class to override reveal.
+    background: rgba(200, 50, 30, 1);
+  }
+
+  .singularity & {
+    background: #fe5848;
+  }
+
+  .toolkit & {
+    background-color: #bb6edd;
+  }
+
+  .yeoman & {
+    background-color: #5aadbb;
+  }
+
+  .wrap-up & {
+    background: white;
+  }
+
+  /*
+   * Custom background images
+   */
+
+  .fingerprint-pre &,
+  .medal-pre & {
+    background-position: 1800px -1500px;
+  }
+
+  .fingerprint & {
+    background: #fff url('../../img/fingerprint.jpg') no-repeat 28em -16em;
+    opacity: .25;
+  }
+
+  .bronze & {
+    background: #fff url('../../img/medal-bronze.png') no-repeat 26em -1em;
+  }
+
+  .silver &  {
+    background: #fff url('../../img/medal-silver.png') no-repeat 26em -1em;
+  }
+
+  .gold & {
+    background: #fff url('../../img/medal-gold.png') no-repeat 26em -1em;
+  }
+}
+
+h1 a.wordmark {
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-family: 'ostrich-wordmark';
+  background: none !important;
+  text-shadow: none !important;
+
+  .wordmark--4 {
+    margin-left: -.10em;
+  }
+}
+
+.fk-logo {
+  width: 100%;
+  height: 100%;
+}
+
+/*********************************************
+ * TABLES
+ *********************************************/
+
+table.comparison {
+  margin: 1em auto;
+  font-size: 1.6em;
+}
+table.comparison tr td {
+  width: 5em;
+  padding: .4em;
+}
+table.comparison tr td:nth-child(1) {
+  text-align: right;
+  padding-right: 1em;
+}
+table.comparison tr td:nth-child(2) {
+  text-align: left;
+  padding-left: 1em;
+}
+
+
+/*********************************************
+ * Advanced-RWD Styles
+ *********************************************/
+
+.reveal .fragment code {
+  color: #666;
+}
+
+.reveal ul.naked li {
+  list-style-type: none;
+}
+
+
+details {
+  text-align: left;
+}
+
+details details {
+  width: 90%;
+  margin-left: 10%;
+}
+
+
+
+@import url(http://snugug.github.io/fonts/scp.css);
+@import url(http://snugug.github.io/fonts/pt.css);

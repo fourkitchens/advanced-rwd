@@ -4,5 +4,7 @@ sftp-config.json
 # ignore sass stuff
 .sass-cache
 
+node_modules
+
 # ignore all CSS in dev folders
 cafe/css

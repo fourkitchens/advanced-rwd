@@ -1,122 +1,596 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Advanced Responsive Web Design with Sass+Compass</title>
 
-  <meta name="description" content="Training assets for Advanced RWD with Sass+Compass">
-  <meta name="author" content="Chris Ruppel, Sam Richard, Ian Carrico, Mason Wendell">
+    <head>
+        <meta charset="utf-8">
 
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <title>Advanced Responsive Web Design</title>
 
-  <style>
-    @import url("http://fonts.googleapis.com/css?family=Rambla:400,700,400itali");
-    html {
-      background: #66b360;
-      padding: 1em 2em;
-    }
-    body {
-      text-align: center;
-      max-width: 42em;
-      margin: 1em auto;
-      padding: 2em 3em;
-      color: #444;
-      background: #f3f3f3;
-      box-shadow: inset 0 0 1.4em #020, 0 0 4em rgba(255,255,255,.8);
-      font-family: "Rambla", sans-serif;
-      -webkit-transition: all 1s ease;
-         -moz-transition: all 1s ease;
-          -ms-transition: all 1s ease;
-           -o-transition: all 1s ease;
-              transition: all 1s ease;
-    }
-    h1 {margin-top: 0; }
-    ul,li {text-align: left; }
-    a {color: #66b360; }
-    a:visited {color: #065300; }
-    abbr {cursor: help; }
-    p.small {
-      font-size: .8em;
-    }
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    /* -- resize me :) -- */
-    body::after {
-      content: 'resize me \00A0 \00A0 :)';
-      font-size: 3em;
-      color: #000;
-      opacity: .025;
-      text-shadow: 0 0 .4em #fff;
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-      position: absolute;
-      bottom: 2em;
-      left: 50%;
-      margin-left: -3em;
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
 
-      -webkit-animation: pulse 4s linear 5;
-         -moz-animation: pulse 4s linear 5;
-          -ms-animation: pulse 4s linear 5;
-           -o-animation: pulse 4s linear 5;
-              animation: pulse 4s linear 5;
-    }
-
-    /* -- le keyframes -- */
-    @-webkit-keyframes pulse {50% {opacity: .2; }}
-       @-moz-keyframes pulse {50% {opacity: .2; }}
-        @-ms-keyframes pulse {50% {opacity: .2; }}
-         @-o-keyframes pulse {50% {opacity: .2; }}
-            @keyframes pulse {50% {opacity: .2; }}
-
-    @-webkit-keyframes throb {50% {border-radius: 5em 12em; }}
-       @-moz-keyframes throb {50% {border-radius: 5em 12em; }}
-        @-ms-keyframes throb {50% {border-radius: 5em 12em; }}
-         @-o-keyframes throb {50% {border-radius: 5em 12em; }}
-            @keyframes throb {50% {border-radius: 5em 12em; }}
+        <link rel="stylesheet" href="css/theme.css" id="theme">
 
 
-    /* -- le queries de media -- */
-    @media (min-width: 26em) {
-      body {
-        text-align: left;
-        margin-top: 2em;
-        padding: 2em 5em;
-        border-radius: 2em 4em;
-      }
-    }
-    @media (min-width: 44em) {
-      body {
-        margin-top: 3em;
-        padding: 2em 4em 2em 8em;
-        border-radius: 2em 9em;
-      }
-    }
-    @media (min-width: 61em) {
-      body {
-        margin-top: 3.5em;
-        padding: 2em 3em 2em 13em;
-        border-radius: 2em 17em;
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css" id="highlight-theme">
 
-      -webkit-animation: throb 5.5s ease-in-out 5;
-         -moz-animation: throb 5.5s ease-in-out 5;
-          -ms-animation: throb 5.5s ease-in-out 5;
-           -o-animation: throb 5.5s ease-in-out 5;
-              animation: throb 5.5s ease-in-out 5;
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-      }
-    }
-  </style>
-</head>
-<body>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-  <h1>Advanced <abbr title="Responsive Web Design">RWD</abbr> with Sass+Compass</h1>
-  <h2>Welcome to the <em>worst</em> training ever!</h2>
-  <h3>Website located at: <a href="http://fourkitchens.github.io/advanced-rwd/">fourkitchens.github.io/advanced-rwd/</a></h3>
-  <ul>
-    <li><a href="slides/">Slides for Today's Training</a></li>
-    <li><a href="https://github.com/fourkitchens/responsive-training-site">Code for Today's Training</a></li>
-    <li><a href="http://fourkitchens.github.io/responsive-training-site/">Example of Finished Site</a></li>
-  </ul>
-  <p>Brought to you by <a href="http://twitter.com/Snugug">Sam Richard</a>, <a href="http://twitter.com/iamcarrico">Ian Carrico</a>, and <a href="http://twitter.com/rupl">Chris Ruppel</a></p>
+    <body>
 
-</body>
+        <div class="reveal">
+
+            <div class="slides">
+
+                
+                    
+                        
+    <section data-state="intro" data-markdown="slides/index.md"></section>
+
+
+                    
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="intro" id="who" data-markdown="slides/intro/who.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="ian" data-markdown="slides/intro/ian.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="sam" data-markdown="slides/intro/sam.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="taylor" data-markdown="slides/intro/taylor.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="patrick" data-markdown="slides/intro/patrick.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="also" data-markdown="slides/intro/also.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="intro" id="is" data-markdown="slides/intro/is.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="isnt" data-markdown="slides/intro/isnt.md"></section>
+
+
+                            
+                                
+    <section data-state="intro" id="agenda" data-markdown="slides/intro/agenda.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="sass" id="sass-index" data-markdown="slides/sass/index.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="sass" data-markdown="slides/sass/sass.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="syntax" data-markdown="slides/sass/syntax.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="syntax-2" data-markdown="slides/sass/syntax-2.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="scss" data-markdown="slides/sass/scss.md"></section>
+
+
+                            
+                                
+    <section data-state="soothe" id="sassmeister" data-markdown="slides/sass/sassmeister.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="variables" data-markdown="slides/sass/variables.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="sassy-maps" data-markdown="slides/sass/maps.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="functions" data-markdown="slides/sass/functions.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="mixins" data-markdown="slides/sass/mixins.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="extendables" data-markdown="slides/sass/extendables.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="partials" data-markdown="slides/sass/partials.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="comments" data-markdown="slides/sass/comments.md"></section>
+
+
+                            
+                                
+    <section data-state="sass" id="sass-questions" data-markdown="slides/sass/questions.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass" data-markdown="slides/compass/index.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="drupal" data-markdown="slides/compass/drupal.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-mixins" data-markdown="slides/compass/mixins.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-features" data-markdown="slides/compass/features.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-extensions" data-markdown="slides/compass/extensions.md"></section>
+
+
+                            
+                                
+    <section data-state="compass" id="compass-questions" data-markdown="slides/compass/questions.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="bundler" id="bundler" data-markdown="slides/bundler/bundler.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-install" data-markdown="slides/bundler/install.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-one-time" data-markdown="slides/bundler/one-time.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-bundle-install" data-markdown="slides/bundler/bundle-install.md"></section>
+
+
+                            
+                                
+    <section data-state="bundler" id="bundler-exec" data-markdown="slides/bundler/exec.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="mq" id="media-queries" data-markdown="slides/mq/mq.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-examples" data-markdown="slides/mq/examples.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="breakpoint" data-markdown="slides/mq/breakpoint.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="breakdown" data-markdown="slides/mq/breakdown.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-single" data-markdown="slides/mq/single.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-fenced" data-markdown="slides/mq/fenced.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-explicit" data-markdown="slides/mq/explicit.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="mq-combine" data-markdown="slides/mq/combine.md"></section>
+
+
+                            
+                                
+    <section data-state="mq" id="noquery" data-markdown="slides/mq/noquery.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="mq-bronze" data-markdown="slides/mq/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="mq-silver" data-markdown="slides/mq/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="mq-gold" data-markdown="slides/mq/gold.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="singularity" id="singularity" data-markdown="slides/singularity/singularity.md"></section>
+
+
+                            
+                                
+    <section data-state="alert" id="special-note" data-markdown="slides/singularity/note.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="box-model" data-markdown="slides/singularity/box-model.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="s960" data-markdown="slides/singularity/960.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="setting-up" data-markdown="slides/singularity/setting-up.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="output" data-markdown="slides/singularity/output.md"></section>
+
+
+                            
+                                
+    <section data-state="singularity" id="grid-span" data-markdown="slides/singularity/grid-span.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="singularity-bronze" data-markdown="slides/singularity/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="singularity-silver" data-markdown="slides/singularity/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="singularity-gold" data-markdown="slides/singularity/gold.md"></section>
+
+
+                            
+                                
+    <section data-state="alert" id="class-based-grid-systems-suck" data-markdown="slides/singularity/class-based.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="content" id="content-first" data-markdown="slides/content/first.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="what-is-content-first" data-html="slides/content/what.html"></section>
+
+
+                            
+                                
+    <section data-state="content" id="ideal-grid" data-markdown="slides/content/ideal.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="singularity-is-built-for-this" data-markdown="slides/content/built.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="asymmetric" data-markdown="slides/content/asymmetric.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="asymmetric-types" data-markdown="slides/content/asymmetric-types.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="custom-grids" data-markdown="slides/content/custom.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="compound-grids" data-markdown="slides/content/compound.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="ratio-grids" data-markdown="slides/content/ratio.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="spiral-grids" data-markdown="slides/content/spiral.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="snap-grids" data-markdown="slides/content/snap.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="global-contexts" data-markdown="slides/content/global-contexts.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="global-contexts-2" data-markdown="slides/content/global-contexts-2.md"></section>
+
+
+                            
+                                
+    <section data-state="content" id="override-global-contexts" data-markdown="slides/content/override.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="content-bronze" data-markdown="slides/content/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="content-silver" data-markdown="slides/content/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="content-gold" data-markdown="slides/content/gold.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="toolkit" id="toolkit" data-markdown="slides/toolkit/toolkit.md"></section>
+
+
+                            
+                                
+    <section data-state="toolkit" id="what-is-toolkit" data-markdown="slides/toolkit/what.md"></section>
+
+
+                            
+                                
+    <section data-state="toolkit" id="basic-fluid-media" data-markdown="slides/toolkit/fluid.md"></section>
+
+
+                            
+                                
+    <section data-state="toolkit" id="intrinsic-ratios" data-markdown="slides/toolkit/ir.md"></section>
+
+
+                            
+                                
+    <section data-state="bronze" id="toolkit-bronze" data-markdown="slides/toolkit/bronze.md"></section>
+
+
+                            
+                                
+    <section data-state="silver" id="toolkit-silver" data-markdown="slides/toolkit/silver.md"></section>
+
+
+                            
+                                
+    <section data-state="gold" id="toolkit-gold" data-markdown="slides/toolkit/gold.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="yeoman" id="yeoman" data-markdown="slides/yeoman/yeoman.md"></section>
+
+
+                            
+                                
+    <section data-state="yeoman" id="yeoman-install" data-markdown="slides/yeoman/install.md"></section>
+
+
+                            
+                                
+    <section data-state="yeoman" id="sub-theme-generation" data-markdown="slides/yeoman/sub-theme.md"></section>
+
+
+                            
+                                
+    <section data-state="yeoman" id="boom" data-markdown="slides/yeoman/boom.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+                    
+                    
+                        <section>
+                            
+                                
+    <section data-state="wrap-up" id="wrap-up" data-markdown="slides/wrap-up/wrap-up.md"></section>
+
+
+                            
+                                
+    <section data-state="wrap-up" id="thank-you" data-markdown="slides/wrap-up/thanks.md"></section>
+
+
+                            
+                                
+    <section data-state="wrap-up" id="four-kitchens" data-markdown="slides/wrap-up/4k.md"></section>
+
+
+                            
+                        </section>
+                    
+                
+            </div>
+
+        </div>
+
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script>
+            // Configure Reveal
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+                ]
+            });
+        </script>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </body>
+
 </html>
